@@ -1,0 +1,384 @@
+a,
+a:hover,
+a:active,
+a:visited {
+  color: #FFFFFF;
+  text-decoration: none;
+  cursor: pointer; }
+
+body {
+  overflow-x: hidden;
+  overflow-y: visible;
+  height: auto;
+  width: auto; }
+  body #grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 1fr 100px; }
+    body #grid-container #grid-content__loggedin {
+      display: grid;
+      grid-column: auto;
+      grid-row: 2;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      background-color: #FFFFFF;
+      overflow: hidden; }
+    body #grid-container #grid-content__unregistered {
+      display: grid;
+      grid-column: auto;
+      grid-row: 2;
+      grid-template-columns: 20px 1fr 1fr 1fr 20px;
+      grid-template-rows: 50px 200px 100px 1fr 1fr 1fr;
+      background: url("/Exchange.me/img/14219176094_308139ff32_o.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center left;
+      overflow: hidden; }
+      body #grid-container #grid-content__unregistered #content-information {
+        display: grid;
+        grid-column: 2;
+        grid-row-start: 2;
+        grid-row-end: 6;
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px 1fr;
+        background-color: #33333380;
+        border-radius: 20px;
+        padding: 0 5px 0 5px;
+        -webkit-filter: grayscale(30%) brightness(90%);
+                filter: grayscale(30%) brightness(90%);
+        overflow-x: hidden;
+        overflow-y: auto;
+        z-index: 2; }
+        body #grid-container #grid-content__unregistered #content-information #information-heading {
+          font-family: 'Lato', sans-serif;
+          text-decoration: underline;
+          overflow: hidden; }
+        body #grid-container #grid-content__unregistered #content-information #information-text {
+          font-family: 'Lato', sans-serif;
+          font-weight: 500;
+          word-spacing: 0px;
+          line-height: 20px; }
+      body #grid-container #grid-content__unregistered #content-login-container {
+        display: grid;
+        grid-column: 3;
+        grid-row-start: 2;
+        grid-row-end: 6;
+        justify-self: center;
+        height: auto;
+        width: 80%;
+        background-color: #333333;
+        border: 2px solid #00FF22; }
+        body #grid-container #grid-content__unregistered #content-login-container #login-form {
+          display: none;
+          grid-template-columns: 1fr;
+          grid-template-rows: 100px 70px 35px 40px 35px 1fr 20px;
+          margin: 0;
+          overflow: hidden; }
+          body #grid-container #grid-content__unregistered #content-login-container #login-form #login-heading {
+            grid-column: auto;
+            grid-row: 1;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300; }
+          body #grid-container #grid-content__unregistered #content-login-container #login-form #login-username {
+            grid-column: auto;
+            grid-row: 3;
+            background: none;
+            background-color: #353535;
+            height: 30px;
+            width: 50%;
+            font-family: 'Montserrat', sans-serif;
+            padding-left: 10px;
+            border-top: 0px;
+            border-right: 0px;
+            border-bottom: 1px solid #00FF22;
+            border-left: 0px;
+            -webkit-transition: border-bottom 500ms ease-in-out;
+            transition: border-bottom 500ms ease-in-out; }
+            body #grid-container #grid-content__unregistered #content-login-container #login-form #login-username::-webkit-input-placeholder {
+              -webkit-transition: color 250ms ease-out;
+              transition: color 250ms ease-out; }
+            body #grid-container #grid-content__unregistered #content-login-container #login-form #login-username:-ms-input-placeholder {
+              -webkit-transition: color 250ms ease-out;
+              transition: color 250ms ease-out; }
+            body #grid-container #grid-content__unregistered #content-login-container #login-form #login-username::-ms-input-placeholder {
+              -webkit-transition: color 250ms ease-out;
+              transition: color 250ms ease-out; }
+            body #grid-container #grid-content__unregistered #content-login-container #login-form #login-username::placeholder {
+              -webkit-transition: color 250ms ease-out;
+              transition: color 250ms ease-out; }
+            body #grid-container #grid-content__unregistered #content-login-container #login-form #login-username:hover::-webkit-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #login-form #login-username:focus::-webkit-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #login-form #login-username:active::-webkit-input-placeholder {
+              color: #FFFFFF; }
+            body #grid-container #grid-content__unregistered #content-login-container #login-form #login-username:hover:-ms-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #login-form #login-username:focus:-ms-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #login-form #login-username:active:-ms-input-placeholder {
+              color: #FFFFFF; }
+            body #grid-container #grid-content__unregistered #content-login-container #login-form #login-username:hover::-ms-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #login-form #login-username:focus::-ms-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #login-form #login-username:active::-ms-input-placeholder {
+              color: #FFFFFF; }
+            body #grid-container #grid-content__unregistered #content-login-container #login-form #login-username:hover::placeholder, body #grid-container #grid-content__unregistered #content-login-container #login-form #login-username:focus::placeholder, body #grid-container #grid-content__unregistered #content-login-container #login-form #login-username:active::placeholder {
+              color: #FFFFFF; }
+            body #grid-container #grid-content__unregistered #content-login-container #login-form #login-username:focus,
+            body #grid-container #grid-content__unregistered #content-login-container #login-form #login-username select:focus {
+              outline: none;
+              outline-offset: none;
+              border-bottom: 1px solid #00bb19; }
+          body #grid-container #grid-content__unregistered #content-login-container #login-form #login-password {
+            grid-column: auto;
+            grid-row: 5;
+            background: none;
+            background-color: #353535;
+            height: 30px;
+            width: 50%;
+            font-family: 'Montserrat', sans-serif;
+            padding-left: 10px;
+            border-top: 0px;
+            border-right: 0px;
+            border-bottom: 1px solid #00FF22;
+            border-left: 0px;
+            -webkit-transition: border-bottom 250ms ease-in-out;
+            transition: border-bottom 250ms ease-in-out; }
+            body #grid-container #grid-content__unregistered #content-login-container #login-form #login-password::-webkit-input-placeholder {
+              -webkit-transition: color 250ms ease-out;
+              transition: color 250ms ease-out; }
+            body #grid-container #grid-content__unregistered #content-login-container #login-form #login-password:-ms-input-placeholder {
+              -webkit-transition: color 250ms ease-out;
+              transition: color 250ms ease-out; }
+            body #grid-container #grid-content__unregistered #content-login-container #login-form #login-password::-ms-input-placeholder {
+              -webkit-transition: color 250ms ease-out;
+              transition: color 250ms ease-out; }
+            body #grid-container #grid-content__unregistered #content-login-container #login-form #login-password::placeholder {
+              -webkit-transition: color 250ms ease-out;
+              transition: color 250ms ease-out; }
+            body #grid-container #grid-content__unregistered #content-login-container #login-form #login-password:hover::-webkit-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #login-form #login-password:focus::-webkit-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #login-form #login-password:active::-webkit-input-placeholder {
+              color: #FFFFFF; }
+            body #grid-container #grid-content__unregistered #content-login-container #login-form #login-password:hover:-ms-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #login-form #login-password:focus:-ms-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #login-form #login-password:active:-ms-input-placeholder {
+              color: #FFFFFF; }
+            body #grid-container #grid-content__unregistered #content-login-container #login-form #login-password:hover::-ms-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #login-form #login-password:focus::-ms-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #login-form #login-password:active::-ms-input-placeholder {
+              color: #FFFFFF; }
+            body #grid-container #grid-content__unregistered #content-login-container #login-form #login-password:hover::placeholder, body #grid-container #grid-content__unregistered #content-login-container #login-form #login-password:focus::placeholder, body #grid-container #grid-content__unregistered #content-login-container #login-form #login-password:active::placeholder {
+              color: #FFFFFF; }
+            body #grid-container #grid-content__unregistered #content-login-container #login-form #login-password:focus,
+            body #grid-container #grid-content__unregistered #content-login-container #login-form #login-password select:focus {
+              outline: none;
+              outline-offset: none;
+              border-bottom: 1px solid #00bb19; }
+          body #grid-container #grid-content__unregistered #content-login-container #login-form #login-submit {
+            grid-column: auto;
+            grid-row: 6;
+            height: 60px;
+            width: 40%;
+            color: #FFFFFF;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5em;
+            font-weight: 300;
+            background: none;
+            background-color: #FF0000;
+            border: none;
+            -webkit-transition: background-color 500ms ease;
+            transition: background-color 500ms ease;
+            cursor: pointer; }
+            body #grid-container #grid-content__unregistered #content-login-container #login-form #login-submit:hover {
+              background-color: #af0000; }
+          body #grid-container #grid-content__unregistered #content-login-container #login-form #option-change {
+            grid-column: auto;
+            grid-row: 7;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8em;
+            font-weight: 100;
+            letter-spacing: 0.5px; }
+            body #grid-container #grid-content__unregistered #content-login-container #login-form #option-change #login-option-change {
+              color: #0ff;
+              text-decoration: underline;
+              cursor: pointer; }
+        body #grid-container #grid-content__unregistered #content-login-container #register-form {
+          display: none;
+          grid-template-columns: 1fr;
+          grid-template-rows: 100px 50px 35px 20px 35px 50px 1fr 20px;
+          margin: 0;
+          overflow: hidden; }
+          body #grid-container #grid-content__unregistered #content-login-container #register-form #register-heading {
+            grid-column: auto;
+            grid-row: 1;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300; }
+          body #grid-container #grid-content__unregistered #content-login-container #register-form #register-username {
+            grid-column: auto;
+            grid-row: 3;
+            background: none;
+            background-color: #353535;
+            height: 30px;
+            width: 50%;
+            font-family: 'Montserrat', sans-serif;
+            padding-left: 10px;
+            border-top: 0px;
+            border-right: 0px;
+            border-bottom: 1px solid #00FF22;
+            border-left: 0px;
+            -webkit-transition: border-bottom 500ms ease-in-out;
+            transition: border-bottom 500ms ease-in-out; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-username::-webkit-input-placeholder {
+              -webkit-transition: color 250ms ease-out;
+              transition: color 250ms ease-out; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-username:-ms-input-placeholder {
+              -webkit-transition: color 250ms ease-out;
+              transition: color 250ms ease-out; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-username::-ms-input-placeholder {
+              -webkit-transition: color 250ms ease-out;
+              transition: color 250ms ease-out; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-username::placeholder {
+              -webkit-transition: color 250ms ease-out;
+              transition: color 250ms ease-out; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-username:hover::-webkit-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #register-form #register-username:focus::-webkit-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #register-form #register-username:active::-webkit-input-placeholder {
+              color: #FFFFFF; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-username:hover:-ms-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #register-form #register-username:focus:-ms-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #register-form #register-username:active:-ms-input-placeholder {
+              color: #FFFFFF; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-username:hover::-ms-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #register-form #register-username:focus::-ms-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #register-form #register-username:active::-ms-input-placeholder {
+              color: #FFFFFF; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-username:hover::placeholder, body #grid-container #grid-content__unregistered #content-login-container #register-form #register-username:focus::placeholder, body #grid-container #grid-content__unregistered #content-login-container #register-form #register-username:active::placeholder {
+              color: #FFFFFF; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-username:focus,
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-username select:focus {
+              outline: none;
+              outline-offset: none;
+              border-bottom: 1px solid #00bb19; }
+          body #grid-container #grid-content__unregistered #content-login-container #register-form #register-password {
+            grid-column: auto;
+            grid-row: 5;
+            background: none;
+            background-color: #353535;
+            height: 30px;
+            width: 50%;
+            font-family: 'Montserrat', sans-serif;
+            padding-left: 10px;
+            border-top: 0px;
+            border-right: 0px;
+            border-bottom: 1px solid #00FF22;
+            border-left: 0px;
+            -webkit-transition: border-bottom 250ms ease-in-out;
+            transition: border-bottom 250ms ease-in-out; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-password::-webkit-input-placeholder {
+              -webkit-transition: color 250ms ease-out;
+              transition: color 250ms ease-out; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-password:-ms-input-placeholder {
+              -webkit-transition: color 250ms ease-out;
+              transition: color 250ms ease-out; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-password::-ms-input-placeholder {
+              -webkit-transition: color 250ms ease-out;
+              transition: color 250ms ease-out; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-password::placeholder {
+              -webkit-transition: color 250ms ease-out;
+              transition: color 250ms ease-out; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-password:hover::-webkit-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #register-form #register-password:focus::-webkit-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #register-form #register-password:active::-webkit-input-placeholder {
+              color: #FFFFFF; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-password:hover:-ms-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #register-form #register-password:focus:-ms-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #register-form #register-password:active:-ms-input-placeholder {
+              color: #FFFFFF; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-password:hover::-ms-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #register-form #register-password:focus::-ms-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #register-form #register-password:active::-ms-input-placeholder {
+              color: #FFFFFF; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-password:hover::placeholder, body #grid-container #grid-content__unregistered #content-login-container #register-form #register-password:focus::placeholder, body #grid-container #grid-content__unregistered #content-login-container #register-form #register-password:active::placeholder {
+              color: #FFFFFF; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-password:focus,
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-password select:focus {
+              outline: none;
+              outline-offset: none;
+              border-bottom: 1px solid #00bb19; }
+          body #grid-container #grid-content__unregistered #content-login-container #register-form #register-gender {
+            grid-column: auto;
+            grid-row: 6;
+            height: 20px;
+            width: 25%;
+            color: #808080;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 100;
+            background: none;
+            background-color: #353535;
+            border-top: 0px;
+            border-right: 0px;
+            border-bottom: 1px solid #00FF22;
+            border-left: 0px; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-gender:focus,
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-gender select:focus {
+              outline: none;
+              outline-offset: none; }
+          body #grid-container #grid-content__unregistered #content-login-container #register-form #register-submit {
+            grid-column: auto;
+            grid-row: 7;
+            height: 60px;
+            width: 40%;
+            color: #FFFFFF;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5em;
+            font-weight: 300;
+            background: none;
+            background-color: #FF0000;
+            border: none;
+            -webkit-transition: background-color 500ms ease;
+            transition: background-color 500ms ease;
+            cursor: pointer; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-submit:hover {
+              background-color: #af0000; }
+          body #grid-container #grid-content__unregistered #content-login-container #register-form #option-change {
+            grid-column: auto;
+            grid-row: 8;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8em;
+            font-weight: 100;
+            letter-spacing: 0.5px; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #option-change #register-option-change {
+              color: #0ff;
+              text-decoration: underline;
+              cursor: pointer; }
+
+@supports (display: grid) {
+  @media only screen and (max-width: 1375px) {
+    body #grid-container #grid-content__loggedin {
+      display: grid;
+      grid-column: auto;
+      grid-row: 2;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      background-color: #FFFFFF;
+      overflow: hidden; }
+    body #grid-container #grid-content__unregistered {
+      display: grid;
+      grid-column: auto;
+      grid-row: 2;
+      grid-template-columns: 20px 1fr 1fr 20px;
+      grid-template-rows: 50px 200px 100px 1fr 1fr 1fr;
+      background: url("/Exchange.me/img/14219176094_308139ff32_o.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center left;
+      overflow: hidden; }
+      body #grid-container #grid-content__unregistered #content-information {
+        display: grid;
+        grid-column: 2;
+        grid-row-start: 2;
+        grid-row-end: 6;
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px 1fr;
+        background-color: #33333380;
+        border-radius: 20px;
+        padding: 0 5px 0 5px;
+        -webkit-filter: grayscale(30%) brightness(90%);
+                filter: grayscale(30%) brightness(90%);
+        overflow-x: hidden;
+        overflow-y: auto;
+        z-index: 2; }
+        body #grid-container #grid-content__unregistered #content-information #information-heading {
+          font-family: 'Lato', sans-serif;
+          font-size: 2.5em;
+          text-decoration: underline;
+          overflow: hidden; }
+        body #grid-container #grid-content__unregistered #content-information #information-text {
+          font-family: 'Lato', sans-serif;
+          font-weight: 500;
+          word-spacing: 0px;
+          line-height: 17px; }
+      body #grid-container #grid-content__unregistered #content-login-container {
+        display: grid;
+        grid-column: 3;
+        grid-row-start: 2;
+        grid-row-end: 6;
+        justify-self: center;
+        height: auto;
+        width: 80%;
+        background-color: #333333;
+        border: 2px solid #00FF22; } } }
+
+/*# sourceMappingURL=index.css.map */

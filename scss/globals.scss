@@ -1,0 +1,282 @@
+// Unapproved use and redistribution of this code and respective product is strictly prohibited.
+// Copyright© 2018 Keanu Ashwell all rights are reserved to the author, creator, registered 
+// and licensed owners of this product and it's content
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import "partials/_partials.scss";
+
+html {
+
+    height: 100%;
+
+    body {
+
+        object {
+
+            pointer-events: none;
+
+        }
+
+        height: 100%;
+        width: auto;
+
+        margin: 0 !important;
+
+        #grid-container {
+
+            display: grid;
+
+            height: 100%;
+
+            #grid-header {
+
+                display: grid;
+
+                grid-column: auto;
+                grid-row: 1;
+
+                grid-template-columns: 200px 1fr 500px;
+                grid-template-rows: 1fr;
+
+                background-color: $exchange-black;
+
+                border-bottom: 2px solid $exchange-green;
+
+                overflow: hidden;
+
+                a {
+
+                    justify-self: end;
+
+                    align-self: center;
+
+                    height: 20px;
+                    width: 181px;
+
+                    #header-logo {
+
+                        grid-column: 1;
+                        grid-row: auto;
+
+                    }
+
+                }
+
+                #header-nav {
+
+                    display: grid;
+
+                    grid-column: 3;
+                    grid-row: auto;
+
+                    grid-template-columns: 50px 30px 120px 30px 35px 35px 65px 30px 52px 30px;
+                    grid-template-rows: 1fr;
+
+                    justify-self: end;
+
+                    align-self: center;
+
+                    font-family: 'Lato', sans-serif; // font-size: 19px;
+                    font-weight: 400;
+
+                    padding-right: 10px;
+
+                }
+
+            } // #grid-content {
+            // }
+            #grid-footer {
+
+                display: grid;
+
+                grid-column: auto;
+                grid-row: 3;
+
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+
+                background-color: $exchange-black;
+
+                border-top: 2px groove $exchange-green;
+
+                a {
+
+                    display: grid;
+
+                    grid-column: 3;
+                    grid-row: 1;
+
+                    justify-self: end;
+
+                    align-self: center;
+
+                    height: 25px;
+                    width: 200px;
+
+                    padding-top: 10px;
+                    padding-right: 20px;
+
+                    #footer-logo {}
+
+                }
+
+                #footer-social-container {
+
+                    display: grid;
+
+                    grid-column: 3;
+                    grid-row: 2;
+
+                    grid-template-columns: 1fr 50px 50px 50px;
+                    grid-template-rows: 1fr;
+
+                    overflow: hidden; // TODO: Change icons to class.
+                    #icons-facebook {
+
+                        grid-column: 4;
+
+                        justify-self: center;
+
+                        align-self: start;
+
+                        width: auto;
+
+                    }
+
+                    #icons-twitter {
+
+                        grid-column: 3;
+
+                        justify-self: center;
+
+                        align-self: start;
+
+                        width: auto;
+
+                    }
+
+                    #icons-youtube {
+
+                        grid-column: 2;
+
+                        justify-self: center;
+
+                        align-self: start;
+
+                        width: auto;
+
+                    }
+
+                    object {
+
+                        display: inherit;
+
+                        grid-column: inherit;
+
+                        height: 100%;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+.text {
+
+    padding: 0;
+    margin: 0;
+
+    &.left {
+
+        justify-self: start;
+
+    }
+
+    &.center {
+
+        justify-self: center;
+
+    }
+
+    &.right {
+
+        justify-self: end;
+
+    }
+
+    &.top {
+
+        align-self: start;
+
+    }
+
+    &.middle {
+
+        align-self: center;
+
+    }
+
+    &.bottom {
+
+        align-self: end;
+
+    }
+
+    &.x2 {
+
+        font-size: 2em;
+
+    }
+
+    &.x3 {
+
+        font-size: 3em;
+
+    }
+
+    &.x4 {
+
+        font-size: 4em;
+
+    }
+
+    &.x5 {
+
+        font-size: 5em;
+
+    }
+
+    &.x6 {
+
+        font-size: 6em;
+
+    }
+
+    &.black {
+
+        color: $exchange-black;
+
+    }
+
+    &.white {
+
+        color: $exchange-white;
+
+    }
+
+}
+
+@supports(display: grid) {}
