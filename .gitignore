@@ -1,4 +1,14 @@
 
+# Ignores
+
+# VS Code Dir
 \.vscode/
 
+# Brackets JSON Settings Dir
 \.brackets\.json
+
+# Node Modules Dir
+\node_modules
+
+# Package Json File
+package-lock\.json
