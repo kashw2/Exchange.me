@@ -123,38 +123,9 @@ require_once('mysql.php');
             <?php
         
             // Home page setup
-        
-            // Query
-            $QUERY_LOGIN_SESSION = mysqli_query($conn, "
 
-            SELECT 
-            exchangeme.accounts.username,
-            exchangeme.accounts.session
-            FROM exchangeme.accounts
-            WHERE exchangeme.accounts.username = '" . htmlspecialchars($_POST['login-username']) . "'
-            AND exchangeme.accounts.password = '" . md5($_POST['login-password']) . "'
-            AND exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "';
-
-            ");
-
-            // Fetch results
-            $RESULT_LOGIN_SESSION = mysqli_fetch_row($QUERY_LOGIN_SESSION);
-            
-            // Check if user is logged in
-            if(
-                $_COOKIE['loggedin']
-            ) {                    
-                    
-                echo '
-
-                <!-- Content Container ---->
-                <div id="grid-content__loggedin">
-
-                </div>
-
-                ';
-                
-            } else {
+            // Check if loggedin cookie exists
+            if(!$_COOKIE['loggedin']) {
 
                 echo '
 
@@ -235,80 +206,154 @@ require_once('mysql.php');
                 </div>
 
                 ';
-                
-                // Make sure fields have values
-                
+
+            } else {
+
+                // Cookie exists
+
+                // Check to make sure the cookie is not empty
                 if(
-                    !empty($_POST['register-username'])
-                    && !empty($_POST['register-password'])
-                    && !empty($_POST['register-gender'])
+                    !empty($_COOKIE['loggedin'])
+                    && !empty($_SESSION['username'])
                 ) {
-                    
-                    // Post data
-                    
-                    // Insert data into database after cleaning it
-                    
-                    $QUERY_REGISTER_USER = mysqli_query($conn, "
-                    
-                        INSERT INTO exchangeme.accounts (
-                        exchangeme.accounts.id,
-                        exchangeme.accounts.username,
-                        exchangeme.accounts.password,
-                        exchangeme.accounts.gender,
-                        exchangeme.accounts.creationdate,
-                        exchangeme.accounts.lastlogin,
-                        exchangeme.accounts.ip,
-                        exchangeme.accounts.session
-                        )
-                        VALUES(
-                        DEFAULT,
-                        '" . htmlspecialchars($_POST['register-username']) . "',
-                        '" . md5($_POST['register-password']) . '' . mcrypt_create_iv(10, MCRYPT_DEV_URANDOM) . "',
-                        '" . htmlspecialchars($_POST['register-gender']) . "',
-                        DEFAULT,
-                        DEFAULT,
-                        '" . $_SERVER['REMOTE_ADDR'] . "',
-                        '" . session_id() . "'
-                        );
-                    
-                    ");
-                    
-                    // Check for success
-                    if($QUERY_REGISTER_USER === TRUE) {
-                        
-                        // Log the user in
-                        
-                        setcookie("loggedin", session_id(), time()+3600*24);
-                        
-                        // Set username session variable
-                        $_SESSION['username'] = $_POST['register-username'];
-                        
-                        // Redirect
-//                        header('Location: index.php');
-                        
-                    } else {
-                        
-                        // Make sure there is actually a session to destroy
-                        
-                        if($_COOKIE['PHPSESSID']) {
-                        
-                            // Destroy and active site session
-                            session_destroy();
-                            
-                            setcookie('PHPSESSID', '', time()+3600*24);
-                            
-                            // Redirect
-//                            header('Location: index.php');
-                            
-                        }
-                        
-                    }
-                                        
-                } else {
-                    
-                    // Required fields not set
-                    
+
+                    echo '
+
+                    <!-- Content Container ---->
+                    <div id="grid-content__loggedin">
+    
+                    </div>
+    
+                    ';
+
                 }
+
+            }
+
+            // Login
+
+            // Session check
+
+            if(!empty($_COOKIE['loggedin'])) {
+
+                // Query
+                $QUERY_SESSION_LOGIN = mysqli_query($conn, "
+                
+                SELECT
+                exchangeme.accounts.session,
+                exchangeme.accounts.username
+                FROM exchangeme.accounts
+                WHERE exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "';
+                
+                ");
+
+                // Fetch results
+                $RESULT_SESSION_LOGIN = mysqli_fetch_row($QUERY_SESSION_LOGIN);
+
+                // Check sessions
+                if($_COOKIE['loggedin'] == $RESULT_SESSION_LOGIN[0]) {
+
+                    // Sessions match!
+
+                    // Set session username variable
+                    $_SESSION['username'] = $RESULT_SESSION_LOGIN[1];
+
+                    // Update session in database for added security
+
+                    // Query
+                    $QUERY_UPDATE_SESSION = mysqli_query($conn, "
+                    
+                    UPDATE exchangeme.accounts 
+                    SET exchangeme.accounts.lastlogin = CURRENT_TIME,
+                    exchangeme.accounts.ip = '" . $_SERVER['REMOTE_ADDR'] . "',
+                    exchangeme.accounts.session = '" . session_id() . "'
+                    WHERE exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "';
+
+                    ");
+
+                    // Resend headers
+                    header('Location: index.php');
+
+                } else {
+
+                    // Sessions mismatch!
+
+                    // TODO: Create a alert that acknowldeges the error
+
+                }
+
+
+            } else {
+
+                if(
+                    isset($_POST['login-username']) 
+                    && isset($_POST['login-password'])
+                ) {
+    
+                    // Query
+                    $QUERY_LOGIN_USER = mysqli_query($conn, "
+                    
+                    SELECT 
+                    exchangeme.accounts.username
+                    FROM exchangeme.accounts 
+                    WHERE exchangeme.accounts.username = '" . $_POST['login-username'] . "'
+                    AND exchangeme.accounts.password
+                    LIKE '" . md5(($_POST['login-password'])) . "%';
+    
+                    ");
+
+                    // Fetch Results
+                    $RESULT_LOGIN_USER = mysqli_fetch_row($QUERY_LOGIN_USER);
+
+                    // Check if anything returned from query
+                    if(mysqli_num_rows($QUERY_LOGIN_USER) == 1) {
+
+                        // Account found
+
+                        // Set session username variable
+                        $_SESSION['username'] = $RESULT_LOGIN_USER[0];
+
+                        // Update session in database for added security
+
+                        // Query
+                        $QUERY_UPDATE_SESSION_LOGIN = mysqli_query($conn, "
+                        
+                        UPDATE exchangeme.accounts 
+                        SET exchangeme.accounts.lastlogin = CURRENT_TIME,
+                        exchangeme.accounts.ip = '" . $_SERVER['REMOTE_ADDR'] . "',
+                        exchangeme.accounts.session = '" . session_id() . "'
+                        WHERE exchangeme.accounts.username = '" . $_POST['login-username'] . "'
+                        AND exchangeme.accounts.password = '" . $_POST['login-password'] . "';
+
+                        ");
+
+                        // Set cookie
+                        setcookie('loggedin', session_id(), time()+3600*24*365, '/');
+
+                        // Resend headers
+                        header('Location: index.php');
+
+                    } else {
+
+                        // No account
+
+                        // TODO: Create a alert that acknowldeges the error
+
+                    }
+
+                }
+
+            }
+
+
+
+            // Register
+
+            if(
+                isset($_POST['register-username']) 
+                && isset($_POST['register-password'])
+                && isset($_POST['register-gender'])
+            ) {
 
             }
 
