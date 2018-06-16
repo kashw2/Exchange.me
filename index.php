@@ -271,9 +271,6 @@ require_once('mysql.php');
 
                     ");
 
-                    // Resend headers
-                    header('Location: index.php');
-
                 } else {
 
                     // Sessions mismatch!
@@ -296,9 +293,9 @@ require_once('mysql.php');
                     SELECT 
                     exchangeme.accounts.username
                     FROM exchangeme.accounts 
-                    WHERE exchangeme.accounts.username = '" . $_POST['login-username'] . "'
+                    WHERE exchangeme.accounts.username = '" . htmlspecialchars($_POST['login-username']) . "'
                     AND exchangeme.accounts.password
-                    LIKE '" . md5(($_POST['login-password'])) . "%';
+                    LIKE '" . htmlspecialchars(md5(($_POST['login-password']))) . "%';
     
                     ");
 
@@ -322,8 +319,8 @@ require_once('mysql.php');
                         SET exchangeme.accounts.lastlogin = CURRENT_TIME,
                         exchangeme.accounts.ip = '" . $_SERVER['REMOTE_ADDR'] . "',
                         exchangeme.accounts.session = '" . session_id() . "'
-                        WHERE exchangeme.accounts.username = '" . $_POST['login-username'] . "'
-                        AND exchangeme.accounts.password = '" . $_POST['login-password'] . "';
+                        WHERE exchangeme.accounts.username = '" . htmlspecialchars($_POST['login-username']) . "'
+                        AND exchangeme.accounts.password = '" . htmlspecialchars($_POST['login-password']) . "';
 
                         ");
 
@@ -332,6 +329,8 @@ require_once('mysql.php');
 
                         // Resend headers
                         header('Location: index.php');
+
+                        // 
 
                     } else {
 
@@ -355,35 +354,70 @@ require_once('mysql.php');
                 && isset($_POST['register-gender'])
             ) {
 
+                // All POST fields are set and have values
+
+                // Query
+                $QUERY_REGISTER_USER = mysqli_query($conn, "
+                
+                INSERT INTO exchangeme.accounts (
+                exchangeme.accounts.id,
+                exchangeme.accounts.username,
+                exchangeme.accounts.password,
+                exchangeme.accounts.gender,
+                exchangeme.accounts.creationdate,
+                exchangeme.accounts.lastlogin,
+                exchangeme.accounts.ip,
+                exchangeme.accounts.session
+                )
+                VALUES (
+                DEFAULT,
+                '" . htmlspecialchars($_POST['register-username']) . "',
+                '" . md5($_POST['register-password']) . '' . mcrypt_create_iv(10, MCRYPT_DEV_URANDOM) . "',
+                '" . htmlspecialchars($_POST['register-gender']) . "',
+                DEFAULT,
+                DEFAULT,
+                '" . $_SERVER['REMOTE_ADDR'] . "',
+                '" . session_id() . "'
+                );
+
+                ");
+
+                // Set Username Session variable
+                $_SESSION['username'] = $_POST['register-username'];
+                
+                // Set cookie
+                setcookie('loggedin', session_id(), time()+3600*24*365, '/');
+
+                // Resend Headers
+                header('Location: index.php');
+
             }
 
             ?>
 
-                <!-- Footer Container -->
-                <div id="grid-footer">
+            <!-- Footer Container -->
+            <div id="grid-footer">
 
-                    <a href="index.php">
-                <object id="footer-logo" data="img/logo.svg" type="image/svg+xml"></object>
-            </a>
+                <a href="index.php">
+                    <object id="footer-logo" data="img/logo.svg" type="image/svg+xml"></object>
+                </a>
 
-                    <!-- Social Media Icon Container -->
-                    <div id="footer-social-container">
+                <!-- Social Media Icon Container -->
+                <div id="footer-social-container">
 
-                        <a id="icons-facebook" href="//www.facebook.com">
+                <a id="icons-facebook" href="//www.facebook.com">
                     <object data="img/flaticon/facebook-letter-logo.svg" type="image/svg+xml"></object>
                 </a>
 
-                        <a id="icons-twitter" href="//www.twitter.com">
+                <a id="icons-twitter" href="//www.twitter.com">
                     <object data="img/flaticon/twitter-logo.svg" type="image/svg+xml"></object>
                 </a>
 
-                        <a id="icons-youtube" href="//www.youtube.com">
+                <a id="icons-youtube" href="//www.youtube.com">
                     <object data="img/flaticon/youtube-logo.svg" type="image/svg+xml"></object>
                 </a>
 
-                    </div>
-
-                </div>
+            </div>
 
         </div>
 
