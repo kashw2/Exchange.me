@@ -1,4 +1,4 @@
-<h1 style="color:green;">Exchange.</h1><span>me</span>
+<h1 style="color:green;">Exchange.me</h1>
 <br><br>
 <p>Exchange.me is a small project that I undertook as a Fullstack development experience.</p>
 <br>
