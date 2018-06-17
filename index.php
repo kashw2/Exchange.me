@@ -60,10 +60,14 @@ require_once('mysql.php');
                     <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="#00FF22"></path>
                 </svg>
 
-                    <?php
+                <?php
                 
                 // Check login before displaying header
                 
+                // Hoisted Variables
+
+                $ITERATOR_NEWS_CONTENT = 0;
+
                 if(
                     $_COOKIE['loggedin'] == true
                     && !empty($_COOKIE['loggedin'])
@@ -219,8 +223,70 @@ require_once('mysql.php');
 
                     echo '
 
-                    <!-- Content Container ---->
+                    <!-- Content Container -->
                     <div id="grid-content__loggedin">
+
+                        <!-- News Container -->
+                        <div id="content-news">
+
+                            <div id="news-header">
+
+                                <h1 id="news-heading" class="text heading left middle black">News</h1>
+                            
+                            </div>
+
+                            <div id="news-content">
+                    
+                    ';
+
+                    // Query
+                    $QUERY_NEWS = mysqli_query($conn, "
+                    
+                    SELECT
+                    exchangeme.news.author,
+                    exchangeme.news.date,
+                    exchangeme.news.content,
+                    exchangeme.accounts.creationdate
+                    FROM 
+                    exchangeme.news,
+                    exchangeme.accounts
+                    ORDER BY exchangeme.news.id DESC;
+
+                    ");
+
+                    // Fetch Results
+                    $RESULT_NEWS = mysqli_fetch_array($QUERY_NEWS);
+
+                    // Loop through the results
+                    while($RESULT_NEWS = mysqli_fetch_array($QUERY_NEWS)) {
+
+                        echo '
+                        
+                            <div id="news-post-' . $ITERATOR_NEWS_CONTENT . '" class="news news-content-container">
+
+                                <div class="news news-profile-picture">
+
+                                </div>
+
+                                <p class="news news-author">' . $RESULT_NEWS[0] . '</p>
+
+                                <p class="news news-post-date">' . $RESULT_NEWS[1] . '</p>
+
+                                <p class="news news-post-content">' . $RESULT_NEWS[2] . '</p>
+                            
+                            </div>
+                        
+                        ';
+
+                        // TODO: Convert post date result to format D MMM YYYY
+
+                    }
+
+                    echo '
+
+                            </div>
+
+                        </div>
     
                     </div>
     
@@ -248,7 +314,7 @@ require_once('mysql.php');
                 ");
 
                 // Fetch results
-                $RESULT_SESSION_LOGIN = mysqli_fetch_row($QUERY_SESSION_LOGIN);
+                $RESULT_SESSION_LOGIN = mysqli_fetch_array($QUERY_SESSION_LOGIN);
 
                 // Check sessions
                 if($_COOKIE['loggedin'] == $RESULT_SESSION_LOGIN[0]) {
@@ -300,7 +366,7 @@ require_once('mysql.php');
                     ");
 
                     // Fetch Results
-                    $RESULT_LOGIN_USER = mysqli_fetch_row($QUERY_LOGIN_USER);
+                    $RESULT_LOGIN_USER = mysqli_fetch_array($QUERY_LOGIN_USER);
 
                     // Check if anything returned from query
                     if(mysqli_num_rows($QUERY_LOGIN_USER) == 1) {

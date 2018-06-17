@@ -31,17 +31,67 @@ body {
         // }
         #grid-content__loggedin {
 
-            display: grid;
+            display: grid; 
 
             grid-column: auto;
             grid-row: 2;
 
-            grid-template-columns: 1fr;
-            grid-template-rows: 1fr;
+            grid-template-columns: 1fr 1fr 1.75fr;
+            grid-template-rows: 1fr 0.6fr;
 
             background-color: $exchange-white;
 
             overflow: hidden;
+
+            #content-news {
+
+                display: grid;
+
+                position: relative;
+
+                top: 0px;
+
+                grid-column: 3;
+                grid-row: 1;
+
+                grid-template-columns: 1fr;
+                grid-template-rows: 50px 1fr;
+
+                box-shadow: 0px 0px 5px $exchange-black;
+
+                margin: 10px 20px 10px 20px;
+
+                transition: top 150ms ease-in-out 0s, box-shadow 200ms ease-in-out;
+
+                &:hover {
+
+                    top: -2.5px;
+
+                    box-shadow: 0px 0px 5px #20792c;
+
+                }
+
+                #news-header {
+
+                    display: grid;
+
+                    grid-column: auto;
+                    grid-row: 1;
+
+                    border-bottom: 2px solid $exchange-black;
+
+                    #news-heading {
+
+                        padding: 0px 0px 0px 10px;
+
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: 600;
+
+                    }
+
+                }
+
+            }
 
         }
 
@@ -59,6 +109,7 @@ body {
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center left;
+
             overflow: hidden;
 
             #content-information {
@@ -518,6 +569,130 @@ body {
 
 }
 
+.news,
+div {
+
+    &.news-content-container {
+
+        display: grid;
+
+        position: relative;
+
+        grid-template-columns: 24px 150px 1fr;
+        grid-template-rows: 24px 20px 1fr; 
+
+        height: auto;
+        width: 100%;
+
+        max-height: 300px;
+
+        padding-top: 10px;
+
+        overflow: hidden;
+
+        // background-color: $exchange-black;
+
+    }
+
+    &.news-profile-picture {
+
+        display: grid;
+
+        position: relative;
+
+        grid-column: 1;
+        grid-row: 1;
+
+        height: 100%;
+        width: 100%;
+
+        background-image: url("/Exchange.me/img/materialdesign/ic_account_circle_24px.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        margin-left: 5px;
+
+        cursor: pointer;
+
+    }
+
+    &.news-author {
+
+        display: grid;
+
+        position: relative;
+
+        grid-column: 2;
+        grid-row: 1;
+
+        color: #a5a5a5;
+
+        font-family: 'Lato', sans-serif;
+        font-weight: 300;
+        font-size: 0.85em;
+
+        padding: 2.5px 0px 0px 10px;
+
+        cursor: pointer;
+
+        &:hover {
+
+            text-decoration: underline;
+
+        }
+
+    }
+
+    &.news-post-date {
+
+        display: grid;
+
+        position: relative;
+
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row: 2;
+
+        color: #a5a5a5;
+
+        font-family: 'Lato', sans-serif;
+        font-weight: 300;
+        font-size: 0.70em;
+
+        padding-left: 5px;
+
+        cursor: pointer;
+
+        &:hover {
+
+            text-decoration: underline;
+
+        }
+
+    }
+
+    &.news-post-content {
+
+        display: grid;
+
+        position: relative;
+
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row: 3;
+
+        font-family: 'Lato', sans-serif;
+        font-weight: 300;
+        font-size: 0.80em;
+
+        text-align: left;
+
+        padding: 0px 5px 0px 5px;
+
+    }
+
+}
+
 @supports(display: grid) {
 
     @media only screen and (max-width: 1375px) {
@@ -533,12 +708,28 @@ body {
                     grid-column: auto;
                     grid-row: 2;
 
-                    grid-template-columns: 1fr;
-                    grid-template-rows: 1fr;
+                    grid-template-columns: 1fr 1fr 1.75fr;
+                    grid-template-rows: 1fr 0.6fr;
 
                     background-color: $exchange-white;
 
                     overflow: hidden;
+
+                    #content-news {
+
+                        display: grid;
+
+                        grid-column: 3;
+                        grid-row: 1;
+
+                        grid-template-columns: 1fr;
+                        grid-template-rows: 50px 1fr;
+
+                        box-shadow: 1px 1px 5px $exchange-black;
+
+                        margin: 20px 20px 10px 20px;
+
+                    }
 
                 }
 
