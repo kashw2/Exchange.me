@@ -76,15 +76,15 @@ html {
 
                     align-self: center;
 
-                    font-family: 'Lato', sans-serif; // font-size: 19px;
+                    font-family: 'Lato', sans-serif;
                     font-weight: 400;
 
                     padding-right: 10px;
 
                 }
 
-            } // #grid-content {
-            // }
+            }
+            
             #grid-footer {
 
                 display: grid;
@@ -131,6 +131,7 @@ html {
                     grid-template-rows: 1fr;
 
                     overflow: hidden; // TODO: Change icons to class.
+                    
                     #icons-facebook {
 
                         grid-column: 4;
