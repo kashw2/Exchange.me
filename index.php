@@ -234,6 +234,9 @@ require_once('mysql.php');
 
                                 <!-- News Heading -->
                                 <h1 id="news-heading" class="text heading left middle black">News</h1>
+
+                                <!-- News Search -->
+                                <input id="news-search" type="text" placeholder="Search..">
                             
                             </div>
 
@@ -289,7 +292,6 @@ require_once('mysql.php');
                         // Increment the iterator
                         $ITERATOR_NEWS_CONTENT++;
 
-                        // TODO: Convert post date result to format D MMM YYYY
                         // TODO: Create links to profile pages and posts for the date of another post
 
                     }
