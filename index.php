@@ -24,7 +24,7 @@ require_once('mysql.php');
 
         <title>Exchange.me</title>
 
-        <!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- JavaScript -->
         <!-- <script src="javascript/min/sidebarScript.min.js"></script> -->
@@ -229,12 +229,15 @@ require_once('mysql.php');
                         <!-- News Container -->
                         <div id="content-news">
 
+                            <!-- News Header -->
                             <div id="news-header">
 
+                                <!-- News Heading -->
                                 <h1 id="news-heading" class="text heading left middle black">News</h1>
                             
                             </div>
 
+                            <!-- News Content -->
                             <div id="news-content">
                     
                     ';
@@ -262,23 +265,32 @@ require_once('mysql.php');
 
                         echo '
                         
+                            <!-- News Content Container -->
                             <div id="news-post-' . $ITERATOR_NEWS_CONTENT . '" class="news news-content-container">
 
+                                <!-- Profile Picture -->
                                 <div class="news news-profile-picture">
 
                                 </div>
 
+                                <!-- Author Name -->
                                 <p class="news news-author">' . $RESULT_NEWS[0] . '</p>
 
-                                <p class="news news-post-date">' . $RESULT_NEWS[1] . '</p>
+                                <!-- Post Date -->
+                                <p class="news news-post-date">' . $RESULT_NEWS[1][8] . '' . $RESULT_NEWS[1][9] . '/' . $RESULT_NEWS[1][5] . '' . $RESULT_NEWS[1][6] . ' / ' . $RESULT_NEWS[1][2] . '' . $RESULT_NEWS[1][3] . '</p>
 
+                                <!-- Content -->
                                 <p class="news news-post-content">' . $RESULT_NEWS[2] . '</p>
                             
                             </div>
                         
                         ';
 
+                        // Increment the iterator
+                        $ITERATOR_NEWS_CONTENT++;
+
                         // TODO: Convert post date result to format D MMM YYYY
+                        // TODO: Create links to profile pages and posts for the date of another post
 
                     }
 
