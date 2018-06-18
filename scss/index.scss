@@ -1,6 +1,7 @@
 // Unapproved use and redistribution of this code and respective product is strictly prohibited.
 // Copyright© 2018 Keanu Ashwell all rights are reserved to the author, creator, registered 
 // and licensed owners of this product and it's content
+
 @import "partials/_partials.scss";
 
 a,
@@ -27,8 +28,8 @@ body {
     #grid-container {
 
         grid-template-columns: 1fr;
-        grid-template-rows: 70px 1fr 100px; // #grid-header {
-        // }
+        grid-template-rows: 70px 1fr 100px; 
+
         #grid-content__loggedin {
 
             display: grid; 
@@ -563,8 +564,8 @@ body {
 
             }
 
-        } // #grid-footer {    
-        // }
+        }
+
     }
 
 }
@@ -590,7 +591,7 @@ div {
 
         overflow: hidden;
 
-        // background-color: $exchange-black;
+
 
     }
 
@@ -746,7 +747,7 @@ div {
                     background: url('/Exchange.me/img/14219176094_308139ff32_o.png');
                     background-size: cover;
                     background-repeat: no-repeat;
-                    background-position: center left; //                    filter: grayscale(80%) brightness(70%);
+                    background-position: center left;
                     overflow: hidden;
 
                     #content-information {
@@ -815,8 +816,8 @@ div {
 
                     }
 
-                } // #grid-footer {    
-                // }
+                }
+
             }
 
         }
