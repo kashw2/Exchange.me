@@ -64,6 +64,8 @@ body {
 
                 transition: top 150ms ease-in-out 0s, box-shadow 200ms ease-in-out;
 
+                overflow: hidden;
+
                 &:hover {
 
                     top: -2.5px;
@@ -87,6 +89,33 @@ body {
 
                         font-family: 'Montserrat', sans-serif;
                         font-weight: 600;
+
+                    }
+
+                }
+
+                #news-content {
+
+                    display: grid;
+
+                    overflow-y: auto;
+                    overflow-x: hidden;
+                    
+                    ::-webkit-scrollbar {
+
+                        width: 7px;
+
+                    }
+
+                    ::-webkit-scrollbar-thumb {
+
+                        background: #888; 
+
+                    }
+
+                    ::-webkit-scrollbar-thumb:hover {
+
+                        background: #555; 
 
                     }
 
@@ -589,10 +618,6 @@ div {
 
         padding-top: 10px;
 
-        overflow: hidden;
-
-
-
     }
 
     &.news-profile-picture {
@@ -729,6 +754,29 @@ div {
                         box-shadow: 1px 1px 5px $exchange-black;
 
                         margin: 20px 20px 10px 20px;
+
+                        max-height: 550px;
+
+                        overflow-y: auto;
+                        overflow-x: hidden;
+
+                        ::-webkit-scrollbar {
+
+                            width: 7px;
+    
+                        }
+    
+                        ::-webkit-scrollbar-thumb {
+    
+                            background: #888; 
+    
+                        }
+    
+                        ::-webkit-scrollbar-thumb:hover {
+    
+                            background: #555; 
+    
+                        }
 
                     }
 

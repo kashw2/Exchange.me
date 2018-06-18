@@ -36,7 +36,8 @@ body {
         -webkit-transition: top 150ms ease-in-out 0s, -webkit-box-shadow 200ms ease-in-out;
         transition: top 150ms ease-in-out 0s, -webkit-box-shadow 200ms ease-in-out;
         transition: top 150ms ease-in-out 0s, box-shadow 200ms ease-in-out;
-        transition: top 150ms ease-in-out 0s, box-shadow 200ms ease-in-out, -webkit-box-shadow 200ms ease-in-out; }
+        transition: top 150ms ease-in-out 0s, box-shadow 200ms ease-in-out, -webkit-box-shadow 200ms ease-in-out;
+        overflow: hidden; }
         body #grid-container #grid-content__loggedin #content-news:hover {
           top: -2.5px;
           -webkit-box-shadow: 0px 0px 5px #20792c;
@@ -50,6 +51,16 @@ body {
             padding: 0px 0px 0px 10px;
             font-family: 'Montserrat', sans-serif;
             font-weight: 600; }
+        body #grid-container #grid-content__loggedin #content-news #news-content {
+          display: grid;
+          overflow-y: auto;
+          overflow-x: hidden; }
+          body #grid-container #grid-content__loggedin #content-news #news-content ::-webkit-scrollbar {
+            width: 7px; }
+          body #grid-container #grid-content__loggedin #content-news #news-content ::-webkit-scrollbar-thumb {
+            background: #888; }
+          body #grid-container #grid-content__loggedin #content-news #news-content ::-webkit-scrollbar-thumb:hover {
+            background: #555; }
     body #grid-container #grid-content__unregistered {
       display: grid;
       grid-column: auto;
@@ -361,8 +372,7 @@ div.news-content-container {
   height: auto;
   width: 100%;
   max-height: 300px;
-  padding-top: 10px;
-  overflow: hidden; }
+  padding-top: 10px; }
 .news.news-profile-picture,
 div.news-profile-picture {
   display: grid;
@@ -438,7 +448,16 @@ div.news-post-content {
         grid-template-rows: 50px 1fr;
         -webkit-box-shadow: 1px 1px 5px #333333;
                 box-shadow: 1px 1px 5px #333333;
-        margin: 20px 20px 10px 20px; }
+        margin: 20px 20px 10px 20px;
+        max-height: 550px;
+        overflow-y: auto;
+        overflow-x: hidden; }
+        body #grid-container #grid-content__loggedin #content-news ::-webkit-scrollbar {
+          width: 7px; }
+        body #grid-container #grid-content__loggedin #content-news ::-webkit-scrollbar-thumb {
+          background: #888; }
+        body #grid-container #grid-content__loggedin #content-news ::-webkit-scrollbar-thumb:hover {
+          background: #555; }
     body #grid-container #grid-content__unregistered {
       display: grid;
       grid-column: auto;
