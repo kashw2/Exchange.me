@@ -239,6 +239,7 @@ require_once('mysql.php');
                                 <input id="news-search" type="text" placeholder="Search..">
                             
                             </div>
+                            <script src="javascript/newsScript.js"></script>
 
                             <!-- News Content -->
                             <div id="news-content">
@@ -280,7 +281,7 @@ require_once('mysql.php');
                                 <p class="news news-author">' . $RESULT_NEWS[0] . '</p>
 
                                 <!-- Post Date -->
-                                <p class="news news-post-date">' . $RESULT_NEWS[1][8] . '' . $RESULT_NEWS[1][9] . '/' . $RESULT_NEWS[1][5] . '' . $RESULT_NEWS[1][6] . ' / ' . $RESULT_NEWS[1][2] . '' . $RESULT_NEWS[1][3] . '</p>
+                                <p class="news news-post-date">' . $RESULT_NEWS[1][8] . '' . $RESULT_NEWS[1][9] . '/' . $RESULT_NEWS[1][5] . '' . $RESULT_NEWS[1][6] . '/' . $RESULT_NEWS[1][2] . '' . $RESULT_NEWS[1][3] . '</p>
 
                                 <!-- Content -->
                                 <p class="news news-post-content">' . $RESULT_NEWS[2] . '</p>
