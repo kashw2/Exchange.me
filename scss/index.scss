@@ -112,6 +112,9 @@ body {
                         height: 30px;
                         width: 175px;
 
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: 300;
+
                         border: none;
                         border-style: none;
 
@@ -133,24 +136,30 @@ body {
 
                     display: grid;
 
-                    overflow-y: auto;
-                    overflow-x: hidden;
+                    overflow: hidden;
 
-                    ::-webkit-scrollbar {
+                    &:hover {
 
-                        width: 7px;
+                        overflow-y: auto;
+                        overflow-x: hidden;
 
-                    }
+                        ::-webkit-scrollbar {
 
-                    ::-webkit-scrollbar-thumb {
-
-                        background: #888; 
-
-                    }
-
-                    ::-webkit-scrollbar-thumb:hover {
-
-                        background: #555; 
+                            width: 7px;
+    
+                        }
+    
+                        ::-webkit-scrollbar-thumb {
+    
+                            background: #888; 
+    
+                        }
+    
+                        ::-webkit-scrollbar-thumb:hover {
+    
+                            background: #555; 
+    
+                        }
 
                     }
 
@@ -792,24 +801,30 @@ div {
 
                         max-height: 550px;
 
-                        overflow-y: auto;
-                        overflow-x: hidden;
+                        overflow: hidden;
 
-                        ::-webkit-scrollbar {
+                        &:hover {
 
-                            width: 7px;
+                            overflow-y: auto;
+                            overflow-x: hidden;
+
+                            ::-webkit-scrollbar {
     
-                        }
-    
-                        ::-webkit-scrollbar-thumb {
-    
-                            background: #888; 
-    
-                        }
-    
-                        ::-webkit-scrollbar-thumb:hover {
-    
-                            background: #555; 
+                                width: 7px;
+        
+                            }
+        
+                            ::-webkit-scrollbar-thumb {
+        
+                                background: #888; 
+        
+                            }
+        
+                            ::-webkit-scrollbar-thumb:hover {
+        
+                                background: #555; 
+        
+                            }
     
                         }
 

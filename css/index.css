@@ -63,6 +63,8 @@ body {
             align-self: center;
             height: 30px;
             width: 175px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
             border: none;
             border-style: none;
             border-radius: 10px;
@@ -71,14 +73,16 @@ body {
               color: #808080; }
         body #grid-container #grid-content__loggedin #content-news #news-content {
           display: grid;
-          overflow-y: auto;
-          overflow-x: hidden; }
-          body #grid-container #grid-content__loggedin #content-news #news-content ::-webkit-scrollbar {
-            width: 7px; }
-          body #grid-container #grid-content__loggedin #content-news #news-content ::-webkit-scrollbar-thumb {
-            background: #888; }
-          body #grid-container #grid-content__loggedin #content-news #news-content ::-webkit-scrollbar-thumb:hover {
-            background: #555; }
+          overflow: hidden; }
+          body #grid-container #grid-content__loggedin #content-news #news-content:hover {
+            overflow-y: auto;
+            overflow-x: hidden; }
+            body #grid-container #grid-content__loggedin #content-news #news-content:hover ::-webkit-scrollbar {
+              width: 7px; }
+            body #grid-container #grid-content__loggedin #content-news #news-content:hover ::-webkit-scrollbar-thumb {
+              background: #888; }
+            body #grid-container #grid-content__loggedin #content-news #news-content:hover ::-webkit-scrollbar-thumb:hover {
+              background: #555; }
     body #grid-container #grid-content__unregistered {
       display: grid;
       grid-column: auto;
@@ -468,14 +472,16 @@ div.news-post-content {
                 box-shadow: 1px 1px 5px #333333;
         margin: 20px 20px 10px 20px;
         max-height: 550px;
-        overflow-y: auto;
-        overflow-x: hidden; }
-        body #grid-container #grid-content__loggedin #content-news ::-webkit-scrollbar {
-          width: 7px; }
-        body #grid-container #grid-content__loggedin #content-news ::-webkit-scrollbar-thumb {
-          background: #888; }
-        body #grid-container #grid-content__loggedin #content-news ::-webkit-scrollbar-thumb:hover {
-          background: #555; }
+        overflow: hidden; }
+        body #grid-container #grid-content__loggedin #content-news:hover {
+          overflow-y: auto;
+          overflow-x: hidden; }
+          body #grid-container #grid-content__loggedin #content-news:hover ::-webkit-scrollbar {
+            width: 7px; }
+          body #grid-container #grid-content__loggedin #content-news:hover ::-webkit-scrollbar-thumb {
+            background: #888; }
+          body #grid-container #grid-content__loggedin #content-news:hover ::-webkit-scrollbar-thumb:hover {
+            background: #555; }
     body #grid-container #grid-content__unregistered {
       display: grid;
       grid-column: auto;
