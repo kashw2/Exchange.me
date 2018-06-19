@@ -239,7 +239,7 @@ require_once('mysql.php');
                                 <input id="news-search" type="text" placeholder="Search..">
                             
                             </div>
-                            <script src="javascript/newsScript.js"></script>
+                            <script src="javascript/min/newsScript.min.js"></script>
 
                             <!-- News Content -->
                             <div id="news-content">
