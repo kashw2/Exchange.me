@@ -34,8 +34,6 @@ $RESULT_NEWS = mysqli_fetch_array($QUERY_NEWS);
 // Print results
 echo '
 
-<script src="ajax/min/newsLoad.min.js"></script>
-
 <!-- News Header -->
 <div id="news-header">
 
@@ -46,7 +44,6 @@ echo '
     <input id="news-search" type="text" placeholder="Search..">
 
 </div>
-<script src="javascript/min/newsScript.min.js"></script>
 
 <!-- News Content -->
 <div id="news-content">
