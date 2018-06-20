@@ -229,6 +229,8 @@ require_once('mysql.php');
                         <!-- News Container -->
                         <div id="content-news">
 
+                            <script src="ajax/min/newsLoad.min.js"></script>
+
                             <!-- News Header -->
                             <div id="news-header">
 
