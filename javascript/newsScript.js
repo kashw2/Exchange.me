@@ -29,9 +29,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Convert to uppercase this entry relative to the increment
                 var news = newsContent[i].textContent.toUpperCase();
+                var author = newsAuthor[i].textContent.toUpperCase();
+                var date = newsDate[i].textContent.toUpperCase();
+
+                // FIXME: author and date are both skipped in search
 
                 // Check the posts for the search criteria
-                if(news.indexOf(search) > 0) {
+                if(
+                    news.indexOf(search) > 0
+                    || author.indexOf(search) > 0
+                    || date.indexOf(search) > 0
+                ) {
 
                     // Change the style
                     document.getElementById("news-post-" + i).style.display = "grid";
