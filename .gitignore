@@ -12,3 +12,7 @@
 
 # Package Json File
 package-lock\.json
+
+javascript/min/newsWorker\.min\.js
+
+javascript/webWorkers/newsWorker\.js
