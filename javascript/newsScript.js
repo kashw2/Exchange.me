@@ -7,6 +7,16 @@
 // Add the event listner
 document.addEventListener('DOMContentLoaded', function() {
 
+    // Web Workers
+
+    // Check that web workers are supported and available
+    // if(window.Worker) {
+
+    //     // Create the web worker
+    //     const newsWorker = new window.Worker("javascript/min/newsWorker.min.js");
+
+    // }
+
     // Search functionallity
 
     // Add the event listner
@@ -14,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Decalre and define variables
         var search = document.getElementById("news-search").value.toUpperCase();
-        var newsContentContainer = document.getElementsByClassName('news-content-container');
+        var newsContentContainer = document.getElementsByClassName("news-content-container");
         var newsAuthor = document.getElementsByClassName("news-author");
         var newsDate = document.getElementsByClassName("news-post-date");
         var newsId = undefined;
