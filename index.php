@@ -218,7 +218,7 @@ require_once('mysql.php');
                 // Check to make sure the cookie is not empty
                 if(
                     !empty($_COOKIE['loggedin'])
-                    && !empty($_SESSION['username'])
+                    && !empty($_SESSION['user']['username'])
                 ) {
 
                     echo '
@@ -315,7 +315,10 @@ require_once('mysql.php');
 
             // Session check
 
-            if(!empty($_COOKIE['loggedin'])) {
+            if(
+                $_COOKIE['loggedin']
+                || !empty($_COOKIE['loggedin'])
+                ) {
 
                 // Query
                 $QUERY_SESSION_LOGIN = mysqli_query($conn, "
@@ -337,7 +340,7 @@ require_once('mysql.php');
                     // Sessions match!
 
                     // Set session username variable
-                    $_SESSION['username'] = $RESULT_SESSION_LOGIN[1];
+                    $_SESSION['user']['username'] = $RESULT_SESSION_LOGIN[1];
 
                     // Update session in database for added security
 
@@ -356,7 +359,10 @@ require_once('mysql.php');
 
                     // Sessions mismatch!
 
-                    // TODO: Create a alert that acknowldeges the error
+                    // Reset Cookie
+                    setcookie('loggedin', session_id(), time()+3600*24*365, '/');
+
+                    // header('Location: index.php');
 
                 }
 
@@ -389,7 +395,7 @@ require_once('mysql.php');
                         // Account found
 
                         // Set session username variable
-                        $_SESSION['username'] = $RESULT_LOGIN_USER[0];
+                        $_SESSION['user']['username'] = $RESULT_LOGIN_USER[0];
 
                         // Update session in database for added security
 
@@ -464,7 +470,7 @@ require_once('mysql.php');
                 ");
 
                 // Set Username Session variable
-                $_SESSION['username'] = $_POST['register-username'];
+                $_SESSION['user']['username'] = $_POST['register-username'];
                 
                 // Set cookie
                 setcookie('loggedin', session_id(), time()+3600*24*365, '/');
