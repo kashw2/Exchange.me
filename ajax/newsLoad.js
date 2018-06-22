@@ -14,6 +14,7 @@ $(document).ready(function() {
         $("#content-news").load("ajax/inc/news.inc.reload.php",
         {},
         
+            // Callback
             function(responseTxt, statusTxt, xhr) {
 
             }

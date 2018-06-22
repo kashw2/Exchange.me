@@ -7,6 +7,8 @@
 // Start the outputbuffer
 ob_start();
 
+// Require database connection
+
 require_once('../../mysql.php');
 
 // Hoisted Variables
