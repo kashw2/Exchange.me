@@ -34,8 +34,8 @@ ORDER BY exchangeme.news.id DESC;
 $RESULT_NEWS = mysqli_fetch_array($QUERY_NEWS);
 
 if(
-        !empty($RESULT_NEWS)
-        && isset($RESULT_NEWS)
+    !empty($RESULT_NEWS)
+    && isset($RESULT_NEWS)
     ) {
 
     // Print results
