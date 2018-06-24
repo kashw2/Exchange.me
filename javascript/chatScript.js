@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add event listner
     document.getElementById("messaging-message").addEventListener('keydown', function(e) {
 
+        // Prevent instant new line
+
         // Check keypress
         if(e.keyCode == "13" && !e.shiftKey && document.getElementById("messaging-message").value == "") {
 
@@ -18,6 +20,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
         }
 
+        // Display remaining characters
+        var maxChars = 250;
+        var currentLength = document.getElementById("messaging-message").value.length;
+        var charsLeft = maxChars - currentLength;
+
+        // Change the length displayed
+        document.getElementById("chat-remaining").textContent = "Characters Left: " + charsLeft;
+
     }, false);
+
+    // Display remaining characters
+
+    // Add the event listner
+    document.getElementById("messaging-message").addEventListener('change', function() {
+
+        // Display remaining characters
+        var maxChars = 250;
+        var currentLength = document.getElementById("messaging-message").value.length;
+        var charsLeft = maxChars - currentLength;
+
+        // Change the length displayed
+        document.getElementById("chat-remaining").textContent = "Characters Left: " + charsLeft;
+
+    }, true);
 
 }, true);
