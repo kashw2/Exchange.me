@@ -37,7 +37,9 @@ $(document).ready(function() {
     setInterval(function() {
 
         $("#chat-messages").load("ajax/inc/chat.inc.load", 
-        {},
+        {
+            Username: $("#grid-content__loggedin").data("user")
+        },
 
             // Callback
             function(responseTxt, statusTxt, xhr) {
