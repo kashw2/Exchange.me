@@ -33,53 +33,60 @@ ORDER BY exchangeme.news.id DESC;
 // Fetch Results
 $RESULT_NEWS = mysqli_fetch_array($QUERY_NEWS);
 
-// Print results
-echo '
+if(
+        !empty($RESULT_NEWS)
+        && isset($RESULT_NEWS)
+    ) {
 
-<!-- News Header -->
-<div id="news-header">
-
-    <!-- News Heading -->
-    <h1 id="news-heading" class="text heading left middle black">News</h1>
-
-    <!-- News Search -->
-    <input id="news-search" type="text" placeholder="Search..">
-
-</div>
-
-<!-- News Content -->
-<div id="news-content">
-
-';
-
-// Loop through the results
-while($RESULT_NEWS = mysqli_fetch_array($QUERY_NEWS)) {
-
+    // Print results
     echo '
-    
-        <!-- News Content Container -->
-        <div id="news-post-' . $ITERATOR_NEWS_CONTENT . '" class="news news-content-container">
 
-            <!-- Profile Picture -->
-            <div class="news news-profile-picture">
+    <!-- News Header -->
+    <div id="news-header">
 
-            </div>
+        <!-- News Heading -->
+        <h1 id="news-heading" class="text heading left middle black">News</h1>
 
-            <!-- Author Name -->
-            <p class="news news-author">' . $RESULT_NEWS[0] . '</p>
+        <!-- News Search -->
+        <input id="news-search" type="text" placeholder="Search..">
 
-            <!-- Post Date -->
-            <p class="news news-post-date">' . $RESULT_NEWS[1][8] . '' . $RESULT_NEWS[1][9] . '/' . $RESULT_NEWS[1][5] . '' . $RESULT_NEWS[1][6] . '/' . $RESULT_NEWS[1][2] . '' . $RESULT_NEWS[1][3] . '</p>
+    </div>
 
-            <!-- Content -->
-            <p class="news news-post-content">' . $RESULT_NEWS[2] . '</p>
-        
-        </div>
-    
+    <!-- News Content -->
+    <div id="news-content">
+
     ';
 
-    // Increment the iterator
-    $ITERATOR_NEWS_CONTENT++;
+    // Loop through the results
+    while($RESULT_NEWS = mysqli_fetch_array($QUERY_NEWS)) {
+
+        echo '
+        
+            <!-- News Content Container -->
+            <div id="news-post-' . $ITERATOR_NEWS_CONTENT . '" class="news news-content-container">
+
+                <!-- Profile Picture -->
+                <div class="news news-profile-picture">
+
+                </div>
+
+                <!-- Author Name -->
+                <p class="news news-author">' . $RESULT_NEWS[0] . '</p>
+
+                <!-- Post Date -->
+                <p class="news news-post-date">' . $RESULT_NEWS[1][8] . '' . $RESULT_NEWS[1][9] . '/' . $RESULT_NEWS[1][5] . '' . $RESULT_NEWS[1][6] . '/' . $RESULT_NEWS[1][2] . '' . $RESULT_NEWS[1][3] . '</p>
+
+                <!-- Content -->
+                <p class="news news-post-content">' . $RESULT_NEWS[2] . '</p>
+            
+            </div>
+        
+        ';
+
+        // Increment the iterator
+        $ITERATOR_NEWS_CONTENT++;
+
+    }
 
     // TODO: Create links to profile pages and posts for the date of another post
 
