@@ -224,7 +224,41 @@ require_once('mysql.php');
                     echo '
 
                     <!-- Content Container -->
-                    <div id="grid-content__loggedin">
+                    <div id="grid-content__loggedin" data-user="' . $_SESSION['user']['username'] . '">
+
+                        <!-- Chat Container -->
+                        <div id="content-chat">
+
+                            <!-- Chat Sidebar -->
+                            <div id="chat-sidebar">
+
+                                <div id="sidebar-account"></div>
+                                <div id="sidebar-users"></div>
+                                <div id="sidebar-friends"></div>
+                                <div id="sidebar-blocked"></div>
+                                <div id="sidebar-settings"></div>
+                            
+                            </div>
+
+                            <!-- Chat Messages -->
+                            <div id="chat-messages">
+
+                                <script src="ajax/min/chatLoad.min.js"></script>
+
+                            </div>
+
+                            <!-- Message Input -->
+                            <div id="chat-messaging">
+
+                                <textarea id="messaging-message" wrap="soft" maxlength="250" placeholder="Send Message"></textarea>
+
+                                <script src="javascript/min/chatScript.min.js"></script>
+
+                            </div>
+
+                            <p id="chat-remaining" class="text middle right">Characters Left: 250</p>
+
+                        </div>
 
                         <!-- News Container -->
                         <div id="content-news">
@@ -241,6 +275,7 @@ require_once('mysql.php');
                                 <input id="news-search" type="text" placeholder="Search..">
                             
                             </div>
+                            
                             <script src="javascript/min/newsScript.min.js"></script>
 
                             <!-- News Content -->
@@ -267,7 +302,7 @@ require_once('mysql.php');
                     $RESULT_NEWS = mysqli_fetch_array($QUERY_NEWS);
 
                     // Loop through the results
-                    while($RESULT_NEWS = mysqli_fetch_array($QUERY_NEWS)) {
+                    do {
 
                         echo '
                         
@@ -297,7 +332,7 @@ require_once('mysql.php');
 
                         // TODO: Create links to profile pages and posts for the date of another post
 
-                    }
+                    } while($RESULT_NEWS = mysqli_fetch_array($QUERY_NEWS));
 
                     echo '
 
