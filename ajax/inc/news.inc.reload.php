@@ -58,7 +58,7 @@ if(
     ';
 
     // Loop through the results
-    while($RESULT_NEWS = mysqli_fetch_array($QUERY_NEWS)) {
+    do {
 
         echo '
         
@@ -86,7 +86,7 @@ if(
         // Increment the iterator
         $ITERATOR_NEWS_CONTENT++;
 
-    }
+    } while($RESULT_NEWS = mysqli_fetch_array($QUERY_NEWS));
 
     // TODO: Create links to profile pages and posts for the date of another post
 
