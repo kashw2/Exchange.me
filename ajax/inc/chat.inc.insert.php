@@ -17,6 +17,7 @@ if(
     && !empty($_POST['Message'])
     ) {
 
+    // Query
     $QUERY_INSERT_MESSAGE = mysqli_query($conn, "
 
     INSERT INTO exchangeme.messages (
