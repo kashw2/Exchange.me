@@ -231,11 +231,13 @@ require_once('mysql.php');
                             <!-- Chat Sidebar -->
                             <div id="chat-sidebar">
 
-                                <div id="sidebar-account"></div>
-                                <div id="sidebar-users"></div>
-                                <div id="sidebar-friends"></div>
-                                <div id="sidebar-blocked"></div>
-                                <div id="sidebar-settings"></div>
+                                <div id="sidebar-account" class="sidebar sidebar-element"></div>
+                                <div id="sidebar-users" class="sidebar sidebar-element"></div>
+                                <div id="sidebar-friends" class="sidebar sidebar-element"></div>
+                                <div id="sidebar-blocked" class="sidebar sidebar-element"></div>
+                                <div id="sidebar-settings" class="sidebar sidebar-element"></div>
+
+                                <script src="javascript/min/chatSidebarScript.min.js"></script>
                             
                             </div>
 
