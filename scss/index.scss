@@ -121,17 +121,12 @@ body {
                     grid-row-end: 4;
 
                     background-color: #25cc3b;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 24px;
 
                     #sidebar-account {
 
-                        display: grid;
-
-                        position: relative;
-
-                        top: 0px;
-                        left: 0px;
-
-                        grid-column: auto;
                         grid-row: 1;
 
                         background: url('/Exchange.me/img/materialdesign/ic_account_balance_24px.svg');
@@ -141,32 +136,10 @@ body {
 
                         transition: background-color 300ms ease;
 
-                        cursor: pointer;
-
-                        &:hover {
-
-                            background-color: rgb(47, 206, 255);
-
-                        }
-
-                        &:active {
-
-                            background-color: #0bb700;
-
-                        }
-
                     }
 
                     #sidebar-users {
 
-                        display: grid;
-
-                        position: relative;
-
-                        top: 0px;
-                        left: 0px;
-
-                        grid-column: auto;
                         grid-row: 2;
 
                         background: url('/Exchange.me/img/materialdesign/baseline-supervised_user_circle-24px.svg');
@@ -176,33 +149,10 @@ body {
 
                         transition: background-color 300ms ease;
 
-                        cursor: pointer;
-
-                        &:hover {
-
-                            background-color: #2fceff;
-
-                        }
-
-                        &:active {
-
-                            background-color: #0bb700;
-
-                        }
-
                     }
 
                     #sidebar-friends {
 
-                        
-                        display: grid;
-
-                        position: relative;
-
-                        top: 0px;
-                        left: 0px;
-
-                        grid-column: auto;
                         grid-row: 3;
 
                         background: url('/Exchange.me/img/materialdesign/ic_favorite_border_24px.svg');
@@ -212,32 +162,10 @@ body {
 
                         transition: background-color 300ms ease;
 
-                        cursor: pointer;
-
-                        &:hover {
-
-                            background-color: rgb(47, 206, 255);
-
-                        }
-
-                        &:active {
-
-                            background-color: #0bb700;
-
-                        }
-
                     }
 
                     #sidebar-blocked {
 
-                        display: grid;
-
-                        position: relative;
-
-                        top: 0px;
-                        left: 0px;
-
-                        grid-column: auto;
                         grid-row: 4;
 
                         background: url('/Exchange.me/img/materialdesign/ic_block_24px.svg');
@@ -247,32 +175,10 @@ body {
 
                         transition: background-color 300ms ease;
 
-                        cursor: pointer;
-
-                        &:hover {
-
-                            background-color: rgb(47, 206, 255);
-
-                        }
-
-                        &:active {
-
-                            background-color: #0bb700;
-
-                        }
-
                     }
 
                     #sidebar-settings {
                         
-                        display: grid;
-
-                        position: relative;
-
-                        top: 0px;
-                        left: 0px;
-
-                        grid-column: auto;
                         grid-row: 5;
 
                         background: url('/Exchange.me/img/materialdesign/ic_settings_24px.svg');
@@ -281,20 +187,6 @@ body {
                         background-size: 24px;
 
                         transition: background-color 300ms ease;
-
-                        cursor: pointer;
-
-                        &:hover {
-
-                            background-color: rgb(47, 206, 255);
-
-                        }
-
-                        &:active {
-
-                            background-color: #0bb700;
-
-                        }
 
                     }
 
@@ -976,6 +868,38 @@ body {
                 }
 
             }
+
+        }
+
+    }
+
+}
+
+.sidebar,
+div {
+
+    &.sidebar-element {
+
+        display: grid;
+
+        position: relative;
+
+        top: 0px;
+        left: 0px;
+
+        grid-column: auto;
+
+        cursor: pointer;
+
+        &:hover {
+
+            background-color: rgb(47, 206, 255) !important;
+
+        }
+
+        &:active {
+
+            background-color: #0bb700 !important;
 
         }
 

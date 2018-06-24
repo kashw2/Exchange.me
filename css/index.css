@@ -63,97 +63,50 @@ body {
           grid-column: 1;
           grid-row-start: 1;
           grid-row-end: 4;
-          background-color: #25cc3b; }
+          background-color: #25cc3b;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 24px; }
           body #grid-container #grid-content__loggedin #content-chat #chat-sidebar #sidebar-account {
-            display: grid;
-            position: relative;
-            top: 0px;
-            left: 0px;
-            grid-column: auto;
             grid-row: 1;
             background: url("/Exchange.me/img/materialdesign/ic_account_balance_24px.svg");
             background-repeat: no-repeat;
             background-position: center;
             background-size: 24px;
             -webkit-transition: background-color 300ms ease;
-            transition: background-color 300ms ease;
-            cursor: pointer; }
-            body #grid-container #grid-content__loggedin #content-chat #chat-sidebar #sidebar-account:hover {
-              background-color: #2fceff; }
-            body #grid-container #grid-content__loggedin #content-chat #chat-sidebar #sidebar-account:active {
-              background-color: #0bb700; }
+            transition: background-color 300ms ease; }
           body #grid-container #grid-content__loggedin #content-chat #chat-sidebar #sidebar-users {
-            display: grid;
-            position: relative;
-            top: 0px;
-            left: 0px;
-            grid-column: auto;
             grid-row: 2;
             background: url("/Exchange.me/img/materialdesign/baseline-supervised_user_circle-24px.svg");
             background-repeat: no-repeat;
             background-position: center;
             background-size: 24px;
             -webkit-transition: background-color 300ms ease;
-            transition: background-color 300ms ease;
-            cursor: pointer; }
-            body #grid-container #grid-content__loggedin #content-chat #chat-sidebar #sidebar-users:hover {
-              background-color: #2fceff; }
-            body #grid-container #grid-content__loggedin #content-chat #chat-sidebar #sidebar-users:active {
-              background-color: #0bb700; }
+            transition: background-color 300ms ease; }
           body #grid-container #grid-content__loggedin #content-chat #chat-sidebar #sidebar-friends {
-            display: grid;
-            position: relative;
-            top: 0px;
-            left: 0px;
-            grid-column: auto;
             grid-row: 3;
             background: url("/Exchange.me/img/materialdesign/ic_favorite_border_24px.svg");
             background-repeat: no-repeat;
             background-position: center;
             background-size: 24px;
             -webkit-transition: background-color 300ms ease;
-            transition: background-color 300ms ease;
-            cursor: pointer; }
-            body #grid-container #grid-content__loggedin #content-chat #chat-sidebar #sidebar-friends:hover {
-              background-color: #2fceff; }
-            body #grid-container #grid-content__loggedin #content-chat #chat-sidebar #sidebar-friends:active {
-              background-color: #0bb700; }
+            transition: background-color 300ms ease; }
           body #grid-container #grid-content__loggedin #content-chat #chat-sidebar #sidebar-blocked {
-            display: grid;
-            position: relative;
-            top: 0px;
-            left: 0px;
-            grid-column: auto;
             grid-row: 4;
             background: url("/Exchange.me/img/materialdesign/ic_block_24px.svg");
             background-repeat: no-repeat;
             background-position: center;
             background-size: 24px;
             -webkit-transition: background-color 300ms ease;
-            transition: background-color 300ms ease;
-            cursor: pointer; }
-            body #grid-container #grid-content__loggedin #content-chat #chat-sidebar #sidebar-blocked:hover {
-              background-color: #2fceff; }
-            body #grid-container #grid-content__loggedin #content-chat #chat-sidebar #sidebar-blocked:active {
-              background-color: #0bb700; }
+            transition: background-color 300ms ease; }
           body #grid-container #grid-content__loggedin #content-chat #chat-sidebar #sidebar-settings {
-            display: grid;
-            position: relative;
-            top: 0px;
-            left: 0px;
-            grid-column: auto;
             grid-row: 5;
             background: url("/Exchange.me/img/materialdesign/ic_settings_24px.svg");
             background-repeat: no-repeat;
             background-position: center;
             background-size: 24px;
             -webkit-transition: background-color 300ms ease;
-            transition: background-color 300ms ease;
-            cursor: pointer; }
-            body #grid-container #grid-content__loggedin #content-chat #chat-sidebar #sidebar-settings:hover {
-              background-color: #2fceff; }
-            body #grid-container #grid-content__loggedin #content-chat #chat-sidebar #sidebar-settings:active {
-              background-color: #0bb700; }
+            transition: background-color 300ms ease; }
         body #grid-container #grid-content__loggedin #content-chat #chat-messaging {
           display: grid;
           grid-column: 2;
@@ -551,6 +504,21 @@ body {
               color: #0ff;
               text-decoration: underline;
               cursor: pointer; }
+
+.sidebar.sidebar-element,
+div.sidebar-element {
+  display: grid;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  grid-column: auto;
+  cursor: pointer; }
+  .sidebar.sidebar-element:hover,
+  div.sidebar-element:hover {
+    background-color: #2fceff !important; }
+  .sidebar.sidebar-element:active,
+  div.sidebar-element:active {
+    background-color: #0bb700 !important; }
 
 .message.message-container__self,
 div.message-container__self {
