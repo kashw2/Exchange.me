@@ -5,6 +5,8 @@
 // Check the document is ready
 $(document).ready(function() {
 
+    // Send Messages
+
     // Check for keypress
     $("#messaging-message").keypress(function(e) {
 
@@ -25,11 +27,25 @@ $(document).ready(function() {
             
             );
 
-        }
-
-        // Prevent key from repeating
-        // e.preventDefault();        
+        } 
 
     });
+
+    // Recieve Messages
+
+    // Repeat function every second
+    setInterval(function() {
+
+        $("#chat-messages").load("ajax/inc/chat.inc.load", 
+        {},
+
+            // Callback
+            function(responseTxt, statusTxt, xhr) {
+                
+            }
+
+        );
+
+    }, 1000)
 
 });
