@@ -149,6 +149,12 @@ body {
 
                         }
 
+                        &:active {
+
+                            background-color: #0bb700;
+
+                        }
+
                     }
 
                     #sidebar-users {
@@ -175,6 +181,12 @@ body {
                         &:hover {
 
                             background-color: #2fceff;
+
+                        }
+
+                        &:active {
+
+                            background-color: #0bb700;
 
                         }
 
@@ -208,6 +220,12 @@ body {
 
                         }
 
+                        &:active {
+
+                            background-color: #0bb700;
+
+                        }
+
                     }
 
                     #sidebar-blocked {
@@ -237,6 +255,12 @@ body {
 
                         }
 
+                        &:active {
+
+                            background-color: #0bb700;
+
+                        }
+
                     }
 
                     #sidebar-settings {
@@ -263,6 +287,12 @@ body {
                         &:hover {
 
                             background-color: rgb(47, 206, 255);
+
+                        }
+
+                        &:active {
+
+                            background-color: #0bb700;
 
                         }
 
