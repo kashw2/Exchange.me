@@ -1,9 +1,7 @@
 SELECT
 exchangeme.news.author,
 exchangeme.news.date,
-exchangeme.news.content,
-exchangeme.accounts.creationdate
+exchangeme.news.content
 FROM 
-exchangeme.news,
-exchangeme.accounts
+exchangeme.news
 ORDER BY exchangeme.news.id DESC;
