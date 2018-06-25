@@ -66,34 +66,6 @@ body {
 
                 overflow: hidden;
 
-                &:hover {
-
-                    top: -2.5px;
-
-                    box-shadow: 0px 0px 5px #20792c;
-
-                    overflow: hidden;
-
-                    ::-webkit-scrollbar {
-
-                        width: 7px;
-
-                    }
-
-                    ::-webkit-scrollbar-thumb {
-
-                        background: #888; 
-
-                    }
-
-                    ::-webkit-scrollbar-thumb:hover {
-
-                        background: #555; 
-
-                    }
-
-                }
-
                 #chat-messages {
 
                     display: block;
@@ -102,6 +74,36 @@ body {
                     grid-row: 1;
 
                     padding: 10px 10px 10px 10px;
+
+                    overflow: hidden;
+
+                    &:hover {
+
+                        top: -2.5px;
+
+    
+                        overflow-x: hidden;
+                        overflow-y: auto;
+    
+                        ::-webkit-scrollbar {
+    
+                            width: 7px;
+    
+                        }
+    
+                        ::-webkit-scrollbar-thumb {
+    
+                            background: #888; 
+    
+                        }
+    
+                        ::-webkit-scrollbar-thumb:hover {
+    
+                            background: #555; 
+    
+                        }
+    
+                    }
 
                 }
 
@@ -951,6 +953,38 @@ div {
         width: 90%;
 
         margin-top: 10px;
+
+    }
+
+    &.message-delete__self {
+
+        position: relative;
+
+        top: -5%;
+        right: -6.5%;
+
+        height: 15px;
+        width: 15px;
+
+        background-color: black;
+
+        cursor: pointer;
+
+    }
+
+    &.message-delete__user {
+
+        position: relative;
+
+        top: -5%;
+        left: 91%;
+
+        height: 15px;
+        width: 15px;
+
+        background-color: black;
+
+        cursor: pointer;
 
     }
 

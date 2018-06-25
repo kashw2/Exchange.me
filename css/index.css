@@ -38,22 +38,22 @@ body {
         transition: top 150ms ease-in-out 0s, box-shadow 200ms ease-in-out;
         transition: top 150ms ease-in-out 0s, box-shadow 200ms ease-in-out, -webkit-box-shadow 200ms ease-in-out;
         overflow: hidden; }
-        body #grid-container #grid-content__loggedin #content-chat:hover {
-          top: -2.5px;
-          -webkit-box-shadow: 0px 0px 5px #20792c;
-                  box-shadow: 0px 0px 5px #20792c;
-          overflow: hidden; }
-          body #grid-container #grid-content__loggedin #content-chat:hover ::-webkit-scrollbar {
-            width: 7px; }
-          body #grid-container #grid-content__loggedin #content-chat:hover ::-webkit-scrollbar-thumb {
-            background: #888; }
-          body #grid-container #grid-content__loggedin #content-chat:hover ::-webkit-scrollbar-thumb:hover {
-            background: #555; }
         body #grid-container #grid-content__loggedin #content-chat #chat-messages {
           display: block;
           grid-column: 2;
           grid-row: 1;
-          padding: 10px 10px 10px 10px; }
+          padding: 10px 10px 10px 10px;
+          overflow: hidden; }
+          body #grid-container #grid-content__loggedin #content-chat #chat-messages:hover {
+            top: -2.5px;
+            overflow-x: hidden;
+            overflow-y: auto; }
+            body #grid-container #grid-content__loggedin #content-chat #chat-messages:hover ::-webkit-scrollbar {
+              width: 7px; }
+            body #grid-container #grid-content__loggedin #content-chat #chat-messages:hover ::-webkit-scrollbar-thumb {
+              background: #888; }
+            body #grid-container #grid-content__loggedin #content-chat #chat-messages:hover ::-webkit-scrollbar-thumb:hover {
+              background: #555; }
         body #grid-container #grid-content__loggedin #content-chat #chat-sidebar {
           display: grid;
           position: relative;
@@ -544,6 +544,24 @@ div.message-container__user {
   height: auto;
   width: 90%;
   margin-top: 10px; }
+.message.message-delete__self,
+div.message-delete__self {
+  position: relative;
+  top: -5%;
+  right: -6.5%;
+  height: 15px;
+  width: 15px;
+  background-color: black;
+  cursor: pointer; }
+.message.message-delete__user,
+div.message-delete__user {
+  position: relative;
+  top: -5%;
+  left: 91%;
+  height: 15px;
+  width: 15px;
+  background-color: black;
+  cursor: pointer; }
 .message.message-user,
 div.message-user {
   display: grid;
