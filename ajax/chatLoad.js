@@ -34,7 +34,7 @@ $(document).ready(function() {
     // Recieve Messages
 
     // Repeat function every second
-    setInterval(function() {
+    setInterval(function(e) {
 
         $("#chat-messages").load("ajax/inc/chat.inc.load", 
         {
@@ -47,6 +47,8 @@ $(document).ready(function() {
             }
 
         );
+
+        e.preventDefault();
 
     }, 1000);
 
