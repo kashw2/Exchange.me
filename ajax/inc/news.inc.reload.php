@@ -21,11 +21,9 @@ $QUERY_NEWS = mysqli_query($conn, "
 SELECT
 exchangeme.news.author,
 exchangeme.news.date,
-exchangeme.news.content,
-exchangeme.accounts.creationdate
+exchangeme.news.content
 FROM 
-exchangeme.news,
-exchangeme.accounts
+exchangeme.news
 ORDER BY exchangeme.news.id DESC;
 
 ");
@@ -37,25 +35,6 @@ if(
     !empty($RESULT_NEWS)
     && isset($RESULT_NEWS)
     ) {
-
-    // Print results
-    echo '
-
-    <!-- News Header -->
-    <div id="news-header">
-
-        <!-- News Heading -->
-        <h1 id="news-heading" class="text heading left middle black">News</h1>
-
-        <!-- News Search -->
-        <input id="news-search" type="text" placeholder="Search..">
-
-    </div>
-
-    <!-- News Content -->
-    <div id="news-content">
-
-    ';
 
     // Loop through the results
     do {
