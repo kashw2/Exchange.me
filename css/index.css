@@ -525,7 +525,7 @@ div.message-container__self {
   display: grid;
   position: relative;
   margin-left: 10%;
-  grid-template-columns: 150px 1fr 125px;
+  grid-template-columns: 150px 1fr 50px;
   grid-template-rows: 25px 1fr;
   justify-self: end;
   align-self: center;
