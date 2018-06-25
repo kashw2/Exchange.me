@@ -529,15 +529,15 @@ require_once('mysql.php');
                 <div id="footer-social-container">
 
                 <a id="icons-facebook" href="//www.facebook.com">
-                    <object data="img/flaticon/facebook-letter-logo.svg" type="image/svg+xml"></object>
+                    <object data="img/flaticon/facebook.svg" type="image/svg+xml"></object>
                 </a>
 
                 <a id="icons-twitter" href="//www.twitter.com">
-                    <object data="img/flaticon/twitter-logo.svg" type="image/svg+xml"></object>
+                    <object data="img/flaticon/twitter.svg" type="image/svg+xml"></object>
                 </a>
 
                 <a id="icons-youtube" href="//www.youtube.com">
-                    <object data="img/flaticon/youtube-logo.svg" type="image/svg+xml"></object>
+                    <object data="img/flaticon/youtube.svg" type="image/svg+xml"></object>
                 </a>
 
             </div>
