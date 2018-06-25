@@ -11,7 +11,7 @@ $(document).ready(function() {
     setInterval(function() {
 
         // Load data
-        $("#content-news").load("ajax/inc/news.inc.reload.php",
+        $("#news-content").load("ajax/inc/news.inc.reload.php",
         {},
         
             // Callback
