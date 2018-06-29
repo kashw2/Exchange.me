@@ -66,6 +66,27 @@ do {
 
     ';
 
+        // // Check who the sender was
+        // if($RESULT_CHAT[0] == $_POST['Username']) {
+
+        //     echo '
+    
+        //         <!-- Message Delete Container -->
+        //         <div class="message message-delete__self"></div>
+            
+        //     ';
+    
+        // } else {
+    
+        //     echo '
+    
+        //         <!-- Message Delete Container -->
+        //         <div class="message message-delete__user"></div>
+            
+        //     ';
+    
+        // }
+
 } while($RESULT_CHAT = mysqli_fetch_array($QUERY_CHAT));
 
 ?>
