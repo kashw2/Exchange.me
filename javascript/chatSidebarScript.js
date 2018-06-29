@@ -9,8 +9,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Declare and define the variables
     var sliderOpened = false;
+    var openedTab;
 
     // Function prototype
+
+    var Sidebar_Destroy_Base_Layout = function(title) {
+
+        // Close the slider
+        document.getElementById("chat-sidebar-slider").style.width = "0px";
+
+        // Delete the elements
+        document.getElementById("chat-sidebar-slider").removeChild(document.getElementById("slider-" + openedTab.toLowerCase()));
+        document.getElementById("slider-close-container").removeChild(document.getElementById("slider-close"));
+        document.getElementById("chat-sidebar-slider").removeChild(document.getElementById("slider-close-container"));
+
+        // Set the variable to false
+        sliderOpened = false;
+
+    }
+
     var Sidebar_Init_Base_Layout = function(title, gridTemplateColumns, gridTemplateRows, firstColumn, lastColumn, execTime) {
 
         // Check if execTime has a value
@@ -37,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var header_heading = document.createElement("p");
 
             // Set the heading attributes
-            header_heading.setAttribute("id", "slider-" + title);
+            header_heading.setAttribute("id", "slider-" + title.toLowerCase());
 
             // Style the heading
             header_heading.style.justifySelf = "center";
@@ -55,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var container_button = document.createElement("div");
 
             // Set the container attributes
-            container_button.setAttribute("id", "slider-close");
+            container_button.setAttribute("id", "slider-close-container");
             
             // Style the container
             container_button.style.gridColumn = lastColumn;
@@ -71,6 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Set the button attributes
             button_close.setAttribute("data", "img/materialdesign/ic_close_24px.svg");
             button_close.setAttribute("type", "image/svg+xml");
+            button_close.setAttribute("id", "slider-close");
 
             // Style the button
             button_close.style.height = "100%";
@@ -88,8 +106,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Delete the elements
                 document.getElementById("chat-sidebar-slider").removeChild(header_heading);
+                document.getElementById("slider-close-container").removeChild(button_close);
                 document.getElementById("chat-sidebar-slider").removeChild(container_button);
-                document.getElementById("chat-sidebar-slider").removeChild(button_close);
 
                 // Set the variable to false
                 sliderOpened = false;
@@ -122,7 +140,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Init the base layout
             Sidebar_Init_Base_Layout("Account", "1fr 25px", "25px 1fr 200px", 1, 2, 1000);
 
-            // Create the elements
+            // Change the tab opened
+            openedTab = "Account";
     
             // Change the value of slider
             sliderOpened = true;
@@ -132,6 +151,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Close the slider
         document.getElementById("chat-sidebar-slider").style.width = "0px";
 
+        Sidebar_Destroy_Base_Layout("Account");
+
             // Set delay
             setTimeout(function() {
 
@@ -140,6 +161,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Init the base layout
                 Sidebar_Init_Base_Layout("Account", "1fr 25px", "25px 1fr 200px", 1, 2, 1000);
+
+                // Change the tab opened
+                openedTab = "Account";
 
                 // Change the value of slider
                 sliderOpened = true;
@@ -166,6 +190,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Expand the slider
             document.getElementById("chat-sidebar-slider").style.width = "300px";
+
+            // Init the base layout
+            Sidebar_Init_Base_Layout("Users", "1fr 25px", "25px 1fr 200px", 1, 2, 1000);
+
+            // Change the tab opened
+            openedTab = "Users";
     
             // Change the value of slider
             sliderOpened = true;
@@ -175,11 +205,19 @@ document.addEventListener('DOMContentLoaded', function() {
         // Close the slider
         document.getElementById("chat-sidebar-slider").style.width = "0px";
 
+        Sidebar_Destroy_Base_Layout("Users");
+
             // Set delay
             setTimeout(function() {
 
                 // Open the slider
                 document.getElementById("chat-sidebar-slider").style.width = "300px";
+
+                // Init the base layout
+                Sidebar_Init_Base_Layout("Users", "1fr 25px", "25px 1fr 200px", 1, 2, 1000);
+
+                // Change the tab opened
+                openedTab = "Users";
 
                 // Change the value of slider
                 sliderOpened = true;
@@ -208,6 +246,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Expand the slider
             document.getElementById("chat-sidebar-slider").style.width = "300px";
+
+            // Init the base layout
+            Sidebar_Init_Base_Layout("Friends", "1fr 25px", "25px 1fr 200px", 1, 2, 1000);
+
+            // Change the tab opened
+            openedTab = "Friends";
     
             // Change the value of slider
             sliderOpened = true;
@@ -217,11 +261,19 @@ document.addEventListener('DOMContentLoaded', function() {
         // Close the slider
         document.getElementById("chat-sidebar-slider").style.width = "0px";
 
+        Sidebar_Destroy_Base_Layout("Friends");
+
             // Set delay
             setTimeout(function() {
 
                 // Open the slider
                 document.getElementById("chat-sidebar-slider").style.width = "300px";
+
+                // Init the base layout
+                Sidebar_Init_Base_Layout("Friends", "1fr 25px", "25px 1fr 200px", 1, 2, 1000);
+
+                // Change the tab opened
+                openedTab = "Friends";
 
                 // Change the value of slider
                 sliderOpened = true;
@@ -250,6 +302,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Expand the slider
             document.getElementById("chat-sidebar-slider").style.width = "300px";
+
+            // Init the base layout
+            Sidebar_Init_Base_Layout("Blocked", "1fr 25px", "25px 1fr 200px", 1, 2, 1000);
+
+            // Change the tab opened
+            openedTab = "Blocked";
     
             // Change the value of slider
             sliderOpened = true;
@@ -259,11 +317,19 @@ document.addEventListener('DOMContentLoaded', function() {
         // Close the slider
         document.getElementById("chat-sidebar-slider").style.width = "0px";
 
+        Sidebar_Destroy_Base_Layout("Blocked");
+
             // Set delay
             setTimeout(function() {
 
                 // Open the slider
                 document.getElementById("chat-sidebar-slider").style.width = "300px";
+
+                // Init the base layout
+                Sidebar_Init_Base_Layout("Blocked", "1fr 25px", "25px 1fr 200px", 1, 2, 1000);
+
+                // Change the tab opened
+                openedTab = "Blocked";
 
                 // Change the value of slider
                 sliderOpened = true;
@@ -292,6 +358,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Expand the slider
             document.getElementById("chat-sidebar-slider").style.width = "300px";
+
+            // Init the base layout
+            Sidebar_Init_Base_Layout("Settings", "1fr 25px", "25px 1fr 200px", 1, 2, 1000);
+
+            // Change the tab opened
+            openedTab = "Settings";
     
             // Change the value of slider
             sliderOpened = true;
@@ -301,11 +373,19 @@ document.addEventListener('DOMContentLoaded', function() {
         // Close the slider
         document.getElementById("chat-sidebar-slider").style.width = "0px";
 
+        Sidebar_Destroy_Base_Layout("Settings");
+
             // Set delay
             setTimeout(function() {
 
                 // Open the slider
                 document.getElementById("chat-sidebar-slider").style.width = "300px";
+
+                // Init the base layout
+                Sidebar_Init_Base_Layout("Settings", "1fr 25px", "25px 1fr 200px", 1, 2, 1000);
+
+                // Change the tab opened
+                openedTab = "Settings";
 
                 // Change the value of slider
                 sliderOpened = true;
