@@ -2,10 +2,10 @@
 // Copyright© 2018 Keanu Ashwell all rights are reserved to the author, creator, registered 
 // and licensed owners of this product and it's content
 
-'use strict';
-
 // Add the event listner
 document.addEventListener('DOMContentLoaded', function() {
+
+    'use strict';
 
     // Add event listner
     document.getElementById("messaging-message").addEventListener('keydown', function(e) {

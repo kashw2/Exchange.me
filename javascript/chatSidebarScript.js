@@ -2,10 +2,10 @@
 // Copyright© 2018 Keanu Ashwell all rights are reserved to the author, creator, registered 
 // and licensed owners of this product and it's content
 
-'use strict';
-
 // Add the event listner
 document.addEventListener('DOMContentLoaded', function() {
+
+    'use strict';
 
     // Declare and define the variables
     var sliderOpened = false;
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
             break;
         }
 
-    }
+    };
 
     var Sidebar_Init_Base_Layout = function(title, gridTemplateColumns, gridTemplateRows, firstColumn, lastColumn, execTime) {
 

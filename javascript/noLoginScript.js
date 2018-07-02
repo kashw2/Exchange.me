@@ -4,6 +4,8 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
+    'use strict';
+
     // Move Header Headings Grid Location
 
     // Make sure there are children
