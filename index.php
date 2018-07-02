@@ -241,6 +241,10 @@ require_once('mysql.php');
                             
                             </div>
 
+                            <div id="chat-sidebar-slider">
+                            
+                            </div>
+
                             <!-- Chat Messages -->
                             <div id="chat-messages">
 
