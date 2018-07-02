@@ -28,7 +28,7 @@ body {
         top: 0px;
         grid-column: 1;
         grid-row: auto;
-        grid-template-columns: 50px 1fr;
+        grid-template-columns: 50px 10px 1fr;
         grid-template-rows: 1fr 100px 20px;
         -webkit-box-shadow: 0px 0px 5px #333333;
                 box-shadow: 0px 0px 5px #333333;
@@ -40,7 +40,7 @@ body {
         overflow: hidden; }
         body #grid-container #grid-content__loggedin #content-chat #chat-messages {
           display: block;
-          grid-column: 2;
+          grid-column: 3;
           grid-row: 1;
           padding: 10px 10px 10px 10px;
           overflow: hidden; }
@@ -109,7 +109,7 @@ body {
             transition: background-color 300ms ease; }
         body #grid-container #grid-content__loggedin #content-chat #chat-messaging {
           display: grid;
-          grid-column: 2;
+          grid-column: 3;
           grid-row: 2;
           padding: 10px 10px 5px 10px; }
           body #grid-container #grid-content__loggedin #content-chat #chat-messaging #messaging-message {
@@ -127,13 +127,35 @@ body {
               background: #555; }
         body #grid-container #grid-content__loggedin #content-chat #chat-remaining {
           display: grid;
-          grid-column: 2;
+          grid-column: 3;
           grid-row: 3;
           color: #a5a5a5;
           font-family: Helvetica, sans-serif;
           font-weight: 100;
           font-size: 0.75em;
           padding: 0px 20px 5px 0px; }
+        body #grid-container #grid-content__loggedin #content-chat #account-container {
+          display: grid;
+          position: absolute;
+          top: 5px;
+          margin-left: 55px;
+          height: 500px;
+          width: 300px;
+          background-color: #FFFFFF;
+          opacity: 0.5;
+          -webkit-box-shadow: 0px 0px 5px #333333;
+                  box-shadow: 0px 0px 5px #333333; }
+        body #grid-container #grid-content__loggedin #content-chat #chat-sidebar-slider {
+          display: grid;
+          position: relative;
+          left: 0px;
+          height: 100%;
+          width: 10px;
+          -webkit-transition: width 1s ease;
+          transition: width 1s ease;
+          background-color: #fffffff2;
+          overflow: hidden;
+          z-index: 1; }
       body #grid-container #grid-content__loggedin #content-news {
         display: grid;
         position: relative;
@@ -681,7 +703,7 @@ div.news-post-content {
         top: 0px;
         grid-column: 1;
         grid-row: auto;
-        grid-template-columns: 50px 1fr;
+        grid-template-columns: 50px 10px 1fr;
         grid-template-rows: 1fr 100px 15px;
         -webkit-box-shadow: 0px 0px 5px #333333;
                 box-shadow: 0px 0px 5px #333333;

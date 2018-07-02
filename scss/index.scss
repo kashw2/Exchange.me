@@ -55,7 +55,7 @@ body {
                 grid-column: 1;
                 grid-row: auto;
 
-                grid-template-columns: 50px 1fr;
+                grid-template-columns: 50px 10px 1fr;
                 grid-template-rows: 1fr 100px 20px;
 
                 box-shadow: 0px 0px 5px $exchange-black;
@@ -70,7 +70,7 @@ body {
 
                     display: block;
 
-                    grid-column: 2;
+                    grid-column: 3;
                     grid-row: 1;
 
                     padding: 10px 10px 10px 10px;
@@ -198,7 +198,7 @@ body {
 
                     display: grid;
 
-                    grid-column: 2;
+                    grid-column: 3;
                     grid-row: 2;
 
                     padding: 10px 10px 5px 10px;
@@ -242,7 +242,7 @@ body {
 
                     display: grid;
 
-                    grid-column: 2;
+                    grid-column: 3;
                     grid-row: 3;
 
                     color: #a5a5a5;
@@ -253,6 +253,47 @@ body {
 
                     padding: 0px 20px 5px 0px;
 
+                }
+
+                #account-container {
+
+                    display: grid;
+
+                    position: absolute;
+
+                    top: 5px;
+                    margin-left: 55px;
+
+                    height: 500px;
+                    width: 300px;
+
+                    background-color: $exchange-white;
+                    
+                    opacity: 0.5;
+
+                    box-shadow: 0px 0px 5px $exchange-black;
+
+                }
+
+                #chat-sidebar-slider {
+
+                    display: grid;
+
+                    position: relative;
+
+                    left: 0px;
+
+                    height: 100%;
+                    width: 10px;
+
+                    transition: width 1s ease;
+
+                    background-color: #fffffff2;
+
+                    overflow: hidden;
+
+                    z-index: 1;
+                    
                 }
 
             }
@@ -1202,7 +1243,7 @@ div {
                         grid-column: 1;
                         grid-row: auto;
         
-                        grid-template-columns: 50px 1fr;
+                        grid-template-columns: 50px 10px 1fr;
                         grid-template-rows: 1fr 100px 15px;
         
                         box-shadow: 0px 0px 5px $exchange-black;
