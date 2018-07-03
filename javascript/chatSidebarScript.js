@@ -31,6 +31,12 @@ document.addEventListener('DOMContentLoaded', function() {
             case "Account":
             // Delete Account contents
 
+            // Remove all parental elements from the accounts pane
+            document.getElementById("slider-account-intro").remove();
+            document.getElementById("account-intro-name").remove();
+            document.getElementById("account-options-panel").remove();
+            document.getElementById("account-controls-panel").remove();
+
             break;
             case "Users":
             // Delete Users contents
