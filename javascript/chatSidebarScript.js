@@ -141,10 +141,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Close the slider
                 document.getElementById("chat-sidebar-slider").style.width = "0px";
 
-                // Delete the elements
-                document.getElementById("chat-sidebar-slider").removeChild(header_heading);
-                document.getElementById("slider-close-container").removeChild(button_close);
-                document.getElementById("chat-sidebar-slider").removeChild(container_button);
+                // Destroy the current layout
+                Sidebar_Destroy_Base_Layout(tabTitle);
 
                 // Set the variable to false
                 sliderOpened = false;
