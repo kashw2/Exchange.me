@@ -56,9 +56,11 @@ document.addEventListener('DOMContentLoaded', function() {
             break;
         }
 
+        // TODO: Make this switch statement arbitary and recursivly loop elements and remove them.
+
     };
 
-    var Sidebar_Init_Base_Layout = function(title, gridTemplateColumns, gridTemplateRows, firstColumn, lastColumn, execTime) {
+    var Sidebar_Init_Base_Layout = function(title, gridTemplateColumns, gridTemplateRows, lastColumn, execTime) {
 
         // Set global tab title
         tabTitle = title;
@@ -687,7 +689,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById("chat-sidebar-slider").style.width = "300px";
 
             // Init the base layout
-            Sidebar_Init_Base_Layout("Account", "1fr 25px", "25px 25px 30px 2fr 1fr", 1, 2, 1000);
+            Sidebar_Init_Base_Layout("Account", "1fr 25px", "25px 25px 30px 2fr 1fr", 2, 1000);
 
             // Change the tab opened
             openedTab = "Account";
@@ -709,7 +711,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById("chat-sidebar-slider").style.width = "300px";
 
                 // Init the base layout
-                Sidebar_Init_Base_Layout("Account", "1fr 25px", "25px 1fr 200px", 1, 2, 1000);
+                Sidebar_Init_Base_Layout("Account", "1fr 25px", "25px 25px 30px 2fr 1fr", 2, 1000);
 
                 // Change the tab opened
                 openedTab = "Account";
@@ -741,7 +743,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById("chat-sidebar-slider").style.width = "300px";
 
             // Init the base layout
-            Sidebar_Init_Base_Layout("Users", "1fr 25px", "25px 1fr 200px", 1, 2, 1000);
+            Sidebar_Init_Base_Layout("Users", "1fr 25px", "25px 1fr 200px", 2, 1000);
 
             // Change the tab opened
             openedTab = "Users";
@@ -763,7 +765,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById("chat-sidebar-slider").style.width = "300px";
 
                 // Init the base layout
-                Sidebar_Init_Base_Layout("Users", "1fr 25px", "25px 1fr 200px", 1, 2, 1000);
+                Sidebar_Init_Base_Layout("Users", "1fr 25px", "25px 1fr 200px", 2, 1000);
 
                 // Change the tab opened
                 openedTab = "Users";
@@ -819,7 +821,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById("chat-sidebar-slider").style.width = "300px";
 
                 // Init the base layout
-                Sidebar_Init_Base_Layout("Friends", "1fr 25px", "25px 1fr 200px", 1, 2, 1000);
+                Sidebar_Init_Base_Layout("Friends", "1fr 25px", "25px 1fr 200px", 2, 1000);
 
                 // Change the tab opened
                 openedTab = "Friends";
@@ -853,7 +855,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById("chat-sidebar-slider").style.width = "300px";
 
             // Init the base layout
-            Sidebar_Init_Base_Layout("Blocked", "1fr 25px", "25px 1fr 200px", 1, 2, 1000);
+            Sidebar_Init_Base_Layout("Blocked", "1fr 25px", "25px 1fr 200px", 2, 1000);
 
             // Change the tab opened
             openedTab = "Blocked";
@@ -875,7 +877,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById("chat-sidebar-slider").style.width = "300px";
 
                 // Init the base layout
-                Sidebar_Init_Base_Layout("Blocked", "1fr 25px", "25px 1fr 200px", 1, 2, 1000);
+                Sidebar_Init_Base_Layout("Blocked", "1fr 25px", "25px 1fr 200px", 2, 1000);
 
                 // Change the tab opened
                 openedTab = "Blocked";
@@ -909,7 +911,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById("chat-sidebar-slider").style.width = "300px";
 
             // Init the base layout
-            Sidebar_Init_Base_Layout("Settings", "1fr 25px", "25px 1fr 200px", 1, 2, 1000);
+            Sidebar_Init_Base_Layout("Settings", "1fr 25px", "25px 1fr 200px", 2, 1000);
 
             // Change the tab opened
             openedTab = "Settings";
@@ -931,7 +933,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById("chat-sidebar-slider").style.width = "300px";
 
                 // Init the base layout
-                Sidebar_Init_Base_Layout("Settings", "1fr 25px", "25px 1fr 200px", 1, 2, 1000);
+                Sidebar_Init_Base_Layout("Settings", "1fr 25px", "25px 1fr 200px", 2, 1000);
 
                 // Change the tab opened
                 openedTab = "Settings";
