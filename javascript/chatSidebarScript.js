@@ -86,57 +86,57 @@ document.addEventListener('DOMContentLoaded', function() {
             // Create the eleemnts
 
             // Create the heading
-            let header_heading = document.createElement("p");
+            let HTMLParagraphElement_Account_Settings = document.createElement("p");
 
             // Set the heading attributes
-            header_heading.setAttribute("id", "slider-" + title.toLowerCase());
+            HTMLParagraphElement_Account_Settings.setAttribute("id", "slider-" + title.toLowerCase());
 
             // Style the heading
-            header_heading.style.justifySelf = "center";
-            header_heading.style.alignSelf = "center";
-            header_heading.style.fontFamily = "Lato, sans-serif";
-            header_heading.style.gridColumnStart = 1;
-            header_heading.style.gridColumnEnd = 4;
-            header_heading.style.gridRow = 1;
+            HTMLParagraphElement_Account_Settings.style.justifySelf = "center";
+            HTMLParagraphElement_Account_Settings.style.alignSelf = "center";
+            HTMLParagraphElement_Account_Settings.style.fontFamily = "Lato, sans-serif";
+            HTMLParagraphElement_Account_Settings.style.gridColumnStart = 1;
+            HTMLParagraphElement_Account_Settings.style.gridColumnEnd = 4;
+            HTMLParagraphElement_Account_Settings.style.gridRow = 1;
 
             // Set the heading text
-            header_heading.textContent = title + " Settings";
+            HTMLParagraphElement_Account_Settings.textContent = title + " Settings";
 
             // Append the heading
-            document.getElementById("chat-sidebar-slider").appendChild(header_heading);
+            document.getElementById("chat-sidebar-slider").appendChild(HTMLParagraphElement_Account_Settings);
 
             // Create the button contianer
-            let container_button = document.createElement("div");
+            let HTMLDivElement_Slider_Close = document.createElement("div");
 
             // Set the container attributes
-            container_button.setAttribute("id", "slider-close-container");
+            HTMLDivElement_Slider_Close.setAttribute("id", "slider-close-container");
             
             // Style the container
-            container_button.style.gridColumn = lastColumn;
-            container_button.style.gridRow = 1;
-            container_button.style.cursor = "pointer";
+            HTMLDivElement_Slider_Close.style.gridColumn = lastColumn;
+            HTMLDivElement_Slider_Close.style.gridRow = 1;
+            HTMLDivElement_Slider_Close.style.cursor = "pointer";
 
             // Append the container
-            document.getElementById("chat-sidebar-slider").appendChild(container_button);
+            document.getElementById("chat-sidebar-slider").appendChild(HTMLDivElement_Slider_Close);
 
             // Create the close button
-            let button_close = document.createElement("object");
+            let HTMLObjectElement_Close = document.createElement("object");
 
             // Set the button attributes
-            button_close.setAttribute("data", "img/materialdesign/ic_close_24px.svg");
-            button_close.setAttribute("type", "image/svg+xml");
-            button_close.setAttribute("id", "slider-close");
+            HTMLObjectElement_Close.setAttribute("data", "img/materialdesign/ic_close_24px.svg");
+            HTMLObjectElement_Close.setAttribute("type", "image/svg+xml");
+            HTMLObjectElement_Close.setAttribute("id", "slider-close");
 
             // Style the button
-            button_close.style.height = "100%";
-            button_close.style.width = "100%";
-            button_close.style.cursor = "pointer";
+            HTMLObjectElement_Close.style.height = "100%";
+            HTMLObjectElement_Close.style.width = "100%";
+            HTMLObjectElement_Close.style.cursor = "pointer";
 
             // Append the button
-            container_button.appendChild(button_close);
+            HTMLDivElement_Slider_Close.appendChild(HTMLObjectElement_Close);
 
             // Add the event listner
-            container_button.addEventListener("click", function() {
+            HTMLDivElement_Slider_Close.addEventListener("click", function() {
 
                 // Close the slider
                 document.getElementById("chat-sidebar-slider").style.width = "0px";
@@ -157,492 +157,492 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Create the account pane
 
                 // Create the intro
-                let account_intro = document.createElement("p");
+                let HTMLParagraphElement_Account_Intro = document.createElement("p");
 
                 // Set the intro attributes 
-                account_intro.setAttribute("id", "slider-account-intro");
+                HTMLParagraphElement_Account_Intro.setAttribute("id", "slider-account-intro");
                 
                 // Set the textContext
-                account_intro.textContent = "Welcome:";
+                HTMLParagraphElement_Account_Intro.textContent = "Welcome:";
 
                 // Style the intro
-                account_intro.style.gridColumnStart = 1;
-                account_intro.style.gridColumnEnd = 3;
-                account_intro.style.gridRow = 2;
-                account_intro.style.justifySelf = "start";
-                account_intro.style.alignSelf = "center";
-                account_intro.style.paddingLeft = "10px";
-                account_intro.style.fontFamily = "Lato, sans-serif";
+                HTMLParagraphElement_Account_Intro.style.gridColumnStart = 1;
+                HTMLParagraphElement_Account_Intro.style.gridColumnEnd = 3;
+                HTMLParagraphElement_Account_Intro.style.gridRow = 2;
+                HTMLParagraphElement_Account_Intro.style.justifySelf = "start";
+                HTMLParagraphElement_Account_Intro.style.alignSelf = "center";
+                HTMLParagraphElement_Account_Intro.style.paddingLeft = "10px";
+                HTMLParagraphElement_Account_Intro.style.fontFamily = "Lato, sans-serif";
 
                 // Append the child
-                document.getElementById("chat-sidebar-slider").appendChild(account_intro);
+                document.getElementById("chat-sidebar-slider").appendChild(HTMLParagraphElement_Account_Intro);
 
                 // Create the intro name
-                let account_name = document.createElement("p");
+                let HTMLParagraphElement_Account_Intro_Name = document.createElement("p");
 
                 // Set the intro name attributes 
-                account_name.setAttribute("id", "account-intro-name");
+                HTMLParagraphElement_Account_Intro_Name.setAttribute("id", "account-intro-name");
                 
                 // Set the textContext
-                account_name.textContent = document.getElementById("grid-content__loggedin").getAttribute("data-user");
+                HTMLParagraphElement_Account_Intro_Name.textContent = document.getElementById("grid-content__loggedin").getAttribute("data-user");
 
                 // Style the intro name
-                account_name.style.gridColumnStart = 1;
-                account_name.style.gridColumnEnd = 3;
-                account_name.style.gridRow = 3;
-                account_name.style.justifySelf = "start";
-                account_name.style.alignSelf = "start";
-                account_name.style.paddingLeft = "10px";
-                account_name.style.fontFamily = "Lato, sans-serif";
+                HTMLParagraphElement_Account_Intro_Name.style.gridColumnStart = 1;
+                HTMLParagraphElement_Account_Intro_Name.style.gridColumnEnd = 3;
+                HTMLParagraphElement_Account_Intro_Name.style.gridRow = 3;
+                HTMLParagraphElement_Account_Intro_Name.style.justifySelf = "start";
+                HTMLParagraphElement_Account_Intro_Name.style.alignSelf = "start";
+                HTMLParagraphElement_Account_Intro_Name.style.paddingLeft = "10px";
+                HTMLParagraphElement_Account_Intro_Name.style.fontFamily = "Lato, sans-serif";
 
                 // Add the event listner
-                account_name.addEventListener("mouseover", function() {
+                HTMLParagraphElement_Account_Intro_Name.addEventListener("mouseover", function() {
 
                     // Style the account name
-                    account_name.style.textDecoration = "underline";
+                    HTMLParagraphElement_Account_Intro_Name.style.textDecoration = "underline";
 
                 }, true);
 
                 // Add the event listner
-                account_name.addEventListener("mouseout", function() {
+                HTMLParagraphElement_Account_Intro_Name.addEventListener("mouseout", function() {
 
                     // Style the account name
-                    account_name.style.textDecoration = "none";
+                    HTMLParagraphElement_Account_Intro_Name.style.textDecoration = "none";
 
                 }, true);
 
                 // Append the child
-                document.getElementById("chat-sidebar-slider").appendChild(account_name);
+                document.getElementById("chat-sidebar-slider").appendChild(HTMLParagraphElement_Account_Intro_Name);
 
                 // Create the Account Options panel
-                let account_options_container = document.createElement("div");
+                let HTMLDivElement_Account_Options_Panel = document.createElement("div");
 
                 // Set the panel attributes
-                account_options_container.setAttribute("id", "account-options-panel");
+                HTMLDivElement_Account_Options_Panel.setAttribute("id", "account-options-panel");
 
                 // Set the panel style
-                account_options_container.style.gridColumnStart = 1;
-                account_options_container.style.gridColumnEnd = 3;
-                account_options_container.style.gridRow = 4;
-                account_options_container.style.display = "grid";
-                account_options_container.style.gridTemplateColumns = "90px 1fr";
-                account_options_container.style.gridTemplateRows = "30px 30px 30px 30px 30px";
+                HTMLDivElement_Account_Options_Panel.style.gridColumnStart = 1;
+                HTMLDivElement_Account_Options_Panel.style.gridColumnEnd = 3;
+                HTMLDivElement_Account_Options_Panel.style.gridRow = 4;
+                HTMLDivElement_Account_Options_Panel.style.display = "grid";
+                HTMLDivElement_Account_Options_Panel.style.gridTemplateColumns = "90px 1fr";
+                HTMLDivElement_Account_Options_Panel.style.gridTemplateRows = "30px 30px 30px 30px 30px";
 
                 // Append the options panel
-                document.getElementById("chat-sidebar-slider").appendChild(account_options_container);
+                document.getElementById("chat-sidebar-slider").appendChild(HTMLDivElement_Account_Options_Panel);
 
                 // Create the heading
-                let email_heading = document.createElement("p");
+                let HTMLParagraphElement_Account_Email = document.createElement("p");
 
                 // Set the intro name attributes 
-                email_heading.setAttribute("id", "options-email");
+                HTMLParagraphElement_Account_Email.setAttribute("id", "options-email");
 
                 // Set the textContext
-                email_heading.textContent = "Email:";
+                HTMLParagraphElement_Account_Email.textContent = "Email:";
 
                 // Style the intro name
-                email_heading.style.gridColumn = 1;
-                email_heading.style.gridRow = 1;
-                email_heading.style.justifySelf = "center";
-                email_heading.style.alignSelf = "center";
-                email_heading.style.paddingLeft = "10px";
-                email_heading.style.fontFamily = "Lato, sans-serif";
+                HTMLParagraphElement_Account_Email.style.gridColumn = 1;
+                HTMLParagraphElement_Account_Email.style.gridRow = 1;
+                HTMLParagraphElement_Account_Email.style.justifySelf = "center";
+                HTMLParagraphElement_Account_Email.style.alignSelf = "center";
+                HTMLParagraphElement_Account_Email.style.paddingLeft = "10px";
+                HTMLParagraphElement_Account_Email.style.fontFamily = "Lato, sans-serif";
 
                 // Append the heading
-                document.getElementById("account-options-panel").appendChild(email_heading);
+                document.getElementById("account-options-panel").appendChild(HTMLParagraphElement_Account_Email);
 
                 // Create the email section
-                let input_change_email = document.createElement("input");
+                let HTMLInputElement_Account_Email = document.createElement("input");
 
                 // Set the input attributes
-                input_change_email.setAttribute("id", "options-input-email");
-                // input_change_email.setAttribute("type", "email");
+                HTMLInputElement_Account_Email.setAttribute("id", "options-input-email");
+                // HTMLInputElement_Account_Email.setAttribute("type", "email");
 
                 // Style the input
-                input_change_email.style.gridColumn = 2;
-                input_change_email.style.gridRow = 1;
-                input_change_email.style.height = "20px";
-                input_change_email.style.width = "90%";
-                input_change_email.style.justifySelf = "center";
-                input_change_email.style.alignSelf = "center";
-                input_change_email.style.border = "none";
-                input_change_email.style.backgroundColor = "#f3f3f3";
-                input_change_email.style.fontFamily = "Lato, sans-serif";
+                HTMLInputElement_Account_Email.style.gridColumn = 2;
+                HTMLInputElement_Account_Email.style.gridRow = 1;
+                HTMLInputElement_Account_Email.style.height = "20px";
+                HTMLInputElement_Account_Email.style.width = "90%";
+                HTMLInputElement_Account_Email.style.justifySelf = "center";
+                HTMLInputElement_Account_Email.style.alignSelf = "center";
+                HTMLInputElement_Account_Email.style.border = "none";
+                HTMLInputElement_Account_Email.style.backgroundColor = "#f3f3f3";
+                HTMLInputElement_Account_Email.style.fontFamily = "Lato, sans-serif";
 
                 // Add the event listner
-                input_change_email.addEventListener("click", function() {
+                HTMLInputElement_Account_Email.addEventListener("click", function() {
 
                     // Style the element
-                    input_change_email.style.borderTop = "none";
-                    input_change_email.style.borderRight = "none";
-                    input_change_email.style.borderBottom = "1px solid #000000";
-                    input_change_email.style.borderLeft = "none";
-                    input_change_email.style.backgroundColor = "transparent";
+                    HTMLInputElement_Account_Email.style.borderTop = "none";
+                    HTMLInputElement_Account_Email.style.borderRight = "none";
+                    HTMLInputElement_Account_Email.style.borderBottom = "1px solid #000000";
+                    HTMLInputElement_Account_Email.style.borderLeft = "none";
+                    HTMLInputElement_Account_Email.style.backgroundColor = "transparent";
 
                 }, true);
 
                 // Add the event listner
-                input_change_email.addEventListener("focusout", function() {
+                HTMLInputElement_Account_Email.addEventListener("focusout", function() {
 
                     // Check if there is a value
-                    if(input_change_email.value == "") {
+                    if(HTMLInputElement_Account_Email.value == "") {
 
                         // Style the element
-                        input_change_email.style.border = "none";
-                        input_change_email.style.backgroundColor = "#f3f3f3";
-                        input_change_email.style.paddingLeft = "5px";
+                        HTMLInputElement_Account_Email.style.border = "none";
+                        HTMLInputElement_Account_Email.style.backgroundColor = "#f3f3f3";
+                        HTMLInputElement_Account_Email.style.paddingLeft = "5px";
 
                     }
 
                 }, true);
 
                 // Add the event listner
-                input_change_email.addEventListener("focus", function() {
+                HTMLInputElement_Account_Email.addEventListener("focus", function() {
 
                     // Style the element
-                    input_change_email.style.outline = "none";
-                    input_change_email.style.paddingLeft = "0px";
+                    HTMLInputElement_Account_Email.style.outline = "none";
+                    HTMLInputElement_Account_Email.style.paddingLeft = "0px";
 
                 }, true);
 
                 // Append the input
-                document.getElementById("account-options-panel").appendChild(input_change_email);
+                document.getElementById("account-options-panel").appendChild(HTMLInputElement_Account_Email);
 
                 // Create the heading
-                let username_heading = document.createElement("p");
+                let HTMLParagraphElement_Account_Username = document.createElement("p");
 
                 // Set the intro name attributes 
-                username_heading.setAttribute("id", "options-username");
+                HTMLParagraphElement_Account_Username.setAttribute("id", "options-username");
 
                 // Set the textContext
-                username_heading.textContent = "Username:";
+                HTMLParagraphElement_Account_Username.textContent = "Username:";
 
                 // Style the intro name
-                username_heading.style.gridColumn = 1;
-                username_heading.style.gridRow = 2;
-                username_heading.style.justifySelf = "center";
-                username_heading.style.alignSelf = "center";
-                username_heading.style.paddingLeft = "10px";
-                username_heading.style.fontFamily = "Lato, sans-serif";
+                HTMLParagraphElement_Account_Username.style.gridColumn = 1;
+                HTMLParagraphElement_Account_Username.style.gridRow = 2;
+                HTMLParagraphElement_Account_Username.style.justifySelf = "center";
+                HTMLParagraphElement_Account_Username.style.alignSelf = "center";
+                HTMLParagraphElement_Account_Username.style.paddingLeft = "10px";
+                HTMLParagraphElement_Account_Username.style.fontFamily = "Lato, sans-serif";
 
                 // Append the heading
-                document.getElementById("account-options-panel").appendChild(username_heading);
+                document.getElementById("account-options-panel").appendChild(HTMLParagraphElement_Account_Username);
 
                 // Create the email section
-                let input_change_username = document.createElement("input");
+                let HTMLInputElement_Account_Username = document.createElement("input");
 
                 // Set the input attributes
-                input_change_username.setAttribute("id", "options-input-username");
+                HTMLInputElement_Account_Username.setAttribute("id", "options-input-username");
 
                 // Style the input
-                input_change_username.style.gridColumn = 2;
-                input_change_username.style.gridRow = 2;
-                input_change_username.style.height = "20px";
-                input_change_username.style.width = "90%";
-                input_change_username.style.justifySelf = "center";
-                input_change_username.style.alignSelf = "center";
-                input_change_username.style.border = "none";
-                input_change_username.style.backgroundColor = "#f3f3f3";
-                input_change_username.style.fontFamily = "Lato, sans-serif";
+                HTMLInputElement_Account_Username.style.gridColumn = 2;
+                HTMLInputElement_Account_Username.style.gridRow = 2;
+                HTMLInputElement_Account_Username.style.height = "20px";
+                HTMLInputElement_Account_Username.style.width = "90%";
+                HTMLInputElement_Account_Username.style.justifySelf = "center";
+                HTMLInputElement_Account_Username.style.alignSelf = "center";
+                HTMLInputElement_Account_Username.style.border = "none";
+                HTMLInputElement_Account_Username.style.backgroundColor = "#f3f3f3";
+                HTMLInputElement_Account_Username.style.fontFamily = "Lato, sans-serif";
 
                 // Add the event listner
-                input_change_username.addEventListener("click", function() {
+                HTMLInputElement_Account_Username.addEventListener("click", function() {
 
                     // Style the element
-                    input_change_username.style.borderTop = "none";
-                    input_change_username.style.borderRight = "none";
-                    input_change_username.style.borderBottom = "1px solid #000000";
-                    input_change_username.style.borderLeft = "none";
-                    input_change_username.style.backgroundColor = "transparent";
+                    HTMLInputElement_Account_Username.style.borderTop = "none";
+                    HTMLInputElement_Account_Username.style.borderRight = "none";
+                    HTMLInputElement_Account_Username.style.borderBottom = "1px solid #000000";
+                    HTMLInputElement_Account_Username.style.borderLeft = "none";
+                    HTMLInputElement_Account_Username.style.backgroundColor = "transparent";
 
                 }, true);
 
                 // Add the event listner
-                input_change_username.addEventListener("focusout", function() {
+                HTMLInputElement_Account_Username.addEventListener("focusout", function() {
 
                     // Check if there is a value
-                    if(input_change_username.value == "") {
+                    if(HTMLInputElement_Account_Username.value == "") {
 
                         // Style the element
-                        input_change_username.style.border = "none";
-                        input_change_username.style.backgroundColor = "#f3f3f3";
-                        input_change_username.style.paddingLeft = "5px";
+                        HTMLInputElement_Account_Username.style.border = "none";
+                        HTMLInputElement_Account_Username.style.backgroundColor = "#f3f3f3";
+                        HTMLInputElement_Account_Username.style.paddingLeft = "5px";
 
                     }
 
                 }, true);
 
                 // Add the event listner
-                input_change_username.addEventListener("focus", function() {
+                HTMLInputElement_Account_Username.addEventListener("focus", function() {
 
                     // Style the element
-                    input_change_username.style.outline = "none";
-                    input_change_username.style.paddingLeft = "0px";
+                    HTMLInputElement_Account_Username.style.outline = "none";
+                    HTMLInputElement_Account_Username.style.paddingLeft = "0px";
 
                 }, true);
 
                 // Append the input
-                document.getElementById("account-options-panel").appendChild(input_change_username);
+                document.getElementById("account-options-panel").appendChild(HTMLInputElement_Account_Username);
 
                 // Create the heading
-                let password_heading = document.createElement("p");
+                let HTMLParagraphElement_Account_Password = document.createElement("p");
 
                 // Set the intro name attributes 
-                password_heading.setAttribute("id", "options-password");
+                HTMLParagraphElement_Account_Password.setAttribute("id", "options-password");
 
                 // Set the textContext
-                password_heading.textContent = "Password:";
+                HTMLParagraphElement_Account_Password.textContent = "Password:";
 
                 // Style the intro name
-                password_heading.style.gridColumn = 1;
-                password_heading.style.gridRow = 3;
-                password_heading.style.justifySelf = "center";
-                password_heading.style.alignSelf = "center";
-                password_heading.style.paddingLeft = "10px";
-                password_heading.style.fontFamily = "Lato, sans-serif";
+                HTMLParagraphElement_Account_Password.style.gridColumn = 1;
+                HTMLParagraphElement_Account_Password.style.gridRow = 3;
+                HTMLParagraphElement_Account_Password.style.justifySelf = "center";
+                HTMLParagraphElement_Account_Password.style.alignSelf = "center";
+                HTMLParagraphElement_Account_Password.style.paddingLeft = "10px";
+                HTMLParagraphElement_Account_Password.style.fontFamily = "Lato, sans-serif";
 
                 // Append the heading
-                document.getElementById("account-options-panel").appendChild(password_heading);
+                document.getElementById("account-options-panel").appendChild(HTMLParagraphElement_Account_Password);
 
                 // Create the email section
-                let input_change_password = document.createElement("input");
+                let HTMLInputElement_Account_Password = document.createElement("input");
 
                 // Set the input attributes
-                input_change_password.setAttribute("id", "options-input-password");
-                // input_change_password.setAttribute("type", "password");
+                HTMLInputElement_Account_Password.setAttribute("id", "options-input-password");
+                // HTMLInputElement_Account_Password.setAttribute("type", "password");
 
                 // Style the input
-                input_change_password.style.gridColumn = 2;
-                input_change_password.style.gridRow = 3;
-                input_change_password.style.height = "20px";
-                input_change_password.style.width = "90%";
-                input_change_password.style.justifySelf = "center";
-                input_change_password.style.alignSelf = "center";
-                input_change_password.style.border = "none";
-                input_change_password.style.backgroundColor = "#f3f3f3";
-                input_change_password.style.fontFamily = "Lato, sans-serif";
+                HTMLInputElement_Account_Password.style.gridColumn = 2;
+                HTMLInputElement_Account_Password.style.gridRow = 3;
+                HTMLInputElement_Account_Password.style.height = "20px";
+                HTMLInputElement_Account_Password.style.width = "90%";
+                HTMLInputElement_Account_Password.style.justifySelf = "center";
+                HTMLInputElement_Account_Password.style.alignSelf = "center";
+                HTMLInputElement_Account_Password.style.border = "none";
+                HTMLInputElement_Account_Password.style.backgroundColor = "#f3f3f3";
+                HTMLInputElement_Account_Password.style.fontFamily = "Lato, sans-serif";
 
                 // Add the event listner
-                input_change_password.addEventListener("click", function() {
+                HTMLInputElement_Account_Password.addEventListener("click", function() {
 
                     // Style the element
-                    input_change_password.style.borderTop = "none";
-                    input_change_password.style.borderRight = "none";
-                    input_change_password.style.borderBottom = "1px solid #000000";
-                    input_change_password.style.borderLeft = "none";
-                    input_change_password.style.backgroundColor = "transparent";
+                    HTMLInputElement_Account_Password.style.borderTop = "none";
+                    HTMLInputElement_Account_Password.style.borderRight = "none";
+                    HTMLInputElement_Account_Password.style.borderBottom = "1px solid #000000";
+                    HTMLInputElement_Account_Password.style.borderLeft = "none";
+                    HTMLInputElement_Account_Password.style.backgroundColor = "transparent";
 
                 }, true);
 
                 // Add the event listner
-                input_change_password.addEventListener("focusout", function() {
+                HTMLInputElement_Account_Password.addEventListener("focusout", function() {
 
                     // Check if there is a value
-                    if(input_change_password.value == "") {
+                    if(HTMLInputElement_Account_Password.value == "") {
 
                         // Style the element
-                        input_change_password.style.border = "none";
-                        input_change_password.style.backgroundColor = "#f3f3f3";
-                        input_change_password.style.paddingLeft = "5px";
+                        HTMLInputElement_Account_Password.style.border = "none";
+                        HTMLInputElement_Account_Password.style.backgroundColor = "#f3f3f3";
+                        HTMLInputElement_Account_Password.style.paddingLeft = "5px";
 
                     }
 
                 }, true);
 
                 // Add the event listner
-                input_change_password.addEventListener("focus", function() {
+                HTMLInputElement_Account_Password.addEventListener("focus", function() {
 
                     // Style the element
-                    input_change_password.style.outline = "none";
-                    input_change_password.style.paddingLeft = "0px";
+                    HTMLInputElement_Account_Password.style.outline = "none";
+                    HTMLInputElement_Account_Password.style.paddingLeft = "0px";
 
                 }, true);
 
                 // Append the input
-                document.getElementById("account-options-panel").appendChild(input_change_password);
+                document.getElementById("account-options-panel").appendChild(HTMLInputElement_Account_Password);
 
                 // Create the heading
-                let alias_heading = document.createElement("p");
+                let HTMLParagraphElement_Account_Alias = document.createElement("p");
 
                 // Set the intro name attributes 
-                alias_heading.setAttribute("id", "options-alias");
+                HTMLParagraphElement_Account_Alias.setAttribute("id", "options-alias");
 
                 // Set the textContext
-                alias_heading.textContent = "Alias:";
+                HTMLParagraphElement_Account_Alias.textContent = "Alias:";
 
                 // Style the intro name
-                alias_heading.style.gridColumn = 1;
-                alias_heading.style.gridRow = 4;
-                alias_heading.style.justifySelf = "center";
-                alias_heading.style.alignSelf = "center";
-                alias_heading.style.paddingLeft = "10px";
-                alias_heading.style.fontFamily = "Lato, sans-serif";
+                HTMLParagraphElement_Account_Alias.style.gridColumn = 1;
+                HTMLParagraphElement_Account_Alias.style.gridRow = 4;
+                HTMLParagraphElement_Account_Alias.style.justifySelf = "center";
+                HTMLParagraphElement_Account_Alias.style.alignSelf = "center";
+                HTMLParagraphElement_Account_Alias.style.paddingLeft = "10px";
+                HTMLParagraphElement_Account_Alias.style.fontFamily = "Lato, sans-serif";
 
                 // Append the heading
-                document.getElementById("account-options-panel").appendChild(alias_heading);
+                document.getElementById("account-options-panel").appendChild(HTMLParagraphElement_Account_Alias);
 
                 // Create the email section
-                let input_change_alias = document.createElement("input");
+                let HTMLInputElement_Account_Alias = document.createElement("input");
 
                 // Set the input attributes
-                input_change_alias.setAttribute("id", "options-input-alias");
+                HTMLInputElement_Account_Alias.setAttribute("id", "options-input-alias");
 
                 // Style the input
-                input_change_alias.style.gridColumn = 2;
-                input_change_alias.style.gridRow = 4;
-                input_change_alias.style.height = "20px";
-                input_change_alias.style.width = "90%";
-                input_change_alias.style.justifySelf = "center";
-                input_change_alias.style.alignSelf = "center";
-                input_change_alias.style.border = "none";
-                input_change_alias.style.backgroundColor = "#f3f3f3";
-                input_change_alias.style.fontFamily = "Lato, sans-serif";
+                HTMLInputElement_Account_Alias.style.gridColumn = 2;
+                HTMLInputElement_Account_Alias.style.gridRow = 4;
+                HTMLInputElement_Account_Alias.style.height = "20px";
+                HTMLInputElement_Account_Alias.style.width = "90%";
+                HTMLInputElement_Account_Alias.style.justifySelf = "center";
+                HTMLInputElement_Account_Alias.style.alignSelf = "center";
+                HTMLInputElement_Account_Alias.style.border = "none";
+                HTMLInputElement_Account_Alias.style.backgroundColor = "#f3f3f3";
+                HTMLInputElement_Account_Alias.style.fontFamily = "Lato, sans-serif";
 
                 // Add the event listner
-                input_change_alias.addEventListener("click", function() {
+                HTMLInputElement_Account_Alias.addEventListener("click", function() {
 
                     // Style the element
-                    input_change_alias.style.borderTop = "none";
-                    input_change_alias.style.borderRight = "none";
-                    input_change_alias.style.borderBottom = "1px solid #000000";
-                    input_change_alias.style.borderLeft = "none";
-                    input_change_alias.style.backgroundColor = "transparent";
+                    HTMLInputElement_Account_Alias.style.borderTop = "none";
+                    HTMLInputElement_Account_Alias.style.borderRight = "none";
+                    HTMLInputElement_Account_Alias.style.borderBottom = "1px solid #000000";
+                    HTMLInputElement_Account_Alias.style.borderLeft = "none";
+                    HTMLInputElement_Account_Alias.style.backgroundColor = "transparent";
 
                 }, true);
 
                 // Add the event listner
-                input_change_alias.addEventListener("focusout", function() {
+                HTMLInputElement_Account_Alias.addEventListener("focusout", function() {
 
                     // Check if there is a value
-                    if(input_change_alias.value == "") {
+                    if(HTMLInputElement_Account_Alias.value == "") {
 
                         // Style the element
-                        input_change_alias.style.border = "none";
-                        input_change_alias.style.backgroundColor = "#f3f3f3";
-                        input_change_alias.style.paddingLeft = "5px";
+                        HTMLInputElement_Account_Alias.style.border = "none";
+                        HTMLInputElement_Account_Alias.style.backgroundColor = "#f3f3f3";
+                        HTMLInputElement_Account_Alias.style.paddingLeft = "5px";
 
                     }
 
                 }, true);
 
                 // Add the event listner
-                input_change_alias.addEventListener("focus", function() {
+                HTMLInputElement_Account_Alias.addEventListener("focus", function() {
 
                     // Style the element
-                    input_change_alias.style.outline = "none";
-                    input_change_alias.style.paddingLeft = "0px";
+                    HTMLInputElement_Account_Alias.style.outline = "none";
+                    HTMLInputElement_Account_Alias.style.paddingLeft = "0px";
 
                 }, true);
 
                 // Append the input
-                document.getElementById("account-options-panel").appendChild(input_change_alias);
+                document.getElementById("account-options-panel").appendChild(HTMLInputElement_Account_Alias);
 
                 // TODO: Change for loop to incorporate a class for all input elemenets and utilise getElementsByClassName.
 
                 // Create the Account Controls panel
 
-                let account_controls_container = document.createElement("div");
+                let HTMLDivElement_Account_Controls_Panel = document.createElement("div");
 
                 // Set the panel attributes
-                account_controls_container.setAttribute("id", "account-controls-panel");
+                HTMLDivElement_Account_Controls_Panel.setAttribute("id", "account-controls-panel");
 
                 // Set the panel style
-                account_controls_container.style.gridColumnStart = 1;
-                account_controls_container.style.gridColumnEnd = 3;
-                account_controls_container.style.gridRow = 5;
-                account_controls_container.style.display = "grid";
-                account_controls_container.style.gridTemplateColumns = "1fr 1fr";
-                account_controls_container.style.gridTemplateRows = "1fr 1fr 1fr";
+                HTMLDivElement_Account_Controls_Panel.style.gridColumnStart = 1;
+                HTMLDivElement_Account_Controls_Panel.style.gridColumnEnd = 3;
+                HTMLDivElement_Account_Controls_Panel.style.gridRow = 5;
+                HTMLDivElement_Account_Controls_Panel.style.display = "grid";
+                HTMLDivElement_Account_Controls_Panel.style.gridTemplateColumns = "1fr 1fr";
+                HTMLDivElement_Account_Controls_Panel.style.gridTemplateRows = "1fr 1fr 1fr";
 
                 // Append the options panel
-                document.getElementById("chat-sidebar-slider").appendChild(account_controls_container);
+                document.getElementById("chat-sidebar-slider").appendChild(HTMLDivElement_Account_Controls_Panel);
 
                 // Create the options panel heading
-                let controls_heading = document.createElement("h3");
+                let HTMLHeadingElement_Account_DangerZone = document.createElement("h3");
 
                 // Set the heading attributes
-                controls_heading.setAttribute("id", "controls-heading");
+                HTMLHeadingElement_Account_DangerZone.setAttribute("id", "controls-heading");
 
                 // Set the textContext
-                controls_heading.textContent = "Danger Zone";
+                HTMLHeadingElement_Account_DangerZone.textContent = "Danger Zone";
 
                 // Style the heading
-                controls_heading.style.gridColumnStart = 1;
-                controls_heading.style.gridColumnEnd = 3;
-                controls_heading.style.justifySelf = "start";
-                controls_heading.style.alignSelf = "start";
-                controls_heading.style.marginLeft = "10px";
-                controls_heading.style.paddingTop = "5px";
-                controls_heading.style.fontFamily = "Montserrat, sans-serif";
-                controls_heading.style.color = "#de1414";
-                controls_heading.style.letterSpacing = "-1px";
-                controls_heading.style.transition = "all 500ms ease-in-out";
+                HTMLHeadingElement_Account_DangerZone.style.gridColumnStart = 1;
+                HTMLHeadingElement_Account_DangerZone.style.gridColumnEnd = 3;
+                HTMLHeadingElement_Account_DangerZone.style.justifySelf = "start";
+                HTMLHeadingElement_Account_DangerZone.style.alignSelf = "start";
+                HTMLHeadingElement_Account_DangerZone.style.marginLeft = "10px";
+                HTMLHeadingElement_Account_DangerZone.style.paddingTop = "5px";
+                HTMLHeadingElement_Account_DangerZone.style.fontFamily = "Montserrat, sans-serif";
+                HTMLHeadingElement_Account_DangerZone.style.color = "#de1414";
+                HTMLHeadingElement_Account_DangerZone.style.letterSpacing = "-1px";
+                HTMLHeadingElement_Account_DangerZone.style.transition = "all 500ms ease-in-out";
 
                 // Add the event listner
-                controls_heading.addEventListener("mouseover", function() {
+                HTMLHeadingElement_Account_DangerZone.addEventListener("mouseover", function() {
 
-                    controls_heading.style.color = "#fb1a1a";
+                    HTMLHeadingElement_Account_DangerZone.style.color = "#fb1a1a";
 
                 }, true);
 
                 // Add the event listner
-                controls_heading.addEventListener("mouseout", function() {
+                HTMLHeadingElement_Account_DangerZone.addEventListener("mouseout", function() {
 
-                    controls_heading.style.color = "#de1414";
+                    HTMLHeadingElement_Account_DangerZone.style.color = "#de1414";
 
                 }, true);
 
                 // Append the heading
-                document.getElementById("account-controls-panel").appendChild(controls_heading);
+                document.getElementById("account-controls-panel").appendChild(HTMLHeadingElement_Account_DangerZone);
 
                 // Danger Zone buttons
 
                 // Create delete account button
-                let button_delete_account = document.createElement("button");
+                let HTMLButtonElement_Account_DeleteAccount = document.createElement("button");
 
                 // Set the button attribute
-                button_delete_account.setAttribute("id", "controls-delete-account");
+                HTMLButtonElement_Account_DeleteAccount.setAttribute("id", "controls-delete-account");
 
                 // Set the textContext
-                button_delete_account.textContent = "Delete Account";
+                HTMLButtonElement_Account_DeleteAccount.textContent = "Delete Account";
 
                 // Style the button
-                button_delete_account.style.color = "#ffa500";
-                button_delete_account.style.gridColumn = 1;
-                button_delete_account.style.gridRow = 2;
-                button_delete_account.style.width = "80%";
-                button_delete_account.style.height = "35px";
-                button_delete_account.style.justifySelf = "center";
-                button_delete_account.style.alignSelf = "center";
-                button_delete_account.style.backgroundColor = "#FFFFFF";
-                button_delete_account.style.borderRadius = "5px";
-                button_delete_account.style.border = "1px solid #efefef";
-                button_delete_account.style.fontFamily = "Montserrat, sans-serif";
-                button_delete_account.style.cursor = "pointer";
-                button_delete_account.style.transition = "background-color 250ms ease";
+                HTMLButtonElement_Account_DeleteAccount.style.color = "#ffa500";
+                HTMLButtonElement_Account_DeleteAccount.style.gridColumn = 1;
+                HTMLButtonElement_Account_DeleteAccount.style.gridRow = 2;
+                HTMLButtonElement_Account_DeleteAccount.style.width = "80%";
+                HTMLButtonElement_Account_DeleteAccount.style.height = "35px";
+                HTMLButtonElement_Account_DeleteAccount.style.justifySelf = "center";
+                HTMLButtonElement_Account_DeleteAccount.style.alignSelf = "center";
+                HTMLButtonElement_Account_DeleteAccount.style.backgroundColor = "#FFFFFF";
+                HTMLButtonElement_Account_DeleteAccount.style.borderRadius = "5px";
+                HTMLButtonElement_Account_DeleteAccount.style.border = "1px solid #efefef";
+                HTMLButtonElement_Account_DeleteAccount.style.fontFamily = "Montserrat, sans-serif";
+                HTMLButtonElement_Account_DeleteAccount.style.cursor = "pointer";
+                HTMLButtonElement_Account_DeleteAccount.style.transition = "background-color 250ms ease";
 
                 // Add the event listner
-                button_delete_account.addEventListener("mouseover", function() {
+                HTMLButtonElement_Account_DeleteAccount.addEventListener("mouseover", function() {
 
-                    button_delete_account.style.backgroundColor = "#FBFBFB";
+                    HTMLButtonElement_Account_DeleteAccount.style.backgroundColor = "#FBFBFB";
 
                 }, true);
 
                 // Add the event listner
-                button_delete_account.addEventListener("mouseout", function() {
+                HTMLButtonElement_Account_DeleteAccount.addEventListener("mouseout", function() {
 
-                    button_delete_account.style.backgroundColor = "#FFFFFF";
+                    HTMLButtonElement_Account_DeleteAccount.style.backgroundColor = "#FFFFFF";
 
                 }, true);
 
-                button_delete_account.addEventListener("focus", function() {
+                HTMLButtonElement_Account_DeleteAccount.addEventListener("focus", function() {
 
-                    button_delete_account.style.outline = "none";
+                    HTMLButtonElement_Account_DeleteAccount.style.outline = "none";
 
                 }, true);
 
                 // Append the button
-                document.getElementById("account-controls-panel").appendChild(button_delete_account);
+                document.getElementById("account-controls-panel").appendChild(HTMLButtonElement_Account_DeleteAccount);
 
                 break;
                 case "Users":
