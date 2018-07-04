@@ -14,7 +14,7 @@ require_once('../../mysql.php');
 // Check to make sure POST isset and isnt empty
 if(
     !empty($_POST['Message'])
-    && !empty($_POST['Message'])
+    && isset($_POST['Message'])
     ) {
 
     // Query
