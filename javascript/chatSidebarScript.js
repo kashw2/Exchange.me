@@ -591,6 +591,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Append the child
                 document.getElementById("account-options-panel").appendChild(HTMLButtonElement_Account_Save);
 
+                // Create the response heading
+                let HTMLParagraphElement_Account_Response = document.createElement("p");
+
+                // Set the textContext
+                HTMLParagraphElement_Account_Response.textContent = "Response: ";
+
+                // Set the heading attributes
+                HTMLParagraphElement_Account_Response.setAttribute("id", "options-response");
+
+                // Style the heading
+                HTMLParagraphElement_Account_Response.style.gridColumn = 1;
+                HTMLParagraphElement_Account_Response.style.gridRow = 6;
+                HTMLParagraphElement_Account_Response.style.justifySelf = "start";
+                HTMLParagraphElement_Account_Response.style.alignSelf = "center";
+                HTMLParagraphElement_Account_Response.style.color = "#000000";
+                HTMLParagraphElement_Account_Response.style.fontFamily = "Lato, sans-serif";
+                HTMLParagraphElement_Account_Response.style.fontSize = "0.8em";
+                HTMLParagraphElement_Account_Response.style.padding = "0px 0px 15px 10px";
+
+                // Append the child
+                document.getElementById("account-options-panel").appendChild(HTMLParagraphElement_Account_Response);
+
                 // Create the Account Controls panel
 
                 let HTMLDivElement_Account_Controls_Panel = document.createElement("div");
