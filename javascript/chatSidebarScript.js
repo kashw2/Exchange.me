@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     'use strict';
 
     // Declare and define the variables
-    var sliderOpened = false;
-    var openedTab, tabTitle;
+    var var_sliderOpened = false;
+    var var_openedTab, var_tabTitle;
 
     // Function prototype
 
@@ -19,15 +19,15 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("chat-sidebar-slider").style.width = "0px";
 
         // Delete the elements
-        document.getElementById("chat-sidebar-slider").removeChild(document.getElementById("slider-" + openedTab.toLowerCase()));
+        document.getElementById("chat-sidebar-slider").removeChild(document.getElementById("slider-" + var_openedTab.toLowerCase()));
         document.getElementById("slider-close-container").removeChild(document.getElementById("slider-close"));
         document.getElementById("chat-sidebar-slider").removeChild(document.getElementById("slider-close-container"));
 
         // Set the variable to false
-        sliderOpened = false;
+        var_sliderOpened = false;
 
         // Check what tab needs cleanup
-        switch(openedTab) {
+        switch(var_openedTab) {
             case "Account":
             // Delete Account contents
 
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var Sidebar_Init_Base_Layout = function(title, gridTemplateColumns, gridTemplateRows, lastColumn, execTime) {
 
         // Set global tab title
-        tabTitle = title;
+        var_tabTitle = title;
 
         // Check if execTime has a value
         if(
@@ -142,10 +142,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById("chat-sidebar-slider").style.width = "0px";
 
                 // Destroy the current layout
-                Sidebar_Destroy_Base_Layout(tabTitle);
+                Sidebar_Destroy_Base_Layout(var_tabTitle);
 
                 // Set the variable to false
-                sliderOpened = false;
+                var_sliderOpened = false;
 
             }, true);
 
@@ -695,7 +695,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Create sidebar element containers
 
         // Check is the slider is opened
-        if(sliderOpened == false) {
+        if(var_sliderOpened == false) {
 
             // Expand the slider
             document.getElementById("chat-sidebar-slider").style.width = "300px";
@@ -704,12 +704,12 @@ document.addEventListener('DOMContentLoaded', function() {
             Sidebar_Init_Base_Layout("Account", "1fr 25px", "25px 25px 30px 2fr 1fr", 2, 1000);
 
             // Change the tab opened
-            openedTab = "Account";
+            var_openedTab = "Account";
     
             // Change the value of slider
-            sliderOpened = true;
+            var_sliderOpened = true;
     
-        } else if(sliderOpened == true) {
+        } else if(var_sliderOpened == true) {
 
         // Close the slider
         document.getElementById("chat-sidebar-slider").style.width = "0px";
@@ -726,10 +726,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 Sidebar_Init_Base_Layout("Account", "1fr 25px", "25px 25px 30px 2fr 1fr", 2, 1000);
 
                 // Change the tab opened
-                openedTab = "Account";
+                var_openedTab = "Account";
 
                 // Change the value of slider
-                sliderOpened = true;
+                var_sliderOpened = true;
 
             }, 1000);
 
@@ -749,7 +749,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("sidebar-settings").style.backgroundColor = "#25cc3b";
 
         // Check is the slider is opened
-        if(sliderOpened == false) {
+        if(var_sliderOpened == false) {
 
             // Expand the slider
             document.getElementById("chat-sidebar-slider").style.width = "300px";
@@ -758,12 +758,12 @@ document.addEventListener('DOMContentLoaded', function() {
             Sidebar_Init_Base_Layout("Users", "1fr 25px", "25px 1fr 200px", 2, 1000);
 
             // Change the tab opened
-            openedTab = "Users";
+            var_openedTab = "Users";
     
             // Change the value of slider
-            sliderOpened = true;
+            var_sliderOpened = true;
     
-        } else if(sliderOpened == true) {
+        } else if(var_sliderOpened == true) {
 
         // Close the slider
         document.getElementById("chat-sidebar-slider").style.width = "0px";
@@ -780,10 +780,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 Sidebar_Init_Base_Layout("Users", "1fr 25px", "25px 1fr 200px", 2, 1000);
 
                 // Change the tab opened
-                openedTab = "Users";
+                var_openedTab = "Users";
 
                 // Change the value of slider
-                sliderOpened = true;
+                var_sliderOpened = true;
 
             }, 1000);
 
@@ -805,7 +805,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Create sidebar element containers
 
         // Check is the slider is opened
-        if(sliderOpened == false) {
+        if(var_sliderOpened == false) {
 
             // Expand the slider
             document.getElementById("chat-sidebar-slider").style.width = "300px";
@@ -814,12 +814,12 @@ document.addEventListener('DOMContentLoaded', function() {
             Sidebar_Init_Base_Layout("Friends", "1fr 25px", "25px 1fr 200px", 1, 2, 1000);
 
             // Change the tab opened
-            openedTab = "Friends";
+            var_openedTab = "Friends";
     
             // Change the value of slider
-            sliderOpened = true;
+            var_sliderOpened = true;
     
-        } else if(sliderOpened == true) {
+        } else if(var_sliderOpened == true) {
 
         // Close the slider
         document.getElementById("chat-sidebar-slider").style.width = "0px";
@@ -836,10 +836,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 Sidebar_Init_Base_Layout("Friends", "1fr 25px", "25px 1fr 200px", 2, 1000);
 
                 // Change the tab opened
-                openedTab = "Friends";
+                var_openedTab = "Friends";
 
                 // Change the value of slider
-                sliderOpened = true;
+                var_sliderOpened = true;
 
             }, 1000);
 
@@ -861,7 +861,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Create sidebar element containers
 
         // Check is the slider is opened
-        if(sliderOpened == false) {
+        if(var_sliderOpened == false) {
 
             // Expand the slider
             document.getElementById("chat-sidebar-slider").style.width = "300px";
@@ -870,12 +870,12 @@ document.addEventListener('DOMContentLoaded', function() {
             Sidebar_Init_Base_Layout("Blocked", "1fr 25px", "25px 1fr 200px", 2, 1000);
 
             // Change the tab opened
-            openedTab = "Blocked";
+            var_openedTab = "Blocked";
     
             // Change the value of slider
-            sliderOpened = true;
+            var_sliderOpened = true;
     
-        } else if(sliderOpened == true) {
+        } else if(var_sliderOpened == true) {
 
         // Close the slider
         document.getElementById("chat-sidebar-slider").style.width = "0px";
@@ -892,10 +892,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 Sidebar_Init_Base_Layout("Blocked", "1fr 25px", "25px 1fr 200px", 2, 1000);
 
                 // Change the tab opened
-                openedTab = "Blocked";
+                var_openedTab = "Blocked";
 
                 // Change the value of slider
-                sliderOpened = true;
+                var_sliderOpened = true;
 
             }, 1000);
 
@@ -917,7 +917,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Create sidebar element containers
 
         // Check is the slider is opened
-        if(sliderOpened == false) {
+        if(var_sliderOpened == false) {
 
             // Expand the slider
             document.getElementById("chat-sidebar-slider").style.width = "300px";
@@ -926,12 +926,12 @@ document.addEventListener('DOMContentLoaded', function() {
             Sidebar_Init_Base_Layout("Settings", "1fr 25px", "25px 1fr 200px", 2, 1000);
 
             // Change the tab opened
-            openedTab = "Settings";
+            var_openedTab = "Settings";
     
             // Change the value of slider
-            sliderOpened = true;
+            var_sliderOpened = true;
     
-        } else if(sliderOpened == true) {
+        } else if(var_sliderOpened == true) {
 
         // Close the slider
         document.getElementById("chat-sidebar-slider").style.width = "0px";
@@ -948,10 +948,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 Sidebar_Init_Base_Layout("Settings", "1fr 25px", "25px 1fr 200px", 2, 1000);
 
                 // Change the tab opened
-                openedTab = "Settings";
+                var_openedTab = "Settings";
 
                 // Change the value of slider
-                sliderOpened = true;
+                var_sliderOpened = true;
 
             }, 1000);
 
