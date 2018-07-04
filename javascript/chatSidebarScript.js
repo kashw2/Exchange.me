@@ -539,6 +539,58 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // TODO: Change for loop to incorporate a class for all input elemenets and utilise getElementsByClassName.
 
+                // Create the save button
+                let HTMLButtonElement_Account_Save = document.createElement("button");
+
+                // Set the button textContext
+                HTMLButtonElement_Account_Save.textContent = "Save";
+
+                // Set the button attributes
+                HTMLButtonElement_Account_Save.setAttribute("id", "options-save");
+
+                // Style the button
+                HTMLButtonElement_Account_Save.style.gridColumn = 2;
+                HTMLButtonElement_Account_Save.style.gridRow = 6;
+                HTMLButtonElement_Account_Save.style.justifySelf = "end";
+                HTMLButtonElement_Account_Save.style.alignSelf = "center";
+                HTMLButtonElement_Account_Save.style.color = "#FFFFFF";
+                HTMLButtonElement_Account_Save.style.backgroundColor = "#00cc00";
+                HTMLButtonElement_Account_Save.style.border = "1px solid #10ff10";
+                HTMLButtonElement_Account_Save.style.borderRadius = "5px";
+                HTMLButtonElement_Account_Save.style.height = "30px";
+                HTMLButtonElement_Account_Save.style.width = "45%";
+                HTMLButtonElement_Account_Save.style.margin = "0px 10px 20px 0px";
+                HTMLButtonElement_Account_Save.style.fontFamily = "Lato, sans-serift";
+                HTMLButtonElement_Account_Save.style.cursor = "pointer";
+                HTMLButtonElement_Account_Save.style.transition = "background-color 250ms ease";
+
+                // Add the event listner
+                HTMLButtonElement_Account_Save.addEventListener("mouseover", function() {
+
+                    // Style the button
+                    HTMLButtonElement_Account_Save.style.backgroundColor = "#02bf02";
+
+                }, true);
+
+                // Add the event listner
+                HTMLButtonElement_Account_Save.addEventListener("mouseout", function() {
+                
+                    // Style the button
+                    HTMLButtonElement_Account_Save.style.backgroundColor = "#00cc00";
+
+                }, true);
+
+                // Add the event listner
+                HTMLButtonElement_Account_Save.addEventListener("focus", function() {
+                
+                    // Style the button
+                    HTMLButtonElement_Account_Save.style.outline = "none";
+
+                }, true);
+
+                // Append the child
+                document.getElementById("account-options-panel").appendChild(HTMLButtonElement_Account_Save);
+
                 // Create the Account Controls panel
 
                 let HTMLDivElement_Account_Controls_Panel = document.createElement("div");
