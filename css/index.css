@@ -687,6 +687,25 @@ div.news-post-content {
   text-align: left;
   padding: 0px 5px 0px 5px; }
 
+p.error,
+h1.error,
+h2.error,
+h3.error,
+h4.error,
+h5.error,
+h6.error,
+.response.error {
+  color: #FF0000; }
+p.success,
+h1.success,
+h2.success,
+h3.success,
+h4.success,
+h5.success,
+h6.success,
+.response.success {
+  color: #00FF22; }
+
 @supports (display: grid) {
   @media only screen and (max-width: 1375px) {
     body #grid-container #grid-content__loggedin {
