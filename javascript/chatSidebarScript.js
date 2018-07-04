@@ -665,6 +665,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
         }, execTime);
 
+        // AJAX Timeout
+        setTimeout(function() {
+
+            // Implement the AJAX Script
+            let HTMLScriptElement_AJAX = document.createElement("script");
+        
+            // Set the attributes
+            HTMLScriptElement_AJAX.setAttribute("src", "ajax/min/sidebarLoad.min.js");
+        
+            // Append the element
+            document.getElementById("account-controls-panel").appendChild(HTMLScriptElement_AJAX);
+        
+        }, execTime);
+
     };
 
     // Add the event listner
