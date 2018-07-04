@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 HTMLDivElement_Account_Options_Panel.style.gridRow = 4;
                 HTMLDivElement_Account_Options_Panel.style.display = "grid";
                 HTMLDivElement_Account_Options_Panel.style.gridTemplateColumns = "90px 1fr";
-                HTMLDivElement_Account_Options_Panel.style.gridTemplateRows = "30px 30px 30px 30px 30px";
+                HTMLDivElement_Account_Options_Panel.style.gridTemplateRows = "30px 30px 30px 30px 1fr 30px";
 
                 // Append the options panel
                 document.getElementById("chat-sidebar-slider").appendChild(HTMLDivElement_Account_Options_Panel);
