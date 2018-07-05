@@ -80,6 +80,20 @@ if(
             // Increment the Error counter
             $ErrorCount++;
 
+        } else {
+
+            // // Script
+            echo '
+
+            <script>
+            
+                document.getElementById("grid-content__loggedin").setAttribute("data-user", "' . $_POST['Username'] . '");
+                document.getElementById("account-intro-name").textContent = document.getElementById("grid-content__loggedin").getAttribute("data-user");
+
+            </script>
+            
+            ';
+
         }
 
     }
