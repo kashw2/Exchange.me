@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Check if execTime has a value
         if(
-            execTime == NaN
+            isNaN(execTime)
             || execTime == "0"
         ) {
 
