@@ -35,7 +35,7 @@ if(
             UPDATE exchangeme.accounts
             SET exchangeme.accounts.email = '" . $_POST['Email'] . "'
             WHERE exchangeme.accounts.username = '" . $_POST['CurrentUsername'] . "'
-            OR exchangeme.accounts.session = '" . session_id() . "';
+            OR exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "';
 
             ");
 
@@ -70,7 +70,7 @@ if(
         UPDATE exchangeme.accounts
         SET exchangeme.accounts.username = '" . $_POST['Username'] . "'
         WHERE exchangeme.accounts.username = '" . $_POST['CurrentUsername'] . "'
-        OR exchangeme.accounts.session = '" . session_id() . "';
+        OR exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "';
 
         ");
 
@@ -110,7 +110,7 @@ if(
         UPDATE exchangeme.accounts
         SET exchangeme.accounts.password = '" . md5($_POST['Password']) . '' . mcrypt_create_iv(10, MCRYPT_DEV_URANDOM) . "'
         WHERE exchangeme.accounts.username = '" . $_POST['CurrentUsername'] . "'
-        OR exchangeme.accounts.session = '" . session_id() . "';
+        OR exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "';
 
         ");
 
@@ -136,7 +136,7 @@ if(
         UPDATE exchangeme.accounts
         SET exchangeme.accounts.alias = '" . $_POST['Alias'] . "'
         WHERE exchangeme.accounts.username = '" . $_POST['CurrentUsername'] . "'
-        OR exchangeme.accounts.session = '" . session_id() . "';
+        OR exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "';
 
         ");
 
@@ -158,6 +158,7 @@ if(
 
     } else {
 
+        // Return
         echo "<p class='response success'>Successful</p>";
 
     }
