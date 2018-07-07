@@ -225,8 +225,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 HTMLDivElement_Account_Options_Panel.style.gridColumnEnd = 3;
                 HTMLDivElement_Account_Options_Panel.style.gridRow = 4;
                 HTMLDivElement_Account_Options_Panel.style.display = "grid";
-                HTMLDivElement_Account_Options_Panel.style.gridTemplateColumns = "90px 1fr";
-                HTMLDivElement_Account_Options_Panel.style.gridTemplateRows = "30px 30px 30px 30px 1fr 30px";
+                HTMLDivElement_Account_Options_Panel.style.gridTemplateColumns = "95px 1fr";
+                HTMLDivElement_Account_Options_Panel.style.gridTemplateRows = "30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 1fr 30px";
 
                 // Append the options panel
                 document.getElementById("chat-sidebar-slider").appendChild(HTMLDivElement_Account_Options_Panel);
@@ -550,7 +550,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Style the button
                 HTMLButtonElement_Account_Save.style.gridColumn = 2;
-                HTMLButtonElement_Account_Save.style.gridRow = 6;
+                HTMLButtonElement_Account_Save.style.gridRow = 12;
                 HTMLButtonElement_Account_Save.style.justifySelf = "end";
                 HTMLButtonElement_Account_Save.style.alignSelf = "center";
                 HTMLButtonElement_Account_Save.style.color = "#FFFFFF";
@@ -602,7 +602,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Style the heading
                 HTMLParagraphElement_Account_Response.style.gridColumn = 1;
-                HTMLParagraphElement_Account_Response.style.gridRow = 6;
+                HTMLParagraphElement_Account_Response.style.gridRow = 12;
                 HTMLParagraphElement_Account_Response.style.justifySelf = "start";
                 HTMLParagraphElement_Account_Response.style.alignSelf = "center";
                 HTMLParagraphElement_Account_Response.style.color = "#000000";
