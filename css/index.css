@@ -271,7 +271,7 @@ body {
         background-color: #333333;
         border: 2px solid #00FF22; }
         body #grid-container #grid-content__unregistered #content-login-container #login-form {
-          display: none;
+          display: grid;
           grid-template-columns: 1fr;
           grid-template-rows: 100px 70px 35px 40px 35px 1fr 20px;
           margin: 0;
@@ -392,7 +392,7 @@ body {
         body #grid-container #grid-content__unregistered #content-login-container #register-form {
           display: none;
           grid-template-columns: 1fr;
-          grid-template-rows: 100px 50px 35px 20px 35px 50px 1fr 20px;
+          grid-template-rows: 100px 50px 35px 20px 35px 50px 35px 50px 1fr 20px;
           margin: 0;
           overflow: hidden; }
           body #grid-container #grid-content__unregistered #content-login-container #register-form #register-heading {
@@ -440,9 +440,49 @@ body {
               outline: none;
               outline-offset: none;
               border-bottom: 1px solid #00bb19; }
-          body #grid-container #grid-content__unregistered #content-login-container #register-form #register-password {
+          body #grid-container #grid-content__unregistered #content-login-container #register-form #register-email {
             grid-column: auto;
             grid-row: 5;
+            background: none;
+            background-color: #353535;
+            height: 30px;
+            width: 50%;
+            font-family: 'Montserrat', sans-serif;
+            padding-left: 10px;
+            border-top: 0px;
+            border-right: 0px;
+            border-bottom: 1px solid #00FF22;
+            border-left: 0px;
+            -webkit-transition: border-bottom 500ms ease-in-out;
+            transition: border-bottom 500ms ease-in-out; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-email::-webkit-input-placeholder {
+              -webkit-transition: color 250ms ease-out;
+              transition: color 250ms ease-out; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-email:-ms-input-placeholder {
+              -webkit-transition: color 250ms ease-out;
+              transition: color 250ms ease-out; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-email::-ms-input-placeholder {
+              -webkit-transition: color 250ms ease-out;
+              transition: color 250ms ease-out; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-email::placeholder {
+              -webkit-transition: color 250ms ease-out;
+              transition: color 250ms ease-out; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-email:hover::-webkit-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #register-form #register-email:focus::-webkit-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #register-form #register-email:active::-webkit-input-placeholder {
+              color: #FFFFFF; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-email:hover:-ms-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #register-form #register-email:focus:-ms-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #register-form #register-email:active:-ms-input-placeholder {
+              color: #FFFFFF; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-email:hover::-ms-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #register-form #register-email:focus::-ms-input-placeholder, body #grid-container #grid-content__unregistered #content-login-container #register-form #register-email:active::-ms-input-placeholder {
+              color: #FFFFFF; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-email:hover::placeholder, body #grid-container #grid-content__unregistered #content-login-container #register-form #register-email:focus::placeholder, body #grid-container #grid-content__unregistered #content-login-container #register-form #register-email:active::placeholder {
+              color: #FFFFFF; }
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-email:focus,
+            body #grid-container #grid-content__unregistered #content-login-container #register-form #register-email select:focus {
+              outline: none;
+              outline-offset: none;
+              border-bottom: 1px solid #00bb19; }
+          body #grid-container #grid-content__unregistered #content-login-container #register-form #register-password {
+            grid-column: auto;
+            grid-row: 7;
             background: none;
             background-color: #353535;
             height: 30px;
@@ -482,7 +522,7 @@ body {
               border-bottom: 1px solid #00bb19; }
           body #grid-container #grid-content__unregistered #content-login-container #register-form #register-gender {
             grid-column: auto;
-            grid-row: 6;
+            grid-row: 8;
             height: 20px;
             width: 25%;
             color: #808080;
@@ -500,7 +540,7 @@ body {
               outline-offset: none; }
           body #grid-container #grid-content__unregistered #content-login-container #register-form #register-submit {
             grid-column: auto;
-            grid-row: 7;
+            grid-row: 9;
             height: 60px;
             width: 40%;
             color: #FFFFFF;
@@ -517,7 +557,7 @@ body {
               background-color: #af0000; }
           body #grid-container #grid-content__unregistered #content-login-container #register-form #option-change {
             grid-column: auto;
-            grid-row: 8;
+            grid-row: 11;
             font-family: 'Montserrat', sans-serif;
             font-size: 0.8em;
             font-weight: 100;

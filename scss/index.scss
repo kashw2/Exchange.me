@@ -526,7 +526,7 @@ body {
 
                 #login-form {
 
-                    display: none;
+                    display: grid;
 
                     grid-template-columns: 1fr;
                     grid-template-rows: 100px 70px 35px 40px 35px 1fr 20px;
@@ -706,7 +706,7 @@ body {
                     display: none;
 
                     grid-template-columns: 1fr;
-                    grid-template-rows: 100px 50px 35px 20px 35px 50px 1fr 20px;
+                    grid-template-rows: 100px 50px 35px 20px 35px 50px 35px 50px 1fr 20px;
 
                     margin: 0;
 
@@ -772,10 +772,60 @@ body {
 
                     }
 
-                    #register-password {
+                    #register-email {
 
                         grid-column: auto;
                         grid-row: 5;
+
+                        background: none;
+
+                        background-color: #353535;
+
+                        height: 30px;
+                        width: 50%;
+
+                        font-family: 'Montserrat', sans-serif;
+
+                        padding-left: 10px;
+
+                        border-top: 0px;
+                        border-right: 0px;
+                        border-bottom: 1px solid $exchange-green;
+                        border-left: 0px;
+
+                        transition: border-bottom 500ms ease-in-out;
+
+                        &::placeholder {
+
+                            transition: color 250ms ease-out;
+
+                        }
+
+                        &:hover::placeholder,
+                        &:focus::placeholder,
+                        &:active::placeholder {
+
+                            color: $exchange-white;
+
+                        }
+
+                        &:focus,
+                        select:focus {
+
+                            outline: none;
+
+                            outline-offset: none;
+
+                            border-bottom: 1px solid #00bb19;
+
+                        }
+
+                    }
+
+                    #register-password {
+
+                        grid-column: auto;
+                        grid-row: 7;
 
                         background: none;
 
@@ -825,7 +875,7 @@ body {
                     #register-gender {
 
                         grid-column: auto;
-                        grid-row: 6;
+                        grid-row: 8;
 
                         height: 20px;
                         width: 25%;
@@ -857,7 +907,7 @@ body {
                     #register-submit {
 
                         grid-column: auto;
-                        grid-row: 7;
+                        grid-row: 9;
 
                         height: 60px;
                         width: 40%;
@@ -888,7 +938,7 @@ body {
                     #option-change {
 
                         grid-column: auto;
-                        grid-row: 8;
+                        grid-row: 11;
 
                         font-family: 'Montserrat', sans-serif;
                         font-size: 0.8em;
