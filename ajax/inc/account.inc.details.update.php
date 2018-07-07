@@ -104,11 +104,16 @@ if(
         && isset($_POST['Password'])
     ) {
 
+        // Salt
+        $SALT = mcrypt_create_iv(10, MCRYPT_DEV_URANDOM);
+
         // Query
         $QUERY_UPDATE_PASSWORD = mysqli_query($conn, "
         
         UPDATE exchangeme.accounts
-        SET exchangeme.accounts.password = '" . md5($_POST['Password']) . '' . mcrypt_create_iv(10, MCRYPT_DEV_URANDOM) . "'
+        SET 
+        exchangeme.accounts.password = '" . md5($_POST['Password']) . '' . $SALT . "',
+        exchangeme.accounts.salt = '" . $SALT . "'
         WHERE exchangeme.accounts.username = '" . $_POST['CurrentUsername'] . "'
         OR exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "';
 
