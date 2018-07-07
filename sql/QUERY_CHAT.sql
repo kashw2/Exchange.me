@@ -1,8 +1,9 @@
 SELECT
-exchangeme.messages.sender,
+exchangeme.accounts.username,
 exchangeme.messages.date,
-exchangeme.messages.message
+exchangeme.messages.content
 FROM exchangeme.messages
-WHERE
+INNER JOIN exchangeme.accounts ON exchangeme.messages.userid = exchangeme.accounts.id
+WHERE 
 exchangeme.messages.date > DATE_SUB(NOW(), INTERVAL 1 HOUR)
 ORDER BY exchangeme.messages.date DESC;
