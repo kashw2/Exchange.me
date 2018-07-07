@@ -70,6 +70,7 @@ require_once('mysql.php');
                 if(
                     $_COOKIE['loggedin'] == true
                     && !empty($_COOKIE['loggedin'])
+                    && isset($_SESSION['user']['username'])
                     ) {
                                 
                     echo '
@@ -127,8 +128,13 @@ require_once('mysql.php');
         
             // Home page setup
 
+            // Not logged in
+
             // Check if loggedin cookie exists
-            if(!$_COOKIE['loggedin']) {
+            if(
+                !$_COOKIE['loggedin']
+            ||  !isset($_SESSION['user']['username'])
+            ) {
 
                 echo '
 
@@ -168,7 +174,7 @@ require_once('mysql.php');
 
                     <div id="content-login-container">
                     
-                        <form id="login-form" method="POST">
+                        <form id="login-form" action="login.php" method="GET">
 
                             <h1 id="login-heading" class="text center middle white">User Login</h1>
 
@@ -182,11 +188,13 @@ require_once('mysql.php');
 
                         </form>
                         
-                        <form id="register-form" method="POST">
+                        <form id="register-form" action="register.php" method="GET">
                         
                             <h1 id="register-heading" class="text center middle white">User Registration</h1>
 
                             <input id="register-username" class="text center middle white" type="text" name="register-username" form="register-form" placeholder="Username">
+
+                            <input id="register-email" class="text center middle white" type="text" name="register-email" form="register-form" placeholder="Email">
 
                             <input id="register-password" class="text center middle white" type="password" name="register-password" form="register-form" placeholder="Password">
 
@@ -210,316 +218,176 @@ require_once('mysql.php');
 
                 ';
 
-            } else {
-
-                // Cookie exists
-
-                // Check to make sure the cookie is not empty
-                if(
-                    !empty($_COOKIE['loggedin'])
-                    && !empty($_SESSION['user']['username'])
-                ) {
-
-                    echo '
-
-                    <!-- Content Container -->
-                    <div id="grid-content__loggedin" data-user="' . $_SESSION['user']['username'] . '">
-
-                        <!-- Chat Container -->
-                        <div id="content-chat">
-
-                            <!-- Chat Sidebar -->
-                            <div id="chat-sidebar">
-
-                                <div id="sidebar-account" class="sidebar sidebar-element"></div>
-                                <div id="sidebar-users" class="sidebar sidebar-element"></div>
-                                <div id="sidebar-friends" class="sidebar sidebar-element"></div>
-                                <div id="sidebar-blocked" class="sidebar sidebar-element"></div>
-                                <div id="sidebar-settings" class="sidebar sidebar-element"></div>
-
-                                <script src="javascript/min/chatSidebarScript.min.js"></script>
-                            
-                            </div>
-
-                            <div id="chat-sidebar-slider">
-
-                            </div>
-
-                            <!-- Chat Messages -->
-                            <div id="chat-messages">
-
-                                <script src="ajax/min/chatLoad.min.js"></script>
-
-                            </div>
-
-                            <!-- Message Input -->
-                            <div id="chat-messaging">
-
-                                <textarea id="messaging-message" wrap="soft" maxlength="250" placeholder="Send Message"></textarea>
-
-                                <script src="javascript/min/chatScript.min.js"></script>
-
-                            </div>
-
-                            <p id="chat-remaining" class="text middle right">Characters Left: 250</p>
-
-                        </div>
-
-                        <!-- News Container -->
-                        <div id="content-news">
-
-                            <script src="ajax/min/newsLoad.min.js"></script>
-
-                            <!-- News Header -->
-                            <div id="news-header">
-
-                                <!-- News Heading -->
-                                <h1 id="news-heading" class="text heading left middle black">News</h1>
-
-                                <!-- News Search -->
-                                <input id="news-search" type="text" placeholder="Search..">
-                            
-                            </div>
-                            
-                            <script src="javascript/min/newsScript.min.js"></script>
-
-                            <!-- News Content -->
-                            <div id="news-content">
-                    
-                    ';
-
-                    // Query
-                    $QUERY_NEWS = mysqli_query($conn, "
-                    
-                    SELECT
-                    exchangeme.news.author,
-                    exchangeme.news.date,
-                    exchangeme.news.content
-                    FROM 
-                    exchangeme.news
-                    ORDER BY exchangeme.news.id DESC;
-
-                    ");
-
-                    // Fetch Results
-                    $RESULT_NEWS = mysqli_fetch_array($QUERY_NEWS);
-
-                    // Loop through the results
-                    do {
-
-                        echo '
-                        
-                            <!-- News Content Container -->
-                            <div id="news-post-' . $ITERATOR_NEWS_CONTENT . '" class="news news-content-container">
-
-                                <!-- Profile Picture -->
-                                <div class="news news-profile-picture">
-
-                                </div>
-
-                                <!-- Author Name -->
-                                <p class="news news-author">' . $RESULT_NEWS[0] . '</p>
-
-                                <!-- Post Date -->
-                                <p class="news news-post-date">' . $RESULT_NEWS[1][8] . '' . $RESULT_NEWS[1][9] . '/' . $RESULT_NEWS[1][5] . '' . $RESULT_NEWS[1][6] . '/' . $RESULT_NEWS[1][2] . '' . $RESULT_NEWS[1][3] . '</p>
-
-                                <!-- Content -->
-                                <p class="news news-post-content">' . $RESULT_NEWS[2] . '</p>
-                            
-                            </div>
-                        
-                        ';
-
-                        // Increment the iterator
-                        $ITERATOR_NEWS_CONTENT++;
-
-                        // TODO: Create links to profile pages and posts for the date of another post
-
-                    } while($RESULT_NEWS = mysqli_fetch_array($QUERY_NEWS));
-
-                    echo '
-
-                            </div>
-
-                        </div>
-    
-                    </div>
-    
-                    ';
-
-                }
-
             }
 
-            // Login
+            // Session Login
 
-            // Session check
+            // Query
+            $QUERY_SESSION_LOGIN = mysqli_query($conn, "
+            
+            SELECT
+            exchangeme.accounts.username,
+            exchangeme.accounts.session
+            FROM exchangeme.accounts
+            WHERE exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "';
+
+            ");
+
+            // Fetch results
+            $RESULTS_SESSION_LOGIN = mysqli_fetch_array($QUERY_SESSION_LOGIN);
+            
+            // Login Display
 
             if(
                 $_COOKIE['loggedin']
-                || !empty($_COOKIE['loggedin'])
-                ) {
-
-                // Query
-                $QUERY_SESSION_LOGIN = mysqli_query($conn, "
-                
-                SELECT
-                exchangeme.accounts.session,
-                exchangeme.accounts.username
-                FROM exchangeme.accounts
-                WHERE exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "';
-                
-                ");
-
-                // Fetch results
-                $RESULT_SESSION_LOGIN = mysqli_fetch_array($QUERY_SESSION_LOGIN);
-
-                // Check sessions
-                if($_COOKIE['loggedin'] == $RESULT_SESSION_LOGIN[0]) {
-
-                    // Sessions match!
-
-                    // Set session username variable
-                    $_SESSION['user']['username'] = $RESULT_SESSION_LOGIN[1];
-
-                    // Update session in database for added security
-
-                    // Query
-                    $QUERY_UPDATE_SESSION = mysqli_query($conn, "
-                    
-                    UPDATE exchangeme.accounts 
-                    SET exchangeme.accounts.lastlogin = CURRENT_TIME,
-                    exchangeme.accounts.ip = '" . $_SERVER['REMOTE_ADDR'] . "',
-                    exchangeme.accounts.session = '" . session_id() . "'
-                    WHERE exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "';
-
-                    ");
-
-                } else {
-
-                    // Sessions mismatch!
-
-                    // Reset Cookie
-                    setcookie('loggedin', session_id(), time()+3600*24*365, '/');
-
-                    // header('Location: index.php');
-
-                }
-
-
-            } else {
-
-                if(
-                    isset($_POST['login-username']) 
-                    && isset($_POST['login-password'])
-                ) {
-    
-                    // Query
-                    $QUERY_LOGIN_USER = mysqli_query($conn, "
-                    
-                    SELECT 
-                    exchangeme.accounts.username
-                    FROM exchangeme.accounts 
-                    WHERE exchangeme.accounts.username = '" . htmlspecialchars($_POST['login-username']) . "'
-                    AND exchangeme.accounts.password
-                    LIKE '" . htmlspecialchars(md5(($_POST['login-password']))) . "%';
-    
-                    ");
-
-                    // Fetch Results
-                    $RESULT_LOGIN_USER = mysqli_fetch_array($QUERY_LOGIN_USER);
-
-                    // Check if anything returned from query
-                    if(mysqli_num_rows($QUERY_LOGIN_USER) == 1) {
-
-                        // Account found
-
-                        // Set session username variable
-                        $_SESSION['user']['username'] = $RESULT_LOGIN_USER[0];
-
-                        // Update session in database for added security
-
-                        // Query
-                        $QUERY_UPDATE_SESSION_LOGIN = mysqli_query($conn, "
-                        
-                        UPDATE exchangeme.accounts 
-                        SET exchangeme.accounts.lastlogin = CURRENT_TIME,
-                        exchangeme.accounts.ip = '" . $_SERVER['REMOTE_ADDR'] . "',
-                        exchangeme.accounts.session = '" . session_id() . "'
-                        WHERE exchangeme.accounts.username = '" . htmlspecialchars($_POST['login-username']) . "'
-                        AND exchangeme.accounts.password = '" . htmlspecialchars($_POST['login-password']) . "';
-
-                        ");
-
-                        // Set cookie
-                        setcookie('loggedin', session_id(), time()+3600*24*365, '/');
-
-                        // Resend headers
-                        header('Location: index.php');
-
-                        // 
-
-                    } else {
-
-                        // No account
-
-                        // TODO: Create a alert that acknowldeges the error
-
-                    }
-
-                }
-
-            }
-
-
-
-            // Register
-
-            if(
-                isset($_POST['register-username']) 
-                && isset($_POST['register-password'])
-                && isset($_POST['register-gender'])
+            &&  isset($_COOKIE['loggedin'])
+            &&  $_COOKIE['loggedin'] == session_id()
+            &&  $RESULTS_SESSION_LOGIN[1] == $_COOKIE['loggedin']
+            &&  isset($_SESSION['user']['username'])
             ) {
 
-                // All POST fields are set and have values
-
-                // Query
-                $QUERY_REGISTER_USER = mysqli_query($conn, "
+                $QUERY_UPDATE_SESSION = mysqli_query($conn, "
                 
-                INSERT INTO exchangeme.accounts (
-                exchangeme.accounts.id,
-                exchangeme.accounts.username,
-                exchangeme.accounts.password,
-                exchangeme.accounts.gender,
-                exchangeme.accounts.creationdate,
-                exchangeme.accounts.lastlogin,
-                exchangeme.accounts.ip,
-                exchangeme.accounts.session
-                )
-                VALUES (
-                DEFAULT,
-                '" . htmlspecialchars($_POST['register-username']) . "',
-                '" . md5($_POST['register-password']) . '' . mcrypt_create_iv(10, MCRYPT_DEV_URANDOM) . "',
-                '" . htmlspecialchars($_POST['register-gender']) . "',
-                DEFAULT,
-                DEFAULT,
-                '" . $_SERVER['REMOTE_ADDR'] . "',
-                '" . session_id() . "'
-                );
+                UPDATE exchangeme.accounts 
+                SET exchangeme.accounts.lastlogin = CURRENT_TIME,
+                exchangeme.accounts.ip = '" . $_SERVER['REMOTE_ADDR'] . "',
+                exchangeme.accounts.session = '" . session_id() . "'
+                WHERE exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "';
 
                 ");
 
-                // Set Username Session variable
-                $_SESSION['user']['username'] = $_POST['register-username'];
-                
-                // Set cookie
-                setcookie('loggedin', session_id(), time()+3600*24*365, '/');
+                // Set session variables
+                $_SESSION['user']['username'] = $RESULTS_SESSION_LOGIN[0];
 
-                // Resend Headers
-                header('Location: index.php');
+                echo '
+                
+                <!-- Content Container -->
+                <div id="grid-content__loggedin" data-user="' . $_SESSION['user']['username'] . '">
+                    
+                    <!-- Chat Container -->
+                    <div id="content-chat">
+                        
+                        <!-- Chat Sidebar -->
+                        <div id="chat-sidebar">
+                        
+                            <div id="sidebar-account" class="sidebar sidebar-element"></div>
+                            <div id="sidebar-users" class="sidebar sidebar-element"></div>
+                            <div id="sidebar-friends" class="sidebar sidebar-element"></div>
+                            <div id="sidebar-blocked" class="sidebar sidebar-element"></div>
+                            <div id="sidebar-settings" class="sidebar sidebar-element"></div>
+                        
+                            <script src="javascript/min/chatSidebarScript.min.js"></script>
+                        
+                        </div>
+                        
+                        <div id="chat-sidebar-slider">
+                        
+                        </div>
+                        
+                        <!-- Chat Messages -->
+                        <div id="chat-messages">
+                            
+                            <script src="ajax/min/chatLoad.min.js"></script>
+                        
+                        </div>
+                        
+                        <!-- Message Input -->
+                        <div id="chat-messaging">
+                            
+                            <textarea id="messaging-message" wrap="soft" maxlength="250" placeholder="Send Message"></textarea>
+                            
+                            <script src="javascript/min/chatScript.min.js"></script>
+                        
+                        </div>
+                        
+                        <p id="chat-remaining" class="text middle right">Characters Left: 250</p>
+                    
+                    </div>
+                    
+                    <!-- News Container -->
+                    <div id="content-news">
+                        
+                        <script src="ajax/min/newsLoad.min.js"></script>
+                        
+                        <!-- News Header -->
+                        <div id="news-header">
+                            
+                            <!-- News Heading -->
+                            <h1 id="news-heading" class="text heading left middle black">News</h1>
+                            
+                            <!-- News Search -->
+                            <input id="news-search" type="text" placeholder="Search..">
+                        
+                        </div>
+                        
+                        <script src="javascript/min/newsScript.min.js"></script>
+                        
+                        <!-- News Content -->
+                        <div id="news-content">
+                
+                ';
+                
+                // Query
+                $QUERY_NEWS = mysqli_query($conn, "
+                
+                SELECT
+                exchangeme.accounts.username,
+                exchangeme.news.date,
+                exchangeme.news.content
+                FROM exchangeme.news
+                INNER JOIN exchangeme.accounts ON exchangeme.news.userid = exchangeme.accounts.id
+                ORDER BY exchangeme.news.id DESC;
+                
+                ");
+                
+                // Fetch Results
+                $RESULT_NEWS = mysqli_fetch_array($QUERY_NEWS);
+                
+                // Loop through the results
+                do {
+                    
+                    echo '
+                    
+                        <!-- News Content Container -->
+                        <div id="news-post-' . $ITERATOR_NEWS_CONTENT . '" class="news news-content-container">
+
+                            <!-- Profile Picture -->
+                            <div class="news news-profile-picture">
+                        
+                            </div>
+                        
+                            <!-- Author Name -->
+                            <p class="news news-author">' . $RESULT_NEWS[0] . '</p>
+                        
+                            <!-- Post Date -->
+                            <p class="news news-post-date">' . $RESULT_NEWS[1][8] . '' . $RESULT_NEWS[1][9] . '/' . $RESULT_NEWS[1][5] . '' . $RESULT_NEWS[1][6] . '/' . $RESULT_NEWS[1][2] . '' . $RESULT_NEWS[1][3] . '</p>
+                        
+                            <!-- Content -->
+                            <p class="news news-post-content">' . $RESULT_NEWS[2] . '</p>
+                        
+                        </div>
+                    
+                    ';
+
+                    // Increment the iterator
+                    $ITERATOR_NEWS_CONTENT++;
+
+                    // TODO: Create links to profile pages and posts for the date of another post
+
+                } while($RESULT_NEWS = mysqli_fetch_array($QUERY_NEWS));
+
+                echo '
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                ';
 
             }
-
+            
             ?>
 
             <!-- Footer Container -->

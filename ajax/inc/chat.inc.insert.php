@@ -22,13 +22,18 @@ if(
 
     INSERT INTO exchangeme.messages (
     exchangeme.messages.id,
-    exchangeme.messages.sender,
+    exchangeme.messages.userid,
     exchangeme.messages.date,
-    exchangeme.messages.message
+    exchangeme.messages.content
     )
     VALUES (
     DEFAULT,
-    '" . $_POST['Username'] . "',
+        (
+            SELECT
+            exchangeme.accounts.id
+            FROM exchangeme.accounts
+            WHERE exchangeme.accounts.username = '" . $_POST['Username'] . "'
+        ),
     DEFAULT,
     '" . $_POST['Message'] . "'
     );

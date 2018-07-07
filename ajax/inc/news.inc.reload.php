@@ -19,11 +19,11 @@ $ITERATOR_NEWS_CONTENT = 0;
 $QUERY_NEWS = mysqli_query($conn, "
 
 SELECT
-exchangeme.news.author,
+exchangeme.accounts.username,
 exchangeme.news.date,
 exchangeme.news.content
-FROM 
-exchangeme.news
+FROM exchangeme.news
+INNER JOIN exchangeme.accounts ON exchangeme.news.userid = exchangeme.accounts.id
 ORDER BY exchangeme.news.id DESC;
 
 ");
