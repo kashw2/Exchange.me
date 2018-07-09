@@ -5,4 +5,4 @@ CREATE TABLE `news` (
 `content` mediumtext NOT NULL,
 PRIMARY KEY (`id`),
 UNIQUE KEY `date_UNIQUE` (`date`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;

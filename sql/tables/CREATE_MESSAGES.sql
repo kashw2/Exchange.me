@@ -1,7 +1,7 @@
 CREATE TABLE `messages` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
 `userid` int(11) NOT NULL,
-`date` datetime NOT NULL,
-`contents` tinytext NOT NULL,
+`date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+`content` tinytext NOT NULL,
 PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
