@@ -46,6 +46,19 @@ if(
                 // Set the cookie
                 setcookie("loggedin", session_id(), time()+3600*24*365, '/');
 
+                // Query
+                $QUERY_UPDATE_SESSION_LOGIN = mysqli_query($conn, "
+                
+                UPDATE exchangeme.accounts 
+                SET exchangeme.accounts.lastlogin = CURRENT_TIME,
+                exchangeme.accounts.ip = '" . $_SERVER['REMOTE_ADDR'] . "',
+                exchangeme.accounts.session = '" . session_id() . "'
+                WHERE exchangeme.accounts.username = '" . htmlspecialchars($_GET['login-username']) . "'
+                OR exchangeme.accounts.email = '" . htmlspecialchars($_GET['login-username']) . "'
+                AND exchangeme.accounts.password = '" . htmlspecialchars(md5($_GET['login-password'])) . "';
+                
+                ");
+
                 // Resend headers
                 header("Location: index.php");
 
