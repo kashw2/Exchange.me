@@ -718,6 +718,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Append the button
                 document.getElementById("account-controls-panel").appendChild(HTMLButtonElement_Account_DeleteAccount);
 
+                // AJAX Timeout
+                setTimeout(function() {
+
+                    // Implement the AJAX Script
+                    let HTMLScriptElement_AJAX = document.createElement("script");
+                
+                    // Set the attributes
+                    HTMLScriptElement_AJAX.setAttribute("src", "ajax/min/sidebarLoad.min.js");
+                
+                    // Append the element
+                    document.getElementById("account-controls-panel").appendChild(HTMLScriptElement_AJAX);
+                
+                }, execTime); 
+
                 break;
                 case "Users":
                 // Delete Users contents
@@ -737,20 +751,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 break;
             }
 
-        }, execTime);
-
-        // AJAX Timeout
-        setTimeout(function() {
-
-            // Implement the AJAX Script
-            let HTMLScriptElement_AJAX = document.createElement("script");
-        
-            // Set the attributes
-            HTMLScriptElement_AJAX.setAttribute("src", "ajax/min/sidebarLoad.min.js");
-        
-            // Append the element
-            document.getElementById("account-controls-panel").appendChild(HTMLScriptElement_AJAX);
-        
         }, execTime);
 
     };
