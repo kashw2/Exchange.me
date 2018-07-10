@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 // Unapproved use and redistribution of this code and respective product is strictly prohibited.
 // Copyright© 2018 Keanu Ashwell all rights are reserved to the author, creator, registered 
@@ -17,7 +17,7 @@ $conn = mysqli_connect($DB_IP, $USERNAME, $PASSWORD, $DB_NAME);
 if($conn->connect_error) {
 
     // Kill and report error code
-    die("MySQL Error: Connection establishment unsuccessful. Er:" . mysql_errno());
+    die("MySQL Error: Connection establishment unsuccessful. Er:" . mysqli_error($conn));
 
 }
 
