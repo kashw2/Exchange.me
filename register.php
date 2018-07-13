@@ -66,10 +66,13 @@ if(
             // Set the cookie
             setcookie("loggedin", session_id(), time()+3600*24*365, '/');
 
-            // Resend headers
+            // Resend Headers
             header("Location: index.php");
 
         } else {
+
+            // Resend Headers
+            header("Location: index.php");
 
         }
 
