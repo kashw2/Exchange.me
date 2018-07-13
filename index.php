@@ -65,12 +65,27 @@ require_once('mysql.php');
                 
                 // Hoisted Variables
 
+                // Query
+                $QUERY_SESSION_LOGIN = mysqli_query($conn, "
+
+                SELECT
+                exchangeme.accounts.username,
+                exchangeme.accounts.session
+                FROM exchangeme.accounts
+                WHERE exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "';
+
+                ");
+
+                // Fetch results
+                $RESULTS_SESSION_LOGIN = mysqli_fetch_array($QUERY_SESSION_LOGIN);
+
                 $ITERATOR_NEWS_CONTENT = 0;
 
                 if(
-                    $_COOKIE['loggedin'] == true
-                    && !empty($_COOKIE['loggedin'])
-                    && isset($_SESSION['user']['username'])
+                    !$_COOKIE['loggedin']
+                    ||  !isset($_SESSION['user']['username'])
+                    ||  $_COOKIE['loggedin']
+                    &&  $RESULTS_SESSION_LOGIN[1] != $_COOKIE['loggedin']
                     ) {
                                 
                     echo '
@@ -128,12 +143,16 @@ require_once('mysql.php');
         
             // Home page setup
 
+            // Session Login
+
             // Not logged in
 
             // Check if loggedin cookie exists
             if(
                 !$_COOKIE['loggedin']
             ||  !isset($_SESSION['user']['username'])
+            ||  $_COOKIE['loggedin']
+            &&  $RESULTS_SESSION_LOGIN[1] != $_COOKIE['loggedin']
             ) {
 
                 echo '
@@ -219,22 +238,6 @@ require_once('mysql.php');
                 ';
 
             }
-
-            // Session Login
-
-            // Query
-            $QUERY_SESSION_LOGIN = mysqli_query($conn, "
-            
-            SELECT
-            exchangeme.accounts.username,
-            exchangeme.accounts.session
-            FROM exchangeme.accounts
-            WHERE exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "';
-
-            ");
-
-            // Fetch results
-            $RESULTS_SESSION_LOGIN = mysqli_fetch_array($QUERY_SESSION_LOGIN);
             
             // Login Display
 
