@@ -82,10 +82,9 @@ require_once('mysql.php');
                 $ITERATOR_NEWS_CONTENT = 0;
 
                 if(
-                    !$_COOKIE['loggedin']
-                    ||  !isset($_SESSION['user']['username'])
-                    ||  $_COOKIE['loggedin']
-                    &&  $RESULTS_SESSION_LOGIN[1] != $_COOKIE['loggedin']
+                    $_COOKIE['loggedin'] == true 
+                    && !empty($_COOKIE['loggedin']) 
+                    && isset($_SESSION['user']['username']) 
                     ) {
                                 
                     echo '
@@ -122,7 +121,12 @@ require_once('mysql.php');
                     
                     ';
                     
-                } else {
+                } else if(
+                    !$_COOKIE['loggedin']
+                    ||  !isset($_SESSION['user']['username'])
+                    ||  $_COOKIE['loggedin']
+                    &&  $RESULTS_SESSION_LOGIN[1] != $_COOKIE['loggedin']
+                ) {
                     
                     echo '
 
