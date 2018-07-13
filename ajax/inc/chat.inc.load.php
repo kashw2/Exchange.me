@@ -55,17 +55,19 @@ do {
     echo '
 
             <!-- User -->
-            <p class="message message-user">' . $RESULT_CHAT[0] . '</p>
+            <p class="message message-user">' . htmlspecialchars($RESULT_CHAT[0]) . '</p>
 
             <!-- Date Sent -->
-            <p class="message message-date">' . $RESULT_CHAT[1][11] . '' . $RESULT_CHAT[1][12] . '' . $RESULT_CHAT[1][13] . '' . $RESULT_CHAT[1][14] . '' . $RESULT_CHAT[1][15] . '</p>
+            <p class="message message-date">' . htmlspecialchars($RESULT_CHAT[1][11]) . '' . htmlspecialchars($RESULT_CHAT[1][12]) . '' . htmlspecialchars($RESULT_CHAT[1][13]) . '' . htmlspecialchars($RESULT_CHAT[1][14]) . '' . htmlspecialchars($RESULT_CHAT[1][15]) . '</p>
 
             <!-- Message -->
-            <p class="message message-contents">' . $RESULT_CHAT[2] . '</p>
+            <p class="message message-contents">' . htmlspecialchars($RESULT_CHAT[2]) . '</p>
 
         </div>
 
     ';
+
+    // TODO: Create less calls to htmlspecialchars when displaying the date of post
 
         // // Check who the sender was
         // if($RESULT_CHAT[0] == $_POST['Username']) {
