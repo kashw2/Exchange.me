@@ -28,4 +28,87 @@ $(document).ready(function() {
 
     });
 
+    // By default just load all online users
+
+    // AJAX
+    $("#options-tablecontainer").load("ajax/inc/users.inc.online.php", {
+        Type: "Online"
+        },
+
+        // Callback
+        function(responseText, statusText, xhr) {
+
+        }
+
+    );
+
+    // Repeat function every 5 minutes
+    let var_default_user_interval =  setInterval(function() {
+
+        // AJAX
+        $("#options-tablecontainer").load("ajax/inc/users.inc.online.php", {
+            Type: "Online"
+            },
+
+            // Callback
+            function(responseText, statusText, xhr) {
+
+            }
+
+        );
+
+    }, 60000*1);
+
+    // Altenative loads
+
+    // Check for click
+    $("#type-online").on("click", function() {
+
+        // Clear interval
+        clearInterval(var_default_user_interval);
+
+        // AJAX
+        $("#options-tablecontainer").load("ajax/inc/users.inc.online.php", {
+            Type: "Online"
+            },
+
+            // Callback
+            function(responseText, statusText, xhr) {
+
+            }
+
+        );
+
+    });
+
+    // Check for click
+    $("#type-friends").on("click", function() {
+
+        // Clear interval
+        clearInterval(var_default_user_interval);
+
+        // AJAX
+        $("#options-tablecontainer").load("ajax/inc/users.inc.online.php", {
+            Type: "Friends"
+            },
+
+            // Callback
+            function(responseText, statusText, xhr) {
+
+            }
+
+        );
+
+    });
+
+    // Check that the element is ready
+    $("#options-tablecontainer").on("load", function() {
+
+        // Check for element click
+        $("#options-refresh").on("click", function() {
+
+        });
+
+    });
+
 });
