@@ -727,6 +727,21 @@ div.news-post-content {
   text-align: left;
   padding: 0px 5px 0px 5px; }
 
+table.users-table,
+.table.users-table {
+  grid-column: auto;
+  grid-row: auto;
+  width: 100%; }
+  table.users-table th, table.users-table td,
+  .table.users-table th,
+  .table.users-table td {
+    width: auto;
+    color: #333333;
+    font-family: 'Lato', sans-serif;
+    font-size: 1em;
+    font-weight: 300;
+    text-align: left; }
+
 p.error,
 h1.error,
 h2.error,
