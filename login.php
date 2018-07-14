@@ -49,7 +49,7 @@ if(
                 // Query
                 $QUERY_UPDATE_SESSION_LOGIN = mysqli_query($conn, "
                 
-                UPDATE exchangeme.accounts 
+                UPDATE exchangeme.accounts
                 SET exchangeme.accounts.lastlogin = CURRENT_TIME,
                 exchangeme.accounts.ip = '" . $_SERVER['REMOTE_ADDR'] . "',
                 exchangeme.accounts.session = '" . session_id() . "'
