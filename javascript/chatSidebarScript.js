@@ -41,6 +41,10 @@ document.addEventListener('DOMContentLoaded', function() {
             case "Users":
             // Delete Users contents
 
+            // Remove all parental elements from the users pane
+            document.getElementById("users-options-panel").remove();
+            document.getElementById("users-online-panel").remove();
+
             break;
             case "Friends":
             // Delete Friends contents
@@ -728,13 +732,219 @@ document.addEventListener('DOMContentLoaded', function() {
                     HTMLScriptElement_AJAX.setAttribute("src", "ajax/min/sidebarLoad.min.js");
                 
                     // Append the element
-                    document.getElementById("account-controls-panel").appendChild(HTMLScriptElement_AJAX);
+                    document.getElementById("chat-sidebar-slider").appendChild(HTMLScriptElement_AJAX);
                 
                 }, execTime); 
 
                 break;
                 case "Users":
                 // Delete Users contents
+
+                // Create the panel
+                let HTMLDivElement_Users_Option_Panel = document.createElement("div");
+
+                // Set the panel attributes
+                HTMLDivElement_Users_Option_Panel.setAttribute("id", "users-options-panel");
+
+                // Style the attributes
+                HTMLDivElement_Users_Option_Panel.style.gridColumnStart = 1;
+                HTMLDivElement_Users_Option_Panel.style.gridColumnEnd = 3;
+                HTMLDivElement_Users_Option_Panel.style.gridRow = 2;
+                HTMLDivElement_Users_Option_Panel.style.display = "grid";
+                HTMLDivElement_Users_Option_Panel.style.gridTemplateColumns = "1fr 1fr";
+                HTMLDivElement_Users_Option_Panel.style.gridTemplateRows = "1fr 1fr";
+
+                // Append the element
+                document.getElementById("chat-sidebar-slider").appendChild(HTMLDivElement_Users_Option_Panel);
+
+                // Create the save button
+                let HTMLButtonElement_Users_Option_Refresh = document.createElement("button");
+
+                // Set the button textContext
+                HTMLButtonElement_Users_Option_Refresh.textContent = "Refresh";
+
+                // Set the button attributes
+                HTMLButtonElement_Users_Option_Refresh.setAttribute("id", "options-refresh");
+
+                // Style the button
+                HTMLButtonElement_Users_Option_Refresh.style.gridColumn = 1;
+                HTMLButtonElement_Users_Option_Refresh.style.gridRow = 1;
+                HTMLButtonElement_Users_Option_Refresh.style.justifySelf = "center";
+                HTMLButtonElement_Users_Option_Refresh.style.alignSelf = "center";
+                HTMLButtonElement_Users_Option_Refresh.style.color = "#FFFFFF";
+                HTMLButtonElement_Users_Option_Refresh.style.backgroundColor = "#00cc00";
+                HTMLButtonElement_Users_Option_Refresh.style.border = "1px solid #10ff10";
+                HTMLButtonElement_Users_Option_Refresh.style.borderRadius = "5px";
+                HTMLButtonElement_Users_Option_Refresh.style.height = "25px";
+                HTMLButtonElement_Users_Option_Refresh.style.width = "70%";
+                HTMLButtonElement_Users_Option_Refresh.style.fontFamily = "Lato, sans-serift";
+                HTMLButtonElement_Users_Option_Refresh.style.cursor = "pointer";
+
+                // Add event listner
+                HTMLButtonElement_Users_Option_Refresh.addEventListener("focusout", function() {
+
+                    // Style the button
+                    HTMLButtonElement_Users_Option_Refresh.style.outline = "none";
+
+                }, true);
+
+                // Add the event listner
+                HTMLButtonElement_Users_Option_Refresh.addEventListener("mouseover", function() {
+
+                    // Style the button
+                    HTMLButtonElement_Users_Option_Refresh.style.backgroundColor = "#02bf02";
+
+                }, true);
+
+                // Add the event listner
+                HTMLButtonElement_Users_Option_Refresh.addEventListener("mouseout", function() {
+                
+                    // Style the button
+                    HTMLButtonElement_Users_Option_Refresh.style.backgroundColor = "#00cc00";
+
+                }, true);
+
+                // Append the element
+                document.getElementById("users-options-panel").appendChild(HTMLButtonElement_Users_Option_Refresh);
+
+
+                // Create the panel
+                let HTMLDivElement_Users_Online_Panel = document.createElement("div");
+
+                // Set the panel attributes
+                HTMLDivElement_Users_Online_Panel.setAttribute("id", "users-online-panel");
+
+                // Style the attributes
+                HTMLDivElement_Users_Online_Panel.style.gridColumnStart = 1;
+                HTMLDivElement_Users_Online_Panel.style.gridColumnEnd = 3;
+                HTMLDivElement_Users_Online_Panel.style.gridRow = 3;
+                HTMLDivElement_Users_Online_Panel.style.display = "grid";
+                HTMLDivElement_Users_Online_Panel.style.gridTemplateColumns = "1fr";
+                HTMLDivElement_Users_Online_Panel.style.gridTemplateRows = "15px 1fr";
+
+                // Append the element
+                document.getElementById("chat-sidebar-slider").appendChild(HTMLDivElement_Users_Online_Panel);
+
+                // Create the element
+                let HTMLDivElement_Users_Online_TypeSelect = document.createElement("div");
+
+                // Set the element attributes
+                HTMLDivElement_Users_Online_TypeSelect.setAttribute("id", "options-userselect");
+
+                // Style the element
+                HTMLDivElement_Users_Online_TypeSelect.style.gridTemplateColumns = "50px 50px 1fr";
+                HTMLDivElement_Users_Online_TypeSelect.style.gridTemplateRows = "1fr";
+                HTMLDivElement_Users_Online_TypeSelect.style.display = "grid";
+                HTMLDivElement_Users_Online_TypeSelect.style.gridColumn = "auto";
+                HTMLDivElement_Users_Online_TypeSelect.style.gridRow = 1;
+
+                // Append the element
+                document.getElementById("users-online-panel").appendChild(HTMLDivElement_Users_Online_TypeSelect);
+
+                // Create the element
+                let HTMLParagraphElement_Users_Online_Type_Online = document.createElement("p");
+
+                // Set the textContext
+                HTMLParagraphElement_Users_Online_Type_Online.textContent = "Online";
+
+                // Set the element attributes
+                HTMLParagraphElement_Users_Online_Type_Online.setAttribute("id", "type-online");
+
+                // Style the element
+                HTMLParagraphElement_Users_Online_Type_Online.style.gridColumn = 1;
+                HTMLParagraphElement_Users_Online_Type_Online.style.gridRow = 1;
+                HTMLParagraphElement_Users_Online_Type_Online.style.justifySelf = "center";
+                HTMLParagraphElement_Users_Online_Type_Online.style.alignSelf = "center";
+                HTMLParagraphElement_Users_Online_Type_Online.style.color = "#00b8ff";
+                HTMLParagraphElement_Users_Online_Type_Online.style.fontFamily = "sans-serif";
+                HTMLParagraphElement_Users_Online_Type_Online.style.fontSize = "0.8em";
+                HTMLParagraphElement_Users_Online_Type_Online.style.letterSpacing = "0.5px";
+                HTMLParagraphElement_Users_Online_Type_Online.style.cursor = "pointer";
+
+                // Append the element
+                document.getElementById("options-userselect").appendChild(HTMLParagraphElement_Users_Online_Type_Online);
+
+                // Add the event listner
+                HTMLParagraphElement_Users_Online_Type_Online.addEventListener("mouseover", function() {
+
+                    // Style th element
+                    HTMLParagraphElement_Users_Online_Type_Online.style.textDecoration = "underline";
+
+                }, true);
+
+                // Add the event listner
+                HTMLParagraphElement_Users_Online_Type_Online.addEventListener("mouseout", function() {
+
+                    // Style th element
+                    HTMLParagraphElement_Users_Online_Type_Online.style.textDecoration = "none";
+
+                }, true);
+
+                // Create the element
+                let HTMLParagraphElement_Users_Online_Type_Friends = document.createElement("p");
+
+                // Set the textContext
+                HTMLParagraphElement_Users_Online_Type_Friends.textContent = "Friends";
+
+                // Set the element attributes
+                HTMLParagraphElement_Users_Online_Type_Friends.setAttribute("id", "type-online");
+
+                // Style the element
+                HTMLParagraphElement_Users_Online_Type_Friends.style.gridColumn = 2;
+                HTMLParagraphElement_Users_Online_Type_Friends.style.gridRow = 1;
+                HTMLParagraphElement_Users_Online_Type_Friends.style.justifySelf = "center";
+                HTMLParagraphElement_Users_Online_Type_Friends.style.alignSelf = "center";
+                HTMLParagraphElement_Users_Online_Type_Friends.style.color = "#00b8ff";
+                HTMLParagraphElement_Users_Online_Type_Friends.style.fontFamily = "sans-serif";
+                HTMLParagraphElement_Users_Online_Type_Friends.style.fontSize = "0.8em";
+                HTMLParagraphElement_Users_Online_Type_Friends.style.letterSpacing = "0.5px";
+                HTMLParagraphElement_Users_Online_Type_Friends.style.cursor = "pointer";
+
+                // Add the event listner
+                HTMLParagraphElement_Users_Online_Type_Friends.addEventListener("mouseover", function() {
+
+                    // Style th element
+                    HTMLParagraphElement_Users_Online_Type_Friends.style.textDecoration = "underline";
+
+                }, true);
+
+                // Add the event listner
+                HTMLParagraphElement_Users_Online_Type_Friends.addEventListener("mouseout", function() {
+
+                    // Style th element
+                    HTMLParagraphElement_Users_Online_Type_Friends.style.textDecoration = "none";
+
+                }, true);
+
+                // Append the element
+                document.getElementById("options-userselect").appendChild(HTMLParagraphElement_Users_Online_Type_Friends);
+
+                // Create the element
+                let HTMLDivElement_Users_Online_Table_Container = document.createElement("div");
+
+                // Set the element attributes
+                HTMLDivElement_Users_Online_Table_Container.setAttribute("id", "options-tablecontainer");
+
+                // Style the element
+                HTMLDivElement_Users_Online_Table_Container.style.gridColumn = "auto";
+                HTMLDivElement_Users_Online_Table_Container.style.gridRow = 2;
+
+                // Append the element
+                document.getElementById("users-online-panel").appendChild(HTMLDivElement_Users_Online_Table_Container);
+
+                // AJAX Timeout
+                setTimeout(function() {
+
+                    // Implement the AJAX Script
+                    let HTMLScriptElement_AJAX = document.createElement("script");
+                
+                    // Set the attributes
+                    HTMLScriptElement_AJAX.setAttribute("src", "ajax/min/sidebarLoad.min.js");
+                
+                    // Append the element
+                    document.getElementById("chat-sidebar-slider").appendChild(HTMLScriptElement_AJAX);
+                
+                }, execTime); 
 
                 break;
                 case "Friends":
@@ -829,7 +1039,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById("chat-sidebar-slider").style.width = "300px";
 
             // Init the base layout
-            Sidebar_Init_Base_Layout("Users", "1fr 25px", "25px 1fr 200px", 2, 1000);
+            Sidebar_Init_Base_Layout("Users", "1fr 25px", "25px 100px 1fr 100px", 2, 1000);
 
             // Change the tab opened
             var_openedTab = "Users";
@@ -851,7 +1061,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById("chat-sidebar-slider").style.width = "300px";
 
                 // Init the base layout
-                Sidebar_Init_Base_Layout("Users", "1fr 25px", "25px 1fr 200px", 2, 1000);
+                Sidebar_Init_Base_Layout("Users", "1fr 25px", "25px 100px 1fr 100px", 2, 1000);
 
                 // Change the tab opened
                 var_openedTab = "Users";
