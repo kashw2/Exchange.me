@@ -50,13 +50,13 @@ if(
                 </div>
 
                 <!-- Author Name -->
-                <p class="news news-author">' . $RESULT_NEWS[0] . '</p>
+                <p class="news news-author">' . htmlspecialchars($RESULT_NEWS[0]) . '</p>
 
                 <!-- Post Date -->
-                <p class="news news-post-date">' . $RESULT_NEWS[1][8] . '' . $RESULT_NEWS[1][9] . '/' . $RESULT_NEWS[1][5] . '' . $RESULT_NEWS[1][6] . '/' . $RESULT_NEWS[1][2] . '' . $RESULT_NEWS[1][3] . '</p>
+                <p class="news news-post-date">' . htmlspecialchars($RESULT_NEWS[1][8]) . '' . htmlspecialchars($RESULT_NEWS[1][9]) . '/' . htmlspecialchars($RESULT_NEWS[1][5]) . '' . htmlspecialchars($RESULT_NEWS[1][6]) . '/' . htmlspecialchars($RESULT_NEWS[1][2]) . '' . htmlspecialchars($RESULT_NEWS[1][3]) . '</p>
 
                 <!-- Content -->
-                <p class="news news-post-content">' . $RESULT_NEWS[2] . '</p>
+                <p class="news news-post-content">' . htmlspecialchars($RESULT_NEWS[2]) . '</p>
             
             </div>
         
