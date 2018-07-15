@@ -18,6 +18,8 @@ require_once('mysql.php');
 if(
     isset($_GET['login-username'])
 &&  isset($_GET['login-password'])
+&&  !empty($_GET['login-username'])
+&&  !empty($_GET['login-password'])
     ) {
 
         // Query
@@ -79,6 +81,13 @@ if(
             header("Location: index.php");
 
         }
+
+    } else {
+
+        // Error
+
+        // Resend headers
+        header("Location: index.php");
 
     }
 
