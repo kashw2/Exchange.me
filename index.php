@@ -82,9 +82,11 @@ require_once('mysql.php');
                 $ITERATOR_NEWS_CONTENT = 0;
 
                 if(
-                    $_COOKIE['loggedin'] == true 
-                    && !empty($_COOKIE['loggedin']) 
-                    && isset($_SESSION['user']['username']) 
+                    $_COOKIE['loggedin']
+                    &&  isset($_COOKIE['loggedin'])
+                    &&  $_COOKIE['loggedin'] == session_id()
+                    &&  $RESULTS_SESSION_LOGIN[1] == $_COOKIE['loggedin']
+                    &&  isset($_SESSION['user']['username'])
                     ) {
                                 
                     echo '
