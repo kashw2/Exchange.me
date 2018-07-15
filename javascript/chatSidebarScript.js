@@ -928,6 +928,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Style the element
                 HTMLDivElement_Users_Online_Table_Container.style.gridColumn = "auto";
                 HTMLDivElement_Users_Online_Table_Container.style.gridRow = 2;
+                HTMLDivElement_Users_Online_Table_Container.style.overflowY = "auto";
 
                 // Append the element
                 document.getElementById("users-online-panel").appendChild(HTMLDivElement_Users_Online_Table_Container);
