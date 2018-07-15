@@ -80,25 +80,31 @@ if(
             date_format($DATE_LOGIN_CREATE, "Y/m/d H:i:s.ms");
 
             // String Difference
-            $DIFFERENCE_STR = intval(date_diff($DATE_LOGIN_CREATE, $DATE_SEEN_CREATE)->format('%i')) - 60;
-            $DIFFERENCE = preg_replace("/[-]/", "", $DIFFERENCE_STR);
+            $DIFFERENCE_STR = intval(date_diff($DATE_LOGIN_CREATE, $DATE_SEEN_CREATE)->format('%i')) - 59;
+            $DIFFERENCE = preg_replace("/[-]/", "", $DIFFERENCE_STR) . " Minutes";
 
-            echo "
-            
-                <tbody>
-                    <tr class='table users-table'>
-                        <td class='table users-table'>" . $RESULT_CHECK_ONLINE[0] . "</td>
-                        <td class='table users-table'>" . $DIFFERENCE . " Minutes</td>
-                    </tr>
-                </tbody>
-                
-            ";
+            if(!empty($RESULT_CHECK_ONLINE[0])) {
+
+                echo "
+
+                    <tbody>
+                        <tr class='table users-table'>
+                            <td class='table users-table underline' value='" . $RESULT_CHECK_ONLINE[0] . "'>" . $RESULT_CHECK_ONLINE[0] . "</td>
+                            <td class='table users-table'>" . $DIFFERENCE . "</td>
+                        </tr>
+                    </tbody>
+
+                ";
+
+            }
 
         } while($RESULT_CHECK_ONLINE = mysqli_fetch_array($QUERY_CHECK_ONLINE));
 
     echo "
 
         </table>
+
+        <script src='javascript/min/usersProfileDisplayScript.min.js'></script>
 
     ";
 
