@@ -32,10 +32,10 @@ if(
             SELECT
             exchangeme.accounts.id
             FROM exchangeme.accounts
-            WHERE exchangeme.accounts.username = '" . htmlspecialchars($_POST['Username']) . "'
+            WHERE exchangeme.accounts.username = '" . strip_tags($_POST['Username']) . "'
         ),
     DEFAULT,
-    '" . htmlspecialchars($_POST['Message']) . "'
+    '" . strip_tags($_POST['Message']) . "'
     );
 
     ");
