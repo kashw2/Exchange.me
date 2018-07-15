@@ -21,6 +21,6 @@ $(document).ready(function() {
 
         );
 
-    }, 25000);
+    }, 60000);
 
 });
