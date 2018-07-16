@@ -18,8 +18,35 @@ for(var i = 0; i < document.getElementsByClassName("table users-table underline"
             HTMLDivElement_User_Container.setAttribute("class", "table users-table profile-display");
             HTMLDivElement_User_Container.setAttribute("data-profile", this.getAttribute("value"));
 
+            // Add the event listner
+            document.addEventListener("click", function(e) {
+
+                // Make sure element exists
+                if(document.getElementsByClassName("table users-table profile-display")[0]) {
+
+                    // Check that clicked element isnt apart of the user card
+                    if(e.target.getAttribute("class") == null) {
+
+                        // Remove the user card
+                        HTMLDivElement_User_Container.remove();
+
+                    }
+
+                    // Check that clicked element isnt apart of the user card
+                    if(!e.target.getAttribute("class").includes("profile")) {
+
+                        // Remove the user card
+                        HTMLDivElement_User_Container.remove();
+
+                    }
+
+                }
+
+            }, true);
+
             // Append the element
             document.getElementById("options-tablecontainer").appendChild(HTMLDivElement_User_Container);
+
 
             if(!document.getElementById("script-usercards")) {
 
