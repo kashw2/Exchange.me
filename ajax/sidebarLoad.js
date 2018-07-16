@@ -45,19 +45,24 @@ $(document).ready(function() {
     // Repeat function every 5 minutes
     let var_default_user_interval =  setInterval(function() {
 
-        // AJAX
-        $("#options-tablecontainer").load("ajax/inc/users.inc.online.php", {
-            Type: "Online"
-            },
+        // Check to make sure user isnt viewing a profile card
+        if(!$(".profile-display")) {
 
-            // Callback
-            function(responseText, statusText, xhr) {
+            // AJAX
+            $("#options-tablecontainer").load("ajax/inc/users.inc.online.php", {
+                Type: "Online"
+                },
 
-            }
+                // Callback
+                function(responseText, statusText, xhr) {
 
-        );
+                }
 
-    }, 60000*1);
+            );
+
+        }
+
+    }, 500*1);
 
     // Altenative loads
 

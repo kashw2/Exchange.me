@@ -731,16 +731,78 @@ table.users-table,
 .table.users-table {
   grid-column: auto;
   grid-row: auto;
-  width: 100%; }
+  width: 100%;
+  padding: 5px 0px 0px 0px; }
   table.users-table th, table.users-table td,
   .table.users-table th,
   .table.users-table td {
     width: auto;
     color: #333333;
     font-family: 'Lato', sans-serif;
-    font-size: 1em;
+    font-size: 0.83em;
     font-weight: 300;
-    text-align: left; }
+    text-align: left;
+    padding: 0px 0px 0px 5px; }
+    table.users-table th:hover.underline, table.users-table td:hover.underline,
+    .table.users-table th:hover.underline,
+    .table.users-table td:hover.underline {
+      text-decoration: underline;
+      cursor: pointer; }
+  table.users-table.profile-display,
+  .table.users-table.profile-display {
+    display: grid;
+    position: relative;
+    grid-template-columns: 30px 1fr;
+    grid-template-rows: 30px 30px 1fr;
+    top: 0px;
+    left: 5px;
+    height: 110px;
+    width: 300px;
+    background-color: transparent;
+    -webkit-animation-name: ProfileCardFadeIn;
+            animation-name: ProfileCardFadeIn;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s; }
+    table.users-table.profile-display .profile-image,
+    .table.users-table.profile-display .profile-image {
+      grid-column: 1;
+      grid-row: 1;
+      justify-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+      height: auto;
+      width: auto;
+      overflow: hidden; }
+    table.users-table.profile-display .profile-name,
+    .table.users-table.profile-display .profile-name {
+      grid-column: 2;
+      grid-row: 1;
+      justify-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+      font-family: 'Lato', sans-serif;
+      font-weight: 600;
+      font-size: 0.85em;
+      padding: 3px 0px 0px 10px; }
+      table.users-table.profile-display .profile-name:hover,
+      .table.users-table.profile-display .profile-name:hover {
+        text-decoration: underline; }
+    table.users-table.profile-display .profile-occupation,
+    .table.users-table.profile-display .profile-occupation {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row: 2;
+      justify-self: start;
+      -ms-flex-item-align: center;
+          align-self: center;
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      font-size: 0.85em;
+      padding: 0px 0px 0px 5px; }
 
 p.error,
 h1.error,
@@ -863,5 +925,15 @@ h6.success,
         width: 80%;
         background-color: #333333;
         border: 2px solid #00FF22; } } }
+@-webkit-keyframes ProfileCardFadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@keyframes ProfileCardFadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 
 /*# sourceMappingURL=index.css.map */

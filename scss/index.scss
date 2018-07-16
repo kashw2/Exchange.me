@@ -1270,6 +1270,8 @@ table,
 
         width: 100%;
 
+        padding: 5px 0px 0px 0px;
+
         th, td {
 
             width: auto;
@@ -1277,14 +1279,108 @@ table,
             color: $exchange-black;
 
             font-family: 'Lato', sans-serif;
-            font-size: 1em;
+            font-size: 0.83em;
             font-weight: 300;
 
             text-align: left;
 
+            padding: 0px 0px 0px 5px;
+
+            &:hover {
+
+                &.underline {
+
+                    text-decoration: underline;
+
+                    cursor: pointer;
+    
+                }
+
+            }
+
         }
         
         tr {
+
+        }
+
+        &.profile-display {
+
+            display: grid;
+
+            position: relative;
+
+            grid-template-columns: 30px 1fr;
+            grid-template-rows: 30px 30px 1fr;
+
+            top: 0px;
+            left: 5px;
+
+            height: 110px;
+            width: 300px;
+
+            background-color: transparent;
+
+            animation-name: ProfileCardFadeIn;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+            animation-duration: 1s;
+
+            .profile-image {
+
+                grid-column: 1;
+                grid-row: 1;
+
+                justify-self: center;
+                align-self: center;
+
+                height: auto;
+                width: auto;
+
+                overflow: hidden;
+
+            }
+
+            .profile-name {
+
+                grid-column: 2;
+                grid-row: 1;
+
+                justify-self: center;
+
+                align-self: center;
+
+                font-family: 'Lato', sans-serif;
+                font-weight: 600;
+                font-size: 0.85em;
+
+                padding: 3px 0px 0px 10px;
+
+                &:hover {
+
+                    text-decoration: underline;
+
+                }
+
+            }
+
+            .profile-occupation {
+
+                grid-column-start: 1;
+                grid-column-end: 3;
+                grid-row: 2;
+
+                justify-self: start;
+
+                align-self: center;
+
+                font-family: 'Lato', sans-serif;
+                font-weight: 300;
+                font-size: 0.85em;
+
+                padding: 0px 0px 0px 5px;
+
+            }
 
         }
 
@@ -1521,6 +1617,22 @@ h6,
             }
 
         }
+
+    }
+
+}
+
+@keyframes ProfileCardFadeIn {
+
+    from {
+
+        opacity: 0;
+
+    } 
+
+    to {
+
+        opacity: 1;
 
     }
 
