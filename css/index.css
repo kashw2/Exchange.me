@@ -759,6 +759,7 @@ table.users-table,
     height: 110px;
     width: 300px;
     background-color: transparent;
+    border-bottom: 1px solid #333333;
     -webkit-animation-name: ProfileCardFadeIn;
             animation-name: ProfileCardFadeIn;
     -webkit-animation-iteration-count: 1;
@@ -803,6 +804,50 @@ table.users-table,
       font-weight: 300;
       font-size: 0.85em;
       padding: 0px 0px 0px 5px; }
+    table.users-table.profile-display .action-container,
+    .table.users-table.profile-display .action-container {
+      display: grid;
+      grid-template-columns: 35px 35px 35px 1fr;
+      grid-template-rows: 1fr;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row: 3;
+      overflow: hidden; }
+    table.users-table.profile-display .action-wrapper,
+    .table.users-table.profile-display .action-wrapper {
+      position: relative;
+      grid-column: auto;
+      grid-row: auto;
+      justify-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+      top: -10px;
+      height: 100%;
+      width: 100%;
+      max-height: 25px;
+      max-width: 25px;
+      border: 2px solid #333333;
+      border-radius: 50%;
+      padding: 0px 0px 0px 0px;
+      cursor: pointer; }
+      table.users-table.profile-display .action-wrapper:hover,
+      .table.users-table.profile-display .action-wrapper:hover {
+        background-color: #f8f8f8; }
+    table.users-table.profile-display .add-user,
+    .table.users-table.profile-display .add-user {
+      position: relative;
+      top: -3.5px;
+      right: 0px; }
+    table.users-table.profile-display .remove-user,
+    .table.users-table.profile-display .remove-user {
+      position: relative;
+      top: -3.5px;
+      right: 0px; }
+    table.users-table.profile-display .block-user,
+    .table.users-table.profile-display .block-user {
+      position: relative;
+      top: -3.5px;
+      right: 0px; }
 
 p.error,
 h1.error,
