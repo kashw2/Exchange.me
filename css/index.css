@@ -774,8 +774,8 @@ table.users-table,
       justify-self: center;
       -ms-flex-item-align: center;
           align-self: center;
-      height: auto;
-      width: auto;
+      height: 24px;
+      width: 24px;
       overflow: hidden; }
     table.users-table.profile-display .profile-name,
     .table.users-table.profile-display .profile-name {
