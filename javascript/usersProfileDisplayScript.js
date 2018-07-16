@@ -33,7 +33,10 @@ for(var i = 0; i < document.getElementsByClassName("table users-table underline"
                     }
 
                     // Check that clicked element isnt apart of the user card
-                    if(!e.target.getAttribute("class").includes("profile")) {
+                    if(
+                        !e.target.getAttribute("class").includes("profile")
+                    &&  !e.target.getAttribute("class").includes("action")
+                    ) {
 
                         // Remove the user card
                         HTMLDivElement_User_Container.remove();

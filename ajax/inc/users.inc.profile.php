@@ -86,6 +86,26 @@ if(
 
     }
 
+    echo "
+    
+        <div class='table users-table action-container'>
+        
+            <div id='add-user' class='table users-table action-wrapper' data-user='" . $_POST['User'] . "'>
+
+                <object class='table users-table add-user' data='img/materialdesign/ic_add_24px.svg' type='image/svg+xml'></object>
+
+            </div>
+
+            <div id='block-user' class='table users-table action-wrapper' data-user='" . $_POST['User'] . "'>
+            
+                <object class='table users-table block-user block-user' data='img/materialdesign/ic_remove_24px.svg' type='image/svg+xml'></object>
+
+            </div>
+
+        </div>
+    
+    ";
+
 }
 
 ?>
