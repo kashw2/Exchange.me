@@ -929,11 +929,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 HTMLDivElement_Users_Online_Table_Container.style.gridColumn = "auto";
                 HTMLDivElement_Users_Online_Table_Container.style.gridRow = 2;
                 HTMLDivElement_Users_Online_Table_Container.style.overflowY = "auto";
+                HTMLDivElement_Users_Online_Table_Container.style.overflowX = "hidden";
 
                 // Append the element
                 document.getElementById("users-online-panel").appendChild(HTMLDivElement_Users_Online_Table_Container);
 
-                // AJAX Timeout
+                // Script Addition Timeout
                 setTimeout(function() {
 
                     // Implement the AJAX Script
@@ -944,7 +945,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                     // Append the element
                     document.getElementById("chat-sidebar-slider").appendChild(HTMLScriptElement_AJAX);
-                
+
                 }, execTime); 
 
                 break;
@@ -1037,7 +1038,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if(var_sliderOpened == false) {
 
             // Expand the slider
-            document.getElementById("chat-sidebar-slider").style.width = "300px";
+            document.getElementById("chat-sidebar-slider").style.width = "340px";
 
             // Init the base layout
             Sidebar_Init_Base_Layout("Users", "1fr 25px", "25px 100px 1fr 100px", 2, 1000);
@@ -1059,7 +1060,7 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(function() {
 
                 // Open the slider
-                document.getElementById("chat-sidebar-slider").style.width = "300px";
+                document.getElementById("chat-sidebar-slider").style.width = "340px";
 
                 // Init the base layout
                 Sidebar_Init_Base_Layout("Users", "1fr 25px", "25px 100px 1fr 100px", 2, 1000);
