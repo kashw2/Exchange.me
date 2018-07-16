@@ -9,7 +9,8 @@ CREATE TABLE `accounts` (
 `alias` varchar(45) DEFAULT NULL,
 `gender` varchar(45) NOT NULL,
 `age` int(11) DEFAULT '0',
-`occupation` varchar(100) DEFAULT NULL,
+`occupation` varchar(45) DEFAULT NULL,
+`company` varchar(45) DEFAULT NULL,
 `creationdate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
 `lastlogin` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
 `awards` varchar(45) DEFAULT '',
@@ -22,7 +23,6 @@ UNIQUE KEY `username_UNIQUE` (`username`),
 UNIQUE KEY `email_UNIQUE` (`email`),
 UNIQUE KEY `password_UNIQUE` (`password`),
 UNIQUE KEY `salt_UNIQUE` (`salt`),
-UNIQUE KEY `ip_UNIQUE` (`ip`),
 UNIQUE KEY `session_UNIQUE` (`session`),
 KEY `permissions_idx` (`permissionid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
