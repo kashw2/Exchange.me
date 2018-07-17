@@ -19,53 +19,17 @@ $(document).ready(function() {
 
     );
 
-    // AJAX
-    $("#add-user").on("click", function(e) {
-
-        $(document).load("ajax/inc/users.inc.add.friend.php", 
-        {
-        Username: $("#grid-content__loggedin").data("user"),
-        Friend: $("#add-user").data("user")
-        },
-
-            // Callback
-            function(responseTxt, statusTxt, xhr) {
-
-                // Response text check
-                switch(responseTxt) {
-                    case "true":
-
-                    // Change the attributes
-                    $(".add-user").attr("data", "img/materialdesign/ic_remove_24px.svg");
-                    $(".add-user").attr("id", "remove-user");
-
-                    break;
-                    case "friends":
-
-                    // Change the attributes
-                    $(".add-user").attr("data", "img/materialdesign/ic_remove_24px.svg");
-                    $(".add-user").attr("id", "remove-user");
-
-                    break;
-                }
-
-            }
-
-        );
-
-    });
-
     // Add the event listner to the document
     $(document).on("click", function(e) {
 
         // Alternative click method
-        if(e.target.getAttribute("id") == "remove-user") {
+        if(e.target.getAttribute("id") == "add-user") {
 
             // AJAX
-            $(document).load("ajax/inc/users.inc.remove.friend.php", 
+            $(document).load("ajax/inc/users.inc.add.friend.php", 
             {
             Username: $("#grid-content__loggedin").data("user"),
-            Friend: $("#remove-user").data("user")
+            Friend: $("#add-user").data("user")
             },
 
                 // Callback
@@ -76,15 +40,18 @@ $(document).ready(function() {
                         case "true":
 
                         // Change the attributes
-                        $(".remove-user").attr("data", "img/materialdesign/ic_add_24px.svg");
-                        $(".remove-user").attr("id", "add-user");
+                        $(".remove-user").attr("class", "table users-table add-user");
+                        $(".add-user").attr("data", "img/materialdesign/ic_remove_24px.svg");
+                        $("#add-user").attr("id", "remove-user");
+                        $("#remove-user").attr("title", "Remove Friend");
 
                         break;
                         case "friends":
 
                         // Change the attributes
-                        $(".remove-user").attr("data", "img/materialdesign/ic_add_24px.svg");
-                        $(".remove-user").attr("id", "add-user");
+                        $(".add-user").attr("data", "img/materialdesign/ic_remove_24px.svg");
+                        $("#add-user").attr("id", "remove-user");
+                        $("#remove-user").attr("title", "Remove Friend");
 
                         break;
                     }
@@ -93,8 +60,50 @@ $(document).ready(function() {
 
             );
 
+        } else {
+
+            // Alternative click method
+            if(e.target.getAttribute("id") == "remove-user") {
+
+                // AJAX
+                $(document).load("ajax/inc/users.inc.remove.friend.php", 
+                {
+                Username: $("#grid-content__loggedin").data("user"),
+                Friend: $("#remove-user").data("user")
+                },
+
+                    // Callback
+                    function(responseTxt, statusTxt, xhr) {
+
+                        // Response text check
+                        switch(responseTxt) {
+                            case "true":
+
+                            // Change the attributes
+                            $(".remove-user").attr("class", "table users-table add-user");
+                            $(".add-user").attr("data", "img/materialdesign/ic_add_24px.svg");
+                            $("#remove-user").attr("id", "add-user");
+                            $("#add-user").attr("title", "Add Friend");
+
+                            break;
+                            case "removed":
+
+                            // Change the attributes
+                            $(".remove-user").attr("data", "img/materialdesign/ic_add_24px.svg");
+                            $("#remove-user").attr("id", "add-user");
+                            $("#add-user").attr("title", "Add Friend");
+
+                            break;
+                        }
+
+                    }
+
+                );
+
+            }
+
         }
 
-    })
+    });
 
 });
