@@ -120,7 +120,7 @@ if(
     FROM exchangeme.accounts
     WHERE exchangeme.accounts.username = '" . $_POST['CurrentUser'] . "';
 
-    ") or die(mysqli_error($conn));
+    ");
 
     // Fetch Results
     $RESULT_CHECK_USER = mysqli_fetch_array($QUERY_CHECK_USER);
