@@ -8,13 +8,13 @@ exchangeme.friends.datestart
         exchangeme.accounts.id
         FROM exchangeme.accounts
         WHERE exchangeme.accounts.username = 'Keanu Ashwell'
-        AND exchangeme.accounts.session = '2dj28dha8wd207808221dwa'
+        AND exchangeme.accounts.session = 'd78wa82769n7d2yuaijda'
     ),
     (
         SELECT
-        exchangeme.account.id
+        exchangeme.accounts.id
         FROM exchangeme.accounts
         WHERE exchangeme.accounts.username = 'Test'
     ),
 DEFAULT
-)
+);
