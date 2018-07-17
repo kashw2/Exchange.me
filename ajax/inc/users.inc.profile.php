@@ -111,12 +111,27 @@ if(
 
     // Fetch Results
     $RESULT_CHECK_RELATIONSHIP = mysqli_fetch_array($QUERY_CHECK_RELATIONSHIP);
+    
+    // Query
+    $QUERY_CHECK_USER = mysqli_query($conn, "
+    
+    SELECT
+    exchangeme.accounts.username
+    FROM exchangeme.accounts
+    WHERE exchangeme.accounts.username = '" . $_POST['CurrentUser'] . "';
+
+    ") or die(mysqli_error($conn));
+
+    // Fetch Results
+    $RESULT_CHECK_USER = mysqli_fetch_array($QUERY_CHECK_USER);
 
     echo "
     
         <div class='table users-table action-container'>
             
         ";
+
+        if($RESULT_CHECK_USER[0] != $_POST['User']) {
 
             if(mysqli_num_rows($QUERY_CHECK_RELATIONSHIP) == 0) {
 
@@ -154,7 +169,9 @@ if(
 
         </div>
     
-    ";
+        ";
+
+    }
 
 }
 
