@@ -65,6 +65,8 @@ require_once('mysql.php');
                 
                 // Hoisted Variables
 
+                // Session login
+
                 // Query
                 $QUERY_SESSION_LOGIN = mysqli_query($conn, "
 
@@ -148,8 +150,6 @@ require_once('mysql.php');
             <?php
         
             // Home page setup
-
-            // Session Login
 
             // Not logged in
 
@@ -281,9 +281,7 @@ require_once('mysql.php');
                         
                             <div id="sidebar-account" class="sidebar sidebar-element"></div>
                             <div id="sidebar-users" class="sidebar sidebar-element"></div>
-                            <div id="sidebar-friends" class="sidebar sidebar-element"></div>
-                            <div id="sidebar-blocked" class="sidebar sidebar-element"></div>
-                            <div id="sidebar-settings" class="sidebar sidebar-element"></div>
+                            <!--<div id="sidebar-settings" class="sidebar sidebar-element"></div>-->
                         
                             <script src="javascript/min/chatSidebarScript.min.js"></script>
                         
