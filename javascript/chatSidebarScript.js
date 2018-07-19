@@ -88,15 +88,27 @@ document.addEventListener('DOMContentLoaded', function() {
             HTMLParagraphElement_Account_Settings.setAttribute("id", "slider-" + title.toLowerCase());
 
             // Style the heading
+            HTMLParagraphElement_Account_Settings.gridColumnStart = 4;
+            HTMLParagraphElement_Account_Settings.style.gridColumnEnd = 4;
+            HTMLParagraphElement_Account_Settings.style.gridRow = 1;
             HTMLParagraphElement_Account_Settings.style.justifySelf = "center";
             HTMLParagraphElement_Account_Settings.style.alignSelf = "center";
             HTMLParagraphElement_Account_Settings.style.fontFamily = "Lato, sans-serif";
-            HTMLParagraphElement_Account_Settings.style.gridColumnStart = 1;
-            HTMLParagraphElement_Account_Settings.style.gridColumnEnd = 4;
-            HTMLParagraphElement_Account_Settings.style.gridRow = 1;
 
-            // Set the heading text
-            HTMLParagraphElement_Account_Settings.textContent = title + " Settings";
+
+            // Check to make sure only tabs that arent settings have postfix added
+            if(title != "Settings") {
+
+                // Set the heading text
+                HTMLParagraphElement_Account_Settings.textContent = title + " Settings";
+
+            } else {
+
+                // Set the heading text
+                HTMLParagraphElement_Account_Settings.textContent = title;
+
+
+            }
 
             // Append the heading
             document.getElementById("chat-sidebar-slider").appendChild(HTMLParagraphElement_Account_Settings);
@@ -167,8 +179,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 HTMLParagraphElement_Account_Intro.style.gridRow = 2;
                 HTMLParagraphElement_Account_Intro.style.justifySelf = "start";
                 HTMLParagraphElement_Account_Intro.style.alignSelf = "center";
-                HTMLParagraphElement_Account_Intro.style.paddingLeft = "10px";
                 HTMLParagraphElement_Account_Intro.style.fontFamily = "Lato, sans-serif";
+                HTMLParagraphElement_Account_Intro.style.paddingLeft = "10px";
 
                 // Append the child
                 document.getElementById("chat-sidebar-slider").appendChild(HTMLParagraphElement_Account_Intro);
@@ -188,8 +200,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 HTMLParagraphElement_Account_Intro_Name.style.gridRow = 3;
                 HTMLParagraphElement_Account_Intro_Name.style.justifySelf = "start";
                 HTMLParagraphElement_Account_Intro_Name.style.alignSelf = "start";
-                HTMLParagraphElement_Account_Intro_Name.style.paddingLeft = "10px";
                 HTMLParagraphElement_Account_Intro_Name.style.fontFamily = "Lato, sans-serif";
+                HTMLParagraphElement_Account_Intro_Name.style.paddingLeft = "10px";
 
                 // Add the event listner
                 HTMLParagraphElement_Account_Intro_Name.addEventListener("mouseover", function() {
@@ -217,12 +229,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 HTMLDivElement_Account_Options_Panel.setAttribute("id", "account-options-panel");
 
                 // Set the panel style
-                HTMLDivElement_Account_Options_Panel.style.gridColumnStart = 1;
-                HTMLDivElement_Account_Options_Panel.style.gridColumnEnd = 3;
-                HTMLDivElement_Account_Options_Panel.style.gridRow = 4;
                 HTMLDivElement_Account_Options_Panel.style.display = "grid";
                 HTMLDivElement_Account_Options_Panel.style.gridTemplateColumns = "95px 1fr";
                 HTMLDivElement_Account_Options_Panel.style.gridTemplateRows = "30px 30px 30px 30px 30px 30px 30px 30px 30px 30px 1fr 30px";
+                HTMLDivElement_Account_Options_Panel.style.gridColumnStart = 1;
+                HTMLDivElement_Account_Options_Panel.style.gridColumnEnd = 3;
+                HTMLDivElement_Account_Options_Panel.style.gridRow = 4;
 
                 // Append the options panel
                 document.getElementById("chat-sidebar-slider").appendChild(HTMLDivElement_Account_Options_Panel);
@@ -241,8 +253,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 HTMLParagraphElement_Account_Email.style.gridRow = 1;
                 HTMLParagraphElement_Account_Email.style.justifySelf = "center";
                 HTMLParagraphElement_Account_Email.style.alignSelf = "center";
-                HTMLParagraphElement_Account_Email.style.paddingLeft = "10px";
                 HTMLParagraphElement_Account_Email.style.fontFamily = "Lato, sans-serif";
+                HTMLParagraphElement_Account_Email.style.paddingLeft = "10px";
 
                 // Append the heading
                 document.getElementById("account-options-panel").appendChild(HTMLParagraphElement_Account_Email);
@@ -257,23 +269,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Style the input
                 HTMLInputElement_Account_Email.style.gridColumn = 2;
                 HTMLInputElement_Account_Email.style.gridRow = 1;
-                HTMLInputElement_Account_Email.style.height = "20px";
-                HTMLInputElement_Account_Email.style.width = "90%";
                 HTMLInputElement_Account_Email.style.justifySelf = "center";
                 HTMLInputElement_Account_Email.style.alignSelf = "center";
-                HTMLInputElement_Account_Email.style.border = "none";
+                HTMLInputElement_Account_Email.style.height = "20px";
+                HTMLInputElement_Account_Email.style.width = "90%";
                 HTMLInputElement_Account_Email.style.backgroundColor = "#f3f3f3";
                 HTMLInputElement_Account_Email.style.fontFamily = "Lato, sans-serif";
+                HTMLInputElement_Account_Email.style.border = "none";
 
                 // Add the event listner
                 HTMLInputElement_Account_Email.addEventListener("click", function() {
 
                     // Style the element
+                    HTMLInputElement_Account_Email.style.backgroundColor = "transparent";
                     HTMLInputElement_Account_Email.style.borderTop = "none";
                     HTMLInputElement_Account_Email.style.borderRight = "none";
                     HTMLInputElement_Account_Email.style.borderBottom = "1px solid #000000";
                     HTMLInputElement_Account_Email.style.borderLeft = "none";
-                    HTMLInputElement_Account_Email.style.backgroundColor = "transparent";
 
                 }, true);
 
@@ -284,8 +296,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     if(HTMLInputElement_Account_Email.value == "") {
 
                         // Style the element
-                        HTMLInputElement_Account_Email.style.border = "none";
                         HTMLInputElement_Account_Email.style.backgroundColor = "#f3f3f3";
+                        HTMLInputElement_Account_Email.style.border = "none";
                         HTMLInputElement_Account_Email.style.paddingLeft = "5px";
 
                     }
@@ -318,8 +330,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 HTMLParagraphElement_Account_Username.style.gridRow = 2;
                 HTMLParagraphElement_Account_Username.style.justifySelf = "center";
                 HTMLParagraphElement_Account_Username.style.alignSelf = "center";
-                HTMLParagraphElement_Account_Username.style.paddingLeft = "10px";
                 HTMLParagraphElement_Account_Username.style.fontFamily = "Lato, sans-serif";
+                HTMLParagraphElement_Account_Username.style.paddingLeft = "10px";
 
                 // Append the heading
                 document.getElementById("account-options-panel").appendChild(HTMLParagraphElement_Account_Username);
@@ -333,23 +345,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Style the input
                 HTMLInputElement_Account_Username.style.gridColumn = 2;
                 HTMLInputElement_Account_Username.style.gridRow = 2;
-                HTMLInputElement_Account_Username.style.height = "20px";
-                HTMLInputElement_Account_Username.style.width = "90%";
                 HTMLInputElement_Account_Username.style.justifySelf = "center";
                 HTMLInputElement_Account_Username.style.alignSelf = "center";
-                HTMLInputElement_Account_Username.style.border = "none";
                 HTMLInputElement_Account_Username.style.backgroundColor = "#f3f3f3";
                 HTMLInputElement_Account_Username.style.fontFamily = "Lato, sans-serif";
+                HTMLInputElement_Account_Username.style.height = "20px";
+                HTMLInputElement_Account_Username.style.width = "90%";
+                HTMLInputElement_Account_Username.style.border = "none";
 
                 // Add the event listner
                 HTMLInputElement_Account_Username.addEventListener("click", function() {
 
                     // Style the element
+                    HTMLInputElement_Account_Username.style.backgroundColor = "transparent";
                     HTMLInputElement_Account_Username.style.borderTop = "none";
                     HTMLInputElement_Account_Username.style.borderRight = "none";
                     HTMLInputElement_Account_Username.style.borderBottom = "1px solid #000000";
                     HTMLInputElement_Account_Username.style.borderLeft = "none";
-                    HTMLInputElement_Account_Username.style.backgroundColor = "transparent";
 
                 }, true);
 
@@ -360,8 +372,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     if(HTMLInputElement_Account_Username.value == "") {
 
                         // Style the element
-                        HTMLInputElement_Account_Username.style.border = "none";
                         HTMLInputElement_Account_Username.style.backgroundColor = "#f3f3f3";
+                        HTMLInputElement_Account_Username.style.border = "none";
                         HTMLInputElement_Account_Username.style.paddingLeft = "5px";
 
                     }
@@ -394,8 +406,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 HTMLParagraphElement_Account_Password.style.gridRow = 3;
                 HTMLParagraphElement_Account_Password.style.justifySelf = "center";
                 HTMLParagraphElement_Account_Password.style.alignSelf = "center";
-                HTMLParagraphElement_Account_Password.style.paddingLeft = "10px";
                 HTMLParagraphElement_Account_Password.style.fontFamily = "Lato, sans-serif";
+                HTMLParagraphElement_Account_Password.style.paddingLeft = "10px";
 
                 // Append the heading
                 document.getElementById("account-options-panel").appendChild(HTMLParagraphElement_Account_Password);
@@ -410,23 +422,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Style the input
                 HTMLInputElement_Account_Password.style.gridColumn = 2;
                 HTMLInputElement_Account_Password.style.gridRow = 3;
-                HTMLInputElement_Account_Password.style.height = "20px";
-                HTMLInputElement_Account_Password.style.width = "90%";
                 HTMLInputElement_Account_Password.style.justifySelf = "center";
                 HTMLInputElement_Account_Password.style.alignSelf = "center";
+                HTMLInputElement_Account_Password.style.height = "20px";
+                HTMLInputElement_Account_Password.style.width = "90%";
                 HTMLInputElement_Account_Password.style.border = "none";
-                HTMLInputElement_Account_Password.style.backgroundColor = "#f3f3f3";
                 HTMLInputElement_Account_Password.style.fontFamily = "Lato, sans-serif";
+                HTMLInputElement_Account_Password.style.backgroundColor = "#f3f3f3";
 
                 // Add the event listner
                 HTMLInputElement_Account_Password.addEventListener("click", function() {
 
                     // Style the element
+                    HTMLInputElement_Account_Password.style.backgroundColor = "transparent";
                     HTMLInputElement_Account_Password.style.borderTop = "none";
                     HTMLInputElement_Account_Password.style.borderRight = "none";
                     HTMLInputElement_Account_Password.style.borderBottom = "1px solid #000000";
                     HTMLInputElement_Account_Password.style.borderLeft = "none";
-                    HTMLInputElement_Account_Password.style.backgroundColor = "transparent";
 
                 }, true);
 
@@ -437,8 +449,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     if(HTMLInputElement_Account_Password.value == "") {
 
                         // Style the element
-                        HTMLInputElement_Account_Password.style.border = "none";
                         HTMLInputElement_Account_Password.style.backgroundColor = "#f3f3f3";
+                        HTMLInputElement_Account_Password.style.border = "none";
                         HTMLInputElement_Account_Password.style.paddingLeft = "5px";
 
                     }
@@ -471,8 +483,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 HTMLParagraphElement_Account_Alias.style.gridRow = 4;
                 HTMLParagraphElement_Account_Alias.style.justifySelf = "center";
                 HTMLParagraphElement_Account_Alias.style.alignSelf = "center";
-                HTMLParagraphElement_Account_Alias.style.paddingLeft = "10px";
                 HTMLParagraphElement_Account_Alias.style.fontFamily = "Lato, sans-serif";
+                HTMLParagraphElement_Account_Alias.style.paddingLeft = "10px";
 
                 // Append the heading
                 document.getElementById("account-options-panel").appendChild(HTMLParagraphElement_Account_Alias);
@@ -486,23 +498,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Style the input
                 HTMLInputElement_Account_Alias.style.gridColumn = 2;
                 HTMLInputElement_Account_Alias.style.gridRow = 4;
-                HTMLInputElement_Account_Alias.style.height = "20px";
-                HTMLInputElement_Account_Alias.style.width = "90%";
                 HTMLInputElement_Account_Alias.style.justifySelf = "center";
                 HTMLInputElement_Account_Alias.style.alignSelf = "center";
-                HTMLInputElement_Account_Alias.style.border = "none";
+                HTMLInputElement_Account_Alias.style.height = "20px";
+                HTMLInputElement_Account_Alias.style.width = "90%";
                 HTMLInputElement_Account_Alias.style.backgroundColor = "#f3f3f3";
                 HTMLInputElement_Account_Alias.style.fontFamily = "Lato, sans-serif";
+                HTMLInputElement_Account_Alias.style.border = "none";
 
                 // Add the event listner
                 HTMLInputElement_Account_Alias.addEventListener("click", function() {
 
                     // Style the element
+                    HTMLInputElement_Account_Alias.style.backgroundColor = "transparent";
                     HTMLInputElement_Account_Alias.style.borderTop = "none";
                     HTMLInputElement_Account_Alias.style.borderRight = "none";
                     HTMLInputElement_Account_Alias.style.borderBottom = "1px solid #000000";
                     HTMLInputElement_Account_Alias.style.borderLeft = "none";
-                    HTMLInputElement_Account_Alias.style.backgroundColor = "transparent";
 
                 }, true);
 
@@ -513,8 +525,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     if(HTMLInputElement_Account_Alias.value == "") {
 
                         // Style the element
-                        HTMLInputElement_Account_Alias.style.border = "none";
                         HTMLInputElement_Account_Alias.style.backgroundColor = "#f3f3f3";
+                        HTMLInputElement_Account_Alias.style.border = "none";
                         HTMLInputElement_Account_Alias.style.paddingLeft = "5px";
 
                     }
@@ -549,14 +561,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 HTMLButtonElement_Account_Save.style.gridRow = 12;
                 HTMLButtonElement_Account_Save.style.justifySelf = "end";
                 HTMLButtonElement_Account_Save.style.alignSelf = "center";
-                HTMLButtonElement_Account_Save.style.color = "#FFFFFF";
                 HTMLButtonElement_Account_Save.style.backgroundColor = "#00cc00";
-                HTMLButtonElement_Account_Save.style.border = "1px solid #10ff10";
-                HTMLButtonElement_Account_Save.style.borderRadius = "5px";
+                HTMLButtonElement_Account_Save.style.color = "#FFFFFF";
                 HTMLButtonElement_Account_Save.style.height = "30px";
                 HTMLButtonElement_Account_Save.style.width = "45%";
-                HTMLButtonElement_Account_Save.style.margin = "0px 10px 20px 0px";
                 HTMLButtonElement_Account_Save.style.fontFamily = "Lato, sans-serift";
+                HTMLButtonElement_Account_Save.style.border = "1px solid #10ff10";
+                HTMLButtonElement_Account_Save.style.borderRadius = "5px";
+                HTMLButtonElement_Account_Save.style.margin = "0px 10px 20px 0px";
                 HTMLButtonElement_Account_Save.style.cursor = "pointer";
                 HTMLButtonElement_Account_Save.style.transition = "background-color 250ms ease";
 
@@ -617,12 +629,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 HTMLDivElement_Account_Controls_Panel.setAttribute("id", "account-controls-panel");
 
                 // Set the panel style
-                HTMLDivElement_Account_Controls_Panel.style.gridColumnStart = 1;
-                HTMLDivElement_Account_Controls_Panel.style.gridColumnEnd = 3;
-                HTMLDivElement_Account_Controls_Panel.style.gridRow = 5;
                 HTMLDivElement_Account_Controls_Panel.style.display = "grid";
                 HTMLDivElement_Account_Controls_Panel.style.gridTemplateColumns = "1fr 1fr";
                 HTMLDivElement_Account_Controls_Panel.style.gridTemplateRows = "1fr 1fr 1fr";
+                HTMLDivElement_Account_Controls_Panel.style.gridColumnStart = 1;
+                HTMLDivElement_Account_Controls_Panel.style.gridColumnEnd = 3;
+                HTMLDivElement_Account_Controls_Panel.style.gridRow = 5;
 
                 // Append the options panel
                 document.getElementById("chat-sidebar-slider").appendChild(HTMLDivElement_Account_Controls_Panel);
@@ -641,11 +653,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 HTMLHeadingElement_Account_DangerZone.style.gridColumnEnd = 3;
                 HTMLHeadingElement_Account_DangerZone.style.justifySelf = "start";
                 HTMLHeadingElement_Account_DangerZone.style.alignSelf = "start";
+                HTMLHeadingElement_Account_DangerZone.style.color = "#de1414";
+                HTMLHeadingElement_Account_DangerZone.style.fontFamily = "Montserrat, sans-serif";
+                HTMLHeadingElement_Account_DangerZone.style.letterSpacing = "-1px";
                 HTMLHeadingElement_Account_DangerZone.style.marginLeft = "10px";
                 HTMLHeadingElement_Account_DangerZone.style.paddingTop = "5px";
-                HTMLHeadingElement_Account_DangerZone.style.fontFamily = "Montserrat, sans-serif";
-                HTMLHeadingElement_Account_DangerZone.style.color = "#de1414";
-                HTMLHeadingElement_Account_DangerZone.style.letterSpacing = "-1px";
                 HTMLHeadingElement_Account_DangerZone.style.transition = "all 500ms ease-in-out";
 
                 // Add the event listner
@@ -677,17 +689,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 HTMLButtonElement_Account_DeleteAccount.textContent = "Delete Account";
 
                 // Style the button
-                HTMLButtonElement_Account_DeleteAccount.style.color = "#ffa500";
                 HTMLButtonElement_Account_DeleteAccount.style.gridColumn = 1;
                 HTMLButtonElement_Account_DeleteAccount.style.gridRow = 2;
                 HTMLButtonElement_Account_DeleteAccount.style.width = "80%";
                 HTMLButtonElement_Account_DeleteAccount.style.height = "35px";
                 HTMLButtonElement_Account_DeleteAccount.style.justifySelf = "center";
                 HTMLButtonElement_Account_DeleteAccount.style.alignSelf = "center";
+                HTMLButtonElement_Account_DeleteAccount.style.color = "#ffa500";
+                HTMLButtonElement_Account_DeleteAccount.style.fontFamily = "Montserrat, sans-serif";
                 HTMLButtonElement_Account_DeleteAccount.style.backgroundColor = "#FFFFFF";
                 HTMLButtonElement_Account_DeleteAccount.style.borderRadius = "5px";
                 HTMLButtonElement_Account_DeleteAccount.style.border = "1px solid #efefef";
-                HTMLButtonElement_Account_DeleteAccount.style.fontFamily = "Montserrat, sans-serif";
                 HTMLButtonElement_Account_DeleteAccount.style.cursor = "pointer";
                 HTMLButtonElement_Account_DeleteAccount.style.transition = "background-color 250ms ease";
 
@@ -739,12 +751,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 HTMLDivElement_Users_Option_Panel.setAttribute("id", "users-options-panel");
 
                 // Style the attributes
-                HTMLDivElement_Users_Option_Panel.style.gridColumnStart = 1;
-                HTMLDivElement_Users_Option_Panel.style.gridColumnEnd = 3;
-                HTMLDivElement_Users_Option_Panel.style.gridRow = 2;
                 HTMLDivElement_Users_Option_Panel.style.display = "grid";
                 HTMLDivElement_Users_Option_Panel.style.gridTemplateColumns = "1fr 1fr";
                 HTMLDivElement_Users_Option_Panel.style.gridTemplateRows = "1fr 1fr";
+                HTMLDivElement_Users_Option_Panel.style.gridColumnStart = 1;
+                HTMLDivElement_Users_Option_Panel.style.gridColumnEnd = 3;
+                HTMLDivElement_Users_Option_Panel.style.gridRow = 2;
 
                 // Append the element
                 document.getElementById("chat-sidebar-slider").appendChild(HTMLDivElement_Users_Option_Panel);
@@ -763,13 +775,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 HTMLButtonElement_Users_Option_Refresh.style.gridRow = 1;
                 HTMLButtonElement_Users_Option_Refresh.style.justifySelf = "center";
                 HTMLButtonElement_Users_Option_Refresh.style.alignSelf = "center";
-                HTMLButtonElement_Users_Option_Refresh.style.color = "#FFFFFF";
-                HTMLButtonElement_Users_Option_Refresh.style.backgroundColor = "#00cc00";
-                HTMLButtonElement_Users_Option_Refresh.style.border = "1px solid #10ff10";
-                HTMLButtonElement_Users_Option_Refresh.style.borderRadius = "5px";
                 HTMLButtonElement_Users_Option_Refresh.style.height = "25px";
                 HTMLButtonElement_Users_Option_Refresh.style.width = "70%";
+                HTMLButtonElement_Users_Option_Refresh.style.color = "#FFFFFF";
+                HTMLButtonElement_Users_Option_Refresh.style.backgroundColor = "#00cc00";
                 HTMLButtonElement_Users_Option_Refresh.style.fontFamily = "Lato, sans-serift";
+                HTMLButtonElement_Users_Option_Refresh.style.border = "1px solid #10ff10";
+                HTMLButtonElement_Users_Option_Refresh.style.borderRadius = "5px";
                 HTMLButtonElement_Users_Option_Refresh.style.cursor = "pointer";
 
                 // Add event listner
@@ -807,12 +819,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 HTMLDivElement_Users_Online_Panel.setAttribute("id", "users-online-panel");
 
                 // Style the attributes
-                HTMLDivElement_Users_Online_Panel.style.gridColumnStart = 1;
-                HTMLDivElement_Users_Online_Panel.style.gridColumnEnd = 3;
-                HTMLDivElement_Users_Online_Panel.style.gridRow = 3;
                 HTMLDivElement_Users_Online_Panel.style.display = "grid";
                 HTMLDivElement_Users_Online_Panel.style.gridTemplateColumns = "1fr";
                 HTMLDivElement_Users_Online_Panel.style.gridTemplateRows = "15px 1fr";
+                HTMLDivElement_Users_Online_Panel.style.gridColumnStart = 1;
+                HTMLDivElement_Users_Online_Panel.style.gridColumnEnd = 3;
+                HTMLDivElement_Users_Online_Panel.style.gridRow = 3;
 
                 // Append the element
                 document.getElementById("chat-sidebar-slider").appendChild(HTMLDivElement_Users_Online_Panel);
@@ -824,9 +836,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 HTMLDivElement_Users_Online_TypeSelect.setAttribute("id", "options-userselect");
 
                 // Style the element
+                HTMLDivElement_Users_Online_TypeSelect.style.display = "grid";
                 HTMLDivElement_Users_Online_TypeSelect.style.gridTemplateColumns = "50px 50px 1fr";
                 HTMLDivElement_Users_Online_TypeSelect.style.gridTemplateRows = "1fr";
-                HTMLDivElement_Users_Online_TypeSelect.style.display = "grid";
                 HTMLDivElement_Users_Online_TypeSelect.style.gridColumn = "auto";
                 HTMLDivElement_Users_Online_TypeSelect.style.gridRow = 1;
 
@@ -920,8 +932,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Style the element
                 HTMLDivElement_Users_Online_Table_Container.style.gridColumn = "auto";
                 HTMLDivElement_Users_Online_Table_Container.style.gridRow = 2;
-                HTMLDivElement_Users_Online_Table_Container.style.overflowY = "auto";
                 HTMLDivElement_Users_Online_Table_Container.style.overflowX = "hidden";
+                HTMLDivElement_Users_Online_Table_Container.style.overflowY = "auto";
 
                 // Append the element
                 document.getElementById("users-online-panel").appendChild(HTMLDivElement_Users_Online_Table_Container);
@@ -958,9 +970,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         document.getElementById("sidebar-account").style.backgroundColor = "#0bb700";
         document.getElementById("sidebar-users").style.backgroundColor = "#25cc3b";
-        document.getElementById("sidebar-friends").style.backgroundColor = "#25cc3b";
-        document.getElementById("sidebar-blocked").style.backgroundColor = "#25cc3b";
-        document.getElementById("sidebar-settings").style.backgroundColor = "#25cc3b";
+        // document.getElementById("sidebar-settings").style.backgroundColor = "#25cc3b";
 
         // Create sidebar element containers
 
@@ -1014,9 +1024,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         document.getElementById("sidebar-account").style.backgroundColor = "#25cc3b";
         document.getElementById("sidebar-users").style.backgroundColor = "#0bb700";
-        document.getElementById("sidebar-friends").style.backgroundColor = "#25cc3b";
-        document.getElementById("sidebar-blocked").style.backgroundColor = "#25cc3b";
-        document.getElementById("sidebar-settings").style.backgroundColor = "#25cc3b";
+        // document.getElementById("sidebar-settings").style.backgroundColor = "#25cc3b";
 
         // Check is the slider is opened
         if(var_sliderOpened == false) {
