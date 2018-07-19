@@ -80,7 +80,7 @@ PRIMARY KEY (`id`),
 UNIQUE KEY `permission_UNIQUE` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
-CREATE TABLE `blocked` (
+CREATE TABLE IF NOT EXISTS `blocked` (
 `userid` int(10) unsigned NOT NULL,
 `blockedid` int(10) unsigned NOT NULL,
 `datestart` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
