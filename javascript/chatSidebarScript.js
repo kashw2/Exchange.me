@@ -88,8 +88,8 @@ document.addEventListener('DOMContentLoaded', function() {
             HTMLParagraphElement_Account_Settings.setAttribute("id", "slider-" + title.toLowerCase());
 
             // Style the heading
-            HTMLParagraphElement_Account_Settings.gridColumnStart = 4;
-            HTMLParagraphElement_Account_Settings.style.gridColumnEnd = 4;
+            HTMLParagraphElement_Account_Settings.style.gridColumnStart = 1;
+            HTMLParagraphElement_Account_Settings.style.gridColumnEnd = 3;
             HTMLParagraphElement_Account_Settings.style.gridRow = 1;
             HTMLParagraphElement_Account_Settings.style.justifySelf = "center";
             HTMLParagraphElement_Account_Settings.style.alignSelf = "center";
@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Set the intro name attributes 
                 HTMLParagraphElement_Account_Intro_Name.setAttribute("id", "account-intro-name");
-                
+
                 // Set the textContext
                 HTMLParagraphElement_Account_Intro_Name.textContent = document.getElementById("grid-content__loggedin").getAttribute("data-user");
 
@@ -202,6 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 HTMLParagraphElement_Account_Intro_Name.style.alignSelf = "start";
                 HTMLParagraphElement_Account_Intro_Name.style.fontFamily = "Lato, sans-serif";
                 HTMLParagraphElement_Account_Intro_Name.style.paddingLeft = "10px";
+                HTMLParagraphElement_Account_Intro_Name.style.cursor = "pointer";
 
                 // Add the event listner
                 HTMLParagraphElement_Account_Intro_Name.addEventListener("mouseover", function() {
