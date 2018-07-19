@@ -220,6 +220,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 }, true);
 
+                // Add the event listner
+                HTMLParagraphElement_Account_Intro_Name.addEventListener("click", function() {
+
+                    // Redirect to profile page
+                    window.location.href = "profile.php?Profile=" + document.getElementById("grid-content__loggedin").getAttribute("data-user");
+
+                }, true);
+
                 // Append the child
                 document.getElementById("chat-sidebar-slider").appendChild(HTMLParagraphElement_Account_Intro_Name);
 
