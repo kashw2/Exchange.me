@@ -13,7 +13,7 @@ $(document).ready(function() {
         // Keycode 13 was pressed (enter)
         if(e.which == "13" && $("#messaging-message").val() != "") {
 
-            $("#chat-messages").load("ajax/inc/chat.inc.insert", {
+            $("#chat-messages").load("ajax/inc/chat.inc.insert.php", {
                 Message: $("#messaging-message").val(),
                 Username: $("#grid-content__loggedin").data("user")
                 }, 
@@ -36,7 +36,7 @@ $(document).ready(function() {
     // Repeat function every second
     setInterval(function(e) {
 
-        $("#chat-messages").load("ajax/inc/chat.inc.load", 
+        $("#chat-messages").load("ajax/inc/chat.inc.load.php", 
         {
             Username: $("#grid-content__loggedin").data("user")
         },
