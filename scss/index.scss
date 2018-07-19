@@ -116,7 +116,7 @@ body {
                     left: 0px;
 
                     grid-template-columns: 1fr;
-                    grid-template-rows: repeat(6, 45px);
+                    grid-template-rows: repeat(3, 45px);
 
                     grid-column: 1;
                     grid-row-start: 1;
@@ -153,44 +153,18 @@ body {
 
                     }
 
-                    #sidebar-friends {
-
-                        grid-row: 3;
-
-                        background: url('../../img/materialdesign/ic_favorite_border_24px.svg');
-                        background-repeat: no-repeat;
-                        background-position: center;
-                        background-size: 24px;
-
-                        transition: background-color 300ms ease;
-
-                    }
-
-                    #sidebar-blocked {
-
-                        grid-row: 4;
-
-                        background: url('../../img/materialdesign/ic_block_24px.svg');
-                        background-repeat: no-repeat;
-                        background-position: center;
-                        background-size: 24px;
-
-                        transition: background-color 300ms ease;
-
-                    }
-
-                    #sidebar-settings {
+                    // #sidebar-settings {
                         
-                        grid-row: 5;
+                    //     grid-row: 3;
 
-                        background: url('../../img/materialdesign/ic_settings_24px.svg');
-                        background-repeat: no-repeat;
-                        background-position: center;
-                        background-size: 24px;
+                    //     background: url('../../img/materialdesign/ic_settings_24px.svg');
+                    //     background-repeat: no-repeat;
+                    //     background-position: center;
+                    //     background-size: 24px;
 
-                        transition: background-color 300ms ease;
+                    //     transition: background-color 300ms ease;
 
-                    }
+                    // }
 
                 }
 

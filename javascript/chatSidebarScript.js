@@ -46,18 +46,10 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById("users-online-panel").remove();
 
             break;
-            case "Friends":
-            // Delete Friends contents
+            // case "Settings":
+            // // Delete Settings contents
 
-            break;
-            case "Blocked":
-            // Delete Blocked contents
-
-            break;
-            case "Settings":
-            // Delete Settings contents
-
-            break;
+            // break;
         }
 
         // TODO: Make this switch statement arbitary and recursivly loop elements and remove them.
@@ -949,18 +941,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, execTime); 
 
                 break;
-                case "Friends":
-                // Delete Friends contents
+                // case "Settings":
+                // // Delete Settings contents
 
-                break;
-                case "Blocked":
-                // Delete Blocked contents
-
-                break;
-                case "Settings":
-                // Delete Settings contents
-
-                break;
+                // break;
             }
 
         }, execTime);
@@ -1077,172 +1061,58 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }, true);
 
-    // Add the event listner
-    document.getElementById("sidebar-friends").addEventListener('click', function() {
+    // // Add the event listner
+    // document.getElementById("sidebar-settings").addEventListener('click', function() { 
 
-        // Change the elements styling
+    //     // Change the elements styling
 
-        document.getElementById("sidebar-account").style.backgroundColor = "#25cc3b";
-        document.getElementById("sidebar-users").style.backgroundColor = "#25cc3b";
-        document.getElementById("sidebar-friends").style.backgroundColor = "#0bb700";
-        document.getElementById("sidebar-blocked").style.backgroundColor = "#25cc3b";
-        document.getElementById("sidebar-settings").style.backgroundColor = "#25cc3b";
+    //     document.getElementById("sidebar-account").style.backgroundColor = "#25cc3b";
+    //     document.getElementById("sidebar-users").style.backgroundColor = "#25cc3b";
+    //     document.getElementById("sidebar-settings").style.backgroundColor = "#0bb700";
 
-        // Create sidebar element containers
+    //     // Create sidebar element containers
 
-        // Check is the slider is opened
-        if(var_sliderOpened == false) {
+    //     // Check is the slider is opened
+    //     if(var_sliderOpened == false) {
 
-            // Expand the slider
-            document.getElementById("chat-sidebar-slider").style.width = "300px";
+    //         // Expand the slider
+    //         document.getElementById("chat-sidebar-slider").style.width = "300px";
 
-            // Init the base layout
-            Sidebar_Init_Base_Layout("Friends", "1fr 25px", "25px 1fr 200px", 1, 2, 1000);
+    //         // Init the base layout
+    //         Sidebar_Init_Base_Layout("Settings", "1fr 25px", "25px 1fr 200px", 2, 1000);
 
-            // Change the tab opened
-            var_openedTab = "Friends";
+    //         // Change the tab opened
+    //         var_openedTab = "Settings";
     
-            // Change the value of slider
-            var_sliderOpened = true;
+    //         // Change the value of slider
+    //         var_sliderOpened = true;
     
-        } else if(var_sliderOpened == true) {
+    //     } else if(var_sliderOpened == true) {
 
-        // Close the slider
-        document.getElementById("chat-sidebar-slider").style.width = "0px";
+    //     // Close the slider
+    //     document.getElementById("chat-sidebar-slider").style.width = "0px";
 
-        Sidebar_Destroy_Base_Layout("Friends");
+    //     Sidebar_Destroy_Base_Layout("Settings");
 
-            // Set delay
-            setTimeout(function() {
+    //         // Set delay
+    //         setTimeout(function() {
 
-                // Open the slider
-                document.getElementById("chat-sidebar-slider").style.width = "300px";
+    //             // Open the slider
+    //             document.getElementById("chat-sidebar-slider").style.width = "300px";
 
-                // Init the base layout
-                Sidebar_Init_Base_Layout("Friends", "1fr 25px", "25px 1fr 200px", 2, 1000);
+    //             // Init the base layout
+    //             Sidebar_Init_Base_Layout("Settings", "1fr 25px", "25px 1fr 200px", 2, 1000);
 
-                // Change the tab opened
-                var_openedTab = "Friends";
+    //             // Change the tab opened
+    //             var_openedTab = "Settings";
 
-                // Change the value of slider
-                var_sliderOpened = true;
+    //             // Change the value of slider
+    //             var_sliderOpened = true;
 
-            }, 1000);
+    //         }, 1000);
 
-        }
+    //     }
 
-    }, true);
-
-    // Add the event listner
-    document.getElementById("sidebar-blocked").addEventListener('click', function() {
-
-        // Change the elements styling
-
-        document.getElementById("sidebar-account").style.backgroundColor = "#25cc3b";
-        document.getElementById("sidebar-users").style.backgroundColor = "#25cc3b";
-        document.getElementById("sidebar-friends").style.backgroundColor = "#25cc3b";
-        document.getElementById("sidebar-blocked").style.backgroundColor = "#0bb700";
-        document.getElementById("sidebar-settings").style.backgroundColor = "#25cc3b";
-
-        // Create sidebar element containers
-
-        // Check is the slider is opened
-        if(var_sliderOpened == false) {
-
-            // Expand the slider
-            document.getElementById("chat-sidebar-slider").style.width = "300px";
-
-            // Init the base layout
-            Sidebar_Init_Base_Layout("Blocked", "1fr 25px", "25px 1fr 200px", 2, 1000);
-
-            // Change the tab opened
-            var_openedTab = "Blocked";
-    
-            // Change the value of slider
-            var_sliderOpened = true;
-    
-        } else if(var_sliderOpened == true) {
-
-        // Close the slider
-        document.getElementById("chat-sidebar-slider").style.width = "0px";
-
-        Sidebar_Destroy_Base_Layout("Blocked");
-
-            // Set delay
-            setTimeout(function() {
-
-                // Open the slider
-                document.getElementById("chat-sidebar-slider").style.width = "300px";
-
-                // Init the base layout
-                Sidebar_Init_Base_Layout("Blocked", "1fr 25px", "25px 1fr 200px", 2, 1000);
-
-                // Change the tab opened
-                var_openedTab = "Blocked";
-
-                // Change the value of slider
-                var_sliderOpened = true;
-
-            }, 1000);
-
-        }
-
-    }, true);
-
-    // Add the event listner
-    document.getElementById("sidebar-settings").addEventListener('click', function() { 
-
-        // Change the elements styling
-
-        document.getElementById("sidebar-account").style.backgroundColor = "#25cc3b";
-        document.getElementById("sidebar-users").style.backgroundColor = "#25cc3b";
-        document.getElementById("sidebar-friends").style.backgroundColor = "#25cc3b";
-        document.getElementById("sidebar-blocked").style.backgroundColor = "#25cc3b";
-        document.getElementById("sidebar-settings").style.backgroundColor = "#0bb700";
-
-        // Create sidebar element containers
-
-        // Check is the slider is opened
-        if(var_sliderOpened == false) {
-
-            // Expand the slider
-            document.getElementById("chat-sidebar-slider").style.width = "300px";
-
-            // Init the base layout
-            Sidebar_Init_Base_Layout("Settings", "1fr 25px", "25px 1fr 200px", 2, 1000);
-
-            // Change the tab opened
-            var_openedTab = "Settings";
-    
-            // Change the value of slider
-            var_sliderOpened = true;
-    
-        } else if(var_sliderOpened == true) {
-
-        // Close the slider
-        document.getElementById("chat-sidebar-slider").style.width = "0px";
-
-        Sidebar_Destroy_Base_Layout("Settings");
-
-            // Set delay
-            setTimeout(function() {
-
-                // Open the slider
-                document.getElementById("chat-sidebar-slider").style.width = "300px";
-
-                // Init the base layout
-                Sidebar_Init_Base_Layout("Settings", "1fr 25px", "25px 1fr 200px", 2, 1000);
-
-                // Change the tab opened
-                var_openedTab = "Settings";
-
-                // Change the value of slider
-                var_sliderOpened = true;
-
-            }, 1000);
-
-        }
-
-    }, true);
+    // }, true);
 
 }, true);
