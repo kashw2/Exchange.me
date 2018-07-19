@@ -28,6 +28,33 @@ $(document).ready(function() {
 
     });
 
+    // Check for click
+    $("#controls-delete-account").on("click", function() {
+
+        // AJAX
+        $(document).load("ajax/inc/account.inc.delete.php", {
+            Username: $("#grid-content__loggedin").data("user")
+            },
+
+            // Callback
+            function(responseText, statusText, xhr) {
+
+                // Check response text
+                if(responseText == "true") {
+
+                    // Redirect
+                    window.location.href = "index.php";
+
+                }
+
+            }
+    
+        );
+
+    });
+
+
+
     // By default just load all online users
 
     // AJAX
