@@ -91,6 +91,22 @@ $(document).ready(function() {
 
     }, 500*1);
 
+    $("#options-refresh").on("click", function() {
+
+        // AJAX
+        $("#options-tablecontainer").load("ajax/inc/users.inc.online.php", {
+            Type: "Online"
+            },
+
+            // Callback
+            function(responseText, statusText, xhr) {
+
+            }
+
+        );
+
+    });
+
     // Altenative loads
 
     // Check for click
