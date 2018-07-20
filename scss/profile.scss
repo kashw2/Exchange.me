@@ -1,0 +1,172 @@
+// Unapproved use and redistribution of this code and respective product is strictly prohibited.
+// Copyright© 2018 Keanu Ashwell all rights are reserved to the author, creator, registered 
+// and licensed owners of this product and it's content
+
+@import "partials/_partials.scss";
+
+a,
+a:hover,
+a:active,
+a:visited {
+
+    color: $exchange-white;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+}
+
+body {
+
+    overflow-x: hidden;
+    overflow-y: visible;
+
+    height: auto;
+    width: auto;
+
+    #grid-container {
+
+        grid-template-columns: 1fr;
+        grid-template-rows: 70px 1fr 100px; 
+
+        #grid-content__loggedin {
+
+            display: grid; 
+
+            grid-column: auto;
+            grid-row: 2;
+
+            grid-template-columns: 1fr 0.75fr;
+            grid-template-rows: 1fr;
+
+            background-color: $exchange-white;
+
+            overflow: hidden;
+
+            #content-profile {
+
+                display: grid;
+
+                grid-column-start: 1;
+                grid-column-end: 3;
+                grid-row: auto;
+
+                grid-template-columns: 150px 1fr;
+                grid-template-rows: 150px 30px 20px 1fr;
+
+                #profile-image__set {
+
+                    grid-column: auto;
+                    grid-row: auto;
+
+                    height: auto;
+                    widows: auto;
+
+                    img {
+
+                        max-height: 150px;
+                        max-width: 150px;
+
+                        margin: 10px 0px 0px 10px;
+
+                        box-shadow: 1px 1px 10px $exchange-black;
+
+                    }
+
+                }
+
+                #profile-image__unset {
+
+                    grid-column: auto;
+                    grid-row: auto;
+
+                    height: auto;
+                    widows: auto;
+
+                    img {
+
+                        max-height: 150px;
+                        max-width: 150px;
+
+                        margin: 10px 0px 0px 10px;
+
+                    }
+
+                }
+
+                #profile-image-upload {
+
+                    display: grid;
+
+                    grid-column: 1;
+                    grid-row: 2;
+
+                    grid-template-columns: 0.5fr 1fr;
+                    grid-template-rows: 1fr;
+
+                    padding: 20px 0px 0px 5px;
+
+                    #image-select {
+
+                        grid-column: 1;
+                        grid-row: auto;
+
+                        height: 25px;
+                        width: 60px;
+
+                        &#image-select[type="file"] {
+
+                            opacity: 0;
+
+                        }
+
+                    }
+
+                    #image-submit {
+
+                        grid-column: 2;
+                        grid-row: 1;
+
+                        height: 25px;
+                        width: 60%;
+
+                        color: #ffffff;
+
+                        background-color: #00cc00;
+
+                        font-family: Lato, sans-serift;
+
+                        border: 1px solid #10ff10;
+
+                        border-radius: 5px;
+
+                        margin-left: 40px;
+
+                        cursor: pointer;
+
+                    }
+
+                    #image-upload-label {
+
+                        position: relative; 
+                        
+                        top: -22px;
+                        
+                        margin: 0 auto; 
+                        
+                        pointer-events: none;
+                        
+                        text-decoration: underline;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
