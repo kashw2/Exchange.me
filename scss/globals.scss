@@ -187,6 +187,29 @@ html {
 
 }
 
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.response {
+
+    &.error {
+
+        color: #FF0000;
+
+    }
+
+    &.success {
+
+        color: $exchange-green;
+
+    }
+
+}
+
 h1,
 h2,
 h3,
