@@ -52,7 +52,7 @@ body {
                 grid-column-end: 3;
                 grid-row: auto;
 
-                grid-template-columns: 150px 1fr 0.35fr;
+                grid-template-columns: 150px 1fr;
                 grid-template-rows: 150px 30px 20px 1fr;
 
                 #profile-image__set {
@@ -247,10 +247,11 @@ body {
                         display: grid;
 
                         grid-column: 3;
-                        grid-row: 1;
+                        grid-row-start: 1;
+                        grid-row-end: 3;
 
-                        grid-template-columns: 1fr auto;
-                        grid-template-rows: 1fr 1fr;
+                        grid-template-columns: auto;
+                        grid-template-rows: 1fr 1fr 20px;
 
                         overflow: hidden;
 
@@ -373,11 +374,159 @@ body {
 
                         }
 
+                        #permission-administrative-container {
+
+                            display: grid;
+
+                            grid-column: 2;
+                            grid-row: 3;
+
+                            grid-template-columns: 1fr auto auto auto auto auto;
+                            grid-template-rows: 1fr;
+
+                            #administrative-block {
+
+                                grid-column: 2;
+                                grid-row: auto;
+
+                                justify-self: end;
+    
+                                align-self: end;
+    
+                                color: $exchange-black;
+
+                                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                                font-weight: 300;
+                                font-size: 0.85em;
+
+                                padding: 0px 5px 0px 5px;
+
+                                cursor: pointer;
+
+                                &:hover {
+
+                                    text-decoration: underline;
+
+                                }
+                                
+                            }
+
+                            #administrative-friend {
+
+                                grid-column: 3;
+                                grid-row: auto;
+
+                                justify-self: end;
+    
+                                align-self: end;
+    
+                                color: #40cf2d;
+
+                                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                                font-weight: 300;
+                                font-size: 0.85em;
+
+                                padding: 0px 5px 0px 5px;
+
+                                cursor: pointer;
+
+                                &:hover {
+
+                                    text-decoration: underline;
+
+                                }
+
+                            }
+
+                            #administrative-report {
+
+                                grid-column: 4;
+                                grid-row: auto;
+
+                                justify-self: end;
+    
+                                align-self: end;
+    
+                                color: #ff4444;
+
+                                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                                font-weight: 300;
+                                font-size: 0.85em;
+
+                                padding: 0px 5px 0px 5px;
+
+                                cursor: pointer;
+
+                                &:hover {
+
+                                    text-decoration: underline;
+
+                                }
+
+                            }
+
+                            #administrative-warn {
+
+                                grid-column: 5;
+                                grid-row: auto;
+
+                                justify-self: end;
+    
+                                align-self: end;
+    
+                                color: #ffa500;
+
+                                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                                font-weight: 300;
+                                font-size: 0.85em;
+
+                                padding: 0px 5px 0px 5px;
+
+                                cursor: pointer;
+
+                                &:hover {
+
+                                    text-decoration: underline;
+
+                                }
+
+                            }
+
+                            #administrative-ban {
+
+                                grid-column: 6;
+                                grid-row: auto;
+
+                                justify-self: end;
+    
+                                align-self: end;
+    
+                                color: #ff0000;
+
+                                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                                font-weight: 300;
+                                font-size: 0.85em;
+
+                                padding: 0px 10px 0px 5px;
+
+                                cursor: pointer;
+
+                                &:hover {
+
+                                    text-decoration: underline;
+
+                                }
+
+                            }
+
+                        }
+
                     }
 
                     #info-occupation {
 
-                        grid-column: 1;
+                        grid-column-start: 1;
+                        grid-column-end: 3;
                         grid-row: 2;
 
                         justify-self: start;
@@ -404,7 +553,8 @@ body {
 
                     #info-company {
 
-                        grid-column: 1;
+                        grid-column-start: 1;
+                        grid-column-end: 3;
                         grid-row: 3;
 
                         justify-self: start;
