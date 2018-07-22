@@ -27,7 +27,7 @@ body {
         grid-column-start: 1;
         grid-column-end: 3;
         grid-row: auto;
-        grid-template-columns: 150px 1fr;
+        grid-template-columns: 150px 1fr 0.35fr;
         grid-template-rows: 150px 30px 20px 1fr; }
         body #grid-container #grid-content__loggedin #content-profile #profile-image__set {
           grid-column: auto;
@@ -77,9 +77,143 @@ body {
             cursor: pointer; }
           body #grid-container #grid-content__loggedin #content-profile #profile-image-upload #image-upload-label {
             position: relative;
-            top: -22px;
+            top: -25px;
+            left: -80px;
             margin: 0 auto;
             pointer-events: none;
             text-decoration: underline; }
+        body #grid-container #grid-content__loggedin #content-profile #profile-upload-status {
+          grid-column: 1;
+          grid-row: 2;
+          padding-left: 5px;
+          justify-self: start;
+          -ms-flex-item-align: center;
+              align-self: center;
+          font-family: sans-serif;
+          font-weight: 500;
+          font-size: 0.8em; }
+        body #grid-container #grid-content__loggedin #content-profile #profile-info-container {
+          display: grid;
+          grid-column: 2;
+          grid-row: 1;
+          grid-template-columns: auto auto 1fr;
+          grid-template-rows: 50px 20px 20px 1fr;
+          margin: 10px 0px 0px 20px; }
+          body #grid-container #grid-content__loggedin #content-profile #profile-info-container #info-username {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row: 1;
+            justify-self: start;
+            font-family: 'Lato', sans-serif;
+            font-weight: 600;
+            font-size: 2.6em;
+            color: #333333;
+            padding-right: 5px;
+            overflow: hidden; }
+            body #grid-container #grid-content__loggedin #content-profile #profile-info-container #info-username:hover {
+              text-decoration: underline; }
+          body #grid-container #grid-content__loggedin #content-profile #profile-info-container #info-alias {
+            grid-column: 2;
+            grid-row: 1;
+            justify-self: start;
+            font-family: 'Lato', sans-serif;
+            font-weight: 600;
+            font-size: 2.6em;
+            color: #333333;
+            overflow: hidden; }
+            body #grid-container #grid-content__loggedin #content-profile #profile-info-container #info-alias:hover {
+              text-decoration: underline; }
+          body #grid-container #grid-content__loggedin #content-profile #profile-info-container #info-permission-container {
+            display: grid;
+            grid-column: 3;
+            grid-row: 1;
+            grid-template-columns: 1fr auto;
+            grid-template-rows: 1fr 1fr;
+            overflow: hidden; }
+            body #grid-container #grid-content__loggedin #content-profile #profile-info-container #info-permission-container #permission-name {
+              grid-column: 2;
+              grid-row: 1;
+              justify-self: end;
+              -ms-flex-item-align: center;
+                  align-self: center;
+              font-family: 'Lato', sans-serif;
+              font-weight: 400;
+              font-size: 1.6em;
+              color: #333333;
+              padding: 0px 10px 0px 10px;
+              overflow: hidden; }
+              body #grid-container #grid-content__loggedin #content-profile #profile-info-container #info-permission-container #permission-name.Guest {
+                color: #333333; }
+              body #grid-container #grid-content__loggedin #content-profile #profile-info-container #info-permission-container #permission-name.Registered {
+                color: #333333; }
+              body #grid-container #grid-content__loggedin #content-profile #profile-info-container #info-permission-container #permission-name.Member {
+                color: #00dd1d; }
+              body #grid-container #grid-content__loggedin #content-profile #profile-info-container #info-permission-container #permission-name.Moderator {
+                color: #ffa500; }
+              body #grid-container #grid-content__loggedin #content-profile #profile-info-container #info-permission-container #permission-name.Administrator {
+                color: #f80808; }
+              body #grid-container #grid-content__loggedin #content-profile #profile-info-container #info-permission-container #permission-name.Site-Administrator {
+                color: #ff0000; }
+            body #grid-container #grid-content__loggedin #content-profile #profile-info-container #info-permission-container #permission-since-container {
+              display: grid;
+              grid-column: 2;
+              grid-row: 2;
+              grid-template-columns: 1fr auto;
+              grid-template-rows: 1fr;
+              overflow: hidden; }
+              body #grid-container #grid-content__loggedin #content-profile #profile-info-container #info-permission-container #permission-since-container #permission-time-pre {
+                grid-column: 1;
+                grid-row: 1;
+                justify-self: end;
+                -ms-flex-item-align: center;
+                    align-self: center;
+                color: #a5a5a5;
+                font-family: 'Lato', sans-serif;
+                font-weight: 300;
+                font-size: 1em;
+                padding-right: 5px;
+                overflow: hidden; }
+              body #grid-container #grid-content__loggedin #content-profile #profile-info-container #info-permission-container #permission-since-container #permission-time {
+                grid-column: 2;
+                grid-row: 1;
+                justify-self: end;
+                -ms-flex-item-align: center;
+                    align-self: center;
+                color: #a5a5a5;
+                font-family: helvetica, sans-serif;
+                font-weight: 100;
+                font-size: 1em;
+                margin-right: 10px;
+                overflow: hidden; }
+                body #grid-container #grid-content__loggedin #content-profile #profile-info-container #info-permission-container #permission-since-container #permission-time:hover {
+                  text-decoration: underline; }
+          body #grid-container #grid-content__loggedin #content-profile #profile-info-container #info-occupation {
+            grid-column: 1;
+            grid-row: 2;
+            justify-self: start;
+            -ms-flex-item-align: start;
+                align-self: start;
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            font-size: 1em;
+            color: #a5a5a5;
+            margin-left: 5px;
+            overflow: hidden; }
+            body #grid-container #grid-content__loggedin #content-profile #profile-info-container #info-occupation p {
+              overflow: hidden; }
+          body #grid-container #grid-content__loggedin #content-profile #profile-info-container #info-company {
+            grid-column: 1;
+            grid-row: 3;
+            justify-self: start;
+            -ms-flex-item-align: start;
+                align-self: start;
+            font-family: 'Lato', sans-serif;
+            font-weight: 500;
+            font-size: 1em;
+            color: #a5a5a5;
+            margin-left: 5px;
+            overflow: hidden; }
+            body #grid-container #grid-content__loggedin #content-profile #profile-info-container #info-company p {
+              overflow: hidden; }
 
 /*# sourceMappingURL=profile.css.map */
