@@ -165,6 +165,7 @@ require_once('mysql.php');
                 <!-- Content Container -->
                 <div id="grid-content__loggedin" data-user="' . $_SESSION['user']['username'] . '">
 
+                    <!-- Profile Content Container -->
                     <div id="content-profile">
 
                 ';
@@ -179,6 +180,7 @@ require_once('mysql.php');
 
                         echo "
                         
+                            <!-- Profile Picture -->
                             <div id='profile-image__set'>
 
                                 <img src='" . $PROFILE_PICTURE[0] . "'>
@@ -191,6 +193,7 @@ require_once('mysql.php');
 
                         echo "
                         
+                            <!-- Profile Picture -->
                             <div id='profile-image__unset'>
                             
                                 <img src='img/__unset-profile-image.png'>
@@ -203,16 +206,166 @@ require_once('mysql.php');
 
                     echo "
 
+                        <!-- Image Upload Form -->
                         <form id='profile-image-upload' method='POST' action='dpupload.php' enctype='multipart/form-data'>
 
+                            <!-- Image File -->
                             <input id='image-select' type='file' name='image' form='profile-image-upload' title='Select a file to upload'>
 
+                            <!-- Submit -->
                             <input id='image-submit' type='submit' form='profile-image-upload' name='submit' value='Upload'>
                             
+                            <!-- Label -->
                             <span id='image-upload-label'>Browse</span>
+
+                    ";
+
+                    // Check for status response
+                    if(
+                        isset($_GET['Status'])
+                    ||  !empty($_GET['Status'])
+                        ) {
+
+                            // Status responses
+                            switch($_GET['Status']) {
+                                case "Success":
+        
+                                echo "
+                                
+                                    <!-- Status Display -->
+                                    <p id='profile-upload-status' class='response success'>Success</p>
+        
+                                ";
+        
+                                break;
+                                case "Error":
+        
+                                echo "
+                                
+                                    <!-- Status Display -->
+                                    <p id='profile-upload-status' class='response error'>Error</p>
+        
+                                ";
+        
+                                break;
+                            }
+
+                        } else {
+
+                            echo "
+                                
+                                <!-- Status Display -->
+                                <p id='profile-upload-status'></p>
+
+                            ";
+
+                        }
+
+                        // Query
+                        $QUERY_SELECT_PROFILE_INFO = mysqli_query($conn,"
                         
-                        </form>
+                        SELECT
+                        exchangeme.accounts.username,
+                        exchangeme.accounts.email,
+                        exchangeme.accounts.firstname,
+                        exchangeme.accounts.lastname,
+                        exchangeme.accounts.alias,
+                        exchangeme.accounts.gender,
+                        exchangeme.accounts.age,
+                        exchangeme.accounts.occupation,
+                        exchangeme.accounts.company,
+                        exchangeme.accounts.companywebsite,
+                        exchangeme.accounts.website,
+                        exchangeme.accounts.creationdate,
+                        exchangeme.accounts.lastlogin,
+                        exchangeme.accounts.awards,
+                        exchangeme.accounts.permissionid
+                        FROM exchangeme.accounts
+                        WHERE exchangeme.accounts.username = '" . strip_tags($_GET['Profile']) . "';
+                        
+                        ");
+
+                        // Fetch Result
+                        $RESULT_SELECT_PROFILE_INFO = mysqli_fetch_array($QUERY_SELECT_PROFILE_INFO);
+
+                        // Query
+                        $QUERY_CHECK_PERMISSIONS = mysqli_query($conn, "
+                        
+                        SELECT
+                        exchangeme.permissions.name
+                        FROM exchangeme.permissions
+                        WHERE exchangeme.permissions.id = '" . $RESULT_SELECT_PROFILE_INFO['permissionid'] . "';
+                        
+                        ");
+
+                        // Fetch Result
+                        $RESULT_CHECK_PERMISSIONS = mysqli_fetch_array($QUERY_CHECK_PERMISSIONS);
+
+                echo "
+
+                    </form>
+
+                    <!-- Profile Information Container -->
+                    <div id='profile-info-container'>
+
+                        <p id='info-username'>" . $RESULT_SELECT_PROFILE_INFO['username'] . "</p>
+
+                        <p id='info-alias'>(" . $RESULT_SELECT_PROFILE_INFO['alias'] . ")</p>
+
+                        <!-- Permission Information Container -->
+                        <div id='info-permission-container'>
+
+                            <p id='permission-name' class='" . $RESULT_CHECK_PERMISSIONS['name'] . "'>" . $RESULT_CHECK_PERMISSIONS['name'] . ".</p>
+
+                            <div id='permission-since-container'>
+
+                                <p id='permission-time-pre'>Since</p>
+
+                ";
+
+                $CREATION_DATE = date_create($RESULT_SELECT_PROFILE_INFO['creationdate']);
+
+                echo "
+
+                                <p id='permission-time'>" . $CREATION_DATE->format("d F Y") . "</p>
+
+                            </div>
+
+                        </div>
+                            
+                        <p id='info-occupation'>" . $RESULT_SELECT_PROFILE_INFO['occupation'] . "</p>
+
+                ";
+
+                if(
+                    isset($RESULT_SELECT_PROFILE_INFO['companywebsite'])
+                &&  !empty($RESULT_SELECT_PROFILE_INFO['companywebsite'])
+                ) {
+
+                    echo "
                     
+                        <a id='info-company' href='//" . $RESULT_SELECT_PROFILE_INFO['companywebsite'] . "'>
+                        
+                            <p>" . $RESULT_SELECT_PROFILE_INFO['company'] . "</p>
+
+                        </a>
+
+                    ";
+
+                } else {
+
+                    echo "
+                    
+                        <p id='info-company'>" . $RESULT_SELECT_PROFILE_INFO['company'] . "</p>
+                    
+                    ";
+
+                }
+                        
+                echo "
+                
+                        </div>
+                
                     </div>
 
                 </div>
