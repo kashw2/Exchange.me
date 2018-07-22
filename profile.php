@@ -268,7 +268,7 @@ require_once('mysql.php');
                         exchangeme.accounts.username,
                         exchangeme.accounts.email,
                         exchangeme.accounts.firstname,
-                        exchangeme.accounts.lastname,
+                        exchangeme.accounts.lastname,                                                                                                                                                                                                                                                                                                                                                                                                               
                         exchangeme.accounts.alias,
                         exchangeme.accounts.gender,
                         exchangeme.accounts.age,
@@ -321,6 +321,7 @@ require_once('mysql.php');
 
                             <p id='permission-name' class='" . $RESULT_CHECK_PERMISSIONS['name'] . "'>" . $RESULT_CHECK_PERMISSIONS['name'] . ".</p>
 
+                            <!-- Permission Since Container -->
                             <div id='permission-since-container'>
 
                                 <p id='permission-time-pre'>Since</p>
@@ -334,6 +335,127 @@ require_once('mysql.php');
                                 <p id='permission-time'>" . $CREATION_DATE->format("d F Y") . "</p>
 
                             </div>
+
+                ";
+
+                // Query
+                $QUERY_CHECK_ADMINISTRATIVE_PERMISSIONS = mysqli_query($conn, "
+                
+                SELECT
+                exchangeme.accounts.username,
+                exchangeme.accounts.permissionid
+                FROM exchangeme.accounts
+                WHERE exchangeme.accounts.username = '" . $RESULT_SELECT_PROFILE_INFO['username'] . "';
+                
+                ");
+
+                // Fetch Result
+                $RESULT_CHECK_ADMINISTRATIVE_PERMISSIONS = mysqli_fetch_array($QUERY_CHECK_ADMINISTRATIVE_PERMISSIONS);
+
+                if($RESULT_CHECK_ADMINISTRATIVE_PERMISSIONS['username'] = $_SESSION['user']['username']) {
+
+                    echo "
+                    
+                        <div id='permission-administrative-container'>
+
+                    ";
+
+                    switch($RESULT_CHECK_ADMINISTRATIVE_PERMISSIONS['permissionid']) {
+                        case 1:
+                        // Guest
+
+                        echo "
+                        
+                            <p id='administrative-block'>Block</p>
+
+                        ";
+
+                        break;
+                        case 2:
+                        // Registered
+
+                        echo "
+                        
+                            <p id='administrative-block'>Block</p>
+                            <p id='administrative-report'>Report</p>
+
+                        ";
+
+                        break;
+                        case 3:
+                        // Member
+
+                        echo "
+                        
+                        <p id='administrative-block'>Block</p>
+                        <p id='administrative-friend'>Add Friend</p>
+                        <p id='administrative-report'>Report</p>
+
+                        ";
+
+                        break;
+                        case 4:
+                        // Moderator
+
+                        echo "
+                        
+                            <p id='administrative-block'>Block</p>
+                            <p id='administrative-friend'>Add Friend</p>
+                            <p id='administrative-report'>Report</p>
+                            <p id='administrative-warn'>Warn</p>
+
+                        ";
+
+                        break;
+                        case 5:
+                        // Administrator
+
+                        echo "
+
+                            <p id='administrative-block'>Block</p>
+                            <p id='administrative-friend'>Add Friend</p>
+                            <p id='administrative-report'>Report</p>
+                            <p id='administrative-warn'>Warn</p>
+                            <p id='administrative-ban'>Ban</p>
+                        
+                        ";
+
+                        break;
+                        case 6:
+                        // Site Administrator
+
+                        echo "
+
+                            <p id='administrative-block'>Block</p>
+                            <p id='administrative-friend'>Add Friend</p>
+                            <p id='administrative-report'>Report</p>
+                            <p id='administrative-warn'>Warn</p>
+                            <p id='administrative-ban'>Ban</p>
+                        
+                        ";
+
+                        break;
+                        default:
+                        // Default
+
+                        echo "
+                        
+                            <p id='administrative-block'>Block</p>
+
+                        ";
+
+                        break;
+                    }
+
+                    echo "
+                        
+                        </div>
+
+                    ";
+
+                }
+
+                echo "
 
                         </div>
                             
