@@ -14,44 +14,59 @@ require_once('mysql.php');
 // Check FILE POST
 if($_POST['submit']) {
 
-    // Query
-    $QUERY_SELECT_USERNAME = mysqli_query($conn, "
-    
-    SELECT
-    exchangeme.accounts.username
-    FROM exchangeme.accounts
-    WHERE exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "';
+    // Check if there is a posted file
+    if(!empty($_FILES['image'])) {
 
-    ");
+        // Query
+        $QUERY_SELECT_USERNAME = mysqli_query($conn, "
+            
+        SELECT
+        exchangeme.accounts.username
+        FROM exchangeme.accounts
+        WHERE exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "';
 
-    // Fetch Result
-    $RESULT_SELECT_USERNAME = mysqli_fetch_array($QUERY_SELECT_USERNAME);
+        ");
 
-    // Define variables
-    $DIRECTORY = "img/profiles/" . $RESULT_SELECT_USERNAME[0] . "/"; 
-    $FILE = $_FILES['image'];
+        // Fetch Result
+        $RESULT_SELECT_USERNAME = mysqli_fetch_array($QUERY_SELECT_USERNAME);
 
-    // Rename image file
-    rename($_FILES['image']['tmp_name'], $DIRECTORY . "image.png");
+        // Define variables
+        $DIRECTORY = "img/profiles/" . $RESULT_SELECT_USERNAME[0] . "/"; 
+        $FILE = $_FILES['image'];
 
-    // Check that file is an image
-    // if(getimagesize($_FILES['image']['tmp_name']) !== false) {
+        // Rename image file
+        rename($_FILES['image']['tmp_name'], $DIRECTORY . "image.png");
 
-        if(
-            strtolower(pathinfo($DIRECTORY . $FILE['name'], PATHINFO_EXTENSION)) == "jpg"
-        ||  strtolower(pathinfo($DIRECTORY . $FILE['name'], PATHINFO_EXTENSION)) == "png"
-        ||  strtolower(pathinfo($DIRECTORY . $FILE['name'], PATHINFO_EXTENSION)) == "jpeg"
-            ) {
+        // Check that file is an image
+        // if(getimagesize($_FILES['image']['tmp_name']) !== false) {
 
-                // Upload file
-                move_uploaded_file($_FILES['image']['tmp_name'], $DIRECTORY . $FILE['name']);
+            if(
+                strtolower(pathinfo($DIRECTORY . $FILE['name'], PATHINFO_EXTENSION)) == "jpg"
+            ||  strtolower(pathinfo($DIRECTORY . $FILE['name'], PATHINFO_EXTENSION)) == "png"
+            ||  strtolower(pathinfo($DIRECTORY . $FILE['name'], PATHINFO_EXTENSION)) == "jpeg"
+                ) {
 
-                // Redirect back to profile
-                header('Location: profile.php?Profile=' . $RESULT_SELECT_USERNAME[0]);
+                    // Upload file
+                    move_uploaded_file($_FILES['image']['tmp_name'], $DIRECTORY . $FILE['name']);
 
-        }
+                    // Redirect back to profile
+                    header('Location: profile.php?Profile=' . $RESULT_SELECT_USERNAME[0] . '&Status=Success');
 
-    // }
+            } else {
+
+                // Redirect back to profile with error
+                header('Location: profile.php?Profile=' . $RESULT_SELECT_USERNAME[0] . '&Status=Error');
+
+            }
+
+        // }
+
+    } else {
+
+        // Redirect back to profile with error
+        header('Location: profile.php?Profile=' . $RESULT_SELECT_USERNAME[0] . '&Status=Error');
+
+    }
 
 }
 
