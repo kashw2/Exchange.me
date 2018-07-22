@@ -308,7 +308,11 @@ require_once('mysql.php');
                     <!-- Profile Information Container -->
                     <div id='profile-info-container'>
 
-                        <p id='info-username'>" . $RESULT_SELECT_PROFILE_INFO['username'] . "</p>
+                        <a id='info-username' href='profile.php?Profile=" . $RESULT_SELECT_PROFILE_INFO['username'] . "'>
+                        
+                            <p>" . $RESULT_SELECT_PROFILE_INFO['username'] . "</p>
+
+                        </a>
 
                         <p id='info-alias'>(" . $RESULT_SELECT_PROFILE_INFO['alias'] . ")</p>
 
