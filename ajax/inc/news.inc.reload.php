@@ -49,8 +49,12 @@ if(
 
                 </div>
 
-                <!-- Author Name -->
-                <p class="news news-author">' . htmlspecialchars($RESULT_NEWS[0]) . '</p>
+                <a class="news news-author" href="profile.php?Profile=' . $RESULT_NEWS[0] . '">
+
+                    <!-- Author Name -->
+                    <p>' . htmlspecialchars($RESULT_NEWS[0]) . '</p>
+
+                </a>
 
                 <!-- Post Date -->
                 <p class="news news-post-date">' . htmlspecialchars($RESULT_NEWS[1][8]) . '' . htmlspecialchars($RESULT_NEWS[1][9]) . '/' . htmlspecialchars($RESULT_NEWS[1][5]) . '' . htmlspecialchars($RESULT_NEWS[1][6]) . '/' . htmlspecialchars($RESULT_NEWS[1][2]) . '' . htmlspecialchars($RESULT_NEWS[1][3]) . '</p>
