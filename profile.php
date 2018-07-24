@@ -365,7 +365,7 @@ require_once('mysql.php');
                 exchangeme.accounts.username,
                 exchangeme.accounts.permissionid
                 FROM exchangeme.accounts
-                WHERE exchangeme.accounts.username = '" . $RESULT_SELECT_PROFILE_INFO['username'] . "';
+                WHERE exchangeme.accounts.username = '" . $_SESSION['user']['username'] . "';
                 
                 ");
 
