@@ -471,6 +471,8 @@ require_once('mysql.php');
                         
                         </div>
 
+                        <script src='ajax/min/administrativeLoad.min.js'></script>
+
                     ";
 
                 }
