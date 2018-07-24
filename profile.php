@@ -319,7 +319,22 @@ require_once('mysql.php');
 
                         </a>
 
-                        <p id='info-alias'>(" . $RESULT_SELECT_PROFILE_INFO['alias'] . ")</p>
+                ";
+
+                if(
+                    isset($RESULT_SELECT_PROFILE_INFO['alias'])
+                &&  !empty($RESULT_SELECT_PROFILE_INFO['alias'])
+                    ) {
+
+                        echo "
+                        
+                            <p id='info-alias'>(" . $RESULT_SELECT_PROFILE_INFO['alias'] . ")</p>
+
+                        ";
+
+                    }
+
+                echo "
 
                         <!-- Permission Information Container -->
                         <div id='info-permission-container'>
