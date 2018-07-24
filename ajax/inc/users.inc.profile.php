@@ -44,15 +44,23 @@ if(
 
         echo "
         
-            <p class='table users-table profile-name'>" . $_POST['User'] . " (" . $RESULT_SELECT_PROFILE[0] . ")</p>
+            <a href='profile.php?Profile=" . $_POST['User'] . "' class='table users-table profile-name'>
+            
+                <p>" . $_POST['User'] . " (" . $RESULT_SELECT_PROFILE[0] . ")</p>
+
+            </a>
 
         ";
 
     } else {
 
         echo "
-        
-            <p class='table users-table profile-name'>" . $_POST['User'] . "</p>
+
+            <a href='profile.php?Profile=" . $_POST['User'] . "' class='table users-table profile-name'>
+            
+                <p>" . $_POST['User'] . "</p>
+
+            </a>
 
         ";
 
