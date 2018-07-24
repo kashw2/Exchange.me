@@ -52,7 +52,7 @@ if(
         DEFAULT,
         '" . $_SERVER['REMOTE_ADDR'] . "',
         '" . htmlspecialchars(session_id()) . "',
-        0
+        1
         );
         
         ");
