@@ -60,10 +60,7 @@ $(document).ready(function() {
 
             );
 
-        } else {
-
-            // Alternative click method
-            if(e.target.getAttribute("id") == "remove-user") {
+        } else if(e.target.getAttribute("id") == "remove-user") {
 
                 // AJAX
                 $(document).load("ajax/inc/users.inc.remove.friend.php", 
@@ -100,7 +97,79 @@ $(document).ready(function() {
 
                 );
 
-            }
+        } else if(e.target.getAttribute("id") == "block-user") {
+
+            // AJAX
+            $(document).load("ajax/inc/users.inc.block.php", 
+            {
+            Username: $("#grid-content__loggedin").data("user"),
+            Blocked: $("#block-user").data("user")
+            },
+
+                // Callback
+                function(responseTxt, statusTxt, xhr) {
+
+                    // Response text check
+                    switch(responseTxt) {
+                        case "true":
+
+                        // Change the attributes
+                        $(".block-user").attr("class", "table users-table unblock-user");
+                        $(".unblock-user").attr("data", "img/materialdesign/ic_supervisor_account_24px");
+                        $("#block-user").attr("id", "unblock-user");
+                        $("#unblock-user").attr("title", "Unblock User");
+
+                        break;
+                        case "blocked":
+
+                        // Change the attributes
+                        $(".block-user").attr("data", "img/materialdesign/ic_voice_over_off_24px.svg");
+                        $("#unblock-user").attr("id", "block-user");
+                        $("#block-user").attr("title", "Block User");
+
+                        break;
+                    }
+
+                }
+
+            );
+
+        } else if(e.target.getAttribute("id") == "unblock-user") {
+
+            // AJAX
+            $(document).load("ajax/inc/users.inc.unblock.php", 
+            {
+            Username: $("#grid-content__loggedin").data("user"),
+            Blocked: $("#unblock-user").data("user")
+            },
+
+                // Callback
+                function(responseTxt, statusTxt, xhr) {
+
+                    // Response text check
+                    switch(responseTxt) {
+                        case "true":
+
+                        // Change the attributes
+                        $(".unblock-user").attr("class", "table users-table block-user");
+                        $(".block-user").attr("data", "img/materialdesign/ic_voice_over_off_24px.svg");
+                        $("#unblock-user").attr("id", "block-user");
+                        $("#block-user").attr("title", "Block User");
+
+                        break;
+                        case "unblocked":
+
+                        // Change the attributes
+                        $(".unblock-user").attr("data", "img/materialdesign/ic_supervisor_account_24px");
+                        $("#block-user").attr("id", "unblock-user");
+                        $("#unblock-user").attr("title", "Unblock User");
+
+                        break;
+                    }
+
+                }
+
+            );
 
         }
 

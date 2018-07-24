@@ -89,7 +89,7 @@ if(
     }
 
     // Query
-    $QUERY_CHECK_RELATIONSHIP = mysqli_query($conn, "
+    $QUERY_CHECK_RELATIONSHIP_FRIENDS = mysqli_query($conn, "
     
     SELECT *
     FROM exchangeme.friends
@@ -110,8 +110,32 @@ if(
     ");
 
     // Fetch Results
-    $RESULT_CHECK_RELATIONSHIP = mysqli_fetch_array($QUERY_CHECK_RELATIONSHIP);
+    $RESULT_CHECK_RELATIONSHIP_FRIENDS = mysqli_fetch_array($QUERY_CHECK_RELATIONSHIP_FRIENDS);
     
+    // Query
+    $QUERY_CHECK_RELATIONSHIP_BLOCKED = mysqli_query($conn, "
+    
+    SELECT *
+    FROM exchangeme.blocked
+    WHERE exchangeme.blocked.userid = (
+        SELECT
+        exchangeme.accounts.id
+        FROM exchangeme.accounts
+        WHERE exchangeme.accounts.username = '" . strip_tags($_POST["CurrentUser"]) . "'
+        AND exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "'
+    )
+    AND exchangeme.blocked.blockedid = (
+        SELECT
+        exchangeme.accounts.id
+        FROM exchangeme.accounts
+        WHERE exchangeme.accounts.username = '" . strip_tags($_POST['User']) . "'
+    );
+    
+    ") or die(mysqli_error($conn));
+
+    // Fetch Result
+    $RESULT_CHECK_RELATIONSHIP_BLOCKED = mysqli_fetch_array($QUERY_CHECK_RELATIONSHIP_BLOCKED);
+
     // Query
     $QUERY_CHECK_USER = mysqli_query($conn, "
     
@@ -133,7 +157,7 @@ if(
 
         if($RESULT_CHECK_USER[0] != $_POST['User']) {
 
-            if(mysqli_num_rows($QUERY_CHECK_RELATIONSHIP) == 0) {
+            if(mysqli_num_rows($QUERY_CHECK_RELATIONSHIP_FRIENDS) == 0) {
 
                 echo "
                 
@@ -159,20 +183,41 @@ if(
 
             }
 
-        echo "
 
-            <div id='block-user' class='table users-table action-wrapper' data-user='" . $_POST['User'] . "' title='Block User'>
+            if(mysqli_num_rows($QUERY_CHECK_RELATIONSHIP_BLOCKED) == 0) {
+    
+                echo "
+
+                    <div id='block-user' class='table users-table action-wrapper' data-user='" . $_POST['User'] . "' title='Block User'>
             
-                <object class='table users-table block-user block-user' data='img/materialdesign/ic_voice_over_off_24px.svg' type='image/svg+xml'></object>
+                        <object class='table users-table block-user' data='img/materialdesign/ic_voice_over_off_24px.svg' type='image/svg+xml'></object>
+        
+                    </div>
 
-            </div>
+                ";
+
+            } else {
+
+                echo "
+
+                    <div id='unblock-user' class='table users-table action-wrapper' data-user='" . $_POST['User'] . "' title='Unblock User'>
+            
+                        <object class='table users-table unblock-user' data='img/materialdesign/ic_supervisor_account_24px.svg' type='image/svg+xml'></object>
+        
+                    </div>
+
+                ";
+
+            }
+
+        }
+
+        echo "
 
         </div>
     
         ";
 
     }
-
-}
 
 ?>
