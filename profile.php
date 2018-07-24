@@ -171,12 +171,12 @@ require_once('mysql.php');
                 ';
 
                 if(
-                    file_exists("img/profiles/" . $_SESSION['user']['username'] . "/image.png")
-                ||  file_exists("img/profiles/" . $_SESSION['user']['username'] . "/image.jpg")
-                ||  file_exists("img/profiles/" . $_SESSION['user']['username'] . "/image.jpeg")
+                    file_exists("img/profiles/" . $_GET['Profile'] . "/image.png")
+                ||  file_exists("img/profiles/" . $_GET['Profile'] . "/image.jpg")
+                ||  file_exists("img/profiles/" . $_GET['Profile'] . "/image.jpeg")
                     ) {
 
-                        $PROFILE_PICTURE = glob("img/profiles/" . $_SESSION['user']['username'] . "/image.*");
+                        $PROFILE_PICTURE = glob("img/profiles/" . $_GET['Profile'] . "/image.*");
 
                         echo "
                         
@@ -204,21 +204,26 @@ require_once('mysql.php');
 
                     }
 
-                    echo "
+                    // Make sure it's your profile
+                    if($_GET['Profile'] == $_SESSION['user']['username']) {
 
-                        <!-- Image Upload Form -->
-                        <form id='profile-image-upload' method='POST' action='dpupload.php' enctype='multipart/form-data'>
+                        echo "
 
-                            <!-- Image File -->
-                            <input id='image-select' type='file' name='image' form='profile-image-upload' title='Select a file to upload'>
+                            <!-- Image Upload Form -->
+                            <form id='profile-image-upload' method='POST' action='dpupload.php' enctype='multipart/form-data'>
 
-                            <!-- Submit -->
-                            <input id='image-submit' type='submit' form='profile-image-upload' name='submit' value='Upload'>
-                            
-                            <!-- Label -->
-                            <span id='image-upload-label'>Browse</span>
+                                <!-- Image File -->
+                                <input id='image-select' type='file' name='image' form='profile-image-upload' title='Select a file to upload'>
 
-                    ";
+                                <!-- Submit -->
+                                <input id='image-submit' type='submit' form='profile-image-upload' name='submit' value='Upload'>
+                                
+                                <!-- Label -->
+                                <span id='image-upload-label'>Browse</span>
+
+                        ";
+
+                    }
 
                     // Check for status response
                     if(
