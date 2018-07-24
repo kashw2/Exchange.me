@@ -709,6 +709,9 @@ table.users-table,
   grid-row: auto;
   width: 100%;
   padding: 5px 0px 0px 0px; }
+  table.users-table a p,
+  .table.users-table a p {
+    color: #000000; }
   table.users-table th, table.users-table td,
   .table.users-table th,
   .table.users-table td {
