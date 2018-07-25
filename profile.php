@@ -372,7 +372,10 @@ require_once('mysql.php');
                 // Fetch Result
                 $RESULT_CHECK_ADMINISTRATIVE_PERMISSIONS = mysqli_fetch_array($QUERY_CHECK_ADMINISTRATIVE_PERMISSIONS);
 
-                if($RESULT_CHECK_ADMINISTRATIVE_PERMISSIONS['username'] = $_SESSION['user']['username']) {
+                if(
+                    $RESULT_CHECK_ADMINISTRATIVE_PERMISSIONS['username'] == $_SESSION['user']['username']
+                &&  $_GET['Profile'] != $_SESSION['user']['username']
+                    ) {
 
                     echo "
                     
