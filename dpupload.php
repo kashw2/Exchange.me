@@ -34,6 +34,9 @@ if($_POST['submit']) {
         $DIRECTORY = "img/profiles/" . $RESULT_SELECT_USERNAME[0] . "/"; 
         $FILE = $_FILES['image'];
 
+        // Create the directory
+        mkdir($DIRECTORY);
+
         // Rename image file
         rename($_FILES['image']['tmp_name'], $DIRECTORY . "image.png");
 
