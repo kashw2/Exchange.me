@@ -49,11 +49,17 @@ if($_POST['submit']) {
             ||  strtolower(pathinfo($DIRECTORY . $FILE['name'], PATHINFO_EXTENSION)) == "jpeg"
                 ) {
 
-                    // Upload file
-                    move_uploaded_file($_FILES['image']['tmp_name'], $DIRECTORY . $FILE['name']);
+                    if(move_uploaded_file($_FILES['image']['tmp_name'], $DIRECTORY . $FILE['name'])) {
 
-                    // Redirect back to profile
-                    header('Location: profile.php?Profile=' . $RESULT_SELECT_USERNAME[0] . '&Status=Success');
+                        // Redirect back to profile
+                        header('Location: profile.php?Profile=' . $RESULT_SELECT_USERNAME[0] . '&Status=Success');
+
+                    } else {
+
+                        // Redirect back to profile
+                        header('Location: profile.php?Profile=' . $RESULT_SELECT_USERNAME[0] . '&Status=Error');
+
+                    }
 
             } else {
 
