@@ -171,4 +171,19 @@ $(document).ready(function() {
 
     });
 
+    // Check for click
+    $("#administrative-edit").on("click", function() {
+
+        if($("#administrative-edit").text() == "Edit") {
+
+            $("#administrative-edit").text("Cancel");
+
+        } else if($("#administrative-edit").text() == "Cancel") {
+
+            $("#administrative-edit").text("Edit");
+
+        }
+
+    });
+
 });

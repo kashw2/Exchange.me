@@ -474,13 +474,25 @@ require_once('mysql.php');
                         
                         </div>
 
-                        <script src='ajax/min/administrativeLoad.min.js'></script>
+                    ";
 
+                } else if($_GET['Profile'] == $_SESSION['user']['username']) {
+
+                    echo "
+                    
+                        <div id='permission-administrative-container'>
+
+                            <p id='administrative-edit'>Edit</p>
+
+                        </div>
+                    
                     ";
 
                 }
 
                 echo "
+
+                        <script src='ajax/min/administrativeLoad.min.js'></script>
 
                         </div>
                             
