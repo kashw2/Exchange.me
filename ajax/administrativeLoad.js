@@ -167,6 +167,8 @@ $(document).ready(function() {
     // Check for click
     $("#administrative-ban").on("click", function() {
 
+        window.location.href = "ban.php?User=" + $("#info-username").children("p").text();
+
     });
 
 });
