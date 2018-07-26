@@ -36,7 +36,7 @@ PRIMARY KEY (`id`),
 UNIQUE KEY `name_UNIQUE` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE IF NOT EXITST `banreasons` (
+CREATE TABLE IF NOT EXISTS `banreasons` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
 `reason` varchar(50) NOT NULL,
 `defaulttime` datetime DEFAULT NULL,
