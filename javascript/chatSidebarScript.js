@@ -356,10 +356,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 HTMLInputElement_Account_Username.style.gridRow = 2;
                 HTMLInputElement_Account_Username.style.justifySelf = "center";
                 HTMLInputElement_Account_Username.style.alignSelf = "center";
-                HTMLInputElement_Account_Username.style.backgroundColor = "#f3f3f3";
-                HTMLInputElement_Account_Username.style.fontFamily = "Lato, sans-serif";
                 HTMLInputElement_Account_Username.style.height = "20px";
                 HTMLInputElement_Account_Username.style.width = "90%";
+                HTMLInputElement_Account_Username.style.backgroundColor = "#f3f3f3";
+                HTMLInputElement_Account_Username.style.fontFamily = "Lato, sans-serif";
                 HTMLInputElement_Account_Username.style.border = "none";
 
                 // Add the event listner
@@ -435,9 +435,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 HTMLInputElement_Account_Password.style.alignSelf = "center";
                 HTMLInputElement_Account_Password.style.height = "20px";
                 HTMLInputElement_Account_Password.style.width = "90%";
-                HTMLInputElement_Account_Password.style.border = "none";
-                HTMLInputElement_Account_Password.style.fontFamily = "Lato, sans-serif";
                 HTMLInputElement_Account_Password.style.backgroundColor = "#f3f3f3";
+                HTMLInputElement_Account_Password.style.fontFamily = "Lato, sans-serif";
+                HTMLInputElement_Account_Password.style.border = "none";
 
                 // Add the event listner
                 HTMLInputElement_Account_Password.addEventListener("click", function() {
@@ -492,6 +492,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 HTMLParagraphElement_Account_Alias.style.gridRow = 4;
                 HTMLParagraphElement_Account_Alias.style.justifySelf = "center";
                 HTMLParagraphElement_Account_Alias.style.alignSelf = "center";
+                HTMLParagraphElement_Account_Alias.style.backgroundColor = "#f3f3f3";
                 HTMLParagraphElement_Account_Alias.style.fontFamily = "Lato, sans-serif";
                 HTMLParagraphElement_Account_Alias.style.paddingLeft = "10px";
 
