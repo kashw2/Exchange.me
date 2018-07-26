@@ -81,6 +81,77 @@ $(document).ready(function() {
     // Check for click
     $("#administrative-friend").on("click", function() {
 
+        // Check if the user is blocked or not
+        if($("#administrative-friend").text() == "Add Friend") {
+
+            // AJAX
+            $(document).load("ajax/inc/users.inc.add.friend.php", 
+            {
+            Username: $("#grid-content__loggedin").data("user"),
+            Friend: $("#info-username").children("p").text()
+            },
+
+                // Callback
+                function(responseTxt, statusTxt, xhr) {
+
+                    // Response text check
+                    switch(responseTxt) {
+                        case "true":
+
+                        // Change the attributes
+                        $("#administrative-friend").text("Remove Friend");
+                        $("#administrative-friend").css("color", "#000");
+
+                        break;
+                        case "friends":
+
+                        // Change the attributes
+                        $("#administrative-friend").text("Remove Friend");
+                        $("#administrative-friend").css("color", "#000");
+
+                        break;
+                    }
+
+                }
+
+            );
+
+        } else {
+
+            // AJAX
+            $(document).load("ajax/inc/users.inc.remove.friend.php", 
+            {
+            Username: $("#grid-content__loggedin").data("user"),
+            Friend: $("#info-username").children("p").text()
+            },
+
+                // Callback
+                function(responseTxt, statusTxt, xhr) {
+
+                    // Response text check
+                    switch(responseTxt) {
+                        case "true":
+
+                        // Change the attributes
+                        $("#administrative-friend").text("Add Friend");
+                        $("#administrative-friend").css("color", "#40cf2d");
+
+                        break;
+                        case "removed":
+
+                        // Change the attributes
+                        $("#administrative-friend").text("Add Friend");
+                        $("#administrative-friend").css("color", "#40cf2d");
+
+                        break;
+                    }
+
+                }
+
+            );
+
+        }
+
     });
 
     // Check for click
