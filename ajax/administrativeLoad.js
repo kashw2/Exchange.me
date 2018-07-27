@@ -248,6 +248,13 @@ $(document).ready(function() {
 
             });
 
+            // Add event listner
+            $("#warning-window-titlebar").on("focusout", function() {
+
+                mouseDown = false;
+
+            });
+
             // Create the element
             let HTMLParagraphElement_Warning_Window_Title = document.createElement("p");
 
