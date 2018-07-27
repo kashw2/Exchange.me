@@ -7,8 +7,7 @@ a:visited {
   cursor: pointer; }
 
 body {
-  overflow-x: hidden;
-  overflow-y: visible;
+  overflow: hidden;
   height: auto;
   width: auto; }
   body #grid-container {
@@ -20,8 +19,7 @@ body {
       grid-row: 2;
       grid-template-columns: 1fr 0.75fr;
       grid-template-rows: 1fr;
-      background-color: #FFFFFF;
-      overflow: hidden; }
+      background-color: #FFFFFF; }
       body #grid-container #grid-content__loggedin #content-profile {
         display: grid;
         grid-column-start: 1;
@@ -263,6 +261,20 @@ body {
                 padding: 0px 10px 0px 5px;
                 cursor: pointer; }
                 body #grid-container #grid-content__loggedin #content-profile #profile-info-container #info-permission-container #permission-administrative-container #administrative-ban:hover {
+                  text-decoration: underline; }
+              body #grid-container #grid-content__loggedin #content-profile #profile-info-container #info-permission-container #permission-administrative-container #administrative-edit {
+                grid-column: 6;
+                grid-row: auto;
+                justify-self: end;
+                -ms-flex-item-align: end;
+                    align-self: end;
+                color: #000000;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-weight: 300;
+                font-size: 0.85em;
+                padding: 0px 10px 0px 5px;
+                cursor: pointer; }
+                body #grid-container #grid-content__loggedin #content-profile #profile-info-container #info-permission-container #permission-administrative-container #administrative-edit:hover {
                   text-decoration: underline; }
           body #grid-container #grid-content__loggedin #content-profile #profile-info-container #info-occupation {
             grid-column-start: 1;
