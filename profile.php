@@ -68,15 +68,15 @@ require_once('mysql.php');
                 // Session login
 
                 // Query
-                $QUERY_SESSION_LOGIN = mysqli_query($conn, "
+                $QUERY_SESSION_LOGIN = mysqli_query($conn, '
 
                 SELECT
                 exchangeme.accounts.username,
                 exchangeme.accounts.session
                 FROM exchangeme.accounts
-                WHERE exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "';
+                WHERE exchangeme.accounts.session = "' . mysqli_real_escape_string($conn, $_COOKIE['loggedin']) . '";
 
-                ");
+                ');
 
                 // Fetch results
                 $RESULTS_SESSION_LOGIN = mysqli_fetch_array($QUERY_SESSION_LOGIN);
@@ -147,15 +147,15 @@ require_once('mysql.php');
             &&  isset($_SESSION['user']['username'])
             ) {
 
-                $QUERY_UPDATE_SESSION = mysqli_query($conn, "
+                $QUERY_UPDATE_SESSION = mysqli_query($conn, '
                 
                 UPDATE exchangeme.accounts 
                 SET exchangeme.accounts.lastlogin = CURRENT_TIME,
-                exchangeme.accounts.ip = '" . $_SERVER['REMOTE_ADDR'] . "',
-                exchangeme.accounts.session = '" . session_id() . "'
-                WHERE exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "';
+                exchangeme.accounts.ip = "' . $_SERVER['REMOTE_ADDR'] . '",
+                exchangeme.accounts.session = "' . session_id() . '"
+                WHERE exchangeme.accounts.session = "' . mysqli_real_escape_string($conn, $_COOKIE['loggedin']) . '";
 
-                ");
+                ');
 
                 // Set session variables
                 $_SESSION['user']['username'] = $RESULTS_SESSION_LOGIN[0];
@@ -267,7 +267,7 @@ require_once('mysql.php');
                         }
 
                         // Query
-                        $QUERY_SELECT_PROFILE_INFO = mysqli_query($conn,"
+                        $QUERY_SELECT_PROFILE_INFO = mysqli_query($conn,'
                         
                         SELECT
                         exchangeme.accounts.username,
@@ -286,22 +286,22 @@ require_once('mysql.php');
                         exchangeme.accounts.awards,
                         exchangeme.accounts.permissionid
                         FROM exchangeme.accounts
-                        WHERE exchangeme.accounts.username = '" . strip_tags(mysqli_real_escape_string($conn, $_GET['Profile'])) . "';
+                        WHERE exchangeme.accounts.username = "' . strip_tags(mysqli_real_escape_string($conn, $_GET['Profile'])) . '";
                         
-                        ");
+                        ');
 
                         // Fetch Result
                         $RESULT_SELECT_PROFILE_INFO = mysqli_fetch_array($QUERY_SELECT_PROFILE_INFO);
 
                         // Query
-                        $QUERY_CHECK_PERMISSIONS = mysqli_query($conn, "
+                        $QUERY_CHECK_PERMISSIONS = mysqli_query($conn, '
                         
                         SELECT
                         exchangeme.permissions.name
                         FROM exchangeme.permissions
-                        WHERE exchangeme.permissions.id = '" . mysqli_real_escape_string($conn, $RESULT_SELECT_PROFILE_INFO['permissionid']) . "';
+                        WHERE exchangeme.permissions.id = "' . mysqli_real_escape_string($conn, $RESULT_SELECT_PROFILE_INFO['permissionid']) . '";
                         
-                        ");
+                        ');
 
                         // Fetch Result
                         $RESULT_CHECK_PERMISSIONS = mysqli_fetch_array($QUERY_CHECK_PERMISSIONS);
@@ -359,15 +359,15 @@ require_once('mysql.php');
                 ";
 
                 // Query
-                $QUERY_CHECK_ADMINISTRATIVE_PERMISSIONS = mysqli_query($conn, "
+                $QUERY_CHECK_ADMINISTRATIVE_PERMISSIONS = mysqli_query($conn, '
                 
                 SELECT
                 exchangeme.accounts.username,
                 exchangeme.accounts.permissionid
                 FROM exchangeme.accounts
-                WHERE exchangeme.accounts.username = '" . $_SESSION['user']['username'] . "';
+                WHERE exchangeme.accounts.username = "' . $_SESSION['user']['username'] . '";
                 
-                ");
+                ');
 
                 // Fetch Result
                 $RESULT_CHECK_ADMINISTRATIVE_PERMISSIONS = mysqli_fetch_array($QUERY_CHECK_ADMINISTRATIVE_PERMISSIONS);
@@ -382,6 +382,58 @@ require_once('mysql.php');
                         <div id='permission-administrative-container'>
 
                     ";
+
+                    // Query
+                    $QUERY_CHECK_RELATIONSHIP_FRIEND = mysqli_query($conn, '
+                    
+                    SELECT 
+                    exchangeme.friends.userid,
+                    exchangeme.friends.friendid
+                    FROM 
+                    exchangeme.friends
+                    WHERE exchangeme.friends.userid = (
+                        SELECT
+                        exchangeme.accounts.id
+                        FROM exchangeme.accounts
+                        WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_SESSION['user']['username']) . '"
+                    )
+                    AND exchangeme.friends.friendid = (
+                        SELECT
+                        exchangeme.accounts.id
+                        FROM exchangeme.accounts
+                        WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $RESULT_SELECT_PROFILE_INFO['username']) . '"
+                    );
+                    
+                    ');
+
+                    // Fetch Results
+                    $RESULT_CHECK_RELATIONSHIP_FRIEND = mysqli_fetch_array($QUERY_CHECK_RELATIONSHIP_FRIEND);
+
+                    // Query
+                    $QUERY_CHECK_RELATIONSHIP_BLOCKED = mysqli_query($conn, '
+                    
+                    SELECT 
+                    exchangeme.blocked.userid,
+                    exchangeme.blocked.blockedid
+                    FROM 
+                    exchangeme.blocked
+                    WHERE exchangeme.blocked.userid = (
+                        SELECT
+                        exchangeme.accounts.id
+                        FROM exchangeme.accounts
+                        WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_SESSION['user']['username']) . '"
+                    )
+                    AND exchangeme.blocked.blockedid = (
+                        SELECT
+                        exchangeme.accounts.id
+                        FROM exchangeme.accounts
+                        WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $RESULT_SELECT_PROFILE_INFO['username']) . '"
+                    );
+                    
+                    ');
+
+                    // Fetch Results
+                    $RESULT_CHECK_RELATIONSHIP_BLOCKED = mysqli_fetch_array($QUERY_CHECK_RELATIONSHIP_BLOCKED);
 
                     switch($RESULT_CHECK_ADMINISTRATIVE_PERMISSIONS['permissionid']) {
                         case 1:
@@ -408,10 +460,44 @@ require_once('mysql.php');
                         case 3:
                         // Member
 
+                        if(mysqli_num_rows($QUERY_CHECK_RELATIONSHIP_BLOCKED) == 0) {
+
+                            echo "
+                            
+                                <p id='administrative-block'>Block</p>
+
+                            ";
+
+                        } else {
+
+                            echo "
+                            
+                                <p id='administrative-block'>Unblock</p>
+
+                            ";
+
+                        }
+
+                        if(mysqli_num_rows($QUERY_CHECK_RELATIONSHIP_FRIEND) == 0) {
+
+                            echo "
+                            
+                                <p id='administrative-friend'>Add Friend</p>
+
+                            ";
+                            
+                        } else {
+
+                            echo "
+                            
+                                <p id='administrative-friend' style='color: #000000;'>Remove Friend</p>
+
+                            ";
+
+                        }
+
                         echo "
                         
-                        <p id='administrative-block'>Block</p>
-                        <p id='administrative-friend'>Add Friend</p>
                         <p id='administrative-report'>Report</p>
 
                         ";
@@ -420,10 +506,44 @@ require_once('mysql.php');
                         case 4:
                         // Moderator
 
+                        if(mysqli_num_rows($QUERY_CHECK_RELATIONSHIP_BLOCKED) == 0) {
+
+                            echo "
+                            
+                                <p id='administrative-block'>Block</p>
+
+                            ";
+
+                        } else {
+
+                            echo "
+                            
+                                <p id='administrative-block'>Unblock</p>
+
+                            ";
+
+                        }
+
+                        if(mysqli_num_rows($QUERY_CHECK_RELATIONSHIP_FRIEND) == 0) {
+
+                            echo "
+                            
+                                <p id='administrative-friend'>Add Friend</p>
+
+                            ";
+                            
+                        } else {
+
+                            echo "
+                            
+                                <p id='administrative-friend' style='color: #000000;'>Remove Friend</p>
+
+                            ";
+
+                        }
+
                         echo "
                         
-                            <p id='administrative-block'>Block</p>
-                            <p id='administrative-friend'>Add Friend</p>
                             <p id='administrative-report'>Report</p>
                             <p id='administrative-warn'>Warn</p>
 
@@ -433,10 +553,44 @@ require_once('mysql.php');
                         case 5:
                         // Administrator
 
+                        if(mysqli_num_rows($QUERY_CHECK_RELATIONSHIP_BLOCKED) == 0) {
+
+                            echo "
+                            
+                                <p id='administrative-block'>Block</p>
+
+                            ";
+
+                        } else {
+
+                            echo "
+                            
+                                <p id='administrative-block'>Unblock</p>
+
+                            ";
+
+                        }
+
+                        if(mysqli_num_rows($QUERY_CHECK_RELATIONSHIP_FRIEND) == 0) {
+
+                            echo "
+                            
+                                <p id='administrative-friend'>Add Friend</p>
+
+                            ";
+                            
+                        } else {
+
+                            echo "
+                            
+                                <p id='administrative-friend' style='color: #000000;'>Remove Friend</p>
+
+                            ";
+
+                        }
+
                         echo "
 
-                            <p id='administrative-block'>Block</p>
-                            <p id='administrative-friend'>Add Friend</p>
                             <p id='administrative-report'>Report</p>
                             <p id='administrative-warn'>Warn</p>
                             <p id='administrative-ban'>Ban</p>
@@ -447,10 +601,44 @@ require_once('mysql.php');
                         case 6:
                         // Site Administrator
 
+                        if(mysqli_num_rows($QUERY_CHECK_RELATIONSHIP_BLOCKED) == 0) {
+
+                            echo "
+                            
+                                <p id='administrative-block'>Block</p>
+
+                            ";
+
+                        } else {
+
+                            echo "
+                            
+                                <p id='administrative-block'>Unblock</p>
+
+                            ";
+
+                        }
+
+                        if(mysqli_num_rows($QUERY_CHECK_RELATIONSHIP_FRIEND) == 0) {
+
+                            echo "
+                            
+                                <p id='administrative-friend'>Add Friend</p>
+
+                            ";
+                            
+                        } else {
+
+                            echo "
+                            
+                                <p id='administrative-friend' style='color: #000000;'>Remove Friend</p>
+
+                            ";
+
+                        }
+
                         echo "
 
-                            <p id='administrative-block'>Block</p>
-                            <p id='administrative-friend'>Add Friend</p>
                             <p id='administrative-report'>Report</p>
                             <p id='administrative-warn'>Warn</p>
                             <p id='administrative-ban'>Ban</p>
