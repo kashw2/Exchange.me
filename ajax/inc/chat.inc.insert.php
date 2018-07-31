@@ -14,11 +14,13 @@ require_once('../../mysql.php');
 // Check to make sure POST isset and isnt empty
 if(
     !empty($_POST['Message'])
-    && isset($_POST['Message'])
+&&  isset($_POST['Message'])
+&&  !empty($_POST['CurrentUser'])
+&&  isset($_POST['CurrentUser'])
     ) {
 
     // Query
-    $QUERY_INSERT_MESSAGE = mysqli_query($conn, "
+    $QUERY_INSERT_MESSAGE = mysqli_query($conn, '
 
     INSERT INTO exchangeme.messages (
     exchangeme.messages.id,
@@ -32,13 +34,13 @@ if(
             SELECT
             exchangeme.accounts.id
             FROM exchangeme.accounts
-            WHERE exchangeme.accounts.username = '" . strip_tags($_POST['Username']) . "'
+            WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_POST['CurrentUser']) . '"
         ),
     DEFAULT,
-    '" . strip_tags($_POST['Message']) . "'
+    "' . mysqli_real_escape_string($conn, $_POST['Message']) . '"
     );
 
-    ");
+    ');
 
 }
 

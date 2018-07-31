@@ -13,14 +13,14 @@ require_once('../../mysql.php');
 
 // Check POST data
 if(
-    !empty($_POST['Username'])
-&&  isset($_POST['Username'])
+    !empty($_POST['CurrentUser'])
+&&  isset($_POST['CurrentUser'])
 &&  !empty($_POST['Friend'])
 &&  isset($_POST['Friend'])
 ) {
 
     // Query
-    $QUERY_CHECK_RELATIONSHIP = mysqli_query($conn, "
+    $QUERY_CHECK_RELATIONSHIP = mysqli_query($conn, '
     
     SELECT *
     FROM exchangeme.friends
@@ -28,17 +28,17 @@ if(
         SELECT
         exchangeme.accounts.id
         FROM exchangeme.accounts
-        WHERE exchangeme.accounts.username = '" . strip_tags($_POST['Username']) . "'
-        AND exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "'
+        WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_POST['CurrentUser']) . '"
+        AND exchangeme.accounts.session = "' . mysqli_real_escape_string($conn, $_COOKIE['loggedin']) . '"
     )
     AND exchangeme.friends.friendid = (
         SELECT
         exchangeme.accounts.id
         FROM exchangeme.accounts
-        WHERE exchangeme.accounts.username = '" . strip_tags($_POST['Friend']) . "'
+        WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_POST['Friend']) . '"
     );
     
-    ");
+    ');
 
     // Fetch Results
     $RESULT_CHECK_RELATIONSHIP = mysqli_fetch_array($QUERY_CHECK_RELATIONSHIP);
@@ -47,7 +47,7 @@ if(
     if(mysqli_num_rows($QUERY_CHECK_RELATIONSHIP) == 0) {
 
         // Query
-        $QUERY_ADD_FRIEND = mysqli_query($conn, "
+        $QUERY_ADD_FRIEND = mysqli_query($conn, '
         
         INSERT INTO exchangeme.friends (
         exchangeme.friends.userid,
@@ -58,19 +58,19 @@ if(
                 SELECT
                 exchangeme.accounts.id
                 FROM exchangeme.accounts
-                WHERE exchangeme.accounts.username = '" . strip_tags($_POST['Username']) . "'
-                AND exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "'
+                WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_POST['CurrentUser']) . '"
+                AND exchangeme.accounts.session = "' . mysqli_real_escape_string($conn, $_COOKIE['loggedin']) . '"
             ),
             (
                 SELECT
                 exchangeme.accounts.id
                 FROM exchangeme.accounts
-                WHERE exchangeme.accounts.username = '" . strip_tags($_POST['Friend']) . "'
+                WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_POST['Friend']) . '"
             ),
         DEFAULT
         );
 
-        ");
+        ');
 
         // Check query
         if($QUERY_ADD_FRIEND == true) {

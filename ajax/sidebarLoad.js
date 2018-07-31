@@ -33,7 +33,7 @@ $(document).ready(function() {
 
         // AJAX
         $(document).load("ajax/inc/account.inc.delete.php", {
-            Username: $("#grid-content__loggedin").data("user")
+            CurrentUser: $("#grid-content__loggedin").data("user")
             },
 
             // Callback
@@ -59,7 +59,8 @@ $(document).ready(function() {
 
     // AJAX
     $("#options-tablecontainer").load("ajax/inc/users.inc.online.php", {
-        Type: "Online"
+        Type: "Online",
+        CurrentUser: $("#grid-content__loggedin").data("user")
         },
 
         // Callback
@@ -77,7 +78,8 @@ $(document).ready(function() {
 
             // AJAX
             $("#options-tablecontainer").load("ajax/inc/users.inc.online.php", {
-                Type: "Online"
+                Type: "Online",
+                CurrentUser: $("#grid-content__loggedin").data("user")
                 },
 
                 // Callback
@@ -95,7 +97,8 @@ $(document).ready(function() {
 
         // AJAX
         $("#options-tablecontainer").load("ajax/inc/users.inc.online.php", {
-            Type: "Online"
+            Type: "Online",
+            CurrentUser: $("#grid-content__loggedin").data("user")
             },
 
             // Callback
@@ -117,7 +120,8 @@ $(document).ready(function() {
 
         // AJAX
         $("#options-tablecontainer").load("ajax/inc/users.inc.online.php", {
-            Type: "Online"
+            Type: "Online",
+            CurrentUser: $("#grid-content__loggedin").data("user")
             },
 
             // Callback
@@ -137,7 +141,8 @@ $(document).ready(function() {
 
         // AJAX
         $("#options-tablecontainer").load("ajax/inc/users.inc.online.php", {
-            Type: "Friends"
+            Type: "Friends",
+            CurrentUser: $("#grid-content__loggedin").data("user")
             },
 
             // Callback

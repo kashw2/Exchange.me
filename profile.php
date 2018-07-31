@@ -286,7 +286,7 @@ require_once('mysql.php');
                         exchangeme.accounts.awards,
                         exchangeme.accounts.permissionid
                         FROM exchangeme.accounts
-                        WHERE exchangeme.accounts.username = '" . strip_tags($_GET['Profile']) . "';
+                        WHERE exchangeme.accounts.username = '" . strip_tags(mysqli_real_escape_string($conn, $_GET['Profile'])) . "';
                         
                         ");
 
@@ -299,7 +299,7 @@ require_once('mysql.php');
                         SELECT
                         exchangeme.permissions.name
                         FROM exchangeme.permissions
-                        WHERE exchangeme.permissions.id = '" . $RESULT_SELECT_PROFILE_INFO['permissionid'] . "';
+                        WHERE exchangeme.permissions.id = '" . mysqli_real_escape_string($conn, $RESULT_SELECT_PROFILE_INFO['permissionid']) . "';
                         
                         ");
 
@@ -468,6 +468,7 @@ require_once('mysql.php');
                         ";
 
                         break;
+
                     }
 
                     echo "

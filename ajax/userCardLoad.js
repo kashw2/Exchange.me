@@ -28,7 +28,7 @@ $(document).ready(function() {
             // AJAX
             $(document).load("ajax/inc/users.inc.add.friend.php", 
             {
-            Username: $("#grid-content__loggedin").data("user"),
+            CurrentUser: $("#grid-content__loggedin").data("user"),
             Friend: $("#add-user").data("user")
             },
 
@@ -102,7 +102,7 @@ $(document).ready(function() {
             // AJAX
             $(document).load("ajax/inc/users.inc.block.php", 
             {
-            Username: $("#grid-content__loggedin").data("user"),
+            CurrentUser: $("#grid-content__loggedin").data("user"),
             Blocked: $("#block-user").data("user")
             },
 
@@ -139,7 +139,7 @@ $(document).ready(function() {
             // AJAX
             $(document).load("ajax/inc/users.inc.unblock.php", 
             {
-            Username: $("#grid-content__loggedin").data("user"),
+            CurrentUser: $("#grid-content__loggedin").data("user"),
             Blocked: $("#unblock-user").data("user")
             },
 

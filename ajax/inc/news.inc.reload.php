@@ -16,7 +16,7 @@ require_once('../../mysql.php');
 $ITERATOR_NEWS_CONTENT = 0;
 
 // Query
-$QUERY_NEWS = mysqli_query($conn, "
+$QUERY_NEWS = mysqli_query($conn, '
 
 SELECT
 exchangeme.accounts.username,
@@ -26,7 +26,7 @@ FROM exchangeme.news
 INNER JOIN exchangeme.accounts ON exchangeme.news.userid = exchangeme.accounts.id
 ORDER BY exchangeme.news.id DESC;
 
-");
+');
 
 // Fetch Results
 $RESULT_NEWS = mysqli_fetch_array($QUERY_NEWS);

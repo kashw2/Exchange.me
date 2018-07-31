@@ -20,16 +20,16 @@ if(
 ) {
 
     // Query
-    $QUERY_SELECT_PROFILE = mysqli_query($conn, "
+    $QUERY_SELECT_PROFILE = mysqli_query($conn, '
     
     SELECT
     exchangeme.accounts.alias,
     exchangeme.accounts.occupation,
     exchangeme.accounts.company
     FROM exchangeme.accounts
-    WHERE exchangeme.accounts.username = '" . $_POST['User'] . "';
+    WHERE exchangeme.accounts.username = "' . $_POST['User'] . '";
     
-    ");
+    ');
 
     // Fetch Results
     $RESULT_SELECT_PROFILE = mysqli_fetch_array($QUERY_SELECT_PROFILE);
@@ -97,7 +97,7 @@ if(
     }
 
     // Query
-    $QUERY_CHECK_RELATIONSHIP_FRIENDS = mysqli_query($conn, "
+    $QUERY_CHECK_RELATIONSHIP_FRIENDS = mysqli_query($conn, '
     
     SELECT *
     FROM exchangeme.friends
@@ -105,23 +105,23 @@ if(
         SELECT
         exchangeme.accounts.id
         FROM exchangeme.accounts
-        WHERE exchangeme.accounts.username = '" . strip_tags($_POST["CurrentUser"]) . "'
-        AND exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "'
+        WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_POST["CurrentUser"]) . '"
+        AND exchangeme.accounts.session = "' . mysqli_real_escape_string($conn, $_COOKIE['loggedin']) . '"
     )
     AND exchangeme.friends.friendid = (
         SELECT
         exchangeme.accounts.id
         FROM exchangeme.accounts
-        WHERE exchangeme.accounts.username = '" . strip_tags($_POST['User']) . "'
+        WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_POST['User']) . '"
     );
     
-    ");
+    ');
 
     // Fetch Results
     $RESULT_CHECK_RELATIONSHIP_FRIENDS = mysqli_fetch_array($QUERY_CHECK_RELATIONSHIP_FRIENDS);
     
     // Query
-    $QUERY_CHECK_RELATIONSHIP_BLOCKED = mysqli_query($conn, "
+    $QUERY_CHECK_RELATIONSHIP_BLOCKED = mysqli_query($conn, '
     
     SELECT *
     FROM exchangeme.blocked
@@ -129,30 +129,30 @@ if(
         SELECT
         exchangeme.accounts.id
         FROM exchangeme.accounts
-        WHERE exchangeme.accounts.username = '" . strip_tags($_POST["CurrentUser"]) . "'
-        AND exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "'
+        WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_POST["CurrentUser"]) . '"
+        AND exchangeme.accounts.session = "' . mysqli_real_escape_string($conn, $_COOKIE['loggedin']) . '"
     )
     AND exchangeme.blocked.blockedid = (
         SELECT
         exchangeme.accounts.id
         FROM exchangeme.accounts
-        WHERE exchangeme.accounts.username = '" . strip_tags($_POST['User']) . "'
+        WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_POST['User']) . '"
     );
     
-    ") or die(mysqli_error($conn));
+    ');
 
     // Fetch Result
     $RESULT_CHECK_RELATIONSHIP_BLOCKED = mysqli_fetch_array($QUERY_CHECK_RELATIONSHIP_BLOCKED);
 
     // Query
-    $QUERY_CHECK_USER = mysqli_query($conn, "
+    $QUERY_CHECK_USER = mysqli_query($conn, '
     
     SELECT
     exchangeme.accounts.username
     FROM exchangeme.accounts
-    WHERE exchangeme.accounts.username = '" . $_POST['CurrentUser'] . "';
+    WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_POST['CurrentUser']) . '";
 
-    ");
+    ');
 
     // Fetch Results
     $RESULT_CHECK_USER = mysqli_fetch_array($QUERY_CHECK_USER);
@@ -169,7 +169,7 @@ if(
 
                 echo "
                 
-                    <div id='add-user' class='table users-table action-wrapper' data-user='" . $_POST['User'] . "' title='Add Friend'>
+                    <div id='add-user' class='table users-table action-wrapper' data-user='" . strip_tags(mysqli_real_escape_string($conn, $_POST['User'])) . "' title='Add Friend'>
 
                         <object class='table users-table add-user' data='img/materialdesign/ic_add_24px.svg' type='image/svg+xml'></object>
 
@@ -181,7 +181,7 @@ if(
 
                 echo "
 
-                    <div id='remove-user' class='table users-table action-wrapper' data-user='" . $_POST['User'] . "' title='Remove Friend'>
+                    <div id='remove-user' class='table users-table action-wrapper' data-user='" . strip_tags(mysqli_real_escape_string($conn, $_POST['User'])) . "' title='Remove Friend'>
 
                         <object class='table users-table remove-user' data='img/materialdesign/ic_remove_24px.svg' type='image/svg+xml'></object>
 
@@ -196,7 +196,7 @@ if(
     
                 echo "
 
-                    <div id='block-user' class='table users-table action-wrapper' data-user='" . $_POST['User'] . "' title='Block User'>
+                    <div id='block-user' class='table users-table action-wrapper' data-user='" . strip_tags(mysqli_real_escape_string($conn, $_POST['User'])) . "' title='Block User'>
             
                         <object class='table users-table block-user' data='img/materialdesign/ic_voice_over_off_24px.svg' type='image/svg+xml'></object>
         
@@ -208,7 +208,7 @@ if(
 
                 echo "
 
-                    <div id='unblock-user' class='table users-table action-wrapper' data-user='" . $_POST['User'] . "' title='Unblock User'>
+                    <div id='unblock-user' class='table users-table action-wrapper' data-user='" . strip_tags(mysqli_real_escape_string($conn, $_POST['User'])) . "' title='Unblock User'>
             
                         <object class='table users-table unblock-user' data='img/materialdesign/ic_supervisor_account_24px.svg' type='image/svg+xml'></object>
         

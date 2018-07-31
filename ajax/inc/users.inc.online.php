@@ -15,13 +15,15 @@ require_once('../../mysql.php');
 if(
     !empty($_POST['Type'])
 &&  isset($_POST['Type'])
+&& !empty($_POST['CurrentUser'])
+&&  isset($_POST['CurrentUser'])
 ) {
 
     switch($_POST['Type']) {
         case "Online":
 
         // Query
-        $QUERY_CHECK_ONLINE = mysqli_query($conn, "
+        $QUERY_CHECK_ONLINE = mysqli_query($conn, '
         
         SELECT
         exchangeme.accounts.username,
@@ -30,7 +32,7 @@ if(
         WHERE exchangeme.accounts.lastlogin > DATE_SUB(NOW(), INTERVAL 60 MINUTE)
         ORDER BY exchangeme.accounts.lastlogin DESC;
         
-        ");
+        ');
 
         // Fetch Results
         $RESULT_CHECK_ONLINE = mysqli_fetch_array($QUERY_CHECK_ONLINE);
@@ -42,7 +44,7 @@ if(
         default:
 
         // Query
-        $QUERY_CHECK_ONLINE = mysqli_query($conn, "
+        $QUERY_CHECK_ONLINE = mysqli_query($conn, '
         
         SELECT
         exchangeme.accounts.username,
@@ -51,7 +53,7 @@ if(
         WHERE exchangeme.accounts.lastlogin > DATE_SUB(NOW(), INTERVAL 60 MINUTE)
         ORDER BY exchangeme.accounts.lastlogin DESC;
         
-        ");
+        ');
 
         // Fetch Results
         $RESULT_CHECK_ONLINE = mysqli_fetch_array($QUERY_CHECK_ONLINE);

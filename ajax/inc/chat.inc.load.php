@@ -11,85 +11,94 @@ ob_start();
 
 require_once('../../mysql.php');
 
-// Query
-$QUERY_CHAT = mysqli_query($conn, "
+// Check to make sure POST isset and isnt empty
+if(
+    isset($_POST['CurrentUser'])
+&&  !empty($_POST['CurrentUser'])
+) {
 
-SELECT 
-exchangeme.accounts.username,
-exchangeme.messages.date,
-exchangeme.messages.content
-FROM exchangeme.messages
-INNER JOIN exchangeme.accounts ON exchangeme.messages.userid = exchangeme.accounts.id
-WHERE 
-exchangeme.messages.date > DATE_SUB(NOW(), INTERVAL 1 HOUR)
-ORDER BY exchangeme.messages.date DESC;
+    // Query
+    $QUERY_CHAT = mysqli_query($conn, '
 
-");
+    SELECT 
+    exchangeme.accounts.username,
+    exchangeme.messages.date,
+    exchangeme.messages.content
+    FROM exchangeme.messages
+    INNER JOIN exchangeme.accounts ON exchangeme.messages.userid = exchangeme.accounts.id
+    WHERE 
+    exchangeme.messages.date > DATE_SUB(NOW(), INTERVAL 1 HOUR)
+    ORDER BY exchangeme.messages.date DESC;
 
-// Fetch results
-$RESULT_CHAT = mysqli_fetch_array($QUERY_CHAT);
+    ');
 
-do {
+    // Fetch results
+    $RESULT_CHAT = mysqli_fetch_array($QUERY_CHAT);
 
-    // Check who the sender was
-    if($RESULT_CHAT[0] == $_POST['Username']) {
+    do {
+
+        // Check who the sender was
+        if($RESULT_CHAT[0] == mysqli_real_escape_string($conn, $_POST['CurrentUser'])) {
+
+            echo '
+            
+                <!-- Message Container -->
+                <div class="message message-container__self">
+            
+            ';
+
+        } else {
+
+            echo '
+            
+                <!-- Message Container -->
+                <div class="message message-container__user">
+            
+            ';
+
+        }
 
         echo '
-        
-            <!-- Message Container -->
-            <div class="message message-container__self">
-        
+
+                <!-- User -->
+                <p class="message message-user">' . htmlspecialchars($RESULT_CHAT[0]) . '</p>
+
+                <!-- Date Sent -->
+                <p class="message message-date">' . htmlspecialchars($RESULT_CHAT[1][11]) . '' . htmlspecialchars($RESULT_CHAT[1][12]) . '' . htmlspecialchars($RESULT_CHAT[1][13]) . '' . htmlspecialchars($RESULT_CHAT[1][14]) . '' . htmlspecialchars($RESULT_CHAT[1][15]) . '</p>
+
+                <!-- Message -->
+                <p class="message message-contents">' . htmlspecialchars($RESULT_CHAT[2]) . '</p>
+
+            </div>
+
         ';
 
-    } else {
+        // TODO: Create less calls to htmlspecialchars when displaying the date of post
 
-        echo '
+            // // Check who the sender was
+            // if($RESULT_CHAT[0] == $_POST['CurrentUser']) {
+
+            //     echo '
         
-            <!-- Message Container -->
-            <div class="message message-container__user">
+            //         <!-- Message Delete Container -->
+            //         <div class="message message-delete__self"></div>
+                
+            //     ';
         
-        ';
+            // } else {
+        
+            //     echo '
+        
+            //         <!-- Message Delete Container -->
+            //         <div class="message message-delete__user"></div>
+                
+            //     ';
+        
+            // }
 
-    }
+    } while($RESULT_CHAT = mysqli_fetch_array($QUERY_CHAT));
 
-    echo '
-
-            <!-- User -->
-            <p class="message message-user">' . htmlspecialchars($RESULT_CHAT[0]) . '</p>
-
-            <!-- Date Sent -->
-            <p class="message message-date">' . htmlspecialchars($RESULT_CHAT[1][11]) . '' . htmlspecialchars($RESULT_CHAT[1][12]) . '' . htmlspecialchars($RESULT_CHAT[1][13]) . '' . htmlspecialchars($RESULT_CHAT[1][14]) . '' . htmlspecialchars($RESULT_CHAT[1][15]) . '</p>
-
-            <!-- Message -->
-            <p class="message message-contents">' . htmlspecialchars($RESULT_CHAT[2]) . '</p>
-
-        </div>
-
-    ';
-
-    // TODO: Create less calls to htmlspecialchars when displaying the date of post
-
-        // // Check who the sender was
-        // if($RESULT_CHAT[0] == $_POST['Username']) {
-
-        //     echo '
     
-        //         <!-- Message Delete Container -->
-        //         <div class="message message-delete__self"></div>
-            
-        //     ';
     
-        // } else {
-    
-        //     echo '
-    
-        //         <!-- Message Delete Container -->
-        //         <div class="message message-delete__user"></div>
-            
-        //     ';
-    
-        // }
-
-} while($RESULT_CHAT = mysqli_fetch_array($QUERY_CHAT));
 
 ?>

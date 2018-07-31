@@ -13,10 +13,10 @@ require_once('../../mysql.php');
 
 // Check that there is a POST value
 if(
-    !empty($_POST['Complaintant'])
-&&  isset($_POST['Complaintant'])
-&&  !empty($_POST['User'])
-&&  isset($_POST['User'])
+    !empty($_POST['CurrentUser'])
+&&  isset($_POST['CurrentUser'])
+&&  !empty($_POST['ReportedUser'])
+&&  isset($_POST['ReportedUser'])
 &&  !empty($_POST['Description'])
 &&  isset($_POST['Description'])
 ) {
@@ -37,18 +37,18 @@ if(
             SELECT 
             exchangeme.accounts.id
             FROM exchangeme.accounts
-            WHERE exchangeme.accounts.username = "' . strip_tags($_POST['Complaintant']) . '"
+            WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_POST['CurrentUser']) . '"
         ),
         (
             SELECT 
             exchangeme.accounts.id
             FROM exchangeme.accounts
-            WHERE exchangeme.accounts.username = "' . strip_tags($_POST['User']) . '"
+            WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_POST['ReportedUser']) . '"
         ),
-        "' . $_POST['Description'] . '"
+        "' . mysqli_real_escape_string($conn, $_POST['Description']) . '"
         );
     
-    ') or die(mysqli_error($conn));
+    ');
 
 }
 

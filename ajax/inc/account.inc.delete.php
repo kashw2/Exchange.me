@@ -13,19 +13,19 @@ require_once('../../mysql.php');
 
 // Check that there is a POST value
 if(
-    !empty($_POST['Username'])
-    && isset($_POST['Username'])
+    !empty($_POST['CurrentUser'])
+    && isset($_POST['CurrentUser'])
 ) {
 
     // Query
-    $QUERY_DELETE_ACCOUNT = mysqli_query($conn, "
+    $QUERY_DELETE_ACCOUNT = mysqli_query($conn, '
     
     DELETE
     FROM exchangeme.accounts
-    WHERE exchangeme.accounts.username = '" . $_POST['Username'] . "'
-    AND exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "'
+    WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_POST['CurrentUser']) . '"
+    AND exchangeme.accounts.session = "' . mysqli_real_escape_string($conn, $_COOKIE['loggedin']) . '"
 
-    ");
+    ');
 
     // Make sure the query is successful
     if($QUERY_DELETE_ACCOUNT == true) {

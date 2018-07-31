@@ -13,10 +13,11 @@ $(document).ready(function() {
         // Keycode 13 was pressed (enter)
         if(e.which == "13" && $("#messaging-message").val() != "") {
 
-            $("#chat-messages").load("ajax/inc/chat.inc.insert.php", {
-                Message: $("#messaging-message").val(),
-                Username: $("#grid-content__loggedin").data("user")
-                }, 
+            $("#chat-messages").load("ajax/inc/chat.inc.insert.php", 
+            {
+            Message: $("#messaging-message").val(),
+            CurrentUser: $("#grid-content__loggedin").data("user")
+            }, 
                 
                 // Callback
                 function(responseTxt, statusTxt, xhr) {
@@ -38,7 +39,7 @@ $(document).ready(function() {
 
         $("#chat-messages").load("ajax/inc/chat.inc.load.php", 
         {
-            Username: $("#grid-content__loggedin").data("user")
+        CurrentUser: $("#grid-content__loggedin").data("user")
         },
 
             // Callback

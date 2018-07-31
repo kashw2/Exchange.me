@@ -30,14 +30,14 @@ if(
         if(filter_var($_POST['Email'], FILTER_VALIDATE_EMAIL)) {
 
             // Query
-            $QUERY_UPDATE_EMAIL = mysqli_query($conn, "
+            $QUERY_UPDATE_EMAIL = mysqli_query($conn, '
 
             UPDATE exchangeme.accounts
-            SET exchangeme.accounts.email = '" . $_POST['Email'] . "'
-            WHERE exchangeme.accounts.username = '" . $_POST['CurrentUsername'] . "'
-            OR exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "';
+            SET exchangeme.accounts.email = "' . mysqli_real_escape_string($conn, $_POST['Email']) . '"
+            WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_POST['CurrentUsername']) . '"
+            OR exchangeme.accounts.session = "' . mysqli_real_escape_string($conn, $_COOKIE['loggedin']) . '";
 
-            ");
+            ');
 
             // Check query status
             if($QUERY_UPDATE_EMAIL == false) {
@@ -65,14 +65,14 @@ if(
     ) {
 
         // Query
-        $QUERY_UPDATE_USERNAME = mysqli_query($conn, "
+        $QUERY_UPDATE_USERNAME = mysqli_query($conn, '
 
         UPDATE exchangeme.accounts
-        SET exchangeme.accounts.username = '" . $_POST['Username'] . "'
-        WHERE exchangeme.accounts.username = '" . $_POST['CurrentUsername'] . "'
-        OR exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "';
+        SET exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_POST['Username']) . '"
+        WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_POST['CurrentUsername']) . '"
+        OR exchangeme.accounts.session = "' . mysqli_real_escape_string($conn, $_COOKIE['loggedin']) . '";
 
-        ");
+        ');
 
         // Check query status
         if($QUERY_UPDATE_USERNAME == false) {
@@ -108,16 +108,16 @@ if(
         $SALT = mcrypt_create_iv(10, MCRYPT_DEV_URANDOM);
 
         // Query
-        $QUERY_UPDATE_PASSWORD = mysqli_query($conn, "
+        $QUERY_UPDATE_PASSWORD = mysqli_query($conn, '
         
         UPDATE exchangeme.accounts
         SET 
-        exchangeme.accounts.password = '" . md5($_POST['Password']) . '' . $SALT . "',
-        exchangeme.accounts.salt = '" . $SALT . "'
-        WHERE exchangeme.accounts.username = '" . $_POST['CurrentUsername'] . "'
-        OR exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "';
+        exchangeme.accounts.password = "' . md5(mysqli_real_escape_string($conn, $_POST['Password'])) . "" . $SALT . '",
+        exchangeme.accounts.salt = "' . $SALT . '"
+        WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_POST['CurrentUsername']) . '"
+        OR exchangeme.accounts.session = "' . mysqli_real_escape_string($conn, $_COOKIE['loggedin']) . '";
 
-        ");
+        ');
 
         // Check query status
         if($QUERY_UPDATE_PASSWORD == false) {
@@ -136,14 +136,14 @@ if(
     ) {
 
         // Query
-        $QUERY_UPDATE_ALIAS = mysqli_query($conn, "
+        $QUERY_UPDATE_ALIAS = mysqli_query($conn, '
         
         UPDATE exchangeme.accounts
-        SET exchangeme.accounts.alias = '" . $_POST['Alias'] . "'
-        WHERE exchangeme.accounts.username = '" . $_POST['CurrentUsername'] . "'
-        OR exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "';
+        SET exchangeme.accounts.alias = "' . mysqli_real_escape_string($conn, $_POST['Alias']) . '"
+        WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_POST['CurrentUsername']) . '"
+        OR exchangeme.accounts.session = "' . mysqli_real_escape_string($conn, $_COOKIE['loggedin']) . '";
 
-        ");
+        ');
 
         // Check query status
         if($QUERY_UPDATE_ALIAS == false) {

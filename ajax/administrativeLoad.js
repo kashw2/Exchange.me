@@ -14,7 +14,7 @@ $(document).ready(function() {
             // AJAX
             $(document).load("ajax/inc/users.inc.block.php", 
             {
-            Username: $("#grid-content__loggedin").data("user"),
+            CurrentUser: $("#grid-content__loggedin").data("user"),
             Blocked: $("#info-username").children("p").text()
             },
 
@@ -47,7 +47,7 @@ $(document).ready(function() {
             // AJAX
             $(document).load("ajax/inc/users.inc.unblock.php", 
             {
-            Username: $("#grid-content__loggedin").data("user"),
+            CurrentUser: $("#grid-content__loggedin").data("user"),
             Blocked: $("#info-username").children("p").text()
             },
 
@@ -87,7 +87,7 @@ $(document).ready(function() {
             // AJAX
             $(document).load("ajax/inc/users.inc.add.friend.php", 
             {
-            Username: $("#grid-content__loggedin").data("user"),
+            CurrentUser: $("#grid-content__loggedin").data("user"),
             Friend: $("#info-username").children("p").text()
             },
 
@@ -121,7 +121,7 @@ $(document).ready(function() {
             // AJAX
             $(document).load("ajax/inc/users.inc.remove.friend.php", 
             {
-            Username: $("#grid-content__loggedin").data("user"),
+            CurrentUser: $("#grid-content__loggedin").data("user"),
             Friend: $("#info-username").children("p").text()
             },
 
@@ -432,8 +432,8 @@ $(document).ready(function() {
 
                 $(document).load("ajax/inc/administrative.inc.report.php", 
                 {
-                Complaintant: $("#grid-content__loggedin").data("user"),
-                User: $("#info-username").children("p").text(),
+                CurrentUser: $("#grid-content__loggedin").data("user"),
+                ReportedUser: $("#info-username").children("p").text(),
                 Description: $("#window-warning-description").val()
                 },
 
