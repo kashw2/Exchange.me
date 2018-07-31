@@ -98,7 +98,20 @@ if(
 
     } while($RESULT_CHAT = mysqli_fetch_array($QUERY_CHAT));
 
+}
+
+    /*
+    MySQL doesn't allow for UPDATE and INSERT queries to be run simultaneously
+    Refer to: https://stackoverflow.com/questions/45494/mysql-error-1093-cant-specify-target-table-for-update-in-from-clause
+    */
+
+    // Query
+    mysqli_query($conn, '
     
+    UPDATE exchangeme.accounts
+    SET exchangeme.accounts.lastlogin = CURRENT_TIMESTAMP
+    WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_POST['CurrentUser']) . '";
     
+    ');
 
 ?>
