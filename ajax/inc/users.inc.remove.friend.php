@@ -13,8 +13,8 @@ require_once('../../mysql.php');
 
 // Check POST data
 if(
-    !empty($_POST['CurrentUsername'])
-&&  isset($_POST['CurrentUsername'])
+    !empty($_POST['CurrentUser'])
+&&  isset($_POST['CurrentUser'])
 &&  !empty($_POST['Friend'])
 &&  isset($_POST['Friend'])
 ) {
@@ -28,7 +28,7 @@ if(
         SELECT
         exchangeme.accounts.id
         FROM exchangeme.accounts
-        WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_POST['CurrentUsername']) . '"
+        WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_POST['CurrentUser']) . '"
         AND exchangeme.accounts.session = "' . mysqli_real_escape_string($conn, $_COOKIE['loggedin']) . '"
     )
     AND exchangeme.friends.friendid = (
@@ -55,7 +55,7 @@ if(
             SELECT
             exchangeme.accounts.id
             FROM exchangeme.accounts
-            WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_POST['CurrentUsername']) . '"
+            WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_POST['CurrentUser']) . '"
         )
         AND exchangeme.friends.friendid = (
             SELECT
@@ -98,7 +98,7 @@ if(
     
     UPDATE exchangeme.accounts
     SET exchangeme.accounts.lastlogin = CURRENT_TIMESTAMP
-    WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_POST['CurrentUsername']) . '";
+    WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_POST['CurrentUser']) . '";
     
     ');
 

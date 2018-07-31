@@ -65,7 +65,7 @@ $(document).ready(function() {
                 // AJAX
                 $(document).load("ajax/inc/users.inc.remove.friend.php", 
                 {
-                Username: $("#grid-content__loggedin").data("user"),
+                CurrentUser: $("#grid-content__loggedin").data("user"),
                 Friend: $("#remove-user").data("user")
                 },
 
