@@ -492,7 +492,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 HTMLParagraphElement_Account_Alias.style.gridRow = 4;
                 HTMLParagraphElement_Account_Alias.style.justifySelf = "center";
                 HTMLParagraphElement_Account_Alias.style.alignSelf = "center";
-                HTMLParagraphElement_Account_Alias.style.backgroundColor = "#f3f3f3";
                 HTMLParagraphElement_Account_Alias.style.fontFamily = "Lato, sans-serif";
                 HTMLParagraphElement_Account_Alias.style.paddingLeft = "10px";
 
