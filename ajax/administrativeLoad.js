@@ -169,49 +169,49 @@ $(document).ready(function() {
             var mousePos, mouseDown;
 
             // Create the element
-            let HTMLDivElement_Warning_Window = document.createElement("div");
+            let HTMLDivElement_Report_Window = document.createElement("div");
 
             // Set element attributes
             /*
             .attr() doesn't append attribute
             TypeError!
             */
-            HTMLDivElement_Warning_Window.setAttribute("id", "user-warning-window");
+            HTMLDivElement_Report_Window.setAttribute("id", "user-warning-window");
 
             // Style the element
-            HTMLDivElement_Warning_Window.style.display = "grid";
-            HTMLDivElement_Warning_Window.style.position = "absolute";
-            HTMLDivElement_Warning_Window.style.gridTemplateColumns = "1fr";
-            HTMLDivElement_Warning_Window.style.gridTemplateRows = "20px 1fr 30px";
-            HTMLDivElement_Warning_Window.style.gridColumnStart = 1;
-            HTMLDivElement_Warning_Window.style.gridColumnEmd = 3;
-            HTMLDivElement_Warning_Window.style.justifySelf = "center";
-            HTMLDivElement_Warning_Window.style.width = "50%";
-            HTMLDivElement_Warning_Window.style.height = "325px";
-            HTMLDivElement_Warning_Window.style.backgroundColor = "#333333";
-            HTMLDivElement_Warning_Window.style.borderLeft = "2px solid #00e01e";
-            HTMLDivElement_Warning_Window.style.borderBottom = "2px solid #00e01e";
-            HTMLDivElement_Warning_Window.style.borderRight = "2px solid #00e01e";
+            HTMLDivElement_Report_Window.style.display = "grid";
+            HTMLDivElement_Report_Window.style.position = "absolute";
+            HTMLDivElement_Report_Window.style.gridTemplateColumns = "1fr";
+            HTMLDivElement_Report_Window.style.gridTemplateRows = "20px 1fr 30px";
+            HTMLDivElement_Report_Window.style.gridColumnStart = 1;
+            HTMLDivElement_Report_Window.style.gridColumnEmd = 3;
+            HTMLDivElement_Report_Window.style.justifySelf = "center";
+            HTMLDivElement_Report_Window.style.width = "50%";
+            HTMLDivElement_Report_Window.style.height = "325px";
+            HTMLDivElement_Report_Window.style.backgroundColor = "#333333";
+            HTMLDivElement_Report_Window.style.borderLeft = "2px solid #00e01e";
+            HTMLDivElement_Report_Window.style.borderBottom = "2px solid #00e01e";
+            HTMLDivElement_Report_Window.style.borderRight = "2px solid #00e01e";
 
             // Append the child
-            $("#content-profile").append(HTMLDivElement_Warning_Window);
+            $("#content-profile").append(HTMLDivElement_Report_Window);
 
             // Create the element
-            let HTMLDivElement_Warning_Window_Titlebar = document.createElement("div");
+            let HTMLDivElement_Report_Window_Titlebar = document.createElement("div");
 
             // Set element attributes
-            HTMLDivElement_Warning_Window_Titlebar.setAttribute("id", "warning-window-titlebar");
+            HTMLDivElement_Report_Window_Titlebar.setAttribute("id", "warning-window-titlebar");
 
             // Style the element
-            HTMLDivElement_Warning_Window_Titlebar.style.display = "grid";
-            HTMLDivElement_Warning_Window_Titlebar.style.gridColumn = "auto";
-            HTMLDivElement_Warning_Window_Titlebar.style.gridRow = 1;
-            HTMLDivElement_Warning_Window_Titlebar.style.gridTemplateColumns = "1fr 20px";
-            HTMLDivElement_Warning_Window_Titlebar.style.gridTemplateRows = "1fr";
-            HTMLDivElement_Warning_Window_Titlebar.style.backgroundColor = "#00e01e";
+            HTMLDivElement_Report_Window_Titlebar.style.display = "grid";
+            HTMLDivElement_Report_Window_Titlebar.style.gridColumn = "auto";
+            HTMLDivElement_Report_Window_Titlebar.style.gridRow = 1;
+            HTMLDivElement_Report_Window_Titlebar.style.gridTemplateColumns = "1fr 20px";
+            HTMLDivElement_Report_Window_Titlebar.style.gridTemplateRows = "1fr";
+            HTMLDivElement_Report_Window_Titlebar.style.backgroundColor = "#00e01e";
 
             // Append the child
-            $("#user-warning-window").append(HTMLDivElement_Warning_Window_Titlebar);
+            $("#user-warning-window").append(HTMLDivElement_Report_Window_Titlebar);
 
             // Add event listner
             $("#warning-window-titlebar").on("mousedown", function(event) {
@@ -256,176 +256,176 @@ $(document).ready(function() {
             });
 
             // Create the element
-            let HTMLParagraphElement_Warning_Window_Title = document.createElement("p");
+            let HTMLParagraphElement_Report_Window_Title = document.createElement("p");
 
             // Set the text context
             /*
             .text() doesn't work here
             TypeError!
             */
-            HTMLParagraphElement_Warning_Window_Title.textContent = "Report User";
+            HTMLParagraphElement_Report_Window_Title.textContent = "Report User";
 
             // Style the element
-            HTMLParagraphElement_Warning_Window_Title.style.gridColumn = 1;
-            HTMLParagraphElement_Warning_Window_Title.style.gridRow = "auto";
-            HTMLParagraphElement_Warning_Window_Title.style.justifySelf = "start";
-            HTMLParagraphElement_Warning_Window_Title.style.alignSelf = "center";
-            HTMLParagraphElement_Warning_Window_Title.style.color = "green";
-            HTMLParagraphElement_Warning_Window_Title.style.fontFamily = "Lato, sans-serif";
-            HTMLParagraphElement_Warning_Window_Title.style.fontSize = "0.8em";
-            HTMLParagraphElement_Warning_Window_Title.style.padding = "0px 0px 0px 5px";
-            HTMLParagraphElement_Warning_Window_Title.style.cursor = "default";
+            HTMLParagraphElement_Report_Window_Title.style.gridColumn = 1;
+            HTMLParagraphElement_Report_Window_Title.style.gridRow = "auto";
+            HTMLParagraphElement_Report_Window_Title.style.justifySelf = "start";
+            HTMLParagraphElement_Report_Window_Title.style.alignSelf = "center";
+            HTMLParagraphElement_Report_Window_Title.style.color = "green";
+            HTMLParagraphElement_Report_Window_Title.style.fontFamily = "Lato, sans-serif";
+            HTMLParagraphElement_Report_Window_Title.style.fontSize = "0.8em";
+            HTMLParagraphElement_Report_Window_Title.style.padding = "0px 0px 0px 5px";
+            HTMLParagraphElement_Report_Window_Title.style.cursor = "default";
 
             // Append the child
-            $("#warning-window-titlebar").append(HTMLParagraphElement_Warning_Window_Title);
+            $("#warning-window-titlebar").append(HTMLParagraphElement_Report_Window_Title);
 
             // Create the element
-            let HTMLDivElement_Warning_Window_Exit = document.createElement("div");
+            let HTMLDivElement_Report_Window_Exit = document.createElement("div");
 
             // Set the attributes
-            HTMLDivElement_Warning_Window_Exit.setAttribute("id", "titlebar-exit-container");
+            HTMLDivElement_Report_Window_Exit.setAttribute("id", "titlebar-exit-container");
 
             // Style the element
-            HTMLDivElement_Warning_Window_Exit.style.display = "grid";
-            HTMLDivElement_Warning_Window_Exit.style.gridTemplateColumns = "1fr";
-            HTMLDivElement_Warning_Window_Exit.style.gridTemplateRows = "1fr";
-            HTMLDivElement_Warning_Window_Exit.style.gridRow = 1;
-            HTMLDivElement_Warning_Window_Exit.style.gridColumn = 2;
-            HTMLDivElement_Warning_Window_Exit.style.backgroundColor = "#ff6363";
+            HTMLDivElement_Report_Window_Exit.style.display = "grid";
+            HTMLDivElement_Report_Window_Exit.style.gridTemplateColumns = "1fr";
+            HTMLDivElement_Report_Window_Exit.style.gridTemplateRows = "1fr";
+            HTMLDivElement_Report_Window_Exit.style.gridRow = 1;
+            HTMLDivElement_Report_Window_Exit.style.gridColumn = 2;
+            HTMLDivElement_Report_Window_Exit.style.backgroundColor = "#ff6363";
 
             // Append the child
-            $("#warning-window-titlebar").append(HTMLDivElement_Warning_Window_Exit);
+            $("#warning-window-titlebar").append(HTMLDivElement_Report_Window_Exit);
 
             // Create the element
-            let HTMLParagraphElement_Warning_Window_Exit = document.createElement("p");
+            let HTMLParagraphElement_Report_Window_Exit = document.createElement("p");
 
             // Set text context
-            HTMLParagraphElement_Warning_Window_Exit.textContent = "x";
+            HTMLParagraphElement_Report_Window_Exit.textContent = "x";
 
             // Set attributes
-            HTMLParagraphElement_Warning_Window_Exit.setAttribute("id", "titlebar-exit");
+            HTMLParagraphElement_Report_Window_Exit.setAttribute("id", "titlebar-exit");
 
             // Style the element
-            HTMLParagraphElement_Warning_Window_Exit.style.gridColumn = "auto";
-            HTMLParagraphElement_Warning_Window_Exit.style.gridRow = "auto";
-            HTMLParagraphElement_Warning_Window_Exit.style.justifySelf = "center";
-            HTMLParagraphElement_Warning_Window_Exit.style.alignSelf = "center";
-            HTMLParagraphElement_Warning_Window_Exit.style.fontFamily = "Lato, sans-serif";
-            HTMLParagraphElement_Warning_Window_Exit.style.fontSize = "0.8em";
-            HTMLParagraphElement_Warning_Window_Exit.style.cursor = "default";
+            HTMLParagraphElement_Report_Window_Exit.style.gridColumn = "auto";
+            HTMLParagraphElement_Report_Window_Exit.style.gridRow = "auto";
+            HTMLParagraphElement_Report_Window_Exit.style.justifySelf = "center";
+            HTMLParagraphElement_Report_Window_Exit.style.alignSelf = "center";
+            HTMLParagraphElement_Report_Window_Exit.style.fontFamily = "Lato, sans-serif";
+            HTMLParagraphElement_Report_Window_Exit.style.fontSize = "0.8em";
+            HTMLParagraphElement_Report_Window_Exit.style.cursor = "default";
 
             // Append the child
-            $("#titlebar-exit-container").append(HTMLParagraphElement_Warning_Window_Exit);
+            $("#titlebar-exit-container").append(HTMLParagraphElement_Report_Window_Exit);
 
             // Add the event listner
             $("#titlebar-exit").on("click", function() {
 
                 // Remove the window
-                HTMLDivElement_Warning_Window.remove();
+                HTMLDivElement_Report_Window.remove();
 
             });
 
             // Create the element
-            let HTMLDivElement_Warning_Window_Form = document.createElement("div");
+            let HTMLDivElement_Report_Window_Form = document.createElement("div");
 
             // Set the element attributes
-            HTMLDivElement_Warning_Window_Form.setAttribute("id", "warning-window-form");
+            HTMLDivElement_Report_Window_Form.setAttribute("id", "warning-window-form");
 
             // Style the element
-            HTMLDivElement_Warning_Window_Form.style.display = "grid";
-            HTMLDivElement_Warning_Window_Form.style.gridColumn = "auto";
-            HTMLDivElement_Warning_Window_Form.style.gridRow = 2;
-            HTMLDivElement_Warning_Window_Form.style.gridTemplateColumns = "1fr";
-            HTMLDivElement_Warning_Window_Form.style.gridTemplateRows = "0.2fr 1fr";
+            HTMLDivElement_Report_Window_Form.style.display = "grid";
+            HTMLDivElement_Report_Window_Form.style.gridColumn = "auto";
+            HTMLDivElement_Report_Window_Form.style.gridRow = 2;
+            HTMLDivElement_Report_Window_Form.style.gridTemplateColumns = "1fr";
+            HTMLDivElement_Report_Window_Form.style.gridTemplateRows = "0.2fr 1fr";
 
             // Append the child
-            $("#user-warning-window").append(HTMLDivElement_Warning_Window_Form);
+            $("#user-warning-window").append(HTMLDivElement_Report_Window_Form);
 
             // Create the element
-            HTMLParagraphElement_Warning_Window_Form = document.createElement("p");
+            HTMLParagraphElement_Report_Window_Form = document.createElement("p");
 
             // Set the text content
-            HTMLParagraphElement_Warning_Window_Form.textContent = "Please input a brief description that describes the incident you've had with this user.";
+            HTMLParagraphElement_Report_Window_Form.textContent = "Please input a brief description that describes the incident you've had with this user.";
 
             // Style the element
-            HTMLParagraphElement_Warning_Window_Form.style.gridColumn = "auto";
-            HTMLParagraphElement_Warning_Window_Form.style.gridRow = 1;
-            HTMLParagraphElement_Warning_Window_Form.style.justifySelf = "center";
-            HTMLParagraphElement_Warning_Window_Form.style.alignSelf = "start";
-            HTMLParagraphElement_Warning_Window_Form.style.color = "#FFFFFF";
-            HTMLParagraphElement_Warning_Window_Form.style.fontFamily = "Lato, sans-serif";
-            HTMLParagraphElement_Warning_Window_Form.style.fontSize = "0.9em";
-            HTMLParagraphElement_Warning_Window_Form.style.fontWeight = "300";
-            HTMLParagraphElement_Warning_Window_Form.style.padding = "10px 10px 10px 10px";
+            HTMLParagraphElement_Report_Window_Form.style.gridColumn = "auto";
+            HTMLParagraphElement_Report_Window_Form.style.gridRow = 1;
+            HTMLParagraphElement_Report_Window_Form.style.justifySelf = "center";
+            HTMLParagraphElement_Report_Window_Form.style.alignSelf = "start";
+            HTMLParagraphElement_Report_Window_Form.style.color = "#FFFFFF";
+            HTMLParagraphElement_Report_Window_Form.style.fontFamily = "Lato, sans-serif";
+            HTMLParagraphElement_Report_Window_Form.style.fontSize = "0.9em";
+            HTMLParagraphElement_Report_Window_Form.style.fontWeight = "300";
+            HTMLParagraphElement_Report_Window_Form.style.padding = "10px 10px 10px 10px";
 
             // Append the element
-            $("#warning-window-form").append(HTMLParagraphElement_Warning_Window_Form);
+            $("#warning-window-form").append(HTMLParagraphElement_Report_Window_Form);
 
             // Create the element
-            HTMLTextAreaElement_Warning_Window_Form = document.createElement("textarea");
+            HTMLTextAreaElement_Report_Window_Form = document.createElement("textarea");
 
             // Set the element attributes
-            HTMLTextAreaElement_Warning_Window_Form.setAttribute("placeholder", "Report Description");
-            HTMLTextAreaElement_Warning_Window_Form.setAttribute("id", "window-warning-description");
+            HTMLTextAreaElement_Report_Window_Form.setAttribute("placeholder", "Report Description");
+            HTMLTextAreaElement_Report_Window_Form.setAttribute("id", "window-warning-description");
 
             // Style the element
-            HTMLTextAreaElement_Warning_Window_Form.style.gridColumn = "auto";
-            HTMLTextAreaElement_Warning_Window_Form.style.gridRow = 2;
-            HTMLTextAreaElement_Warning_Window_Form.style.justifySelf = "center";
-            HTMLTextAreaElement_Warning_Window_Form.style.alignSelf = "end";
-            HTMLTextAreaElement_Warning_Window_Form.style.height = "40%";
-            HTMLTextAreaElement_Warning_Window_Form.style.width = "90%";
-            HTMLTextAreaElement_Warning_Window_Form.style.resize = "none";
-            HTMLTextAreaElement_Warning_Window_Form.style.marginBottom = "40px";
+            HTMLTextAreaElement_Report_Window_Form.style.gridColumn = "auto";
+            HTMLTextAreaElement_Report_Window_Form.style.gridRow = 2;
+            HTMLTextAreaElement_Report_Window_Form.style.justifySelf = "center";
+            HTMLTextAreaElement_Report_Window_Form.style.alignSelf = "end";
+            HTMLTextAreaElement_Report_Window_Form.style.height = "40%";
+            HTMLTextAreaElement_Report_Window_Form.style.width = "90%";
+            HTMLTextAreaElement_Report_Window_Form.style.resize = "none";
+            HTMLTextAreaElement_Report_Window_Form.style.marginBottom = "40px";
 
             // Append element
-            $("#warning-window-form").append(HTMLTextAreaElement_Warning_Window_Form);
+            $("#warning-window-form").append(HTMLTextAreaElement_Report_Window_Form);
 
             // Create the element
-            let HTMLDivElement_Warning_Window_Footer = document.createElement("div");
+            let HTMLDivElement_Report_Window_Footer = document.createElement("div");
 
             // Set element attributes
-            HTMLDivElement_Warning_Window_Footer.setAttribute("id", "warning-window-footer");
+            HTMLDivElement_Report_Window_Footer.setAttribute("id", "warning-window-footer");
 
             // Style the element
-            HTMLDivElement_Warning_Window_Footer.style.display = "grid";
-            HTMLDivElement_Warning_Window_Footer.style.gridColumn = "auto";
-            HTMLDivElement_Warning_Window_Footer.style.gridRow = 3;
-            HTMLDivElement_Warning_Window_Footer.style.gridTemplateColumns = "1fr auto";
-            HTMLDivElement_Warning_Window_Footer.style.gridTemplateRows = "1fr";
-            HTMLDivElement_Warning_Window_Footer.style.backgroundColor = "#383838";
+            HTMLDivElement_Report_Window_Footer.style.display = "grid";
+            HTMLDivElement_Report_Window_Footer.style.gridColumn = "auto";
+            HTMLDivElement_Report_Window_Footer.style.gridRow = 3;
+            HTMLDivElement_Report_Window_Footer.style.gridTemplateColumns = "1fr auto";
+            HTMLDivElement_Report_Window_Footer.style.gridTemplateRows = "1fr";
+            HTMLDivElement_Report_Window_Footer.style.backgroundColor = "#383838";
 
             // Append the child
-            $("#user-warning-window").append(HTMLDivElement_Warning_Window_Footer);
+            $("#user-warning-window").append(HTMLDivElement_Report_Window_Footer);
 
             // Create the element
-            let HTMLInputElement_Warning_Window_Footer_Submit = document.createElement("input");
+            let HTMLInputElement_Report_Window_Footer_Submit = document.createElement("input");
 
             // Set the element attributes
-            HTMLInputElement_Warning_Window_Footer_Submit.setAttribute("id", "warning-window-submit");
-            HTMLInputElement_Warning_Window_Footer_Submit.setAttribute("type", "button");
-            HTMLInputElement_Warning_Window_Footer_Submit.setAttribute("value", "Submit");
+            HTMLInputElement_Report_Window_Footer_Submit.setAttribute("id", "warning-window-submit");
+            HTMLInputElement_Report_Window_Footer_Submit.setAttribute("type", "button");
+            HTMLInputElement_Report_Window_Footer_Submit.setAttribute("value", "Submit");
 
             // Set text content
-            HTMLInputElement_Warning_Window_Footer_Submit.textContent = "Submit";
+            HTMLInputElement_Report_Window_Footer_Submit.textContent = "Submit";
 
             // Style the element
-            HTMLInputElement_Warning_Window_Footer_Submit.style.gridColumn = 2;
-            HTMLInputElement_Warning_Window_Footer_Submit.style.gridRow = "auto";
-            HTMLInputElement_Warning_Window_Footer_Submit.style.justifySelf = "center";
-            HTMLInputElement_Warning_Window_Footer_Submit.style.alignSelf = "center";
-            HTMLInputElement_Warning_Window_Footer_Submit.style.height = "20px";
-            HTMLInputElement_Warning_Window_Footer_Submit.style.width = "80px";
-            HTMLInputElement_Warning_Window_Footer_Submit.style.color = "#FFFFFF";
-            HTMLInputElement_Warning_Window_Footer_Submit.style.backgroundColor = "#ff2828";
-            HTMLInputElement_Warning_Window_Footer_Submit.style.fontFamily = "Lato, sans-serif";
-            HTMLInputElement_Warning_Window_Footer_Submit.style.fontSize = "0.8em";
-            HTMLInputElement_Warning_Window_Footer_Submit.style.fontWeight = "300";
-            HTMLInputElement_Warning_Window_Footer_Submit.style.margin = "2px 10px 2px 10px";
-            HTMLInputElement_Warning_Window_Footer_Submit.style.border = "none";
+            HTMLInputElement_Report_Window_Footer_Submit.style.gridColumn = 2;
+            HTMLInputElement_Report_Window_Footer_Submit.style.gridRow = "auto";
+            HTMLInputElement_Report_Window_Footer_Submit.style.justifySelf = "center";
+            HTMLInputElement_Report_Window_Footer_Submit.style.alignSelf = "center";
+            HTMLInputElement_Report_Window_Footer_Submit.style.height = "20px";
+            HTMLInputElement_Report_Window_Footer_Submit.style.width = "80px";
+            HTMLInputElement_Report_Window_Footer_Submit.style.color = "#FFFFFF";
+            HTMLInputElement_Report_Window_Footer_Submit.style.backgroundColor = "#ff2828";
+            HTMLInputElement_Report_Window_Footer_Submit.style.fontFamily = "Lato, sans-serif";
+            HTMLInputElement_Report_Window_Footer_Submit.style.fontSize = "0.8em";
+            HTMLInputElement_Report_Window_Footer_Submit.style.fontWeight = "300";
+            HTMLInputElement_Report_Window_Footer_Submit.style.margin = "2px 10px 2px 10px";
+            HTMLInputElement_Report_Window_Footer_Submit.style.border = "none";
 
             // Append the element
-            $("#warning-window-footer").append(HTMLInputElement_Warning_Window_Footer_Submit);
+            $("#warning-window-footer").append(HTMLInputElement_Report_Window_Footer_Submit);
 
             // Add event listner
             $("#warning-window-submit").on("click", function() {
@@ -444,7 +444,7 @@ $(document).ready(function() {
                     $("#window-warning-description").val("");
 
                     // Remove window
-                    HTMLDivElement_Warning_Window.remove();
+                    HTMLDivElement_Report_Window.remove();
 
                 }
 
