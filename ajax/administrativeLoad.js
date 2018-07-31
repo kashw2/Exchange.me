@@ -443,6 +443,9 @@ $(document).ready(function() {
                     // Clear the text area
                     $("#window-warning-description").val("");
 
+                    // Remove window
+                    HTMLDivElement_Warning_Window.remove();
+
                 }
 
             );
