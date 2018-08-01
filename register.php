@@ -26,7 +26,7 @@ if(
         $SALT = mcrypt_create_iv(10, MCRYPT_DEV_URANDOM);
 
         // Query
-        $QUERY_REGISTER_USER = mysqli_query($conn, "
+        $QUERY_REGISTER_USER = mysqli_query($conn, '
         
         INSERT INTO exchangeme.accounts (
         exchangeme.accounts.id,
@@ -43,19 +43,19 @@ if(
         )
         VALUES (
         DEFAULT,
-        '" . htmlspecialchars($_GET['register-username']) . "',
-        '" . htmlspecialchars($_GET['register-email']) . "',
-        '" . htmlspecialchars(md5($_GET['register-password'])) . $SALT . "',
-        '" . $SALT . "',
-        '" . htmlspecialchars($_GET['register-gender']) . "',
+        "' . mysqli_real_escape_string($conn, $_GET['register-username']) . '",
+        "' . mysqli_real_escape_string($conn, $_GET['register-email']) . '",
+        "' . md5(mysqli_real_escape_string($conn, $_GET['register-password'])) . $SALT . '",
+        "' . $SALT . '",
+        "' . mysqli_real_escape_string($conn, $_GET['register-gender']) . '",
         DEFAULT,
         DEFAULT,
-        '" . $_SERVER['REMOTE_ADDR'] . "',
-        '" . htmlspecialchars(session_id()) . "',
+        "' . $_SERVER['REMOTE_ADDR'] . '",
+        "' . mysqli_real_escape_string($conn, session_id()) . '",
         1
         );
         
-        ");
+        ');
 
         // Check query status
         if($QUERY_REGISTER_USER == true) {

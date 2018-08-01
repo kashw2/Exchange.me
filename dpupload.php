@@ -18,14 +18,14 @@ if($_POST['submit']) {
     if(!empty($_FILES['image'])) {
 
         // Query
-        $QUERY_SELECT_USERNAME = mysqli_query($conn, "
+        $QUERY_SELECT_USERNAME = mysqli_query($conn, '
             
         SELECT
         exchangeme.accounts.username
         FROM exchangeme.accounts
-        WHERE exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "';
+        WHERE exchangeme.accounts.session = "' . mysqli_real_escape_string($conn, $_COOKIE['loggedin']) . '";
 
-        ");
+        ');
 
         // Fetch Result
         $RESULT_SELECT_USERNAME = mysqli_fetch_array($QUERY_SELECT_USERNAME);

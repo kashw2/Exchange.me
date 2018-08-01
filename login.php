@@ -23,16 +23,16 @@ if(
     ) {
 
         // Query
-        $QUERY_LOGIN_USER = mysqli_query($conn, "
+        $QUERY_LOGIN_USER = mysqli_query($conn, '
         
         SELECT 
         exchangeme.accounts.username
         FROM exchangeme.accounts 
-        WHERE exchangeme.accounts.username = '" . htmlspecialchars($_GET['login-username']) . "'
-        OR exchangeme.accounts.email = '" . htmlspecialchars($_GET['login-username']) . "'
-        AND exchangeme.accounts.password LIKE '" . htmlspecialchars(md5($_GET['login-password'])) . "%';
+        WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_GET['login-username']) . '"
+        OR exchangeme.accounts.email = "' . mysqli_real_escape_string($conn, $_GET['login-username']) . '"
+        AND exchangeme.accounts.password LIKE "' . md5(mysqli_real_escape_string($conn, $_GET['login-password'])) . '%";
         
-        ");
+        ');
 
         // Fetch results
         $RESULT_LOGIN_USER = mysqli_fetch_array($QUERY_LOGIN_USER);
@@ -49,17 +49,17 @@ if(
                 setcookie("loggedin", session_id(), time()+3600*24*365, '/');
 
                 // Query
-                $QUERY_UPDATE_SESSION_LOGIN = mysqli_query($conn, "
+                $QUERY_UPDATE_SESSION_LOGIN = mysqli_query($conn, '
                 
                 UPDATE exchangeme.accounts
                 SET exchangeme.accounts.lastlogin = CURRENT_TIME,
-                exchangeme.accounts.ip = '" . $_SERVER['REMOTE_ADDR'] . "',
-                exchangeme.accounts.session = '" . session_id() . "'
-                WHERE exchangeme.accounts.username = '" . htmlspecialchars($_GET['login-username']) . "'
-                OR exchangeme.accounts.email = '" . htmlspecialchars($_GET['login-username']) . "'
-                AND exchangeme.accounts.password = '" . htmlspecialchars(md5($_GET['login-password'])) . "';
+                exchangeme.accounts.ip = "' . $_SERVER['REMOTE_ADDR'] . '",
+                exchangeme.accounts.session = "' . session_id() . '"
+                WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_GET['login-username']) . '"
+                OR exchangeme.accounts.email = "' . mysqli_real_escape_string($conn, $_GET['login-username']) . '"
+                AND exchangeme.accounts.password = "' . mysqli_real_escape_string($conn, md5($_GET['login-password'])) . '";
                 
-                ");
+                ');
 
                 // Resend headers
                 header("Location: index.php");

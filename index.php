@@ -68,15 +68,15 @@ require_once('mysql.php');
                 // Session login
 
                 // Query
-                $QUERY_SESSION_LOGIN = mysqli_query($conn, "
+                $QUERY_SESSION_LOGIN = mysqli_query($conn, '
 
                 SELECT
                 exchangeme.accounts.username,
                 exchangeme.accounts.session
                 FROM exchangeme.accounts
-                WHERE exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "';
+                WHERE exchangeme.accounts.session = "' . mysqli_real_escape_string($conn, $_COOKIE['loggedin']) . '";
 
-                ");
+                ');
 
                 // Fetch results
                 $RESULTS_SESSION_LOGIN = mysqli_fetch_array($QUERY_SESSION_LOGIN);
@@ -255,15 +255,15 @@ require_once('mysql.php');
             &&  isset($_SESSION['user']['username'])
             ) {
 
-                $QUERY_UPDATE_SESSION = mysqli_query($conn, "
+                $QUERY_UPDATE_SESSION = mysqli_query($conn, '
                 
                 UPDATE exchangeme.accounts 
                 SET exchangeme.accounts.lastlogin = CURRENT_TIME,
-                exchangeme.accounts.ip = '" . $_SERVER['REMOTE_ADDR'] . "',
-                exchangeme.accounts.session = '" . session_id() . "'
-                WHERE exchangeme.accounts.session = '" . $_COOKIE['loggedin'] . "';
+                exchangeme.accounts.ip = "' . $_SERVER['REMOTE_ADDR'] . '",
+                exchangeme.accounts.session = "' . session_id() . '"
+                WHERE exchangeme.accounts.session = "' . mysqli_real_escape_string($conn, $_COOKIE['loggedin']) . '";
 
-                ");
+                ');
 
                 // Set session variables
                 $_SESSION['user']['username'] = $RESULTS_SESSION_LOGIN[0];
@@ -335,7 +335,7 @@ require_once('mysql.php');
                 ';
                 
                 // Query
-                $QUERY_NEWS = mysqli_query($conn, "
+                $QUERY_NEWS = mysqli_query($conn, '
                 
                 SELECT
                 exchangeme.accounts.username,
@@ -345,7 +345,7 @@ require_once('mysql.php');
                 INNER JOIN exchangeme.accounts ON exchangeme.news.userid = exchangeme.accounts.id
                 ORDER BY exchangeme.news.id DESC;
                 
-                ");
+                ');
                 
                 // Fetch Results
                 $RESULT_NEWS = mysqli_fetch_array($QUERY_NEWS);
