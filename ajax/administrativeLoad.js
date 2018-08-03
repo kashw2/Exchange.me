@@ -184,7 +184,7 @@ $(document).ready(function() {
             HTMLDivElement_Report_Window.style.gridTemplateColumns = "1fr";
             HTMLDivElement_Report_Window.style.gridTemplateRows = "20px 1fr 30px";
             HTMLDivElement_Report_Window.style.gridColumnStart = 1;
-            HTMLDivElement_Report_Window.style.gridColumnEmd = 3;
+            HTMLDivElement_Report_Window.style.gridColumnEnd = 3;
             HTMLDivElement_Report_Window.style.justifySelf = "center";
             HTMLDivElement_Report_Window.style.width = "50%";
             HTMLDivElement_Report_Window.style.height = "325px";
