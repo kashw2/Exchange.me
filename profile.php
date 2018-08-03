@@ -306,20 +306,20 @@ require_once('mysql.php');
                         // Fetch Result
                         $RESULT_CHECK_PERMISSIONS = mysqli_fetch_array($QUERY_CHECK_PERMISSIONS);
 
-                echo "
+                    echo "
 
-                    </form>
+                        </form>
 
-                    <!-- Profile Information Container -->
-                    <div id='profile-info-container'>
+                        <!-- Profile Information Container -->
+                        <div id='profile-info-container'>
 
-                        <a id='info-username' href='profile.php?Profile=" . $RESULT_SELECT_PROFILE_INFO['username'] . "'>
-                        
-                            <p>" . $RESULT_SELECT_PROFILE_INFO['username'] . "</p>
+                            <a id='info-username' href='profile.php?Profile=" . $RESULT_SELECT_PROFILE_INFO['username'] . "'>
+                            
+                                <p>" . $RESULT_SELECT_PROFILE_INFO['username'] . "</p>
 
-                        </a>
+                            </a>
 
-                ";
+                    ";
 
                 if(
                     isset($RESULT_SELECT_PROFILE_INFO['alias'])
@@ -715,7 +715,7 @@ require_once('mysql.php');
                 }
                         
                 echo "
-                
+
                         </div>
                 
                     </div>
