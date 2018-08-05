@@ -1,48 +1,52 @@
 // Unapproved use and redistribution of this code and respective product is strictly prohibited.
-// Copyright© 2018 Keanu Ashwell all rights are reserved to the author, creator, registered 
+// Copyright© 2018 Keanu Ashwell all rights are reserved to the author, creator, registered
 // and licensed owners of this product and it's content
 
 // Add the event listner
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener(
+	'DOMContentLoaded',
+	function() {
+		'use strict';
 
-    'use strict';
+		// Move Header Headings Grid Location
 
-    // Move Header Headings Grid Location
+		// Make sure there are children
+		if (document.getElementById('header-nav').hasChildNodes()) {
+			// Declare and define the variable
+			var headerChildren = document.getElementById('header-nav').childNodes;
 
-    // Make sure there are children
-    if (document.getElementById('header-nav').hasChildNodes()) {
+			// Alter the style of the elements
 
-        // Declare and define the variable
-        var headerChildren = document.getElementById('header-nav').childNodes;
+			headerChildren[1].style.position = 'relative';
+			headerChildren[1].style.left = '395px';
 
-        // Alter the style of the elements
+			headerChildren[3].style.position = 'relative';
+			headerChildren[3].style.left = '400px';
+		}
 
-        headerChildren[1].style.position = 'relative';
-        headerChildren[1].style.left = '395px';
+		// Change Form Type
 
-        headerChildren[3].style.position = 'relative';
-        headerChildren[3].style.left = '400px';
+		document.getElementById('login-form').style.display = 'grid';
 
-    }
+		// Add the event listner
+		document.getElementById('login-option-change').addEventListener(
+			'click',
+			function() {
+				document.getElementById('login-form').style.display = 'none';
+				document.getElementById('register-form').style.display = 'grid';
+			},
+			false
+		);
 
-    // Change Form Type
-
-    document.getElementById('login-form').style.display = 'grid';
-
-    // Add the event listner
-    document.getElementById('login-option-change').addEventListener('click', function () {
-
-        document.getElementById('login-form').style.display = 'none';
-        document.getElementById('register-form').style.display = 'grid';
-
-    }, false);
-
-    // Add the event listner
-    document.getElementById('register-option-change').addEventListener('click', function () {
-
-        document.getElementById('login-form').style.display = 'grid';
-        document.getElementById('register-form').style.display = 'none';
-
-    }, false);
-
-}, false);
+		// Add the event listner
+		document.getElementById('register-option-change').addEventListener(
+			'click',
+			function() {
+				document.getElementById('login-form').style.display = 'grid';
+				document.getElementById('register-form').style.display = 'none';
+			},
+			false
+		);
+	},
+	false
+);
