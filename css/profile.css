@@ -25,7 +25,7 @@ body {
         grid-column-start: 1;
         grid-column-end: 3;
         grid-row: auto;
-        grid-template-columns: 150px 1fr;
+        grid-template-columns: 175px 1fr;
         grid-template-rows: 150px 30px 20px 1fr; }
         body #grid-container #grid-content__loggedin #content-profile #profile-image__set {
           grid-column: auto;
@@ -71,7 +71,8 @@ body {
             font-family: Lato, sans-serift;
             border: 1px solid #10ff10;
             border-radius: 5px;
-            margin-left: 40px;
+            padding-right: 40px;
+            margin-left: 10px;
             cursor: pointer; }
           body #grid-container #grid-content__loggedin #content-profile #profile-image-upload #image-upload-label {
             position: relative;
