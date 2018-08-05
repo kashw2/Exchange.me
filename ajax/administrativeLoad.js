@@ -490,10 +490,10 @@ $(document).ready(function() {
 			HTMLParagraphElement_Profile_Header_Profile_Heading.style.cursor = 'pointer';
 
 			/*
-            on, bind and click methods do not work when referencing a declaration of a DOMElement
-            TypeError!
-            */
-			// Add the event listner
+            	on, bind and click methods do not work when referencing a declaration of a DOMElement
+            	TypeError!
+            	*/
+			// dd the event listner
 			HTMLParagraphElement_Profile_Header_Profile_Heading.addEventListener(
 				'click',
 				function() {
@@ -550,30 +550,27 @@ $(document).ready(function() {
 					HTMLParagraphElement_Display_Profile_Email.style.cursor = 'pointer';
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Email.addEventListener('mouseover', function() {
 						HTMLParagraphElement_Display_Profile_Email.style.textDecoration = 'underline';
 					});
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Email.addEventListener('mouseout', function() {
 						HTMLParagraphElement_Display_Profile_Email.style.textDecoration = 'none';
 					});
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Email.addEventListener('click', function() {
 						if ($('#explaination-email').text() != "Alter your account's associated email address.") {
@@ -621,10 +618,9 @@ $(document).ready(function() {
 					HTMLInputElement_Display_Profile_Email.style.border = 'none';
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Email.addEventListener(
 						'click',
@@ -640,10 +636,9 @@ $(document).ready(function() {
 					);
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Email.addEventListener(
 						'focusout',
@@ -660,10 +655,9 @@ $(document).ready(function() {
 					);
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Email.addEventListener(
 						'focus',
@@ -694,30 +688,27 @@ $(document).ready(function() {
 					HTMLParagraphElement_Display_Profile_Username.style.cursor = 'pointer';
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Username.addEventListener('mouseover', function() {
 						HTMLParagraphElement_Display_Profile_Username.style.textDecoration = 'underline';
 					});
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Username.addEventListener('mouseout', function() {
 						HTMLParagraphElement_Display_Profile_Username.style.textDecoration = 'none';
 					});
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Username.addEventListener('click', function() {
 						if ($('#explaination-username').text() != "Alter your account's Username.") {
@@ -764,10 +755,9 @@ $(document).ready(function() {
 					HTMLInputElement_Display_Profile_Username.style.border = 'none';
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Username.addEventListener(
 						'click',
@@ -783,10 +773,9 @@ $(document).ready(function() {
 					);
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Username.addEventListener(
 						'focusout',
@@ -803,10 +792,9 @@ $(document).ready(function() {
 					);
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Username.addEventListener(
 						'focus',
@@ -837,30 +825,27 @@ $(document).ready(function() {
 					HTMLParagraphElement_Display_Profile_Password.style.cursor = 'pointer';
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Password.addEventListener('mouseover', function() {
 						HTMLParagraphElement_Display_Profile_Password.style.textDecoration = 'underline';
 					});
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Password.addEventListener('mouseout', function() {
 						HTMLParagraphElement_Display_Profile_Password.style.textDecoration = 'none';
 					});
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Password.addEventListener('click', function() {
 						if ($('#explaination-password').text() != "Alter your account's Password.") {
@@ -908,10 +893,9 @@ $(document).ready(function() {
 					HTMLInputElement_Display_Profile_Password.style.border = 'none';
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Password.addEventListener(
 						'click',
@@ -927,10 +911,9 @@ $(document).ready(function() {
 					);
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Password.addEventListener(
 						'focusout',
@@ -947,10 +930,9 @@ $(document).ready(function() {
 					);
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Password.addEventListener(
 						'focus',
@@ -997,30 +979,27 @@ $(document).ready(function() {
 					HTMLParagraphElement_Display_Profile_Name_First.style.cursor = 'pointer';
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Name_First.addEventListener('mouseover', function() {
 						HTMLParagraphElement_Display_Profile_Name_First.style.textDecoration = 'underline';
 					});
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Name_First.addEventListener('mouseout', function() {
 						HTMLParagraphElement_Display_Profile_Name_First.style.textDecoration = 'none';
 					});
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Name_First.addEventListener('click', function() {
 						if ($('#explaination-name-first').text() != "Alter your account's associated name." && $('#explaination-name-last').text() != "Alter your account's associated name.") {
@@ -1067,10 +1046,9 @@ $(document).ready(function() {
 					HTMLInputElement_Display_Profile_Name_First.style.border = 'none';
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Name_First.addEventListener(
 						'click',
@@ -1086,10 +1064,9 @@ $(document).ready(function() {
 					);
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Name_First.addEventListener(
 						'focusout',
@@ -1106,10 +1083,9 @@ $(document).ready(function() {
 					);
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Name_First.addEventListener(
 						'focus',
@@ -1140,30 +1116,27 @@ $(document).ready(function() {
 					HTMLParagraphElement_Display_Profile_Name_Last.style.cursor = 'pointer';
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Name_Last.addEventListener('mouseover', function() {
 						HTMLParagraphElement_Display_Profile_Name_Last.style.textDecoration = 'underline';
 					});
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Name_Last.addEventListener('mouseout', function() {
 						HTMLParagraphElement_Display_Profile_Name_Last.style.textDecoration = 'none';
 					});
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Name_Last.addEventListener('click', function() {
 						if ($('#explaination-name-first').text() != "Alter your account's associated name." && $('#explaination-name-last').text() != "Alter your account's associated name.") {
@@ -1210,10 +1183,9 @@ $(document).ready(function() {
 					HTMLInputElement_Display_Profile_Name_Last.style.border = 'none';
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Name_Last.addEventListener(
 						'click',
@@ -1229,10 +1201,9 @@ $(document).ready(function() {
 					);
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Name_Last.addEventListener(
 						'focusout',
@@ -1249,10 +1220,9 @@ $(document).ready(function() {
 					);
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Name_Last.addEventListener(
 						'focus',
@@ -1283,30 +1253,27 @@ $(document).ready(function() {
 					HTMLParagraphElement_Display_Profile_Alias.style.cursor = 'pointer';
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Alias.addEventListener('mouseover', function() {
 						HTMLParagraphElement_Display_Profile_Alias.style.textDecoration = 'underline';
 					});
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Alias.addEventListener('mouseout', function() {
 						HTMLParagraphElement_Display_Profile_Alias.style.textDecoration = 'none';
 					});
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Alias.addEventListener('click', function() {
 						if ($('#explaination-alias').text() != "Alter your account's Alias.") {
@@ -1354,10 +1321,9 @@ $(document).ready(function() {
 					HTMLInputElement_Display_Profile_Alias.style.border = 'none';
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Alias.addEventListener(
 						'click',
@@ -1373,10 +1339,9 @@ $(document).ready(function() {
 					);
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Alias.addEventListener(
 						'focusout',
@@ -1393,10 +1358,9 @@ $(document).ready(function() {
 					);
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Alias.addEventListener(
 						'focus',
@@ -1427,30 +1391,27 @@ $(document).ready(function() {
 					HTMLParagraphElement_Display_Profile_Gender.style.cursor = 'pointer';
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Gender.addEventListener('mouseover', function() {
 						HTMLParagraphElement_Display_Profile_Gender.style.textDecoration = 'underline';
 					});
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Gender.addEventListener('mouseout', function() {
 						HTMLParagraphElement_Display_Profile_Gender.style.textDecoration = 'none';
 					});
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Gender.addEventListener('click', function() {
 						if ($('#explaination-gender').text() != 'Alter your Gender.') {
@@ -1564,30 +1525,27 @@ $(document).ready(function() {
 					HTMLParagraphElement_Display_Profile_Age.style.cursor = 'pointer';
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Age.addEventListener('mouseover', function() {
 						HTMLParagraphElement_Display_Profile_Age.style.textDecoration = 'underline';
 					});
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Age.addEventListener('mouseout', function() {
 						HTMLParagraphElement_Display_Profile_Age.style.textDecoration = 'none';
 					});
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Age.addEventListener('click', function() {
 						if ($('#explaination-age').text() != 'Set your age.') {
@@ -1635,10 +1593,9 @@ $(document).ready(function() {
 					HTMLInputElement_Display_Profile_Age.style.border = 'none';
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Age.addEventListener(
 						'click',
@@ -1654,10 +1611,9 @@ $(document).ready(function() {
 					);
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Age.addEventListener(
 						'focusout',
@@ -1674,10 +1630,9 @@ $(document).ready(function() {
 					);
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Age.addEventListener(
 						'focus',
@@ -1708,30 +1663,27 @@ $(document).ready(function() {
 					HTMLParagraphElement_Display_Profile_Occupation.style.cursor = 'pointer';
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Occupation.addEventListener('mouseover', function() {
 						HTMLParagraphElement_Display_Profile_Occupation.style.textDecoration = 'underline';
 					});
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Occupation.addEventListener('mouseout', function() {
 						HTMLParagraphElement_Display_Profile_Occupation.style.textDecoration = 'none';
 					});
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Occupation.addEventListener('click', function() {
 						if ($('#explaination-occupation').text() != 'Set your Occupation.') {
@@ -1779,10 +1731,9 @@ $(document).ready(function() {
 					HTMLInputElement_Display_Profile_Occupation.style.border = 'none';
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Occupation.addEventListener(
 						'click',
@@ -1798,10 +1749,9 @@ $(document).ready(function() {
 					);
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Occupation.addEventListener(
 						'focusout',
@@ -1818,10 +1768,9 @@ $(document).ready(function() {
 					);
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Occupation.addEventListener(
 						'focus',
@@ -1852,30 +1801,27 @@ $(document).ready(function() {
 					HTMLParagraphElement_Display_Profile_Company.style.cursor = 'pointer';
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Company.addEventListener('mouseover', function() {
 						HTMLParagraphElement_Display_Profile_Company.style.textDecoration = 'underline';
 					});
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Company.addEventListener('mouseout', function() {
 						HTMLParagraphElement_Display_Profile_Company.style.textDecoration = 'none';
 					});
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Company.addEventListener('click', function() {
 						if ($('#explaination-company').text() != 'Set you employer or the Company you work for.') {
@@ -1923,10 +1869,9 @@ $(document).ready(function() {
 					HTMLInputElement_Display_Profile_Company.style.border = 'none';
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Company.addEventListener(
 						'click',
@@ -1942,10 +1887,9 @@ $(document).ready(function() {
 					);
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Company.addEventListener(
 						'focusout',
@@ -1962,10 +1906,9 @@ $(document).ready(function() {
 					);
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Company.addEventListener(
 						'focus',
@@ -1997,30 +1940,27 @@ $(document).ready(function() {
 					HTMLParagraphElement_Display_Profile_Company_Website.style.cursor = 'pointer';
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Company_Website.addEventListener('mouseover', function() {
 						HTMLParagraphElement_Display_Profile_Company_Website.style.textDecoration = 'underline';
 					});
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Company_Website.addEventListener('mouseout', function() {
 						HTMLParagraphElement_Display_Profile_Company_Website.style.textDecoration = 'none';
 					});
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Company_Website.addEventListener('click', function() {
 						if ($('#explaination-company-website').text() != "Set your company's Website/Web Address.") {
@@ -2069,10 +2009,9 @@ $(document).ready(function() {
 					HTMLInputElement_Display_Profile_Company_Website.style.marginLeft = '35px';
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Company_Website.addEventListener(
 						'click',
@@ -2088,10 +2027,9 @@ $(document).ready(function() {
 					);
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Company_Website.addEventListener(
 						'focusout',
@@ -2108,10 +2046,9 @@ $(document).ready(function() {
 					);
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Company_Website.addEventListener(
 						'focus',
@@ -2142,30 +2079,27 @@ $(document).ready(function() {
 					HTMLParagraphElement_Display_Profile_Personal_Website.style.cursor = 'pointer';
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Personal_Website.addEventListener('mouseover', function() {
 						HTMLParagraphElement_Display_Profile_Personal_Website.style.textDecoration = 'underline';
 					});
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Personal_Website.addEventListener('mouseout', function() {
 						HTMLParagraphElement_Display_Profile_Personal_Website.style.textDecoration = 'none';
 					});
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLParagraphElement_Display_Profile_Personal_Website.addEventListener('click', function() {
 						if ($('#explaination-personal-website').text() != 'Set a link to your current personal Portfolio.') {
@@ -2213,10 +2147,9 @@ $(document).ready(function() {
 					HTMLInputElement_Display_Profile_Personal_Website.style.border = 'none';
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Personal_Website.addEventListener(
 						'click',
@@ -2232,10 +2165,9 @@ $(document).ready(function() {
 					);
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Personal_Website.addEventListener(
 						'focusout',
@@ -2252,10 +2184,9 @@ $(document).ready(function() {
 					);
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Personal_Website.addEventListener(
 						'focus',
@@ -2295,20 +2226,18 @@ $(document).ready(function() {
 					HTMLInputElement_Display_Profile_Submit.style.cursor = 'pointer';
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Submit.addEventListener('mouseover', function() {
 						HTMLInputElement_Display_Profile_Submit.style.backgroundColor = '#13c201';
 					});
 
 					/*
-                on, bind and click methods do not work when referencing a declaration of a DOMElement
-                TypeError!
-                */
-
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
 					// Add the event listner
 					HTMLInputElement_Display_Profile_Submit.addEventListener('mouseout', function() {
 						HTMLInputElement_Display_Profile_Submit.style.backgroundColor = '#18cf05';
@@ -2354,10 +2283,10 @@ $(document).ready(function() {
 			HTMLParagraphElement_Profile_Header_Privacy_Heading.style.cursor = 'pointer';
 
 			/*
-            on, bind and click methods do not work when referencing a declaration of a DOMElement
-            TypeError!
-            */
-			// Add the event listner
+            	on, bind and click methods do not work when referencing a declaration of a DOMElement
+            	TypeError!
+            	*/
+			// dd the event listner
 			HTMLParagraphElement_Profile_Header_Privacy_Heading.addEventListener(
 				'click',
 				function() {
