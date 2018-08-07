@@ -38,13 +38,13 @@ if(
         mysqli_query($conn, '
 
         UPDATE exchangeme.accounts
-        SET exchangeme.accounts.username = "' . $_POST['username'] . '"
+        SET exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_POST['username']) . '"
         WHERE exchangeme.accounts.id = "' . $RESULT_CHECK_USER['id'] . '";
 
         ');
 
         // Change img/profiles directory name
-        rename('img/profiles/' . $RESULT_CHECK_USER['username'], 'img/profiles/' . $_POST['username']);
+        rename('img/profiles/' . mysqli_real_escape_string($conn, $RESULT_CHECK_USER['username']), 'img/profiles/' . mysqli_real_escape_string($conn, $_POST['username']));
 
         break;
         case !empty($_POST['email']):
@@ -53,7 +53,7 @@ if(
         mysqli_query($conn, '
 
         UPDATE exchangeme.accounts
-        SET exchangeme.accounts.email = "' . $_POST['email'] . '"
+        SET exchangeme.accounts.email = "' . mysqli_real_escape_string($conn, $_POST['email']) . '"
         WHERE exchangeme.accounts.id = "' . $RESULT_CHECK_USER['id'] . '";
 
         ');
@@ -65,7 +65,7 @@ if(
         mysqli_query($conn, '
 
         UPDATE exchangeme.accounts
-        SET exchangeme.accounts.firstname = "' . $_POST['firstname'] . '"
+        SET exchangeme.accounts.firstname = "' . mysqli_real_escape_string($conn, $_POST['firstname']) . '"
         WHERE exchangeme.accounts.id = "' . $RESULT_CHECK_USER['id'] . '";
 
         ');
@@ -77,7 +77,7 @@ if(
         mysqli_query($conn, '
 
         UPDATE exchangeme.accounts
-        SET exchangeme.accounts.lastname = "' . $_POST['lastname'] . '"
+        SET exchangeme.accounts.lastname = "' . mysqli_real_escape_string($conn, $_POST['lastname']) . '"
         WHERE exchangeme.accounts.id = "' . $RESULT_CHECK_USER['id'] . '";
 
         ');
@@ -89,7 +89,7 @@ if(
         mysqli_query($conn, '
 
         UPDATE exchangeme.accounts
-        SET exchangeme.accounts.alias = "' . $_POST['alias'] . '"
+        SET exchangeme.accounts.alias = "' . mysqli_real_escape_string($conn, $_POST['alias']) . '"
         WHERE exchangeme.accounts.id = "' . $RESULT_CHECK_USER['id'] . '";
 
         ');
@@ -101,7 +101,7 @@ if(
         mysqli_query($conn, '
 
         UPDATE exchangeme.accounts
-        SET exchangeme.accounts.gender = "' . $_POST['gender'] . '"
+        SET exchangeme.accounts.gender = "' . mysqli_real_escape_string($conn, $_POST['gender']) . '"
         WHERE exchangeme.accounts.id = "' . $RESULT_CHECK_USER['id'] . '";
 
         ');
@@ -113,7 +113,7 @@ if(
         mysqli_query($conn, '
 
         UPDATE exchangeme.accounts
-        SET exchangeme.accounts.age = "' . $_POST['age'] . '"
+        SET exchangeme.accounts.age = "' . mysqli_real_escape_string($conn, $_POST['age']) . '"
         WHERE exchangeme.accounts.id = "' . $RESULT_CHECK_USER['id'] . '";
 
         ');
@@ -125,7 +125,7 @@ if(
         mysqli_query($conn, '
 
         UPDATE exchangeme.accounts
-        SET exchangeme.accounts.occupation = "' . $_POST['occupation'] . '"
+        SET exchangeme.accounts.occupation = "' . mysqli_real_escape_string($conn, $_POST['occupation']) . '"
         WHERE exchangeme.accounts.id = "' . $RESULT_CHECK_USER['id'] . '";
 
         ');
@@ -137,7 +137,7 @@ if(
         mysqli_query($conn, '
 
         UPDATE exchangeme.accounts
-        SET exchangeme.accounts.company = "' . $_POST['company'] . '"
+        SET exchangeme.accounts.company = "' . mysqli_real_escape_string($conn, $_POST['company']) . '"
         WHERE exchangeme.accounts.id = "' . $RESULT_CHECK_USER['id'] . '";
 
         ');
@@ -149,7 +149,7 @@ if(
         mysqli_query($conn, '
 
         UPDATE exchangeme.accounts
-        SET exchangeme.accounts.companywebsite = "' . $_POST['companywebsite'] . '"
+        SET exchangeme.accounts.companywebsite = "' . mysqli_real_escape_string($conn, $_POST['companywebsite']) . '"
         WHERE exchangeme.accounts.id = "' . $RESULT_CHECK_USER['id'] . '";
 
         ');
@@ -161,7 +161,7 @@ if(
         mysqli_query($conn, '
         
         UPDATE exchangeme.accounts
-        SET exchangeme.accounts.personalwebsite = "' . $_POST['personalwebsite'] . '"
+        SET exchangeme.accounts.personalwebsite = "' . mysqli_real_escape_string($conn, $_POST['personalwebsite']) . '"
         WHERE exchangeme.accounts.id = "' . $RESULT_CHECK_USER['id'] . '";
 
         ');
@@ -173,7 +173,7 @@ if(
         mysqli_query($conn, '
         
         UPDATE exchangeme.accounts
-        SET exchangeme.accounts.biography = "' . nl2br($_POST['biography']) . '"
+        SET exchangeme.accounts.biography = "' . mysqli_real_escape_string($conn, nl2br($_POST['biography'])) . '"
         WHERE exchangeme.accounts.id = "' . $RESULT_CHECK_USER['id'] . '";
 
         ');
