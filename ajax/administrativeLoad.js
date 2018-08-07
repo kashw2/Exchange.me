@@ -2275,6 +2275,7 @@ $(document).ready(function() {
 					HTMLTextAreaElement_Display_Profile_Biography.style.gridColumn = 6;
 					HTMLTextAreaElement_Display_Profile_Biography.style.gridRowStart = 3;
 					HTMLTextAreaElement_Display_Profile_Biography.style.gridRowEnd = 13;
+					HTMLTextAreaElement_Display_Profile_Biography.style.width = '99%';
 					HTMLTextAreaElement_Display_Profile_Biography.style.backgroundColor = '#f3f3f3';
 					HTMLTextAreaElement_Display_Profile_Biography.style.fontFamily = 'Lato, sans-serif';
 					HTMLTextAreaElement_Display_Profile_Biography.style.fontSize = '0.8em';
