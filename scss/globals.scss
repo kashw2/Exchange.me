@@ -69,7 +69,7 @@ html {
                     grid-column: 3;
                     grid-row: auto;
 
-                    grid-template-columns: 50px 30px 120px 30px 35px 35px 65px 30px 52px 30px;
+                    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
                     grid-template-rows: 1fr;
 
                     justify-self: end;
@@ -80,6 +80,12 @@ html {
                     font-weight: 400;
 
                     padding-right: 10px;
+
+                    svg {
+
+                        margin: 0px 5px 0px 5px;
+
+                    }
 
                 }
 

@@ -33,13 +33,15 @@ html {
           display: grid;
           grid-column: 3;
           grid-row: auto;
-          grid-template-columns: 50px 30px 120px 30px 35px 35px 65px 30px 52px 30px;
+          grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
           grid-template-rows: 1fr;
           justify-self: end;
           align-self: center;
           font-family: 'Lato', sans-serif;
           font-weight: 400;
           padding-right: 10px; }
+          html body #grid-container #grid-header #header-nav svg {
+            margin: 0px 5px 0px 5px; }
       html body #grid-container #grid-footer {
         display: grid;
         grid-column: auto;
