@@ -39,32 +39,32 @@ if(
     // Loop through the results
     do {
 
-        echo '
+        echo "
         
             <!-- News Content Container -->
-            <div id="news-post-' . $ITERATOR_NEWS_CONTENT . '" class="news news-content-container">
+            <div id='news-post-" . $ITERATOR_NEWS_CONTENT . "' class='news news-content-container'>
 
                 <!-- Profile Picture -->
-                <div class="news news-profile-picture">
+                <div class='news news-profile-picture'>
 
                 </div>
 
-                <a class="news news-author" href="profile.php?Profile=' . $RESULT_NEWS[0] . '">
+                <a class='news news-author' href='profile.php?Profile=" . $RESULT_NEWS[0] . "'>
 
                     <!-- Author Name -->
-                    <p>' . htmlspecialchars($RESULT_NEWS[0]) . '</p>
+                    <p>" . mysqli_real_escape_string($conn, $RESULT_NEWS[0]) . "</p>
 
                 </a>
 
                 <!-- Post Date -->
-                <p class="news news-post-date">' . htmlspecialchars($RESULT_NEWS[1][8]) . '' . htmlspecialchars($RESULT_NEWS[1][9]) . '/' . htmlspecialchars($RESULT_NEWS[1][5]) . '' . htmlspecialchars($RESULT_NEWS[1][6]) . '/' . htmlspecialchars($RESULT_NEWS[1][2]) . '' . htmlspecialchars($RESULT_NEWS[1][3]) . '</p>
+                <p class='news news-post-date'>" . mysqli_real_escape_string($conn, $RESULT_NEWS[1][8]) . "" . mysqli_real_escape_string($conn, $RESULT_NEWS[1][9]) . "/" . mysqli_real_escape_string($conn, $RESULT_NEWS[1][5]) . "" . mysqli_real_escape_string($conn, $RESULT_NEWS[1][6]) . "/" . mysqli_real_escape_string($conn, $RESULT_NEWS[1][2]) . "" . mysqli_real_escape_string($conn, $RESULT_NEWS[1][3]) . "</p>
 
                 <!-- Content -->
-                <p class="news news-post-content">' . htmlspecialchars($RESULT_NEWS[2]) . '</p>
+                <p class='news news-post-content'>" . mysqli_real_escape_string($conn, $RESULT_NEWS[2]) . "</p>
             
             </div>
         
-        ';
+        ";
 
         // Increment the iterator
         $ITERATOR_NEWS_CONTENT++;
@@ -89,7 +89,7 @@ if(
         SELECT
         exchangeme.accounts.username
         FROM exchangeme.accounts
-        WHERE exchangeme.accounts.session = "' . $_COOKIE['loggedin'] . '"
+        WHERE exchangeme.accounts.session = "' . mysqli_real_escape_string($conn, $_COOKIE['loggedin']) . '"
     );
     
     ');
