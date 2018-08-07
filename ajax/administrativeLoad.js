@@ -419,6 +419,14 @@ $(document).ready(function() {
 		window.location.href = 'ban.php?User=' + $('#info-username').children('p').text() + '&Type=Ban';
 	});
 
+	// Get the current HTML
+	const var_html = $('#profile-information').html();
+	/*
+	.css retrivial doesn't work here, will have to look into it
+	https://stackoverflow.com/questions/754607/can-jquery-get-all-css-styles-associated-with-an-element
+	*/
+	const var_css = document.getElementById('profile-information').style;
+
 	// Check for click
 	$('#administrative-edit').on('click', function() {
 		// Check for current value
@@ -426,22 +434,13 @@ $(document).ready(function() {
 			// Change the text content
 			$('#administrative-edit').text('Cancel');
 
-			// Create the element
-			let HTMLDivElement_Profile_Container = document.createElement('div');
+			// Remove children and siblings
+			$('#profile-information').empty();
 
-			HTMLDivElement_Profile_Container.setAttribute('id', 'profile-information-edit');
-
-			HTMLDivElement_Profile_Container.style.display = 'grid';
-			HTMLDivElement_Profile_Container.style.gridTemplateColumns = '1fr';
-			HTMLDivElement_Profile_Container.style.gridTemplateRows = '30px 1fr';
-			HTMLDivElement_Profile_Container.style.gridColumn = 2;
-			HTMLDivElement_Profile_Container.style.gridRowStart = 2;
-			HTMLDivElement_Profile_Container.style.gridRowEnd = 5;
-			HTMLDivElement_Profile_Container.style.borderTop = '2px solid #efefef';
-			HTMLDivElement_Profile_Container.style.borderRadius = '5px';
-
-			// Append the element
-			$('#content-profile').append(HTMLDivElement_Profile_Container);
+			// Style the element
+			$('#profile-information').css('grid-template-columns', '1fr');
+			$('#profile-information').css('grid-template-rows', '22.5px 1fr');
+			$('#profile-information').css('background-color', '#FFFFFF');
 
 			// Create the element
 			let HTMLDivElement_Profile_Header = document.createElement('div');
@@ -449,14 +448,13 @@ $(document).ready(function() {
 			HTMLDivElement_Profile_Header.setAttribute('id', 'information-header-container');
 
 			HTMLDivElement_Profile_Header.style.display = 'grid';
-			HTMLDivElement_Profile_Header.style.gridTemplateColumns = 'auto auto 1fr';
+			HTMLDivElement_Profile_Header.style.gridTemplateColumns = '1fr auto auto';
 			HTMLDivElement_Profile_Header.style.gridTemplateRows = '1fr';
 			HTMLDivElement_Profile_Header.style.gridColumn = 'auto';
 			HTMLDivElement_Profile_Header.style.gridRow = 1;
-			HTMLDivElement_Profile_Header.style.backgroundColor = '#fcfcfc';
 
 			// Append the element
-			$('#profile-information-edit').append(HTMLDivElement_Profile_Header);
+			$('#profile-information').append(HTMLDivElement_Profile_Header);
 
 			// Create the element
 			let HTMLDivElement_Profile_Header_Profile = document.createElement('div');
@@ -464,13 +462,11 @@ $(document).ready(function() {
 			HTMLDivElement_Profile_Header_Profile.setAttribute('id', 'header-profile');
 
 			HTMLDivElement_Profile_Header_Profile.style.display = 'grid';
-			HTMLDivElement_Profile_Header_Profile.style.gridColumn = 1;
-			HTMLDivElement_Profile_Header_Profile.style.gridRow = 'auto';
+			HTMLDivElement_Profile_Header_Profile.style.gridColumn = 2;
+			HTMLDivElement_Profile_Header_Profile.style.gridRow = 1;
 			HTMLDivElement_Profile_Header_Profile.style.height = '100%';
 			HTMLDivElement_Profile_Header_Profile.style.width = '100px';
 			HTMLDivElement_Profile_Header_Profile.style.backgroundColor = '#18cf05';
-			HTMLDivElement_Profile_Header_Profile.style.borderTop = '2px solid #efefef';
-			HTMLDivElement_Profile_Header_Profile.style.borderLeft = '2px solid #efefef';
 
 			// Append the element
 			$('#information-header-container').append(HTMLDivElement_Profile_Header_Profile);
@@ -490,17 +486,17 @@ $(document).ready(function() {
 			HTMLParagraphElement_Profile_Header_Profile_Heading.style.cursor = 'pointer';
 
 			/*
-            	on, bind and click methods do not work when referencing a declaration of a DOMElement
-            	TypeError!
-            	*/
-			// dd the event listner
+			on, bind and click methods do not work when referencing a declaration of a DOMElement
+			TypeError!
+			*/
+			// Add the event listner
 			HTMLParagraphElement_Profile_Header_Profile_Heading.addEventListener(
 				'click',
 				function() {
 					// Delete all children and sibling elements
 					$('#information-container').empty();
 
-					HTMLDivElement_Display_Container.style.gridTemplateColumns = '80px 250px 20px 80px 250px 1fr 150px';
+					HTMLDivElement_Display_Container.style.gridTemplateColumns = '80px 250px 20px 80px 250px 1fr';
 					HTMLDivElement_Display_Container.style.gridTemplateRows = '100px 30px 20px 30px 20px 30px 20px 30px 20px 30px 20px 30px 20px auto';
 
 					// Create the element
@@ -2202,18 +2198,159 @@ $(document).ready(function() {
 					$('#information-container').append(HTMLInputElement_Display_Profile_Personal_Website);
 
 					// Create the element
+					let HTMLParagraphElement_Display_Profile_Biography = document.createElement('p');
+
+					// Set the text content
+					HTMLParagraphElement_Display_Profile_Biography.textContent = 'Biography:';
+
+					// Set the element style
+					HTMLParagraphElement_Display_Profile_Biography.style.gridColumn = 6;
+					HTMLParagraphElement_Display_Profile_Biography.style.gridRow = 2;
+					HTMLParagraphElement_Display_Profile_Biography.style.justifySelf = 'start';
+					HTMLParagraphElement_Display_Profile_Biography.style.alignSelf = 'center';
+					HTMLParagraphElement_Display_Profile_Biography.style.color = '#333';
+					HTMLParagraphElement_Display_Profile_Biography.style.fontFamily = 'Lato, sans-serif';
+					HTMLParagraphElement_Display_Profile_Biography.style.fontSize = '0.8em';
+					HTMLParagraphElement_Display_Profile_Biography.style.fontWeight = 300;
+					HTMLParagraphElement_Display_Profile_Biography.style.cursor = 'pointer';
+
+					/*
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
+					// Add the event listner
+					HTMLParagraphElement_Display_Profile_Biography.addEventListener('mouseover', function() {
+						HTMLParagraphElement_Display_Profile_Biography.style.textDecoration = 'underline';
+					});
+
+					/*
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
+					// Add the event listner
+					HTMLParagraphElement_Display_Profile_Biography.addEventListener('mouseout', function() {
+						HTMLParagraphElement_Display_Profile_Biography.style.textDecoration = 'none';
+					});
+
+					/*
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
+					// Add the event listner
+					HTMLParagraphElement_Display_Profile_Biography.addEventListener('click', function() {
+						if ($('#explaination-biography').text() != 'Set your profile Biography.') {
+							// Create the element
+							let HTMLParagraphElement_Display_Profile_Biography_Explaination = document.createElement('p');
+
+							HTMLParagraphElement_Display_Profile_Biography_Explaination.setAttribute('id', 'explaination-biography');
+
+							HTMLParagraphElement_Display_Profile_Biography_Explaination.textContent = 'Set your profile Biography.';
+
+							HTMLParagraphElement_Display_Profile_Biography_Explaination.style.gridColumn = 6;
+							HTMLParagraphElement_Display_Profile_Biography_Explaination.style.gridRow = 13;
+							HTMLParagraphElement_Display_Profile_Biography_Explaination.style.justifySelf = 'start';
+							HTMLParagraphElement_Display_Profile_Biography_Explaination.style.alignSelf = 'start';
+							HTMLParagraphElement_Display_Profile_Biography_Explaination.style.fontFamily = 'Lato, sans-serif';
+							HTMLParagraphElement_Display_Profile_Biography_Explaination.style.fontSize = '0.8em';
+							HTMLParagraphElement_Display_Profile_Biography_Explaination.style.fontWeight = 300;
+
+							// Append the element
+							$('#information-container').append(HTMLParagraphElement_Display_Profile_Biography_Explaination);
+						}
+					});
+
+					// Append the element
+					$('#information-container').append(HTMLParagraphElement_Display_Profile_Biography);
+
+					// Create the element
+					let HTMLTextAreaElement_Display_Profile_Biography = document.createElement('textarea');
+
+					// Set the elements attributes
+					HTMLTextAreaElement_Display_Profile_Biography.setAttribute('id', 'profile-biography');
+					HTMLTextAreaElement_Display_Profile_Biography.setAttribute('form', 'profile-form');
+					HTMLTextAreaElement_Display_Profile_Biography.setAttribute('placeholder', 'Profile Biography');
+					HTMLTextAreaElement_Display_Profile_Biography.setAttribute('name', 'biography');
+
+					// Style the element
+					HTMLTextAreaElement_Display_Profile_Biography.style.gridColumn = 6;
+					HTMLTextAreaElement_Display_Profile_Biography.style.gridRowStart = 3;
+					HTMLTextAreaElement_Display_Profile_Biography.style.gridRowEnd = 13;
+					HTMLTextAreaElement_Display_Profile_Biography.style.backgroundColor = '#f3f3f3';
+					HTMLTextAreaElement_Display_Profile_Biography.style.fontFamily = 'Lato, sans-serif';
+					HTMLTextAreaElement_Display_Profile_Biography.style.fontSize = '0.8em';
+					HTMLTextAreaElement_Display_Profile_Biography.style.fontWeight = 300;
+					HTMLTextAreaElement_Display_Profile_Biography.style.border = 'none';
+					HTMLTextAreaElement_Display_Profile_Biography.style.padding = '5px 5px 5px 5px';
+					HTMLTextAreaElement_Display_Profile_Biography.style.marginRight = '10px';
+					HTMLTextAreaElement_Display_Profile_Biography.style.resize = 'none';
+
+					/*
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
+					// Add the event listner
+					HTMLTextAreaElement_Display_Profile_Biography.addEventListener(
+						'click',
+						function() {
+							// Style the element
+							HTMLTextAreaElement_Display_Profile_Biography.style.backgroundColor = 'transparent';
+							HTMLTextAreaElement_Display_Profile_Biography.style.border = '1px solid #ffcb15';
+						},
+						true
+					);
+
+					/*
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
+					// Add the event listner
+					HTMLTextAreaElement_Display_Profile_Biography.addEventListener(
+						'focusout',
+						function() {
+							// Check if there is a value
+							if (HTMLTextAreaElement_Display_Profile_Biography.value == '') {
+								// Style the element
+								HTMLTextAreaElement_Display_Profile_Biography.style.backgroundColor = '#f3f3f3';
+								HTMLTextAreaElement_Display_Profile_Biography.style.border = 'none';
+								HTMLTextAreaElement_Display_Profile_Biography.style.paddingLeft = '5px';
+							}
+						},
+						true
+					);
+
+					/*
+                	on, bind and click methods do not work when referencing a declaration of a DOMElement
+                	TypeError!
+                	*/
+					// Add the event listner
+					HTMLTextAreaElement_Display_Profile_Biography.addEventListener(
+						'focus',
+						function() {
+							// Style the element
+							HTMLTextAreaElement_Display_Profile_Biography.style.outline = 'none';
+							HTMLTextAreaElement_Display_Profile_Biography.style.paddingLeft = '5px';
+						},
+						true
+					);
+
+					// Append the element
+					$('#information-container').append(HTMLTextAreaElement_Display_Profile_Biography);
+
+					// Create the element
 					let HTMLInputElement_Display_Profile_Submit = document.createElement('input');
 
+					// Set the element attributes
 					HTMLInputElement_Display_Profile_Submit.setAttribute('id', 'profile-submit');
 					HTMLInputElement_Display_Profile_Submit.setAttribute('form', 'profile-form');
 					HTMLInputElement_Display_Profile_Submit.setAttribute('type', 'submit');
-					HTMLInputElement_Display_Profile_Submit.setAttribute('placeholder', 'Update');
+					HTMLInputElement_Display_Profile_Submit.setAttribute('value', 'Update');
 
-					HTMLInputElement_Display_Profile_Submit.style.gridColumnStart = 4;
-					HTMLInputElement_Display_Profile_Submit.style.gridColumnEnd = 6;
-					HTMLInputElement_Display_Profile_Submit.style.gridRow = 12;
+					// Style the element
+					HTMLInputElement_Display_Profile_Submit.style.gridColumnStart = 1;
+					HTMLInputElement_Display_Profile_Submit.style.gridColumnEnd = 3;
+					HTMLInputElement_Display_Profile_Submit.style.gridRow = 14;
 					HTMLInputElement_Display_Profile_Submit.style.justifySelf = 'start';
-					HTMLInputElement_Display_Profile_Submit.style.alignSelf = 'center';
+					HTMLInputElement_Display_Profile_Submit.style.alignSelf = 'start';
 					HTMLInputElement_Display_Profile_Submit.style.height = '20px';
 					HTMLInputElement_Display_Profile_Submit.style.width = '60%';
 					HTMLInputElement_Display_Profile_Submit.style.color = '#FFFFFF';
@@ -2222,7 +2359,7 @@ $(document).ready(function() {
 					HTMLInputElement_Display_Profile_Submit.style.fontSize = '0.8em';
 					HTMLInputElement_Display_Profile_Submit.style.fontWeight = 300;
 					HTMLInputElement_Display_Profile_Submit.style.border = 'none';
-					HTMLInputElement_Display_Profile_Submit.style.marginRight = '50px';
+					HTMLInputElement_Display_Profile_Submit.style.margin = '0px 50px 0px 15px';
 					HTMLInputElement_Display_Profile_Submit.style.cursor = 'pointer';
 
 					/*
@@ -2258,12 +2395,11 @@ $(document).ready(function() {
 			HTMLDivElement_Profile_Header_Privacy.setAttribute('id', 'header-privacy');
 
 			HTMLDivElement_Profile_Header_Privacy.style.display = 'grid';
-			HTMLDivElement_Profile_Header_Privacy.style.gridColumn = 2;
-			HTMLDivElement_Profile_Header_Privacy.style.gridRow = 'auto';
+			HTMLDivElement_Profile_Header_Privacy.style.gridColumn = 3;
+			HTMLDivElement_Profile_Header_Privacy.style.gridRow = 1;
 			HTMLDivElement_Profile_Header_Privacy.style.height = '100%';
 			HTMLDivElement_Profile_Header_Privacy.style.width = '100px';
 			HTMLDivElement_Profile_Header_Privacy.style.backgroundColor = '#12c500';
-			HTMLDivElement_Profile_Header_Privacy.style.borderTop = '2px solid #efefef';
 
 			// Append the element
 			$('#information-header-container').append(HTMLDivElement_Profile_Header_Privacy);
@@ -2283,10 +2419,10 @@ $(document).ready(function() {
 			HTMLParagraphElement_Profile_Header_Privacy_Heading.style.cursor = 'pointer';
 
 			/*
-            	on, bind and click methods do not work when referencing a declaration of a DOMElement
-            	TypeError!
-            	*/
-			// dd the event listner
+			on, bind and click methods do not work when referencing a declaration of a DOMElement
+			TypeError!
+			*/
+			// Add the event listner
 			HTMLParagraphElement_Profile_Header_Privacy_Heading.addEventListener(
 				'click',
 				function() {
@@ -2307,18 +2443,24 @@ $(document).ready(function() {
 			HTMLDivElement_Display_Container.style.display = 'grid';
 			HTMLDivElement_Display_Container.style.gridColumn = 'auto';
 			HTMLDivElement_Display_Container.style.gridRow = 2;
-			HTMLDivElement_Display_Container.style.backgroundColor = '#fcfcfc';
-			HTMLDivElement_Display_Container.style.borderLeft = '2px solid #efefef';
 
 			// Append the element
-			$('#profile-information-edit').append(HTMLDivElement_Display_Container);
+			$('#profile-information').append(HTMLDivElement_Display_Container);
 		}
 		else if ($('#administrative-edit').text() == 'Cancel') {
 			// Change the text content
 			$('#administrative-edit').text('Edit');
 
 			// Remove the element
-			$('#profile-information-edit').remove();
+			$('#profile-information').empty();
+			$('#profile-information').html(var_html);
+
+			/*
+			.css retrivial doesn't work here, will have to look into it
+			https://stackoverflow.com/questions/754607/can-jquery-get-all-css-styles-associated-with-an-element
+			*/
+			// Reset the style
+			document.getElementById('profile-information').style = var_css;
 		}
 	});
 });
