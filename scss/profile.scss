@@ -607,6 +607,59 @@ body {
 
                 }
 
+                #profile-information {
+
+                    display: grid;
+                    
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 1fr 30px 1fr;
+
+                    grid-column: 2;
+                    grid-row-start: 2;
+                    grid-row-end: 5;
+
+                    #information-biography-heading {
+
+                        grid-column: auto;
+                        grid-row: 2;
+
+                        justify-self: start;
+                        align-self: center;
+
+                        color: #000000;
+
+                        text-align: start;
+
+                        font-family: 'Lato', sans-serif;
+                        font-size: 1em;
+                        font-weight: 500;
+
+                        padding: 10px 10px 10px 10px;
+
+                    }
+
+                    #information-biography {
+
+                        grid-column: auto;
+                        grid-row: 3;
+
+                        justify-self: start;
+                        align-self: start;
+
+                        color: #000000;
+
+                        text-align: start;
+
+                        font-family: 'Lato', sans-serif;
+                        font-size: 1em;
+                        font-weight: 300;
+
+                        padding: 0px 15% 10px 10px;
+
+                    }
+
+                }
+
             }
 
         }
