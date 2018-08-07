@@ -13,6 +13,8 @@ $DB_NAME = 'exchangeme';
 // Create the connection
 $conn = mysqli_connect($DB_IP, $USERNAME, $PASSWORD, $DB_NAME);
 
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
 // Check connection
 if($conn->connect_error) {
 
