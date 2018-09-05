@@ -411,12 +411,12 @@ $(document).ready(function() {
 
 	// Check for click
 	$('#administrative-warn').on('click', function() {
-		window.location.href = 'ban.php?User=' + $('#info-username').children('p').text() + '&Type=Warn';
+		window.location.href = 'disciplinary.php?User=' + $('#info-username').children('p').text() + '&Type=Warn';
 	});
 
 	// Check for click
 	$('#administrative-ban').on('click', function() {
-		window.location.href = 'ban.php?User=' + $('#info-username').children('p').text() + '&Type=Ban';
+		window.location.href = 'disciplinary.php?User=' + $('#info-username').children('p').text() + '&Type=Ban';
 	});
 
 	// Get the current HTML
