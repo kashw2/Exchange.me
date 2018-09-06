@@ -243,7 +243,7 @@ require_once('mysql.php');
                                                 <p id='basic-admin'>Admin:</p>
                                                 <p id='basic-details'>Details:</p>
 
-                                                <p id='basic-username' name='User' form='ban-form'>" . $_GET['User'] . "</p>
+                                                <input id='basic-username' type='text'readonly value='" . $_GET['User'] .  "' name='User' form='ban-form'></input>
 
                                                 <select id='basic-reasons' name='Reason' form='ban-form'>
                                                 <option default hidden></option>
@@ -276,15 +276,15 @@ require_once('mysql.php');
 
                                                 </select>
 
-                                                <p id='basic-date' form='ban-form' name='Date'>" . date("d/m/y") . " (Now)</p>
+                                                <p id='basic-date'>" . date("d/m/y") . " (Now)</p>
 
                                                 <input id='basic-duration-select' type='date' name='Duration' form='ban-form'>
 
-                                                <p id='basic-admin-name' name='Admin' form='ban-form'>" . $_SESSION['user']['username'] . "</p>
-                                                
+                                                <p id='basic-admin-name'>" . $_SESSION['user']['username'] . "</p>
+
                                                 <textarea id='basic-details-area' name='Details' form='ban-form'></textarea>
 
-                                                <input id='basic-ban-submit' type='button' value='Ban' form='ban-form'>
+                                                <input id='basic-ban-submit' type='submit' value='Ban' form='ban-form'>
 
                                             </div>
 
@@ -294,20 +294,22 @@ require_once('mysql.php');
 
                                     <h1 id='bans-heading'>Ban History</h1>
 
-                                    <table id='user-bans'>
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>User</th>
-                                                <th>Reason</th>
-                                                <th>Admin</th>
-                                                <th>Start Date</th>
-                                                <th>End Date</th>
-                                                <th>IP Address</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
+                                    <div id='bans-table-container'>
+
+                                        <table id='user-bans'>
+                                            <thead>
+                                                <tr>
+                                                    <!--<th>ID</th>
+                                                    <th>User</th>
+                                                    <th>Reason</th>
+                                                    <th>Admin</th>
+                                                    <th>Start Date</th>
+                                                    <th>End Date</th>
+                                                    <th>IP Address</th>
+                                                    <th></th>-->
+                                                </tr>
+                                            </thead>
+                                            <tbody>
                             ";
 
                             do {
@@ -339,8 +341,10 @@ require_once('mysql.php');
 
                             echo "
                                         
-                                        </tbody>
-                                    </table>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
                                 
                                 </div>
 

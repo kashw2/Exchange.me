@@ -62,8 +62,6 @@ require_once('mysql.php');
                 <?php
                 
                 // Check login before displaying header
-                
-                // Hoisted Variables
 
                 // Session login
 
