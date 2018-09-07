@@ -530,6 +530,251 @@ body {
 
                 }
 
+                
+                    #warning-content-container {
+
+                    display: grid;
+
+                    grid-template-columns: 350px 1fr;
+                    grid-template-rows: 1fr;
+
+                    grid-column: auto;
+                    grid-row: 1;
+
+                    #content-warning-information {
+
+                        display: grid;
+
+                        grid-column: 1;
+                        grid-row: 1;
+
+                        border-right: 1px dashed #000000;
+
+                        #warning-information {
+
+                            justify-self: center;
+                            align-self: start;
+
+                            color: #000000;
+
+                            text-align: center;
+
+                            font-family: 'Lato', sans-serif;
+                            font-weight: 600;
+                            font-size: 1em;
+
+                            word-spacing: 1px;
+
+                            letter-spacing: 0.5px;
+
+                            padding: 35px 30px 20px 30px;
+
+                        }
+
+                    }
+
+                    #content-action-container {
+
+                        display: grid;
+
+                        grid-template-columns: 300px 1fr;
+                        grid-template-rows: 1fr;
+
+                        grid-column: 2;
+                        grid-row: 1;
+
+                        #action-basic-container {
+
+                            display: grid;
+
+                            grid-template-columns: auto 1fr;
+                            grid-template-rows: 25px 15px 25px 15px 25px 15px 1fr 45px;
+
+                            grid-column: 1;
+                            grid-row-start: 1;
+                            grid-row-end: 3;
+
+                            #basic-user {
+
+                                grid-column: 1;
+                                grid-row: 1;
+
+                                justify-self: start;
+                                align-self: center;
+
+                                font-family: 'Lato', sans-serif;
+                                font-weight: 300;
+                                font-size: 0.8em;
+
+                                padding-left: 10px;
+
+                            }
+
+                            #basic-username {
+
+                                grid-column: 2;
+                                grid-row: 1;
+
+                                justify-self: start;
+                                align-self: center;
+
+                                font-family: 'Lato', sans-serif;
+                                font-weight: 300;
+                                font-size: 0.8em;
+
+                                outline: none;
+
+                                border: none;
+
+                                margin-left: 10px;
+
+                                cursor: pointer;
+
+                                &:hover {
+
+                                    text-decoration: underline;
+
+                                    font-weight: 600;
+
+                                }
+
+                            }
+
+                            #basic-date {
+
+                                grid-column: 1;
+                                grid-row: 3;
+
+                                justify-self: start;
+                                align-self: center;
+
+                                font-family: 'Lato', sans-serif;
+                                font-weight: 300;
+                                font-size: 0.8em;
+
+                                padding-left: 10px;
+
+                            }
+
+                            #basic-datenow {
+                            
+                                grid-column: 2;
+                                grid-row: 3;
+
+                                justify-self: start;
+                                align-self: center;
+
+                                font-family: 'Lato', sans-serif;
+                                font-weight: 300;
+                                font-size: 0.8em;
+
+                                padding-left: 10px;
+                                
+                            }
+
+                            #basic-admin {
+
+                                grid-column: 1;
+                                grid-row: 5;
+
+                                justify-self: start;
+                                align-self: center;
+
+                                font-family: 'Lato', sans-serif;
+                                font-weight: 300;
+                                font-size: 0.8em;
+
+                                padding-left: 10px;
+
+                            }
+
+                            #basic-admin-name {
+
+                                grid-column: 2;
+                                grid-row: 5;
+
+                                justify-self: start;
+                                align-self: center;
+
+                                font-family: 'Lato', sans-serif;
+                                font-weight: 300;
+                                font-size: 0.8em;
+
+                                padding-left: 10px;
+
+                            }
+
+                            #basic-brief {
+
+                                grid-column: 1;
+                                grid-row: 7;
+
+                                justify-self: start;
+                                align-self: center;
+
+                                font-family: 'Lato', sans-serif;
+                                font-weight: 300;
+                                font-size: 0.8em;
+
+                                padding-left: 10px;
+
+                            }
+
+                            #basic-brief-area {
+
+                                grid-column: 2;
+                                grid-row: 7;
+
+                                justify-self: center;
+                                align-self: center;
+
+                                height: 85%;
+                                width: 90%;
+
+                                font-family: 'Lato', sans-serif;
+                                font-weight: 300;
+                                font-size: 0.8em;
+
+                                resize: none;
+
+                            }
+
+                            #basic-warning-submit {
+
+                                grid-column-start: 1;
+                                grid-column-end: 3;
+                                grid-row: 8;
+
+                                justify-self: start;
+                                align-self: center;
+
+                                background-color: #ff0000;
+
+                                color: #FFFFFF;
+
+                                height: 85%;
+                                width: 50%;
+
+                                font-family: 'Lato', sans-serif;
+                                font-weight: 300;
+                                font-size: 0.8em;
+
+                                outline: none;
+
+                                border: none;
+
+                                border-radius: 7px;
+
+                                margin-left: 10px;
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
                 #user-warnings {
 
                     position: relative;
