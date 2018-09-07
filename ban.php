@@ -72,12 +72,7 @@ if($RESULT_USER['permissionid'] >= 5) {
                 FROM exchangeme.banreasons
                 WHERE exchangeme.banreasons.reason = "' . $_POST['Reason'] . '"
             ),
-            (
-                SELECT
-                exchangeme.accounts.id
-                FROM exchangeme.accounts
-                WHERE exchangeme.accounts.username = "' . $_SESSION['user']['username'] . '"
-            ),
+            "' . $_SESSION['user']['username'] . '",
             "' . $_POST['Details'] . '",
             (
                 SELECT
