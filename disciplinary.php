@@ -382,6 +382,41 @@ require_once('mysql.php');
 
                                     <h1 id='warning-heading'>Warning History</h1>
 
+                                    <div id='warning-content-container'>
+                                    
+                                        <div id='content-warning-information'>
+                                        
+                                            <p id='warning-information'>You can use this panel to warn users about their actions on the forums, it should be used as a discouragement to further offences and not a form of punishment. However all is up to the administrators discretion.<br>Note that the Brief is both what will show on a users profile and what the user will be notified of.</p>
+
+                                        </div>
+
+                                        <div id='content-action-container'>
+
+                                            <form id='warning-form' method='POST' action='warn.php'></form>
+
+                                            <div id='action-basic-container'>
+
+                                                <p id='basic-user'>User:</p>
+                                                <p id='basic-date'>Date:</p>
+                                                <p id='basic-admin'>Admin:</p>
+                                                <p id='basic-brief'>Brief:</p>
+
+                                                <input id='basic-username' type='text'readonly value='" . $_GET['User'] .  "' name='User' form='warning-form'></input>
+
+                                                <p id='basic-datenow'>" . date("d/m/y") . " (Now)</p>
+
+                                                <p id='basic-admin-name' type='text' name='Admin' form='warning-form'>" . $_SESSION['user']['username'] . "</p>
+
+                                                <textarea id='basic-brief-area' name='Brief' form='warning-form'></textarea>
+
+                                                <input id='basic-warning-submit' type='submit' value='Warn' form='warning-form'>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
                                     <table id='user-warnings'>
                                         <thead>
                                             <tr>
