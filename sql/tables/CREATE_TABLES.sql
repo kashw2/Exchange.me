@@ -19,6 +19,7 @@ CREATE TABLE IF NOT EXISTS `accounts` (
 `ip` varchar(45) NOT NULL,
 `session` varchar(200) NOT NULL,
 `permissionid` int(11) DEFAULT '0',
+`biography` mediumtext,
 `notes` text,
 PRIMARY KEY (`id`),
 UNIQUE KEY `username_UNIQUE` (`username`),
@@ -39,10 +40,9 @@ UNIQUE KEY `name_UNIQUE` (`name`)
 CREATE TABLE IF NOT EXISTS `banreasons` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
 `reason` varchar(50) NOT NULL,
-`defaulttime` datetime DEFAULT NULL,
 PRIMARY KEY (`id`),
 UNIQUE KEY `reason_UNIQUE` (`reason`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `bans` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -52,8 +52,9 @@ CREATE TABLE IF NOT EXISTS `bans` (
 `reasonid` int(11) NOT NULL,
 `admin` varchar(45) NOT NULL,
 `details` tinytext NOT NULL,
+`ip` varchar(45) NOT NULL,
 PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `blocked` (
 `userid` int(10) unsigned NOT NULL,
@@ -92,11 +93,25 @@ UNIQUE KEY `permission_UNIQUE` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `reports` (
-`id` int(11) NOT NULL,
+`id` int(11) NOT NULL AUTO_INCREMENT,
 `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
 `complaintantid` int(11) NOT NULL,
 `userid` int(11) NOT NULL,
 `details` mediumtext,
-PRIMARY KEY (`id`),
-UNIQUE KEY `id_UNIQUE` (`id`)
+PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE IF NOT EXISTS `useroptions` (
+`id` int(11) NOT NULL AUTO_INCREMENT,
+PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE IF NOT EXISTS `warnings` (
+`id` int(11) NOT NULL AUTO_INCREMENT,
+`userid` int(11) NOT NULL,
+`date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+`admin` varchar(45) NOT NULL,
+`brief` tinytext NOT NULL,
+`ip` varchar(45) NOT NULL,
+PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;

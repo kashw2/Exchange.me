@@ -360,7 +360,7 @@ require_once('mysql.php');
                             exchangeme.warnings.id AS warningid,
                             exchangeme.warnings.date,
                             exchangeme.warnings.admin,
-                            exchangeme.warnings.details,
+                            exchangeme.warnings.brief,
                             exchangeme.warnings.ip
                             FROM 
                             exchangeme.warnings
