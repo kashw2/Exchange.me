@@ -285,6 +285,8 @@ body {
               font-family: 'Lato', sans-serif;
               font-weight: 300;
               font-size: 1em; }
+            body #grid-container #grid-content__loggedin #content-ban-container #bans-table-container #user-bans .ban-view {
+              cursor: pointer; }
       body #grid-container #grid-content__loggedin #content-warning-container {
         display: grid;
         grid-template-columns: 1fr;
@@ -463,5 +465,7 @@ body {
             font-family: 'Lato', sans-serif;
             font-weight: 300;
             font-size: 1em; }
+          body #grid-container #grid-content__loggedin #content-warning-container #user-warnings .warning-details {
+            cursor: pointer; }
 
 /*# sourceMappingURL=disciplinary.css.map */

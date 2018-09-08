@@ -330,7 +330,7 @@ require_once('mysql.php');
                                             <th>" . $DATE_START->format("d/m/Y") . "</th>
                                             <th>" . $DATE_END->format("d/m/Y") . "</th>
                                             <th>" . $RESULT_USER_BANS['ip'] . "</th>
-                                            <th>View</th>
+                                            <th class='ban-view' data-href='view.php?Type=" . $_GET['Type'] . "&Id=" . $RESULT_USER_BANS['banid'] . "'>View</th>
                                         </tr>
 
                                     ";
@@ -446,7 +446,7 @@ require_once('mysql.php');
                                             <th>" . $_GET['User'] . "</th>
                                             <th>" . $RESULT_USER_WARNINGS['admin'] . "</th>
                                             <th>" . $RESULT_USER_WARNINGS['ip'] . "</th>
-                                            <th>Details</th>
+                                            <th class='warning-details' data-href='view.php?Type=" . $_GET['Type'] . "&Id=" . $RESULT_USER_WARNINGS['warningid'] . "'>Details</th>
                                         </tr>
 
                                     ";
@@ -494,6 +494,8 @@ require_once('mysql.php');
             }
 
             ?>
+
+            <script src='javascript/min/disciplinaryView.min.js'></script>
 
             <!-- Footer Container -->
             <div id="grid-footer">
