@@ -22,7 +22,7 @@ require_once('mysql.php');
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>Exchange.me - Bans</title>
+        <title>Exchange.me - <?php echo $_GET['Type']; ?></title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
