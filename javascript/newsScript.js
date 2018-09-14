@@ -19,7 +19,7 @@ document.addEventListener(
 				var newsContentContainer = document.getElementsByClassName('news-content-container');
 				var newsAuthor = document.getElementsByClassName('news-author');
 				var newsDate = document.getElementsByClassName('news-post-date');
-				var newsId = undefined;
+				var newsId;
 				var newsContent = document.getElementsByClassName('news-post-content');
 				var news;
 
@@ -28,7 +28,7 @@ document.addEventListener(
 					// Loop through the posts
 					for (var i = 0; i < newsContent.length; i++) {
 						// Convert to uppercase this entry relative to the increment
-						var news = newsContent[i].textContent.toUpperCase();
+						news = newsContent[i].textContent.toUpperCase();
 						var author = newsAuthor[i].textContent.toUpperCase();
 						var date = newsDate[i].textContent.toUpperCase();
 
@@ -49,7 +49,7 @@ document.addEventListener(
 					// Loop through the posts
 					for (var i = 0; i < newsContent.length; i++) {
 						// Convert to uppercase this entry relative to the increment
-						var news = newsContent[i].textContent.toUpperCase();
+						news = newsContent[i].textContent.toUpperCase();
 
 						// Change the style
 						document.getElementById('news-post-' + i).style.display = 'grid';

@@ -20,7 +20,7 @@ $QUERY_USER = mysqli_query($conn, '
 SELECT 
 exchangeme.accounts.permissionid
 FROM exchangeme.accounts
-WHERE exchangeme.accounts.username = "' . $_SESSION['user']['username'] . '"
+WHERE exchangeme.accounts.username = "' . $_SESSION['user']['username'] . '";
 
 ');
 
