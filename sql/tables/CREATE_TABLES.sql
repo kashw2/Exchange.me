@@ -51,8 +51,9 @@ CREATE TABLE IF NOT EXISTS `bans` (
 `enddate` datetime NOT NULL,
 `reasonid` int(11) NOT NULL,
 `admin` varchar(45) NOT NULL,
-`details` tinytext NOT NULL,
+`details` mediumtext NOT NULL,
 `ip` varchar(45) NOT NULL,
+`lastmodified` datetime DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
 
@@ -61,6 +62,29 @@ CREATE TABLE IF NOT EXISTS `blocked` (
 `blockedid` int(10) unsigned NOT NULL,
 `datestart` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE IF NOT EXISTS `deletedbans` (
+`id` int(11) NOT NULL AUTO_INCREMENT,
+`userid` int(11) NOT NULL,
+`startdate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+`enddate` datetime NOT NULL,
+`reasonid` int(11) NOT NULL,
+`admin` varchar(45) NOT NULL,
+`details` mediumtext NOT NULL,
+`ip` varchar(45) NOT NULL,
+`lastmodified` datetime DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE IF NOT EXISTS `editedbans` (
+`id` int(11) NOT NULL AUTO_INCREMENT,
+`bannumber` int(11) NOT NULL,
+`admin` varchar(45) NOT NULL,
+`reason` text NOT NULL,
+`date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+`adminip` varchar(45) NOT NULL,
+PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=03 DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `friends` (
 `userid` int(10) unsigned NOT NULL,
@@ -113,5 +137,6 @@ CREATE TABLE IF NOT EXISTS `warnings` (
 `admin` varchar(45) NOT NULL,
 `brief` tinytext NOT NULL,
 `ip` varchar(45) NOT NULL,
+`lastmodified` datetime DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
