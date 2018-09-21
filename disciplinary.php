@@ -140,349 +140,379 @@ require_once('mysql.php');
             &&  isset($_SESSION['user']['username'])
             ) {
 
-                // Make sure the user is set
-                if(
-                    isset($_GET['User'])
-                &&  !empty($_GET['User'])
-                ) {
+                // Query
+                $QUERY_CHECK_USER = mysqli_query($conn, '
+                
+                SELECT 
+                exchangeme.accounts.permissionid
+                FROM exchangeme.accounts
+                WHERE exchangeme.accounts.username = "' . $_SESSION['user']['username'] . '";
+                
+                ');
 
-                    echo "
-                    
-                        <!-- Content Container -->
-                        <div id='grid-content__loggedin' data-user='" . $_SESSION['user']['username'] . "'>
+                // Fetch Results
+                $RESULT_CHECK_USER = mysqli_fetch_array($QUERY_CHECK_USER);
 
-                            <!-- Page Options -->
-                            <div id='content-page-options'>
+                if($RESULT_CHECK_USER['permissionid'] >= 4) {
 
-                            <!-- Profile Redirect -->
-                            <a id='page-redirect-profile' href='profile.php?Profile=" . $_GET['User'] . "'>Back to Profile</a>
+                    // Make sure the user is set
+                    if(
+                        isset($_GET['User'])
+                    &&  !empty($_GET['User'])
+                    ) {
 
-                    ";
+                        echo "
+                        
+                            <!-- Content Container -->
+                            <div id='grid-content__loggedin' data-user='" . $_SESSION['user']['username'] . "'>
 
-                    switch($_GET['Type']) {
-                        case 'Ban':
+                                <!-- Page Options -->
+                                <div id='content-page-options'>
 
-                            echo "
-                            
-                                <!-- Warning Redirect -->
-                                <a id='page-redirect-warning' href='disciplinary.php?User=" . $_GET['User'] . "&Type=Warn'>Warn</a>
-                            
-                            ";
+                                <!-- Profile Redirect -->
+                                <a id='page-redirect-profile' href='profile.php?Profile=" . $_GET['User'] . "'>Back to Profile</a>
 
-                        break;
-                        case 'Warn':
+                        ";
 
-                            echo "
-                            
-                                <!-- Warning Redirect -->
-                                <a id='page-redirect-ban' href='disciplinary.php?User=" . $_GET['User'] . "&Type=Ban'>Ban</a>
-                            
-                            ";
-
-                        break;
-                    }
-
-                    echo "
-
-                            </div>
-
-                    ";
-
-                    switch($_GET['Type']) {
-                        case 'Ban':
-
-                            // Query
-                            $QUERY_USER_BANS = mysqli_query($conn, '
-                            
-                            SELECT
-                            exchangeme.bans.id AS banid,
-                            exchangeme.bans.startdate,
-                            exchangeme.bans.enddate,
-                            exchangeme.bans.admin,
-                            exchangeme.bans.details,
-                            exchangeme.bans.ip,
-                            exchangeme.banreasons.reason
-                            FROM exchangeme.bans
-                            INNER JOIN exchangeme.banreasons ON exchangeme.bans.reasonid = exchangeme.banreasons.id
-                            WHERE exchangeme.bans.userid = (
-                                SELECT
-                                exchangeme.accounts.id
-                                FROM exchangeme.accounts
-                                WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_GET['User']) . '"
-                            );
-
-                            ');
-
-                            // Fetch Results
-                            $RESULT_USER_BANS = mysqli_fetch_array($QUERY_USER_BANS);
-
-                            echo "
-
-                                <!-- Ban Container -->
-                                <div id='content-ban-container'>
-
-                                    <!-- Ban Content Container -->
-                                    <div id='ban-content-container'>
-                                    
-                                        <div id='content-banning-information'>
-                                        
-                                            <p id='banning-information'>You can use this panel to ban a user for a period of time. Please note that actions are tracked and that abuse of this system will have your administration privledges revoked.</p>
-
-                                        </div>
-
-                                        <div id='content-action-container'>
-
-                                            <form id='ban-form' method='POST' action='ban.php'></form>
-
-                                            <div id='action-basic-container'>
-                                            
-                                                <p id='basic-user'>User:</p>
-                                                <p id='basic-reason'>Reason:</p>
-                                                <p id='basic-start'>Start:</p>
-                                                <p id='basic-duration'>Duration:</p>
-                                                <p id='basic-admin'>Admin:</p>
-                                                <p id='basic-details'>Details:</p>
-
-                                                <input id='basic-username' type='text'readonly value='" . $_GET['User'] .  "' name='User' form='ban-form'></input>
-
-                                                <select id='basic-reasons' name='Reason' form='ban-form'>
-                                                <option default hidden></option>
-                                                
-                                ";
-
-                                // Query
-                                $QUERY_BAN_REASONS = mysqli_query($conn, '
-                                
-                                SELECT
-                                exchangeme.banreasons.reason
-                                FROM exchangeme.banreasons;
-                                
-                                ');
-
-                                // Fetch Results
-                                $RESULT_BAN_REASONS = mysqli_fetch_array($QUERY_BAN_REASONS);
-
-                                do {
-
-                                    echo "
-
-                                    <option>" . $RESULT_BAN_REASONS['reason'] . "</option>
-
-                                    ";
-
-                                } while($RESULT_BAN_REASONS = mysqli_fetch_array($QUERY_BAN_REASONS));
+                        switch($_GET['Type']) {
+                            case 'Ban':
 
                                 echo "
+                                
+                                    <!-- Warning Redirect -->
+                                    <a id='page-redirect-warning' href='disciplinary.php?User=" . $_GET['User'] . "&Type=Warn'>Warn</a>
+                                
+                                ";
 
-                                                </select>
+                            break;
+                            case 'Warn':
 
-                                                <p id='basic-date'>" . date("d/m/y") . " (Now)</p>
+                                echo "
+                                
+                                    <!-- Warning Redirect -->
+                                    <a id='page-redirect-ban' href='disciplinary.php?User=" . $_GET['User'] . "&Type=Ban'>Ban</a>
+                                
+                                ";
 
-                                                <input id='basic-duration-select' type='date' name='Duration' form='ban-form'>
+                            break;
+                        }
 
-                                                <p id='basic-admin-name'>" . $_SESSION['user']['username'] . "</p>
+                        echo "
 
-                                                <textarea id='basic-details-area' name='Details' form='ban-form'></textarea>
+                                </div>
 
-                                                <input id='basic-ban-submit' type='submit' value='Ban' form='ban-form'>
+                        ";
+
+                        switch($_GET['Type']) {
+                            case 'Ban':
+
+                                if($RESULT_CHECK_USER['permissionid'] >= 5) {
+
+                                    // Query
+                                    $QUERY_USER_BANS = mysqli_query($conn, '
+                                    
+                                    SELECT
+                                    exchangeme.bans.id AS banid,
+                                    exchangeme.bans.startdate,
+                                    exchangeme.bans.enddate,
+                                    exchangeme.bans.admin,
+                                    exchangeme.bans.details,
+                                    exchangeme.bans.ip,
+                                    exchangeme.banreasons.reason
+                                    FROM exchangeme.bans
+                                    INNER JOIN exchangeme.banreasons ON exchangeme.bans.reasonid = exchangeme.banreasons.id
+                                    WHERE exchangeme.bans.userid = (
+                                        SELECT
+                                        exchangeme.accounts.id
+                                        FROM exchangeme.accounts
+                                        WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_GET['User']) . '"
+                                    );
+
+                                    ');
+
+                                    // Fetch Results
+                                    $RESULT_USER_BANS = mysqli_fetch_array($QUERY_USER_BANS);
+
+                                    echo "
+
+                                        <!-- Ban Container -->
+                                        <div id='content-ban-container'>
+
+                                            <!-- Ban Content Container -->
+                                            <div id='ban-content-container'>
+                                            
+                                                <div id='content-banning-information'>
+                                                
+                                                    <p id='banning-information'>You can use this panel to ban a user for a period of time. Please note that actions are tracked and that abuse of this system will have your administration privledges revoked.</p>
+
+                                                </div>
+
+                                                <div id='content-action-container'>
+
+                                                    <form id='ban-form' method='POST' action='ban.php'></form>
+
+                                                    <div id='action-basic-container'>
+                                                    
+                                                        <p id='basic-user'>User:</p>
+                                                        <p id='basic-reason'>Reason:</p>
+                                                        <p id='basic-start'>Start:</p>
+                                                        <p id='basic-duration'>Duration:</p>
+                                                        <p id='basic-admin'>Admin:</p>
+                                                        <p id='basic-details'>Details:</p>
+
+                                                        <input id='basic-username' type='text'readonly value='" . $_GET['User'] .  "' name='User' form='ban-form'></input>
+
+                                                        <select id='basic-reasons' name='Reason' form='ban-form'>
+                                                        <option default hidden></option>
+                                                        
+                                        ";
+
+                                        // Query
+                                        $QUERY_BAN_REASONS = mysqli_query($conn, '
+                                        
+                                        SELECT
+                                        exchangeme.banreasons.reason
+                                        FROM exchangeme.banreasons;
+                                        
+                                        ');
+
+                                        // Fetch Results
+                                        $RESULT_BAN_REASONS = mysqli_fetch_array($QUERY_BAN_REASONS);
+
+                                        do {
+
+                                            echo "
+
+                                            <option>" . $RESULT_BAN_REASONS['reason'] . "</option>
+
+                                            ";
+
+                                        } while($RESULT_BAN_REASONS = mysqli_fetch_array($QUERY_BAN_REASONS));
+
+                                        echo "
+
+                                                        </select>
+
+                                                        <p id='basic-date'>" . date("d/m/y") . " (Now)</p>
+
+                                                        <input id='basic-duration-select' type='date' name='Duration' form='ban-form'>
+
+                                                        <p id='basic-admin-name'>" . $_SESSION['user']['username'] . "</p>
+
+                                                        <textarea id='basic-details-area' name='Details' form='ban-form'></textarea>
+
+                                                        <input id='basic-ban-submit' type='submit' value='Ban' form='ban-form'>
+
+                                                    </div>
+
+                                                </div>
 
                                             </div>
 
-                                        </div>
+                                            <h1 id='bans-heading'>Ban History</h1>
 
-                                    </div>
+                                            <div id='bans-table-container'>
 
-                                    <h1 id='bans-heading'>Ban History</h1>
+                                                <table id='user-bans'>
+                                                    <thead>
+                                                        <tr>
+                                                            <!--<th>ID</th>
+                                                            <th>User</th>
+                                                            <th>Reason</th>
+                                                            <th>Admin</th>
+                                                            <th>Start Date</th>
+                                                            <th>End Date</th>
+                                                            <th>IP Address</th>
+                                                            <th></th>-->
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                    ";
 
-                                    <div id='bans-table-container'>
+                                    do {
 
-                                        <table id='user-bans'>
-                                            <thead>
+                                        // Check that there are entries
+                                        if(mysqli_num_rows($QUERY_USER_BANS) > 0) {
+
+                                            $DATE_START = date_create($RESULT_USER_BANS['startdate']);
+                                            $DATE_END = date_create($RESULT_USER_BANS['enddate']);
+                                            
+                                            echo "
+                                            
                                                 <tr>
-                                                    <!--<th>ID</th>
-                                                    <th>User</th>
-                                                    <th>Reason</th>
-                                                    <th>Admin</th>
-                                                    <th>Start Date</th>
-                                                    <th>End Date</th>
-                                                    <th>IP Address</th>
-                                                    <th></th>-->
+                                                    <th>" . $RESULT_USER_BANS['banid'] . "</th>
+                                                    <th>" . $_GET['User'] . "</th>
+                                                    <th>" . $RESULT_USER_BANS['reason'] . "</th>
+                                                    <th>" . $RESULT_USER_BANS['admin'] . "</th>
+                                                    <th>" . $DATE_START->format("d/m/Y") . "</th>
+                                                    <th>" . $DATE_END->format("d/m/Y") . "</th>
+                                                    <th>" . $RESULT_USER_BANS['ip'] . "</th>
+                                                    <th class='ban-view' data-href='view.php?Type=" . $_GET['Type'] . "&Id=" . $RESULT_USER_BANS['banid'] . "'>View</th>
                                                 </tr>
-                                            </thead>
-                                            <tbody>
-                            ";
 
-                            do {
+                                            ";
 
-                                // Check that there are entries
-                                if(mysqli_num_rows($QUERY_USER_BANS) > 0) {
+                                        }
 
-                                    $DATE_START = date_create($RESULT_USER_BANS['startdate']);
-                                    $DATE_END = date_create($RESULT_USER_BANS['enddate']);
-                                    
+                                    } while($RESULT_USER_BANS = mysqli_fetch_array($QUERY_USER_BANS));
+
                                     echo "
-                                    
-                                        <tr>
-                                            <th>" . $RESULT_USER_BANS['banid'] . "</th>
-                                            <th>" . $_GET['User'] . "</th>
-                                            <th>" . $RESULT_USER_BANS['reason'] . "</th>
-                                            <th>" . $RESULT_USER_BANS['admin'] . "</th>
-                                            <th>" . $DATE_START->format("d/m/Y") . "</th>
-                                            <th>" . $DATE_END->format("d/m/Y") . "</th>
-                                            <th>" . $RESULT_USER_BANS['ip'] . "</th>
-                                            <th class='ban-view' data-href='view.php?Type=" . $_GET['Type'] . "&Id=" . $RESULT_USER_BANS['banid'] . "'>View</th>
-                                        </tr>
+                                                
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+                                        
+                                        </div>
 
                                     ";
 
                                 }
 
-                            } while($RESULT_USER_BANS = mysqli_fetch_array($QUERY_USER_BANS));
+                            break;
+                            case 'Warn':
 
-                            echo "
-                                        
-                                            </tbody>
-                                        </table>
+                                if($RESULT_CHECK_USER['permissionid'] >= 4) {
 
-                                    </div>
-                                
-                                </div>
-
-                            ";
-
-                        break;
-                        case 'Warn':
-
-                            // Query
-                            $QUERY_USER_WARNINGS = mysqli_query($conn, '
-                            
-                            SELECT 
-                            exchangeme.warnings.id AS warningid,
-                            exchangeme.warnings.date,
-                            exchangeme.warnings.admin,
-                            exchangeme.warnings.brief,
-                            exchangeme.warnings.ip
-                            FROM 
-                            exchangeme.warnings
-                            WHERE exchangeme.warnings.userid = (
-                                SELECT exchangeme.accounts.id
-                                FROM exchangeme.accounts
-                                WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_GET['User']) . '"
-                            );
-
-                            ');
-
-                            // Fetch Results
-                            $RESULT_USER_WARNINGS = mysqli_fetch_array($QUERY_USER_WARNINGS);
-
-                            echo "
-
-                                <!-- Warning Container -->
-                                <div id='content-warning-container'>
-
-                                    <h1 id='warning-heading'>Warning History</h1>
-
-                                    <div id='warning-content-container'>
+                                    // Query
+                                    $QUERY_USER_WARNINGS = mysqli_query($conn, '
                                     
-                                        <div id='content-warning-information'>
-                                        
-                                            <p id='warning-information'>You can use this panel to warn users about their actions on the forums, it should be used as a discouragement to further offences and not a form of punishment. However all is up to the administrators discretion.<br>Note that the Brief is both what will show on a users profile and what the user will be notified of.</p>
+                                    SELECT 
+                                    exchangeme.warnings.id AS warningid,
+                                    exchangeme.warnings.date,
+                                    exchangeme.warnings.admin,
+                                    exchangeme.warnings.brief,
+                                    exchangeme.warnings.ip
+                                    FROM 
+                                    exchangeme.warnings
+                                    WHERE exchangeme.warnings.userid = (
+                                        SELECT exchangeme.accounts.id
+                                        FROM exchangeme.accounts
+                                        WHERE exchangeme.accounts.username = "' . mysqli_real_escape_string($conn, $_GET['User']) . '"
+                                    );
 
-                                        </div>
+                                    ');
 
-                                        <div id='content-action-container'>
+                                    // Fetch Results
+                                    $RESULT_USER_WARNINGS = mysqli_fetch_array($QUERY_USER_WARNINGS);
 
-                                            <form id='warning-form' method='POST' action='warn.php'></form>
+                                    echo "
 
-                                            <div id='action-basic-container'>
+                                        <!-- Warning Container -->
+                                        <div id='content-warning-container'>
 
-                                                <p id='basic-user'>User:</p>
-                                                <p id='basic-date'>Date:</p>
-                                                <p id='basic-admin'>Admin:</p>
-                                                <p id='basic-brief'>Brief:</p>
+                                            <h1 id='warning-heading'>Warning History</h1>
 
-                                                <input id='basic-username' type='text'readonly value='" . $_GET['User'] .  "' name='User' form='warning-form'></input>
+                                            <div id='warning-content-container'>
+                                            
+                                                <div id='content-warning-information'>
+                                                
+                                                    <p id='warning-information'>You can use this panel to warn users about their actions on the forums, it should be used as a discouragement to further offences and not a form of punishment. However all is up to the administrators discretion.<br>Note that the Brief is both what will show on a users profile and what the user will be notified of.</p>
 
-                                                <p id='basic-datenow'>" . date("d/m/y") . " (Now)</p>
+                                                </div>
 
-                                                <p id='basic-admin-name' type='text' name='Admin' form='warning-form'>" . $_SESSION['user']['username'] . "</p>
+                                                <div id='content-action-container'>
 
-                                                <textarea id='basic-brief-area' name='Brief' form='warning-form'></textarea>
+                                                    <form id='warning-form' method='POST' action='warn.php'></form>
 
-                                                <input id='basic-warning-submit' type='submit' value='Warn' form='warning-form'>
+                                                    <div id='action-basic-container'>
+
+                                                        <p id='basic-user'>User:</p>
+                                                        <p id='basic-date'>Date:</p>
+                                                        <p id='basic-admin'>Admin:</p>
+                                                        <p id='basic-brief'>Brief:</p>
+
+                                                        <input id='basic-username' type='text'readonly value='" . $_GET['User'] .  "' name='User' form='warning-form'></input>
+
+                                                        <p id='basic-datenow'>" . date("d/m/y") . " (Now)</p>
+
+                                                        <p id='basic-admin-name' type='text' name='Admin' form='warning-form'>" . $_SESSION['user']['username'] . "</p>
+
+                                                        <textarea id='basic-brief-area' name='Brief' form='warning-form'></textarea>
+
+                                                        <input id='basic-warning-submit' type='submit' value='Warn' form='warning-form'>
+
+                                                    </div>
+
+                                                </div>
 
                                             </div>
 
-                                        </div>
+                                            <table id='user-warnings'>
+                                                <thead>
+                                                    <tr>
+                                                        <th>ID</th>
+                                                        <th>Date</th>
+                                                        <th>User</th>
+                                                        <th>Admin</th>
+                                                        <th>IP Address</th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                    ";
 
-                                    </div>
+                                    do {
 
-                                    <table id='user-warnings'>
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Date</th>
-                                                <th>User</th>
-                                                <th>Admin</th>
-                                                <th>IP Address</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                            ";
+                                        // Check that there are entries
+                                        if(mysqli_num_rows($QUERY_USER_WARNINGS) > 0) {
 
-                            do {
+                                            $DATE = date_create($RESULT_USER_WARNINGS['date']);
 
-                                // Check that there are entries
-                                if(mysqli_num_rows($QUERY_USER_WARNINGS) > 0) {
+                                            echo "
+                                            
+                                                <tr>
+                                                    <th>" . $RESULT_USER_WARNINGS['warningid'] . "</th>
+                                                    <th>" . $DATE->format("d/m/Y") . "</th>
+                                                    <th>" . $_GET['User'] . "</th>
+                                                    <th>" . $RESULT_USER_WARNINGS['admin'] . "</th>
+                                                    <th>" . $RESULT_USER_WARNINGS['ip'] . "</th>
+                                                    <th class='warning-details' data-href='view.php?Type=" . $_GET['Type'] . "&Id=" . $RESULT_USER_WARNINGS['warningid'] . "'>Details</th>
+                                                </tr>
 
-                                    $DATE = date_create($RESULT_USER_WARNINGS['date']);
+                                            ";
+
+                                        }
+
+                                    } while($RESULT_USER_WARNINGS = mysqli_fetch_array($QUERY_USER_WARNINGS));
 
                                     echo "
-                                    
-                                        <tr>
-                                            <th>" . $RESULT_USER_WARNINGS['warningid'] . "</th>
-                                            <th>" . $DATE->format("d/m/Y") . "</th>
-                                            <th>" . $_GET['User'] . "</th>
-                                            <th>" . $RESULT_USER_WARNINGS['admin'] . "</th>
-                                            <th>" . $RESULT_USER_WARNINGS['ip'] . "</th>
-                                            <th class='warning-details' data-href='view.php?Type=" . $_GET['Type'] . "&Id=" . $RESULT_USER_WARNINGS['warningid'] . "'>Details</th>
-                                        </tr>
+                                                
+                                                </tbody>
+                                            </table>
+                                        
+                                        </div>
 
                                     ";
 
                                 }
 
-                            } while($RESULT_USER_WARNINGS = mysqli_fetch_array($QUERY_USER_WARNINGS));
+                            break;
+                            default:
 
-                            echo "
-                                        
-                                        </tbody>
-                                    </table>
-                                
-                                </div>
+                                // Redirect to referer
+                                header('Location: profile.php?Profile=' . $_GET['User']);
 
-                            ";
+                            break;
+                        }
 
-                        break;
-                        default:
+                        echo "
+                        
+                            </div>
 
-                            // Redirect to referer
-                            header('Location: profile.php?Profile=' . $_GET['User']);
+                        ";
 
-                        break;
+                    } else {
+
+                        // Redirect to referer
+                        header('Location:' . $_SERVER['HTTP_REFERER']);
+
                     }
-
-                    echo "
-                    
-                        </div>
-
-                    ";
 
                 } else {
 
-                    // Redirect to referer
-                    header('Location:' . $_SERVER['HTTP_REFERER']);
+                    // Resubmit headers
+                    header('Location: index.php');
 
                 }
 
