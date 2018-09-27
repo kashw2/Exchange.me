@@ -77,8 +77,6 @@ require_once('mysql.php');
                 // Fetch results
                 $RESULTS_SESSION_LOGIN = mysqli_fetch_array($QUERY_SESSION_LOGIN);
 
-                $ITERATOR_NEWS_CONTENT = 0;
-
                 if(
                     $_COOKIE['loggedin']
                     &&  isset($_COOKIE['loggedin'])
