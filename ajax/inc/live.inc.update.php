@@ -11,7 +11,7 @@ ob_start();
 
 require_once('../../mysql.php');
 
-$EXCHANGE_RATES_JSON = file_get_contents('https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,BCH,ETH,XRP,DOGE,LTE,XLM,ADA,COAL,1337,ZRX,10MT,2GIVE,300,42,808,8BIT,9COIN,ABN,ACC,ACE&tsyms=AUD,USD,EUR&extraParams=Exchange.me&sign=true');
+$EXCHANGE_RATES_JSON = file_get_contents('https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,BCH,ETH,XRP,DOGE,LTE,XLM,ADA,COAL,1337,ZRX,10MT,2GIVE,300,42,808,8BIT,9COIN,ABN,ACC,ACE,ACES,ACOIN,ADL,ADX,ADST,ADT,AIB,ADZ,AEON,AGRS,ARN,AE&tsyms=AUD&extraParams=Exchange.me&sign=true');
 $EXCHANGE_RATES = json_decode($EXCHANGE_RATES_JSON, true);
 
 echo "
@@ -31,7 +31,7 @@ echo "
         </tr>
     </thead>
     <tbody>
-        <tr id='coin-row-1'>
+        <tr>
             <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["BTC"]["AUD"]["FROMSYMBOL"] . "</td>
             <td>$" . $EXCHANGE_RATES["RAW"]["BTC"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
             <td>$" . $EXCHANGE_RATES["RAW"]["BTC"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -42,7 +42,7 @@ echo "
             <td>" . $EXCHANGE_RATES["RAW"]["BTC"]["AUD"]["MARKET"] . "</td>
             <td>" . $EXCHANGE_RATES["RAW"]["BTC"]["AUD"]["LASTUPDATE"] . "</td>
         </tr>
-        <tr id='coin-row-2'>
+        <tr>
             <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["BCH"]["AUD"]["FROMSYMBOL"] . "</td>
             <td>$" . $EXCHANGE_RATES["RAW"]["BCH"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
             <td>$" . $EXCHANGE_RATES["RAW"]["BCH"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -53,7 +53,7 @@ echo "
             <td>" . $EXCHANGE_RATES["RAW"]["BCH"]["AUD"]["MARKET"] . "</td>
             <td>" . $EXCHANGE_RATES["RAW"]["BCH"]["AUD"]["LASTUPDATE"] . "</td>
         </tr>
-        <tr id='coin-row-3'>
+        <tr>
             <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["ETH"]["AUD"]["FROMSYMBOL"] . "</td>
             <td>$" . $EXCHANGE_RATES["RAW"]["ETH"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
             <td>$" . $EXCHANGE_RATES["RAW"]["ETH"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -64,7 +64,7 @@ echo "
             <td>" . $EXCHANGE_RATES["RAW"]["ETH"]["AUD"]["MARKET"] . "</td>
             <td>" . $EXCHANGE_RATES["RAW"]["ETH"]["AUD"]["LASTUPDATE"] . "</td>
         </tr>
-        <tr id='coin-row-4'>
+        <tr>
             <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["XRP"]["AUD"]["FROMSYMBOL"] . "</td>
             <td>$" . $EXCHANGE_RATES["RAW"]["XRP"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
             <td>$" . $EXCHANGE_RATES["RAW"]["XRP"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -75,7 +75,7 @@ echo "
             <td>" . $EXCHANGE_RATES["RAW"]["XRP"]["AUD"]["MARKET"] . "</td>
             <td>" . $EXCHANGE_RATES["RAW"]["XRP"]["AUD"]["LASTUPDATE"] . "</td>
         </tr>
-        <tr id='coin-row-5'>
+        <tr>
             <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["DOGE"]["AUD"]["FROMSYMBOL"] . "</td>
             <td>$" . $EXCHANGE_RATES["RAW"]["DOGE"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
             <td>$" . $EXCHANGE_RATES["RAW"]["DOGE"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -86,7 +86,7 @@ echo "
             <td>" . $EXCHANGE_RATES["RAW"]["DOGE"]["AUD"]["MARKET"] . "</td>
             <td>" . $EXCHANGE_RATES["RAW"]["DOGE"]["AUD"]["LASTUPDATE"] . "</td>
         </tr>
-        <tr id='coin-row-6'>
+        <tr>
             <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["LTE"]["AUD"]["FROMSYMBOL"] . "</td>
             <td>$" . $EXCHANGE_RATES["RAW"]["LTE"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
             <td>$" . $EXCHANGE_RATES["RAW"]["LTE"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -97,7 +97,7 @@ echo "
             <td>" . $EXCHANGE_RATES["RAW"]["LTE"]["AUD"]["MARKET"] . "</td>
             <td>" . $EXCHANGE_RATES["RAW"]["LTE"]["AUD"]["LASTUPDATE"] . "</td>
         </tr>
-        <tr id='coin-row-7'>
+        <tr>
             <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["XLM"]["AUD"]["FROMSYMBOL"] . "</td>
             <td>$" . $EXCHANGE_RATES["RAW"]["XLM"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
             <td>$" . $EXCHANGE_RATES["RAW"]["XLM"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -108,7 +108,7 @@ echo "
             <td>" . $EXCHANGE_RATES["RAW"]["XLM"]["AUD"]["MARKET"] . "</td>
             <td>" . $EXCHANGE_RATES["RAW"]["XLM"]["AUD"]["LASTUPDATE"] . "</td>
         </tr>
-        <tr id='coin-row-8'>
+        <tr>
             <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["ADA"]["AUD"]["FROMSYMBOL"] . "</td>
             <td>$" . $EXCHANGE_RATES["RAW"]["ADA"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
             <td>$" . $EXCHANGE_RATES["RAW"]["ADA"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -119,7 +119,7 @@ echo "
             <td>" . $EXCHANGE_RATES["RAW"]["ADA"]["AUD"]["MARKET"] . "</td>
             <td>" . $EXCHANGE_RATES["RAW"]["ADA"]["AUD"]["LASTUPDATE"] . "</td>
         </tr>
-        <tr id='coin-row-9'>
+        <tr>
             <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["COAL"]["AUD"]["FROMSYMBOL"] . "</td>
             <td>$" . $EXCHANGE_RATES["RAW"]["COAL"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
             <td>$" . $EXCHANGE_RATES["RAW"]["COAL"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -130,7 +130,7 @@ echo "
             <td>" . $EXCHANGE_RATES["RAW"]["COAL"]["AUD"]["MARKET"] . "</td>
             <td>" . $EXCHANGE_RATES["RAW"]["COAL"]["AUD"]["LASTUPDATE"] . "</td>
         </tr>
-        <tr id='coin-row-10'>
+        <tr>
             <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["1337"]["AUD"]["FROMSYMBOL"] . "</td>
             <td>$" . $EXCHANGE_RATES["RAW"]["1337"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
             <td>$" . $EXCHANGE_RATES["RAW"]["1337"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -141,7 +141,7 @@ echo "
             <td>" . $EXCHANGE_RATES["RAW"]["1337"]["AUD"]["MARKET"] . "</td>
             <td>" . $EXCHANGE_RATES["RAW"]["1337"]["AUD"]["LASTUPDATE"] . "</td>
         </tr>
-        <tr id='coin-row-11'>
+        <tr>
             <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["ZRX"]["AUD"]["FROMSYMBOL"] . "</td>
             <td>$" . $EXCHANGE_RATES["RAW"]["ZRX"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
             <td>$" . $EXCHANGE_RATES["RAW"]["ZRX"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -152,7 +152,7 @@ echo "
             <td>" . $EXCHANGE_RATES["RAW"]["ZRX"]["AUD"]["MARKET"] . "</td>
             <td>" . $EXCHANGE_RATES["RAW"]["ZRX"]["AUD"]["LASTUPDATE"] . "</td>
         </tr>
-        <tr id='coin-row-12'>
+        <tr>
             <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["10MT"]["AUD"]["FROMSYMBOL"] . "</td>
             <td>$" . $EXCHANGE_RATES["RAW"]["10MT"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
             <td>$" . $EXCHANGE_RATES["RAW"]["10MT"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -163,7 +163,7 @@ echo "
             <td>" . $EXCHANGE_RATES["RAW"]["10MT"]["AUD"]["MARKET"] . "</td>
             <td>" . $EXCHANGE_RATES["RAW"]["10MT"]["AUD"]["LASTUPDATE"] . "</td>
         </tr>
-        <tr id='coin-row-13'>
+        <tr>
             <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["2GIVE"]["AUD"]["FROMSYMBOL"] . "</td>
             <td>$" . $EXCHANGE_RATES["RAW"]["2GIVE"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
             <td>$" . $EXCHANGE_RATES["RAW"]["2GIVE"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -174,7 +174,7 @@ echo "
             <td>" . $EXCHANGE_RATES["RAW"]["2GIVE"]["AUD"]["MARKET"] . "</td>
             <td>" . $EXCHANGE_RATES["RAW"]["2GIVE"]["AUD"]["LASTUPDATE"] . "</td>
         </tr>
-        <tr id='coin-row-14'>
+        <tr>
             <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["300"]["AUD"]["FROMSYMBOL"] . "</td>
             <td>$" . $EXCHANGE_RATES["RAW"]["300"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
             <td>$" . $EXCHANGE_RATES["RAW"]["300"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -185,7 +185,7 @@ echo "
             <td>" . $EXCHANGE_RATES["RAW"]["300"]["AUD"]["MARKET"] . "</td>
             <td>" . $EXCHANGE_RATES["RAW"]["300"]["AUD"]["LASTUPDATE"] . "</td>
         </tr>
-        <tr id='coin-row-15'>
+        <tr>
             <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["42"]["AUD"]["FROMSYMBOL"] . "</td>
             <td>$" . $EXCHANGE_RATES["RAW"]["42"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
             <td>$" . $EXCHANGE_RATES["RAW"]["42"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -196,7 +196,7 @@ echo "
             <td>" . $EXCHANGE_RATES["RAW"]["42"]["AUD"]["MARKET"] . "</td>
             <td>" . $EXCHANGE_RATES["RAW"]["42"]["AUD"]["LASTUPDATE"] . "</td>
         </tr>
-        <tr id='coin-row-16'>
+        <tr>
             <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["808"]["AUD"]["FROMSYMBOL"] . "</td>
             <td>$" . $EXCHANGE_RATES["RAW"]["808"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
             <td>$" . $EXCHANGE_RATES["RAW"]["808"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -207,7 +207,7 @@ echo "
             <td>" . $EXCHANGE_RATES["RAW"]["808"]["AUD"]["MARKET"] . "</td>
             <td>" . $EXCHANGE_RATES["RAW"]["808"]["AUD"]["LASTUPDATE"] . "</td>
         </tr>
-        <tr id='coin-row-17'>
+        <tr>
             <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["8BIT"]["AUD"]["FROMSYMBOL"] . "</td>
             <td>$" . $EXCHANGE_RATES["RAW"]["8BIT"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
             <td>$" . $EXCHANGE_RATES["RAW"]["8BIT"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -218,7 +218,7 @@ echo "
             <td>" . $EXCHANGE_RATES["RAW"]["8BIT"]["AUD"]["MARKET"] . "</td>
             <td>" . $EXCHANGE_RATES["RAW"]["8BIT"]["AUD"]["LASTUPDATE"] . "</td>
         </tr>
-        <tr id='coin-row-18'>
+        <tr>
             <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["9COIN"]["AUD"]["FROMSYMBOL"] . "</td>
             <td>$" . $EXCHANGE_RATES["RAW"]["9COIN"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
             <td>$" . $EXCHANGE_RATES["RAW"]["9COIN"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -229,7 +229,7 @@ echo "
             <td>" . $EXCHANGE_RATES["RAW"]["9COIN"]["AUD"]["MARKET"] . "</td>
             <td>" . $EXCHANGE_RATES["RAW"]["9COIN"]["AUD"]["LASTUPDATE"] . "</td>
         </tr>
-        <tr id='coin-row-19'>
+        <tr>
             <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["ABN"]["AUD"]["FROMSYMBOL"] . "</td>
             <td>$" . $EXCHANGE_RATES["RAW"]["ABN"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
             <td>$" . $EXCHANGE_RATES["RAW"]["ABN"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -240,7 +240,7 @@ echo "
             <td>" . $EXCHANGE_RATES["RAW"]["ABN"]["AUD"]["MARKET"] . "</td>
             <td>" . $EXCHANGE_RATES["RAW"]["ABN"]["AUD"]["LASTUPDATE"] . "</td>
         </tr>
-        <tr id='coin-row-20'>
+        <tr>
             <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["ACC"]["AUD"]["FROMSYMBOL"] . "</td>
             <td>$" . $EXCHANGE_RATES["RAW"]["ACC"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
             <td>$" . $EXCHANGE_RATES["RAW"]["ACC"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -251,7 +251,7 @@ echo "
             <td>" . $EXCHANGE_RATES["RAW"]["ACC"]["AUD"]["MARKET"] . "</td>
             <td>" . $EXCHANGE_RATES["RAW"]["ACC"]["AUD"]["LASTUPDATE"] . "</td>
         </tr>
-        <tr id='coin-row-21'>
+        <tr>
             <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["ACE"]["AUD"]["FROMSYMBOL"] . "</td>
             <td>$" . $EXCHANGE_RATES["RAW"]["ACE"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
             <td>$" . $EXCHANGE_RATES["RAW"]["ACE"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -261,6 +261,138 @@ echo "
             <td>" . $EXCHANGE_RATES["RAW"]["ACE"]["AUD"]["SUPPLY"] . "</td>
             <td>" . $EXCHANGE_RATES["RAW"]["ACE"]["AUD"]["MARKET"] . "</td>
             <td>" . $EXCHANGE_RATES["RAW"]["ACE"]["AUD"]["LASTUPDATE"] . "</td>
+        </tr>
+        <tr>
+            <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["ACES"]["AUD"]["FROMSYMBOL"] . "</td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ACES"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ACES"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ACES"]["AUD"]["LOWDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ACES"]["AUD"]["CHANGEDAY"] . "</td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ACES"]["AUD"]["PRICE"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ACES"]["AUD"]["SUPPLY"] . "</td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ACES"]["AUD"]["MARKET"] . "</td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ACES"]["AUD"]["LASTUPDATE"] . "</td>
+        </tr>
+        <tr>
+            <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["ACC"]["AUD"]["FROMSYMBOL"] . "</td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ACC"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ACC"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ACC"]["AUD"]["LOWDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ACC"]["AUD"]["CHANGEDAY"] . "</td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ACC"]["AUD"]["PRICE"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ACC"]["AUD"]["SUPPLY"] . "</td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ACC"]["AUD"]["MARKET"] . "</td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ACC"]["AUD"]["LASTUPDATE"] . "</td>
+        </tr>
+        <tr>
+            <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["ACOIN"]["AUD"]["FROMSYMBOL"] . "</td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ACOIN"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ACOIN"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ACOIN"]["AUD"]["LOWDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ACOIN"]["AUD"]["CHANGEDAY"] . "</td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ACOIN"]["AUD"]["PRICE"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ACOIN"]["AUD"]["SUPPLY"] . "</td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ACOIN"]["AUD"]["MARKET"] . "</td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ACOIN"]["AUD"]["LASTUPDATE"] . "</td>
+        </tr>
+        <tr>
+            <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["ADL"]["AUD"]["FROMSYMBOL"] . "</td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ADL"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ADL"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ADL"]["AUD"]["LOWDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ADL"]["AUD"]["CHANGEDAY"] . "</td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ADL"]["AUD"]["PRICE"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ADL"]["AUD"]["SUPPLY"] . "</td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ADL"]["AUD"]["MARKET"] . "</td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ADL"]["AUD"]["LASTUPDATE"] . "</td>
+        </tr>
+        <tr>
+            <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["ADX"]["AUD"]["FROMSYMBOL"] . "</td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ADX"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ADX"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ADX"]["AUD"]["LOWDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ADX"]["AUD"]["CHANGEDAY"] . "</td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ADX"]["AUD"]["PRICE"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ADX"]["AUD"]["SUPPLY"] . "</td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ADX"]["AUD"]["MARKET"] . "</td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ADX"]["AUD"]["LASTUPDATE"] . "</td>
+        </tr>
+        <tr>
+            <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["ADT"]["AUD"]["FROMSYMBOL"] . "</td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ADT"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ADT"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ADT"]["AUD"]["LOWDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ADT"]["AUD"]["CHANGEDAY"] . "</td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ADT"]["AUD"]["PRICE"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ADT"]["AUD"]["SUPPLY"] . "</td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ADT"]["AUD"]["MARKET"] . "</td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ADT"]["AUD"]["LASTUPDATE"] . "</td>
+        </tr>
+        <tr>
+            <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["AIB"]["AUD"]["FROMSYMBOL"] . "</td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["AIB"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["AIB"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["AIB"]["AUD"]["LOWDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>" . $EXCHANGE_RATES["RAW"]["AIB"]["AUD"]["CHANGEDAY"] . "</td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["AIB"]["AUD"]["PRICE"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>" . $EXCHANGE_RATES["RAW"]["AIB"]["AUD"]["SUPPLY"] . "</td>
+            <td>" . $EXCHANGE_RATES["RAW"]["AIB"]["AUD"]["MARKET"] . "</td>
+            <td>" . $EXCHANGE_RATES["RAW"]["AIB"]["AUD"]["LASTUPDATE"] . "</td>
+        </tr>
+        <tr>
+            <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["ADZ"]["AUD"]["FROMSYMBOL"] . "</td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ADZ"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ADZ"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ADZ"]["AUD"]["LOWDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ADZ"]["AUD"]["CHANGEDAY"] . "</td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ADZ"]["AUD"]["PRICE"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ADZ"]["AUD"]["SUPPLY"] . "</td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ADZ"]["AUD"]["MARKET"] . "</td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ADZ"]["AUD"]["LASTUPDATE"] . "</td>
+        </tr>
+        <tr>
+            <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["AEON"]["AUD"]["FROMSYMBOL"] . "</td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["AEON"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["AEON"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["AEON"]["AUD"]["LOWDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>" . $EXCHANGE_RATES["RAW"]["AEON"]["AUD"]["CHANGEDAY"] . "</td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["AEON"]["AUD"]["PRICE"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>" . $EXCHANGE_RATES["RAW"]["AEON"]["AUD"]["SUPPLY"] . "</td>
+            <td>" . $EXCHANGE_RATES["RAW"]["AEON"]["AUD"]["MARKET"] . "</td>
+            <td>" . $EXCHANGE_RATES["RAW"]["AEON"]["AUD"]["LASTUPDATE"] . "</td>
+        </tr>
+        <tr>
+            <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["AGRS"]["AUD"]["FROMSYMBOL"] . "</td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["AGRS"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["AGRS"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["AGRS"]["AUD"]["LOWDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>" . $EXCHANGE_RATES["RAW"]["AGRS"]["AUD"]["CHANGEDAY"] . "</td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["AGRS"]["AUD"]["PRICE"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>" . $EXCHANGE_RATES["RAW"]["AGRS"]["AUD"]["SUPPLY"] . "</td>
+            <td>" . $EXCHANGE_RATES["RAW"]["AGRS"]["AUD"]["MARKET"] . "</td>
+            <td>" . $EXCHANGE_RATES["RAW"]["AGRS"]["AUD"]["LASTUPDATE"] . "</td>
+        </tr>
+        <tr>
+            <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["ARN"]["AUD"]["FROMSYMBOL"] . "</td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ARN"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ARN"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ARN"]["AUD"]["LOWDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ARN"]["AUD"]["CHANGEDAY"] . "</td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["ARN"]["AUD"]["PRICE"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ARN"]["AUD"]["SUPPLY"] . "</td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ARN"]["AUD"]["MARKET"] . "</td>
+            <td>" . $EXCHANGE_RATES["RAW"]["ARN"]["AUD"]["LASTUPDATE"] . "</td>
+        </tr>
+        <tr>
+            <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["AE"]["AUD"]["FROMSYMBOL"] . "</td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["AE"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["AE"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["AE"]["AUD"]["LOWDAY"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>" . $EXCHANGE_RATES["RAW"]["AE"]["AUD"]["CHANGEDAY"] . "</td>
+            <td>$" . $EXCHANGE_RATES["RAW"]["AE"]["AUD"]["PRICE"] . " <span class='naturalised-currency'>AUD</span></td>
+            <td>" . $EXCHANGE_RATES["RAW"]["AE"]["AUD"]["SUPPLY"] . "</td>
+            <td>" . $EXCHANGE_RATES["RAW"]["AE"]["AUD"]["MARKET"] . "</td>
+            <td>" . $EXCHANGE_RATES["RAW"]["AE"]["AUD"]["LASTUPDATE"] . "</td>
         </tr>
     </tbody>
 </table>
