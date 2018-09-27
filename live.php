@@ -433,7 +433,7 @@ require_once('mysql.php');
 
                 </div>
 
-                <script src='javascript/live.js'></script>
+                <script src='javascript/min/live.min.js'></script>
                 <script src='ajax/min/liveLoad.min.js'></script>
 
                 ";
