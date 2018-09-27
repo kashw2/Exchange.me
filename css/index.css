@@ -129,7 +129,7 @@ body {
           width: 10px;
           -webkit-transition: width 1s ease;
           transition: width 1s ease;
-          background-color: #fffffff2;
+          background-color: rgba(255, 255, 255, 0.949);
           overflow: hidden;
           z-index: 1; }
       body #grid-container #grid-content__loggedin #content-news {

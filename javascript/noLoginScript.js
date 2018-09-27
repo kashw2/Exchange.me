@@ -24,19 +24,21 @@ document.addEventListener(
 			headerChildren[3].style.left = '400px';
 		}
 
+		if (document.getElementById('login-form')) {
+			document.getElementById('login-form').style.display = 'grid';
+
+			// Add the event listner
+			document.getElementById('login-option-change').addEventListener(
+				'click',
+				function() {
+					document.getElementById('login-form').style.display = 'none';
+					document.getElementById('register-form').style.display = 'grid';
+				},
+				false
+			);
+		}
+
 		// Change Form Type
-
-		document.getElementById('login-form').style.display = 'grid';
-
-		// Add the event listner
-		document.getElementById('login-option-change').addEventListener(
-			'click',
-			function() {
-				document.getElementById('login-form').style.display = 'none';
-				document.getElementById('register-form').style.display = 'grid';
-			},
-			false
-		);
 
 		// Add the event listner
 		document.getElementById('register-option-change').addEventListener(
