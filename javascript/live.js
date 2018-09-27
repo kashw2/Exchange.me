@@ -52,11 +52,6 @@ document.addEventListener(
 		document.getElementById('navigational-search').addEventListener(
 			'click',
 			function() {
-				if (document.getElementById('navigational-search').value == 'Crypto Search') {
-					// Remove 'value' placeholder
-					document.getElementById('navigational-search').value = '';
-				}
-
 				// Style the element
 				document.getElementById('navigational-search').style.backgroundColor = 'transparent';
 				document.getElementById('navigational-search').style.borderTop = 'none';

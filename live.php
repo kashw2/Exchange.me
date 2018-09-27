@@ -178,7 +178,7 @@ require_once('mysql.php');
 
                         <div id='navigational-headers'></div>
                         
-                        <input id='navigational-search' type='text' value='Crypto Search'>
+                        <input id='navigational-search' type='text' placeholder='Crypto Search'>
                     
                     </div>
 
