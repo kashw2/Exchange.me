@@ -1,0 +1,127 @@
+// Unapproved use and redistribution of this code and respective product is strictly prohibited.
+// Copyright© 2018 Keanu Ashwell all rights are reserved to the author, creator, registered 
+// authorised and licensed owners of this product and it's content
+
+@import "partials/_partials.scss";
+
+a,
+a:hover,
+a:active,
+a:visited {
+
+    color: $exchange-white;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+}
+
+body {
+
+    overflow: hidden;
+
+    height: auto;
+    width: auto;
+
+    #grid-container {
+
+        grid-template-columns: 1fr;
+        grid-template-rows: 70px 1fr 100px; 
+
+        #grid-content__loggedin {
+
+            display: grid;
+
+            grid-column: auto;
+            grid-row: 2;
+
+            grid-template-columns: 1fr;
+            grid-template-rows: 50px 1fr;
+
+            background-color: $exchange-white;
+
+            #content-navigational {
+
+                display: grid;
+
+                grid-column: auto;
+                grid-row: 1;
+
+                grid-template-columns: 200px 1fr 250px;
+                grid-template-rows: 1fr;
+
+                #navigational-headers {
+
+                    display: grid;
+
+                    grid-column: 1;
+                    grid-row: auto;
+
+                }
+
+                #navigational-search {
+
+                    grid-column: 3;
+                    grid-row: auto;
+
+                    justify-self: center;
+                    align-self: center;
+
+                    border-top: none;
+                    border-right: none;
+                    border-bottom: 1px solid #000000;
+                    border-left: none;
+
+                }
+
+            }
+
+            #content-rate-table {
+
+                grid-column: auto;
+                grid-row: 2;
+
+                position: relative;
+
+                justify-self: start;
+                align-self: start;
+
+                width: 100%;
+                height: 15px;
+
+                padding: 0px 10px 5px 10px;
+
+                th, td {
+
+                    width: auto;
+
+                    color: $exchange-black;
+
+                    font-family: 'Lato', sans-serif;
+                    font-size: 0.83em;
+                    font-weight: 300;
+
+                    text-align: left;
+
+                    padding: 0px 0px 0px 5px;
+
+                }
+
+                .naturalised-currency {
+
+                    text-decoration: underline;
+
+                    padding-left: 5px;
+
+                    cursor: pointer;
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
