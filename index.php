@@ -87,7 +87,7 @@ require_once('mysql.php');
                     $_COOKIE['loggedin']
                     &&  isset($_COOKIE['loggedin'])
                     &&  $_COOKIE['loggedin'] == session_id()
-                    &&  $RESULTS_SESSION_LOGIN[1] == $_COOKIE['loggedin']
+                    &&  $RESULTS_SESSION_LOGIN['session'] == $_COOKIE['loggedin']
                     &&  isset($_SESSION['user']['username'])
                     ) {
                                 
@@ -251,7 +251,7 @@ require_once('mysql.php');
                 $_COOKIE['loggedin']
             &&  isset($_COOKIE['loggedin'])
             &&  $_COOKIE['loggedin'] == session_id()
-            &&  $RESULTS_SESSION_LOGIN[1] == $_COOKIE['loggedin']
+            &&  $RESULTS_SESSION_LOGIN['session'] == $_COOKIE['loggedin']
             &&  isset($_SESSION['user']['username'])
             ) {
 
