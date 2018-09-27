@@ -570,6 +570,11 @@ require_once('mysql.php');
 
                 ";
 
+            } else {
+
+                // Resubmit headers
+                header('Location: index.php');
+
             }
             
             ?>
