@@ -12,37 +12,22 @@ document.addEventListener(
 		document.getElementById('navigational-search').addEventListener(
 			'change',
 			function() {
-				// Decalre and define variables
-				let search = document.getElementById('navigational-search').value.toUpperCase();
-				let coinName = document.getElementsByClassName('coin-symbol');
-				let coin;
+				let search = document.getElementById('navigational-search');
+				let searchCriteria = search.value.toUpperCase();
+				let table = document.getElementById('content-rate-table');
+				let tableData;
+				let tableRow = table.getElementsByTagName('tr');
 
-				// Make sure search has a value
-				if (search != '') {
-					// Loop through the posts
-					for (let i = 1; i < coinName.length; i++) {
-						// Convert to uppercase this entry relative to the increment
-						coin = coinName[i].textContent.toUpperCase();
+				for (let i = 0; i < tableRow.length; i++) {
+					tableData = tableRow[i].getElementsByTagName('td')[0];
 
-						// Check the posts for the search criteria
-						if (coin.indexOf(search) > 0) {
-							// Change the style
-							document.getElementById('coin-row-' + i).style.display = 'initial';
+					if (tableData) {
+						if (tableData.innerHTML.toUpperCase().indexOf(searchCriteria) > -1) {
+							tableRow[i].style.display = '';
 						}
 						else {
-							// Change the style
-							document.getElementById('coin-row-' + i).style.display = 'none';
+							tableRow[i].style.display = 'none';
 						}
-					}
-				}
-				else {
-					// Loop through the posts
-					for (let i = 1; i < coinName.length; i++) {
-						// Convert to uppercase this entry relative to the increment
-						coin = coinName[i].textContent.toUpperCase();
-
-						// Change the style
-						document.getElementById('coin-row-' + i).style.display = 'grid';
 					}
 				}
 			},

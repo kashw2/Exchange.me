@@ -197,7 +197,7 @@ require_once('mysql.php');
                             </tr>
                         </thead>
                         <tbody>
-                            <tr id='coin-row-1'>
+                            <tr>
                                 <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["BTC"]["AUD"]["FROMSYMBOL"] . "</td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["BTC"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["BTC"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -208,7 +208,7 @@ require_once('mysql.php');
                                 <td>" . $EXCHANGE_RATES["RAW"]["BTC"]["AUD"]["MARKET"] . "</td>
                                 <td>" . $EXCHANGE_RATES["RAW"]["BTC"]["AUD"]["LASTUPDATE"] . "</td>
                             </tr>
-                            <tr id='coin-row-2'>
+                            <tr>
                                 <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["BCH"]["AUD"]["FROMSYMBOL"] . "</td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["BCH"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["BCH"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -219,7 +219,7 @@ require_once('mysql.php');
                                 <td>" . $EXCHANGE_RATES["RAW"]["BCH"]["AUD"]["MARKET"] . "</td>
                                 <td>" . $EXCHANGE_RATES["RAW"]["BCH"]["AUD"]["LASTUPDATE"] . "</td>
                             </tr>
-                            <tr id='coin-row-3'>
+                            <tr>
                                 <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["ETH"]["AUD"]["FROMSYMBOL"] . "</td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["ETH"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["ETH"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -230,7 +230,7 @@ require_once('mysql.php');
                                 <td>" . $EXCHANGE_RATES["RAW"]["ETH"]["AUD"]["MARKET"] . "</td>
                                 <td>" . $EXCHANGE_RATES["RAW"]["ETH"]["AUD"]["LASTUPDATE"] . "</td>
                             </tr>
-                            <tr id='coin-row-4'>
+                            <tr>
                                 <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["XRP"]["AUD"]["FROMSYMBOL"] . "</td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["XRP"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["XRP"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -241,7 +241,7 @@ require_once('mysql.php');
                                 <td>" . $EXCHANGE_RATES["RAW"]["XRP"]["AUD"]["MARKET"] . "</td>
                                 <td>" . $EXCHANGE_RATES["RAW"]["XRP"]["AUD"]["LASTUPDATE"] . "</td>
                             </tr>
-                            <tr id='coin-row-5'>
+                            <tr>
                                 <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["DOGE"]["AUD"]["FROMSYMBOL"] . "</td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["DOGE"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["DOGE"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -252,7 +252,7 @@ require_once('mysql.php');
                                 <td>" . $EXCHANGE_RATES["RAW"]["DOGE"]["AUD"]["MARKET"] . "</td>
                                 <td>" . $EXCHANGE_RATES["RAW"]["DOGE"]["AUD"]["LASTUPDATE"] . "</td>
                             </tr>
-                            <tr id='coin-row-6'>
+                            <tr>
                                 <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["LTE"]["AUD"]["FROMSYMBOL"] . "</td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["LTE"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["LTE"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -263,7 +263,7 @@ require_once('mysql.php');
                                 <td>" . $EXCHANGE_RATES["RAW"]["LTE"]["AUD"]["MARKET"] . "</td>
                                 <td>" . $EXCHANGE_RATES["RAW"]["LTE"]["AUD"]["LASTUPDATE"] . "</td>
                             </tr>
-                            <tr id='coin-row-7'>
+                            <tr>
                                 <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["XLM"]["AUD"]["FROMSYMBOL"] . "</td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["XLM"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["XLM"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -274,7 +274,7 @@ require_once('mysql.php');
                                 <td>" . $EXCHANGE_RATES["RAW"]["XLM"]["AUD"]["MARKET"] . "</td>
                                 <td>" . $EXCHANGE_RATES["RAW"]["XLM"]["AUD"]["LASTUPDATE"] . "</td>
                             </tr>
-                            <tr id='coin-row-8'>
+                            <tr>
                                 <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["ADA"]["AUD"]["FROMSYMBOL"] . "</td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["ADA"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["ADA"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -285,7 +285,7 @@ require_once('mysql.php');
                                 <td>" . $EXCHANGE_RATES["RAW"]["ADA"]["AUD"]["MARKET"] . "</td>
                                 <td>" . $EXCHANGE_RATES["RAW"]["ADA"]["AUD"]["LASTUPDATE"] . "</td>
                             </tr>
-                            <tr id='coin-row-9'>
+                            <tr>
                                 <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["COAL"]["AUD"]["FROMSYMBOL"] . "</td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["COAL"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["COAL"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -296,7 +296,7 @@ require_once('mysql.php');
                                 <td>" . $EXCHANGE_RATES["RAW"]["COAL"]["AUD"]["MARKET"] . "</td>
                                 <td>" . $EXCHANGE_RATES["RAW"]["COAL"]["AUD"]["LASTUPDATE"] . "</td>
                             </tr>
-                            <tr id='coin-row-10'>
+                            <tr'>
                                 <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["1337"]["AUD"]["FROMSYMBOL"] . "</td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["1337"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["1337"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -307,7 +307,7 @@ require_once('mysql.php');
                                 <td>" . $EXCHANGE_RATES["RAW"]["1337"]["AUD"]["MARKET"] . "</td>
                                 <td>" . $EXCHANGE_RATES["RAW"]["1337"]["AUD"]["LASTUPDATE"] . "</td>
                             </tr>
-                            <tr id='coin-row-11'>
+                            <tr'>
                                 <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["ZRX"]["AUD"]["FROMSYMBOL"] . "</td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["ZRX"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["ZRX"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -318,7 +318,7 @@ require_once('mysql.php');
                                 <td>" . $EXCHANGE_RATES["RAW"]["ZRX"]["AUD"]["MARKET"] . "</td>
                                 <td>" . $EXCHANGE_RATES["RAW"]["ZRX"]["AUD"]["LASTUPDATE"] . "</td>
                             </tr>
-                            <tr id='coin-row-12'>
+                            <tr'>
                                 <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["10MT"]["AUD"]["FROMSYMBOL"] . "</td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["10MT"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["10MT"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -329,7 +329,7 @@ require_once('mysql.php');
                                 <td>" . $EXCHANGE_RATES["RAW"]["10MT"]["AUD"]["MARKET"] . "</td>
                                 <td>" . $EXCHANGE_RATES["RAW"]["10MT"]["AUD"]["LASTUPDATE"] . "</td>
                             </tr>
-                            <tr id='coin-row-13'>
+                            <tr'>
                                 <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["2GIVE"]["AUD"]["FROMSYMBOL"] . "</td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["2GIVE"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["2GIVE"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -340,7 +340,7 @@ require_once('mysql.php');
                                 <td>" . $EXCHANGE_RATES["RAW"]["2GIVE"]["AUD"]["MARKET"] . "</td>
                                 <td>" . $EXCHANGE_RATES["RAW"]["2GIVE"]["AUD"]["LASTUPDATE"] . "</td>
                             </tr>
-                            <tr id='coin-row-14'>
+                            <tr'>
                                 <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["300"]["AUD"]["FROMSYMBOL"] . "</td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["300"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["300"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -351,7 +351,7 @@ require_once('mysql.php');
                                 <td>" . $EXCHANGE_RATES["RAW"]["300"]["AUD"]["MARKET"] . "</td>
                                 <td>" . $EXCHANGE_RATES["RAW"]["300"]["AUD"]["LASTUPDATE"] . "</td>
                             </tr>
-                            <tr id='coin-row-15'>
+                            <tr'>
                                 <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["42"]["AUD"]["FROMSYMBOL"] . "</td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["42"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["42"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -362,7 +362,7 @@ require_once('mysql.php');
                                 <td>" . $EXCHANGE_RATES["RAW"]["42"]["AUD"]["MARKET"] . "</td>
                                 <td>" . $EXCHANGE_RATES["RAW"]["42"]["AUD"]["LASTUPDATE"] . "</td>
                             </tr>
-                            <tr id='coin-row-16'>
+                            <tr'>
                                 <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["808"]["AUD"]["FROMSYMBOL"] . "</td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["808"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["808"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -373,7 +373,7 @@ require_once('mysql.php');
                                 <td>" . $EXCHANGE_RATES["RAW"]["808"]["AUD"]["MARKET"] . "</td>
                                 <td>" . $EXCHANGE_RATES["RAW"]["808"]["AUD"]["LASTUPDATE"] . "</td>
                             </tr>
-                            <tr id='coin-row-17'>
+                            <tr'>
                                 <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["8BIT"]["AUD"]["FROMSYMBOL"] . "</td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["8BIT"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["8BIT"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -384,7 +384,7 @@ require_once('mysql.php');
                                 <td>" . $EXCHANGE_RATES["RAW"]["8BIT"]["AUD"]["MARKET"] . "</td>
                                 <td>" . $EXCHANGE_RATES["RAW"]["8BIT"]["AUD"]["LASTUPDATE"] . "</td>
                             </tr>
-                            <tr id='coin-row-18'>
+                            <tr'>
                                 <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["9COIN"]["AUD"]["FROMSYMBOL"] . "</td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["9COIN"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["9COIN"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -395,7 +395,7 @@ require_once('mysql.php');
                                 <td>" . $EXCHANGE_RATES["RAW"]["9COIN"]["AUD"]["MARKET"] . "</td>
                                 <td>" . $EXCHANGE_RATES["RAW"]["9COIN"]["AUD"]["LASTUPDATE"] . "</td>
                             </tr>
-                            <tr id='coin-row-19'>
+                            <tr'>
                                 <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["ABN"]["AUD"]["FROMSYMBOL"] . "</td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["ABN"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["ABN"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -406,7 +406,7 @@ require_once('mysql.php');
                                 <td>" . $EXCHANGE_RATES["RAW"]["ABN"]["AUD"]["MARKET"] . "</td>
                                 <td>" . $EXCHANGE_RATES["RAW"]["ABN"]["AUD"]["LASTUPDATE"] . "</td>
                             </tr>
-                            <tr id='coin-row-20'>
+                            <tr'>
                                 <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["ACC"]["AUD"]["FROMSYMBOL"] . "</td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["ACC"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["ACC"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
@@ -417,7 +417,7 @@ require_once('mysql.php');
                                 <td>" . $EXCHANGE_RATES["RAW"]["ACC"]["AUD"]["MARKET"] . "</td>
                                 <td>" . $EXCHANGE_RATES["RAW"]["ACC"]["AUD"]["LASTUPDATE"] . "</td>
                             </tr>
-                            <tr id='coin-row-21'>
+                            <tr'>
                                 <td class='coin-symbol'>" . $EXCHANGE_RATES["RAW"]["ACE"]["AUD"]["FROMSYMBOL"] . "</td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["ACE"]["AUD"]["HIGHDAY"] . " <span class='naturalised-currency'>AUD</span></td>
                                 <td>$" . $EXCHANGE_RATES["RAW"]["ACE"]["AUD"]["OPENDAY"] . " <span class='naturalised-currency'>AUD</span></td>
