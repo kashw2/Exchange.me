@@ -1,3 +1,4 @@
+#Create Admin Account
 INSERT INTO exchangeme.accounts (
     exchangeme.accounts.id,
     exchangeme.accounts.username,
@@ -44,6 +45,55 @@ INSERT INTO exchangeme.accounts (
     6,
     "Default Administrator Account",
     "Default Site Administrator"
+);
+
+# Create Test Account
+INSERT INTO exchangeme.accounts (
+    exchangeme.accounts.id,
+    exchangeme.accounts.username,
+    exchangeme.accounts.email,
+    exchangeme.accounts.password,
+    exchangeme.accounts.salt,
+    exchangeme.accounts.firstname,
+    exchangeme.accounts.lastname,
+    exchangeme.accounts.alias,
+    exchangeme.accounts.gender,
+    exchangeme.accounts.age,
+    exchangeme.accounts.occupation,
+    exchangeme.accounts.company,
+    exchangeme.accounts.companywebsite,
+    exchangeme.accounts.website,
+    exchangeme.accounts.creationdate,
+    exchangeme.accounts.lastlogin,
+    exchangeme.accounts.awards,
+    exchangeme.accounts.ip,
+    exchangeme.accounts.session,
+    exchangeme.accounts.permissionid,
+    exchangeme.accounts.biography,
+    exchangeme.accounts.notes
+) VALUES (
+    DEFAULT,
+    "Test",
+    "Test@Exchange.me",
+    "5ed4cd4d31ba61c558a332b2c9b89c56.hOS2R/rj!3|Ap",
+    ".hOS2R/rj!3|Ap",
+    "Tes",
+    "ter",
+    "Test",
+    "Male",
+    "1337",
+    "Tester",
+    "Exchangeme",
+    "Exchange.me",
+    "Exchange.me",
+    DEFAULT,
+    CURRENT_TIME,
+    "",
+    "127.0.0.1",
+    "***SESSION***",
+    6,
+    "Default Test Account",
+    "This is a Test Account"
 );
 
 INSERT INTO exchangeme.banreasons (
@@ -178,8 +228,12 @@ INSERT INTO exchangeme.permissions (
     "Site-Administrator"
 );
 
-
+# Information for Admin Account
 # Password = password.01
 # Salt = >W'q+DgN.!C3p*]
-
 # Stored DB Password = md5(password.01) + >W'q+DgN.!C3p*]
+
+# Information for Test Account
+# Password = password.02
+# Salt = .hOS2"R/rj!3|Ap
+# Stored DB Password = md5(password.02) + .hOS2R/rj!3|Ap
