@@ -1,8 +1,8 @@
 CREATE TABLE IF NOT EXISTS `accounts` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
-`username` varchar(45) NOT NULL,
-`email` varchar(45) NOT NULL,
-`password` varchar(45) NOT NULL,
+`username` varchar(50) NOT NULL,
+`email` varchar(50) NOT NULL,
+`password` varchar(75) NOT NULL,
 `salt` varchar(45) NOT NULL,
 `firstname` varchar(100) DEFAULT NULL,
 `lastname` varchar(100) DEFAULT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `bans` (
 `ip` varchar(45) NOT NULL,
 `lastmodified` datetime DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `blocked` (
 `userid` int(10) unsigned NOT NULL,
@@ -74,7 +74,18 @@ CREATE TABLE IF NOT EXISTS `deletedbans` (
 `ip` varchar(45) NOT NULL,
 `lastmodified` datetime DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
+
+CREATE TABLE IF NOT EXISTS `deletedwarnings` (
+`id` int(11) NOT NULL AUTO_INCREMENT,
+`userid` varchar(45) NOT NULL,
+`date` datetime NOT NULL,
+`admin` varchar(45) NOT NULL,
+`brief` tinytext NOT NULL,
+`ip` varchar(45) NOT NULL,
+`lastmodified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `editedbans` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -84,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `editedbans` (
 `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
 `adminip` varchar(45) NOT NULL,
 PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=03 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=05 DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `friends` (
 `userid` int(10) unsigned NOT NULL,
@@ -139,4 +150,4 @@ CREATE TABLE IF NOT EXISTS `warnings` (
 `ip` varchar(45) NOT NULL,
 `lastmodified` datetime DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
