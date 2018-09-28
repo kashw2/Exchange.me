@@ -153,7 +153,7 @@ require_once('mysql.php');
                 // Fetch Results
                 $RESULT_CHECK_USER = mysqli_fetch_array($QUERY_CHECK_USER);
 
-                if($RESULT_CHECK_USER['permissionid'] >= 4) {
+                if($RESULT_CHECK_USER['permissionid'] >= 5) {
 
                     // Make sure the user is set
                     if(
@@ -206,7 +206,7 @@ require_once('mysql.php');
                         switch($_GET['Type']) {
                             case 'Ban':
 
-                                if($RESULT_CHECK_USER['permissionid'] >= 5) {
+                                if($RESULT_CHECK_USER['permissionid'] >= 6) {
 
                                     // Query
                                     $QUERY_USER_BANS = mysqli_query($conn, '
@@ -372,7 +372,7 @@ require_once('mysql.php');
                             break;
                             case 'Warn':
 
-                                if($RESULT_CHECK_USER['permissionid'] >= 4) {
+                                if($RESULT_CHECK_USER['permissionid'] >= 5) {
 
                                     // Query
                                     $QUERY_USER_WARNINGS = mysqli_query($conn, '

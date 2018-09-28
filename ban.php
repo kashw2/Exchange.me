@@ -28,7 +28,7 @@ WHERE exchangeme.accounts.username = "' . $_SESSION['user']['username'] . '"
 $RESULT_USER = mysqli_fetch_array($QUERY_USER);
 
 // Check that this user can ban
-if($RESULT_USER['permissionid'] >= 5) {
+if($RESULT_USER['permissionid'] >= 6) {
 
     // Sanity Check
     if(

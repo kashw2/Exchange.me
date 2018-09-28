@@ -154,7 +154,7 @@ require_once('mysql.php');
                 $RESULT_CHECK_USER = mysqli_fetch_array($QUERY_CHECK_USER);
 
                 // Make sure the user is set
-                if($RESULT_CHECK_USER['permissionid'] > 4) {
+                if($RESULT_CHECK_USER['permissionid'] > 5) {
 
                     echo "
                     
