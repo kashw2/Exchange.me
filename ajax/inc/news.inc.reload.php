@@ -75,23 +75,4 @@ if(
 
 }
 
-    /*
-    MySQL doesn't allow for UPDATE and INSERT queries to be run simultaneously
-    Refer to: https://stackoverflow.com/questions/45494/mysql-error-1093-cant-specify-target-table-for-update-in-from-clause
-    */
-
-    // Query
-    mysqli_query($conn, '
-    
-    UPDATE exchangeme.accounts
-    SET exchangeme.accounts.lastlogin = CURRENT_TIMESTAMP
-    WHERE exchangeme.accounts.username = (
-        SELECT
-        exchangeme.accounts.username
-        FROM exchangeme.accounts
-        WHERE exchangeme.accounts.session = "' . mysqli_real_escape_string($conn, $_COOKIE['loggedin']) . '"
-    );
-    
-    ');
-
 ?>

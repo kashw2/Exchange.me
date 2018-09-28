@@ -117,7 +117,7 @@ INSERT INTO exchangeme.news (
     exchangeme.news.content
 ) VALUES (
     DEFAULT,
-    0,
+    1,
     DEFAULT,
     "Welcome to Exchange.me!"
 );
