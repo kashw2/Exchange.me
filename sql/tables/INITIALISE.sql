@@ -91,7 +91,7 @@ INSERT INTO exchangeme.accounts (
     "",
     "127.0.0.1",
     "***SESSION***",
-    6,
+    1,
     "Default Test Account",
     "This is a Test Account"
 );
