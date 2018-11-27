@@ -42,8 +42,6 @@ if($RESULT_USER['permissionid'] >= 6) {
     &&  isset($_POST['Details'])
     ) {
 
-        var_dump(date('Y-m-d H:i:s',strtotime($_POST['Duration'])));
-
         // Query
         $QUERY_ADD_BAN = mysqli_query($conn, '
         
