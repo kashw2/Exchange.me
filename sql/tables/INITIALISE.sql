@@ -41,7 +41,7 @@ INSERT INTO exchangeme.accounts (
     CURRENT_TIME,
     "",
     "127.0.0.1",
-    "***SESSION***",
+    "session",
     6,
     "Default Administrator Account",
     "Default Site Administrator"
